@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+</head>
+
+<body>
+
+
+    <%- include('NavbarAllUsers') %>
+
+        <div style="display: grid;grid-template-columns: 70% 1fr;">
+
+            <div style="background-color: #F4F4F4;padding: 1rem;">
+
+                <h1 style="font-size: 1.3rem;font-weight: bold;padding-left: 1rem;padding-top: 2rem;">Order number #4234
+                </h1>
+
+                <!-- Div Items -->
+                <div style="margin-top: 4.4rem; padding-left: 1rem;">
+                    <h2 style="font-size: 1.5rem; font-weight: bold;margin-bottom: 1rem;">Items</h2>
+
+                    <!-- Cards of items -->
+                    <div>
+
+                        <div id="Items" style="display: grid;grid-template-columns: 48% 48%;gap: 1.5rem;">
+
+
+                        </div>
+
+
+                        <!-- total -->
+                        <div
+                            style="border: 1px solid #DBDBDB; margin-top: 0.6rem;padding-left: 1rem;padding-top: 1rem;    margin-right: 0.6rem;">
+                            <!-- Subtotal -->
+                            <div style="display: grid;grid-template-columns: 50% auto;">
+                                <h3 style="font-size: 1.2rem;">Sub-Total</h3>
+                                <h3 id="subtotal" style="font-size: 1.2rem;font-weight: bold;">R0.00</h3>
+                            </div>
+                            <!-- Tax -->
+                            <div style="display: grid;grid-template-columns: 50% auto;">
+                                <h3 style="font-size: 1.2rem;">Tax @ 17%</h3>
+                                <h3 id="vat" style="font-size: 1.2rem;font-weight: bold">R0.00</h3>
+                            </div>
+
+                            <div style="display: grid;grid-template-columns: 50% auto;">
+                                <h3 style="font-size: 1.2rem;">Total</h3>
+                                <h3 id="total" style="font-size: 1.2rem;font-weight: bold">R0.00</h3>
+                            </div>
+                            <!-- Button Procced with payment -->
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- Side bar -->
+            <div style="padding-left: 1rem;padding-top: 40rem;">
+
+
+
+
+
+                <div style="display: flex;justify-content: left;margin-top: 1rem;">
+                    <a href="/homeUser"
+                        style="text-decoration: none;border: none;background-color: #FF0000;width: 9vw;padding: 1rem;color: white;text-align: center;">Cancel</a>
+                </div>
+
+                <div style="margin-top: 1rem;display: flex;padding: 0.5rem;background-color: black;margin-right: 1rem;">
+
+                    <button onclick="sellCartItems()"
+                        style="width: 100%;border: none;background-color: black;color: white;"> Pay
+                    </button>
+
+                    <a id="SellItems" onclick="sellCartItems()"
+                        style="display: flex;align-items: center;border: none;text-decoration: none;color: white;">
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+        </div>
+</body>
+
+<script>
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    document.querySelector('#SellItems').addEventListener('click', sellCartItems);
+    function sellCartItems() {
+        let cart = getCart(); // An array of product IDs
+        console.log("Initial Cart:", cart);
+
+        // Calculate the number of times a certain ID appears, representing the quantity
+        let products = {};
+        cart.forEach(id => {
+            if (products[id]) {
+                products[id]++;
+            } else {
+                products[id] = 1;
+            }
+        });
+
+        // Structure the products as an array of objects
+        let structuredProducts = Object.keys(products).map(id => ({
+            productId: parseInt(id),
+            quantity: products[id]
+        }));
+
+        console.log("Structured Products:", structuredProducts);
+
+        // Create the headers for the request
+        let headers = {
+            "Content-Type": "application/json"
+        };
+
+        var total = document.getElementById("total").innerText;
+
+
+        // Create the body of the request, including the structured products
+        let body = JSON.stringify({
+            saleId: 0,
+            userId: 1,
+            productsInSale: structuredProducts,
+            totalPrice: 300,  // You may want to calculate this based on the cart
+            saleDate: new Date().toISOString(),
+        });
+
+        console.log("Request Body:", body);
+
+        // The URL you're sending the request to, replace this with your actual URL
+        let url = "/MakeSale";
+
+        // Set up the request information
+        let requestOptions = {
+            method: 'POST',
+            headers: headers,
+            body: body
+        };
+
+        fetch(url, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response Data:", data);
+                alert('Succesfully Ordered!')
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Define your function to be executed after the page loads
+    function myFunction() {
+        getCart();
+
+        LoadCart();
+        // Your code here...
+        console.log("Page has finished loading!");
+    }
+
+    // Attach the function to the DOMContentLoaded event
+    document.addEventListener('DOMContentLoaded', myFunction);
+
+
+    function getCart() {
+        let cart;
+        try {
+            cart = JSON.parse(localStorage.getItem('cart'));
+        } catch (error) {
+            console.error('Error parsing cart data from localStorage:', error);
+            cart = [];
+        }
+
+        return cart || []; // returns an empty array if cart is null or undefined
+    }
+
+
+    // Function to remove a product from the cart
+    function removeFromCart(productId) {
+        const index = cart.indexOf(productId);
+        if (index !== -1) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
+        }
+        LoadCart();
+        logCart(); // Log updated cart
+    }
+
+
+    function LoadCart() {
+        // Converting server-side products to a JSON object
+        let allproducts = JSON.parse('<%-JSON.stringify(products)%>');
+
+        // Getting the cart from localStorage
+        var cart = getCart();
+
+        var subtotal = 0;
+        var vat = 0.17; // VAT rate
+        var html = ``; // HTML string to be filled
+        var counter = 0; // Counter set to 0 to iterate over the allproducts array
+
+        // Convert cart array to a Set to remove duplicates
+        let uniqueCart = [...new Set(cart)];
+
+        // Looping through each unique item in the cart
+        uniqueCart.forEach(element => {
+
+            // Count the quantity of each product in the cart
+            let quantity = cart.filter(item => item === element).length;
+
+            // Appending product details to HTML string
+            html += `<div style="display:grid;grid-template-columns: 60% 1fr ;align-items: center;border: 1px solid #DBDBDB;padding: 0px;background-color: white; margin-bottom:0.4rem;">
+            <div>
+                <h3 style="font-size: 0.9rem;padding-left: 0.8rem;font-weight: 600;padding-top:1rem">${allproducts[counter].productName}</h3>
+                <h4 style="padding-left: 0.8rem;font-weight: 600;">R${allproducts[counter].productSellingPrice}</h4>
+                <h3 style="padding-left: 0.8rem;font-weight: 600;font-size:1rem">Quantity: ${quantity}</h3 >
+            </div >
+                        <div style="height:100%">
+                            <div style="display: flex;justify-content: center;height:100%">
+                                <button id="${element}" onclick="removeFromCart(this.id)" style="border: none;background-color: #FF0000;color: white;width: 100%;">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </div>
+        </div >`;
+            // Updating subtotal with current product's price
+            subtotal += allproducts[counter].productSellingPrice * quantity;
+            counter++;
+        });
+
+        // Calculate VAT and total
+        vat = subtotal * vat / 100;
+        vat = roundToDecimal(vat, 2); // Round VAT to 2 decimal places
+        var total = subtotal + vat;
+
+        // Updating HTML with cart's details
+        document.getElementById("subtotal").innerHTML = "R" + subtotal;
+        document.getElementById("vat").innerHTML = "R" + vat;
+        document.getElementById("total").innerHTML = "R" + total;
+        document.getElementById("Items").innerHTML = html;
+    }
+
+
+    // Function to round a number to given decimal places
+    function roundToDecimal(number, decimalPlaces) {
+        const factor = 10 ** decimalPlaces;
+        return Math.round(number * factor) / factor;
+    }
+
+</script>
+
+</htmlv>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>
+        Home Page - User
+    </title>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-btn {
+            cursor: pointer;
+        }
+
+        #searchbar {
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            background-color: #fcfcfc;
+            height: 11vh;
+            display: grid;
+            grid-template-columns: 60% 1fr;
+            align-items: center;
+            flex-direction: row;
+            justify-content: left;
+            padding-right: 4rem;
+            border: 1px solid 1px solid rgb(230 230 230);
+        }
+
+        #searchbarInput {
+            text-align: center;
+            font-size: 0.8em;
+            width: 100%;
+            height: 2.3rem;
+            background-color: #ececec;
+            border: 1px #cfcfcf solid;
+            border-radius: 24px;
+            padding-left: 2.5rem;
+        }
+
+        .custom-table-responsive {
+            margin: 2rem;
+            background-color: white !important;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <%- include('../NavbarAdmin') %>
+
+
+
+        <!-- Floating Bar  -->
+        <div class="floating-btn-container">
+            <a id="openModalBtn" class="floating-btn" style="background-color: #f15e47;" onclick="OpenModal()">
+                <i class="material-icons"> add</i>
+            </a>
+        </div>
+
+
+        <!-- Where all my content is -->
+        <div class="main-content" style="overflow: auto;">
+
+
+
+
+
+            <!-- Search Bar -->
+            <div class="shadowNav" id="searchbar">
+                <h6 style="   font-weight: 800;
+      font-size: 1.5em;
+      padding-left: 5rem;">Suppliers
+
+                </h6>
+
+                <div style="display: flex;width: 100%;justify-content: right;">
+
+
+                    <div style="position: relative; width: 20vw; margin-right: 24rem;">
+                        <input class="shadowNav" id="searchbarInput" type="text" placeholder="Search Inventory">
+                        <i style="position: absolute; 
+                      left: 1rem; 
+                      top: 0.5rem; 
+                      font-size: 0.8em;
+                      color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;"
+                                class="material-symbols-outlined">
+                                search
+                            </span></i>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <section style="margin-top:6rem; padding:  7rem 5rem;">
+
+
+
+                <div style="margin-left: 1rem;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+                      border: 1px solid rgb(216, 216, 216);
+                      width: 300px;
+                      border-radius: 15px;
+                      height: 300px;
+                      display: grid;
+                      grid-template-rows: 33% 33% 33%;
+                      padding-top: 1rem;
+                      justify-content: center;
+                      align-items: left;
+                      ">
+                    <span style="color: white;" class="material-symbols-outlined">
+                        savings
+                    </span>
+                    <H3 style="color: white;font-size: 1.5rem;">Avergae Lead Time</H3>
+                    <h4 style="color: white;">
+                        2 days
+                    </h4>
+                </div>
+
+                <div
+                    style="background-color: white;border-radius: 15px;border:  1px solid rgb(216, 216, 216);margin-bottom: 1REM;margin-top: 7rem;margin: 7rem auto;">
+
+                    <div style="padding: 1rem;padding-left: 3rem;padding-top: 2rem;">
+                        <h3 style="font-weight: bold;font-size: 1.5rem;">Reliable Suppliers
+                        </h3>
+                        <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;">These Suppliers have an
+                            execellent lead time</h5>
+                    </div>
+
+
+
+                    <hr>
+
+
+                    <div style="margin-top:1rem ;width: fit-content;" id="myTable" class="">
+                        <div class="table-responsive custom-table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <label class="control control--checkbox">
+                                            </label>
+                                        </th>
+                                        <th scope="col">Action</th>
+                                        <th scope="col">Component Name</th>
+                                        <th scope="col">Component Quanity (KG/L)</th>
+                                        <th scope="col">Cost Price Per Unit (KG/L)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% Suppliers.forEach(supplier=> { %>
+                                        <tr scope="row">
+                                            <th scope="row">
+                                                <label class="control control--checkbox">
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                            </th>
+                                            <td style="display: flex;align-items: center;gap: 1rem;">
+                                                <a style="display: flex;align-items: center;"
+                                                    href="/ViewSupplier/<%=supplier.supplierId %>"><span
+                                                        class="material-symbols-outlined">
+                                                        right_click
+                                                    </span></a> |
+                                                <button
+                                                    style="display: flex;border: none;background-color: transparent;align-items: center;"
+                                                    onclick="deleteSupplier(<%= supplier.supplierId %>)"><span
+                                                        class="material-symbols-outlined">
+                                                        delete_sweep
+                                                    </span></button>
+                                            </td>
+                                            <td>
+                                                <%= supplier.supplierName %>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="spacer">
+                                            <td colspan="100"></td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+                <div
+                    style="background-color: white;border-radius: 15px;border:  1px solid rgb(216, 216, 216);margin-bottom: 1REM;margin-top: 7rem;margin: 7rem auto;">
+
+
+                    <div style="padding: 1rem;padding-left: 3rem;padding-top: 2rem;">
+                        <h3 style="font-weight: bold;font-size: 1.5rem;">All suppliers
+                        </h3>
+                        <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;">Overview Of all your suppliers
+                        </h5>
+                    </div>
+
+
+
+                    <hr>
+
+
+
+
+                    <div style="margin-top:1rem ;width: fit-content;" id="myTable" class="">
+                        <div class="table-responsive custom-table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <label class="control control--checkbox">
+                                            </label>
+                                        </th>
+                                        <th scope="col">Action</th>
+                                        <th scope="col">Component Name</th>
+                                        <th scope="col">Component Quanity (KG/L)</th>
+                                        <th scope="col">Cost Price Per Unit (KG/L)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% Suppliers.forEach(supplier=> { %>
+                                        <tr scope="row">
+                                            <th scope="row">
+                                                <label class="control control--checkbox">
+                                                    <input type="checkbox" />
+                                                    <div class="control__indicator"></div>
+                                                </label>
+                                            </th>
+                                            <td style="display: flex;align-items: center;gap: 1rem;">
+                                                <a style="display: flex;align-items: center;"
+                                                    href="/ViewSupplier/<%=supplier.supplierId %>"><span
+                                                        class="material-symbols-outlined">
+                                                        right_click
+                                                    </span></a> |
+                                                <button
+                                                    style="display: flex;border: none;background-color: transparent;align-items: center;"
+                                                    onclick="deleteSupplier(<%= supplier.supplierId %>)"><span
+                                                        class="material-symbols-outlined">
+                                                        delete_sweep
+                                                    </span></button>
+                                            </td>
+                                            <td>
+                                                <%= supplier.supplierName %>
+                                            </td>
+
+                                        </tr>
+                                        <tr class="spacer">
+                                            <td colspan="100"></td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </section>
+
+
+
+            </thead>
+
+
+
+
+
+
+            <!-- Categories In the Database -->
+
+
+
+        </div>
+
+        <div id="myModal" class="modal">
+
+            <div id="supplierFormModal" class="modal-content shadow"
+                style="border: 1px solid rgb(191, 191, 191);padding: auto;width: 40%;margin:3rem auto auto 35vw">
+
+
+                <h1 class="headerPageTwo" style="padding-bottom: 0;margin:0rem">Add Supplier</h1>
+                <form id="supplierForm" action="/Addsupplier" method="POST" style="padding: 2rem;">
+                    <label for="supplierName">Supplier Name:</label>
+                    <input class="form-control" type="text" id="supplierName" name="supplierName" required>
+                    <label for="emailAddress">Email Address:</label>
+                    <input class="form-control" type="email" id="emailAddress" name="emailAddress" required>
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input class="form-control" type="tel" id="phoneNumber" name="phoneNumber" required>
+                    <label for="contactPerson">Contact Person:</label>
+                    <input class="form-control" type="text" id="contactPerson" name="contactPerson" required>
+                    <label for="address">Address:</label>
+                    <input class="form-control" type="text" id="address" name="address" required>
+
+
+                    <input style="margin-top: 2rem;" class="btn" type="submit" value="Submit">
+                </form>
+
+
+
+
+
+            </div>
+
+
+        </div>
+        </div>
+
+        <script>
+
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            }
+
+            // Get modal element
+            let modal = document.getElementById('myModal');
+            let btn = document.getElementById('openModalBtn');
+            let span = document.getElementById('closeFormBtn');
+
+            // Open the modal
+            function OpenModal() {
+                modal.style.display = 'block';
+            }
+
+            // Close the modal
+            span.onclick = function () {
+                modal.style.display = 'none';
+            }
+
+            // Close the modal if clicked outside
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            }
+            function deleteSupplier(supplierId, productId) {  // Added productId parameter
+                const url = `/api/Supplier/${supplierId}`;
+
+                fetch(url, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+
+                    //RECIVES MESSAGE FROM SERVER WHEN THE SUPPLIER IS SUCCESFULLY DELETED
+                    .then(response => response.json()) // Parse the JSON response
+                    .then(data => {
+                        if (data.success) {
+                            console.log(data.message);
+                            location.reload();  // Reload the page
+                        } else {
+                            console.error(data.message);
+                            // Optionally show an error message to the user
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                    });
+            }
+
+        </script>
+
+
+</body>
+
+</html>

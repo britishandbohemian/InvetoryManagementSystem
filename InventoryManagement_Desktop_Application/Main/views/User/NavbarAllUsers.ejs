@@ -1,0 +1,28 @@
+<!-- Navigation Bar -->
+<div class="navbar theme-orange"
+ style="display: grid;grid-template-rows: 70% 20%;flex-direction: row;justify-content: center;align-items: center;">
+
+ <div class="header">
+  <div class="user-label" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;gap: 2rem;">
+   <span style="font-size: 3rem;" class="material-symbols-outlined">
+    account_circle
+   </span>
+   <h2 style="font-size: 1rem;color: black;font-weight: bold;">
+    Welcome back <%=user.username%>
+   </h2>
+  </div>
+ </div>
+
+ <ul class="navbar-nav" style="padding:2rem;width: 250px;">
+
+  <li class="nav-item btn" style="margin-top: 15rem;">
+   <a class="nav-link" style="text-align: center;font-weight: bold;color: white;" href="/"><i
+     class="fas fa-sign-out-alt"></i> Log
+    Out</a>
+  </li>
+ </ul>
+</div>

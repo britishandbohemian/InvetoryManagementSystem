@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <!-- Add Bootstrap JS -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+ <!-- Font Awesome -->
+
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+ <link rel="stylesheet" href="/css/styles.css">
+
+ <title>
+  Point Of Sale
+ </title>
+
+
+ <style>
+  .modal-dialog {
+   margin: 4rem auto;
+   max-width: 80%;
+   /* Choose your modal width */
+  }
+
+  .modal-dialog-centered {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+
+  .modal-content {
+   padding: 20px;
+   /* Padding inside the modal */
+   border-radius: 8px;
+   /* Rounded corners if you like */
+  }
+
+
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+  .product-image {
+   position: relative;
+   /* Make it the point of reference for absolutely positioned children */
+  }
+
+  .sale-status {
+   position: absolute;
+   /* Absolutely position it within .product-image */
+   top: 0;
+   /* Align it to the top */
+   left: 0;
+   /* Align it to the left */
+   background-color: rgba(255, 0, 0, 0.5);
+   /* Optional: Make it red with some transparency */
+   color: white;
+   /* Optional: Make the text white */
+   padding: 5px;
+   z-index: 1;
+   /* Optional: Make sure it's above the image */
+  }
+
+  #ExtrasMenu {
+   display: none;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.4);
+   /* Black with opacity */
+  }
+
+  .form-container {
+   background-color: #fefefe;
+   margin: 5rem auto;
+   padding: 20px;
+   border: 1px solid #888;
+   border-radius: 8px;
+   width: 30%;
+   /* or whatever width you want */
+  }
+
+  /* Remove the black background */
+  .modal-backdrop.show {
+   background-color: rgba(0, 0, 0, 0.71) !important;
+   width: 100%;
+   height: 100%;
+  }
+
+  /* Center the modal */
+  .modal-dialog {
+   margin: auto;
+   width: 20%;
+   transform: translate(-50%, -50%);
+  }
+
+
+
+  .category-item {
+   /* Existing styles */
+   display: inline-block;
+   margin-right: 20px;
+   text-align: center;
+   font-size: 1rem;
+   font-weight: bold;
+  }
+
+  .category-item.active {
+   border-bottom: 10px solid red;
+  }
+ </style>
+
+
+</head>
+
+<body>
+
+
+ <%- include('NavbarAllUsers') %>
+
+
+
+  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
+
+   <div class="shadowNav" style="    
+z-index: 2;
+background-color: #fcfcfc;
+display: grid;
+height: 11vh;
+grid-template-columns: 52% 1fr 1fr 1fr;
+align-items: center;
+flex-direction: row;
+padding-left:  4rem;
+position: fixed;
+width: 100%;
+justify-content: left;
+border: 1px solid 1px solid rgb(230 230 230);
+
+">
+    <div style="margin-bottom: rem;">
+
+     <div style="display: grid;width: 100%;grid-template-columns: 1fr 90% 1fr;">
+
+
+      <!-- Material icon for left scroll -->
+      <span class="material-icons" id="scrollLeft">chevron_left</span>
+
+      <!-- Scrollable div for categories -->
+      <!-- Categories -->
+      <div id="categoryScrollDiv" style="overflow-x: auto; white-space: nowrap;">
+       <span class="category-item" data-category="all" onclick="highlightCategory(this)">All</span>
+       <% categories.forEach(function(category){ %>
+        <span class="category-item" data-category="<%= category.categoryId %>" onclick="highlightCategory(this)">
+         <%= category.categoryName %>
+        </span>
+        <% }); %>
+      </div>
+
+
+      <!-- Material icon for right scroll -->
+      <span class="material-icons" id="scrollRight">chevron_right</span>
+     </div>
+
+    </div>
+
+    <div style="display: flex;">
+
+
+
+     <input id="searchInput" class="shadowNav" style="text-align: center;
+font-size: 0.8em;
+width: 300px;
+
+height: 2.3rem;
+background-color: #ececec;
+border: 1px #cfcfcf solid;
+border-radius: 24px;
+" type="text" placeholder="Search Inventory">
+     <i style="position: relative;
+left: 1.2rem; 
+top: 0.8rem; 
+font-size: 0.8em;
+color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;" class="material-symbols-outlined">
+       search
+      </span></i>
+
+
+
+
+
+    </div>
+
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+     <div
+      style="width: 50px; height: 50px; background-color: #000000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+      <div
+       style="width: 40px; height: 40px; background-color: #FF0000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+       <a onclick="openModal()" style="display: flex;align-items: center;"><span class="material-icons"
+         style="color: white;">notifications</span></a>
+      </div>
+     </div>
+    </div>
+
+   </div>
+
+   <div>
+
+    <!-- center -->
+    <div
+     style="width: 95%;margin: 2rem auto;height: 100%;padding-top: 3rem;display: grid;grid-template-columns: 70% 1fr;">
+
+
+     <!-- Cards -->
+     <div class="container" style="padding: 2rem;margin-top: 3rem;width: 100%;">
+
+      <div class="row" style="display: flex;gap: 3rem;">
+       <% products.forEach(function(product){ %>
+        <div class="col-md-2 product-card" id="productCard_<%=product.productId%>"
+         data-category="<%= product.categoryId %>" style="margin-left: 10px;">
+         <div class="card" style="border-radius: 0px;width: 200px;margin-top: 0.8rem;padding: 0;">
+          <!-- Image -->
+          <div class="product-image">
+           <img src="<% if (product.categoryId === 2) { %>images/Beverage.png<% } 
+                   else if (product.categoryId === 3) { %>images/Sauce.png<% } 
+                 else if (product.categoryId === 1) { %>images/Sammosa.png<% } 
+                   else { %>images/Side.png<% } %>" alt="<%= product.productName %>" style="width: 100%;">
+           <!-- Space for sale status -->
+           <div class="sale-status" <% if (product.status !==4) { %> style="display: none;" <% } %> >
+             On Sale
+           </div>
+          </div>
+          <div class="card-body" style="display: grid;gap: 5px; padding:0; grid-template-rows: 60% 1fr;">
+           <div style="padding: 1rem;display: flex;flex-direction: column;gap: 1rem;">
+            <h5 class="card-title product-name" id="productName_<%=product.productId%>"
+             style="font-size: 1rem; font-weight: bold;height: 10px; margin-bottom: 13px; margin-top: 5px;">
+             <%= product.productName %>
+            </h5>
+            <h5 class="card-title product-price" id="productPrice_<%=product.productId%>"
+             style="font-size: 0.7rem; margin-bottom: 13px; margin-top: 10px;">
+             R <%= product.productSellingPrice %>
+            </h5>
+           </div>
+           <button onclick="OpenModal(<%= product.productId %>)"
+            style="font-size: 12px; display: flex;justify-content: center;align-items: center;gap: 10px;width: 100%;"
+            class="btn">
+            Add To Cart <span style="padding-left: 10px;font-size: 20px;"
+             class="material-symbols-outlined">shopping_cart</span>
+           </button>
+          </div>
+         </div>
+        </div>
+        <% }); %>
+      </div>
+
+
+     </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+  <!-- Side Bar  -->
+  <div
+   style="padding:1rem;margin-top: 1rem;width: 30vw; background-color: #F4F4F4; position: fixed;float: right;right: 0;height: 100%;padding-top: 5.6rem;">
+
+
+   <!-- Div Items -->
+   <div style="margin-top: 1rem;height: 70%;overflow: auto;">
+
+
+    <!-- Cards of items -->
+    <div id="Items" style="display: flex;gap:1rem;flex-direction: column;">
+
+
+
+    </div>
+   </div>
+
+
+   <!-- total -->
+   <div
+    style="border: 1px solid #DBDBDB; margin-top: 0.6rem;padding-top: 1rem;background-color: white;position: absolute;right: 20px;width: 93%;bottom: 25px;">
+
+    <div style="padding-left: 0.5rem;">
+     <!-- Subtotal -->
+     <div style="display: grid;grid-template-columns: 50% auto;">
+      <h3 style="font-size: 1vw;">Sub-Total</h3>
+      <h3 id="subtotal" style="font-weight:bold;font-size: 1vw;">R0.00</h3>
+     </div>
+     <!-- Tax -->
+     <div style="display: grid;grid-template-columns: 50% auto;">
+      <h3 style="font-size: 1vw;">Tax @ 17%</h3>
+      <h3 id="vat" style="font-weight:bold;font-size: 1vw;">R0.00</h3>
+     </div>
+
+     <div style="display: grid;grid-template-columns: 50% auto;">
+      <h3 style="font-size: 1vw;">Total</h3>
+      <h3 id="total" style="font-weight:bold;font-size: 1vw;">R0.00</h3>
+     </div>
+    </div>
+
+    <!-- Button Procced with payment -->
+
+    <div
+     style="display: flex;padding: 0.3rem;background-color: black;width: 100%;display: flex;justify-content: center;">
+     <a onclick="showPaymentModal()" style="width: 100%;border: none;background-color: black;color: white;">
+      Procced
+      To
+      Payment
+     </a>
+
+     <a onclick="showPaymentModal()"
+      style="display: flex;align-items: center;border: none;text-decoration: none;color: white;">
+      <span class="material-symbols-outlined">
+       arrow_forward
+      </span>
+
+     </a>
+
+    </div>
+   </div>
+
+
+
+  </div>
+
+
+  <div id="ExtrasMenu" class="modal">
+   <div class="form-container">
+    <div style="display: flex; justify-content: flex-end;">
+     <i class="material-icons close-icon" onclick="closeExtrasModal()">close</i>
+    </div>
+    <div style="padding-left: 2.4rem;margin-bottom: 2rem;">
+     <h3 id="modalProductName">Product Name</h3>
+     <h5 id="modalProductPrice">Extras</h5>
+    </div>
+    <div style="padding: 1rem 3rem;" id="linkedItemsList"></div>
+    <br>
+    <button id="AddToCart" style="margin-left: 2.8rem;" class="btn">Add To Cart</button>
+   </div>
+  </div>
+
+  <div class="modal" id="paymentModal">
+   <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+     <!-- Modal Header -->
+     <div class="modal-header">
+      <h4 class="modal-title">Choose Payment Method</h4>
+      <button type="button" onclick="CloseModalCash()" class="close" data-dismiss="modal">&times;</button>
+     </div>
+
+     <!-- Modal Body -->
+     <div class="modal-body">
+      <div class="d-flex justify-content-center" style="gap: 3rem;">
+       <div style="display: flex;flex-direction: column;justify-content: center;">
+        <span style="font-size: 6rem;" class="material-symbols-outlined">
+         payments
+        </span>
+        <button class="btn btn-primary mt-2" onclick="selectPayment('cash')">Cash</button>
+       </div>
+       <div style="display: flex;flex-direction: column;justify-content: center;">
+        <span style="font-size: 6rem;" class="material-symbols-outlined">
+         credit_card
+        </span>
+        <button class="btn btn-primary mt-2" onclick="sendCartToEndpoint()">Card</button>
+       </div>
+      </div>
+     </div>
+
+    </div>
+   </div>
+  </div>
+  <div class="modal" id="cashModal">
+   <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h4 class="modal-title">Cash Payment</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+     </div>
+     <div class="modal-body">
+      <div id="totalAmountDisplay"></div>
+      <div class="form-group">
+       <label for="cashGiven">Enter Cash Given:</label>
+       <input type="number" class="form-control" id="cashGiven" placeholder="Amount of Cash Given">
+      </div>
+      <button class="btn btn-primary mt-2" onclick="calculateChange()">Calculate Change</button>
+     </div>
+     <div class="modal-footer">
+      <div id="changeAmount"></div>
+      <div>
+       <button class="btn btn-secondary" onclick="sendCartToEndpoint()">Done</button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <!-- Notification Modal -->
+  <!-- Notification Modal -->
+  <div style="margin-top: 4rem;" class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content" style="width: 800px;">
+     <!-- Modal Header -->
+     <div class="modal-header">
+      <h5 class="modal-title">Notification Center</h5>
+      <button type="button" class="close" aria-label="Close" onclick="closeNotificationModal()">
+       <span aria-hidden="true">&times;</span>
+      </button>
+     </div>
+     <!-- Modal Body -->
+     <!-- Modal Body -->
+     <div id="NotificationBody" class="modal-body">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Notification</th>
+         <th>Task Name</th>
+         <th>Priority</th>
+         <th>Due Date</th>
+         <th>Action</th>
+        </tr>
+       </thead>
+       <tbody id="notificationTableBody">
+        <!-- Notifications will be inserted here -->
+       </tbody>
+      </table>
+     </div>
+
+
+     <div id="notificationInputForm" style="display: none;padding: 1rem;">
+      <div class="mb-3">
+       <input type="text" class="form-control" id="taskName" placeholder="Task Name">
+      </div>
+      <div class="mb-3">
+       <textarea class="form-control" id="taskDescription" placeholder="Task Description"></textarea>
+      </div>
+      <div class="mb-3">
+       <input type="datetime-local" class="form-control" id="dueDate">
+      </div>
+      <div class="mb-3">
+       <select class="form-control" id="priority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+        <option value="Urgent">Urgent</option>
+       </select>
+      </div>
+      <div class="mb-3">
+       <select class="form-control" id="notificationType">
+        <option value="Prepare">Prepare</option>
+        <option value="Reorder">Reorder</option>
+       </select>
+      </div>
+      <div class="mb-3">
+       <select id="productSelect" class="form-control">
+        <!-- Populate this dynamically -->
+       </select>
+      </div>
+      <div class="mb-3">
+       <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+      </div>
+      <div class="mb-3">
+       <button type="button" class="btn btn-success" onclick="createNotification()">Submit</button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+      <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+      </button>
+     </div>
+     <div class="modal-body" id="alertModalBody">
+      Message goes here...
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <script type="application/json" id="products-data">
+    <%- JSON.stringify(products) %>
+</script>
+
+  <script>
+
+   function deleteNotification(notificationId) {
+    const fetchOptions = {
+     method: 'DELETE',
+     headers: {
+      'Content-Type': 'application/json'
+     }
+    };
+
+    fetch(`http://localhost:5358/api/Notifications/${notificationId}`, fetchOptions)
+     .then(response => {
+      if (response.ok) {
+       console.log('Notification deleted');
+      } else {
+       console.log('Failed to delete notification');
+      }
+     })
+     .catch(error => {
+      console.error('Error deleting notification:', error);
+     });
+   }
+
+   function openModal() {
+    const modal = document.getElementById('notificationModal');
+    modal.classList.add('show');
+    modal.style.display = 'block';
+   }
+
+
+
+   // Function to close the Notification modal
+   function closeNotificationModal() {
+    const modal = document.getElementById('notificationModal');
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+   }
+
+
+   function selectPayment(method) {
+    if (method === 'cash') {
+     // Hide the first modal
+     const paymentModal = document.getElementById('paymentModal');
+     const paymentModalInstance = bootstrap.Modal.getInstance(paymentModal);
+     paymentModalInstance.hide();
+
+     // Show the second modal for cash payment
+     const cashModal = document.getElementById('cashModal');
+     const cashModalInstance = new bootstrap.Modal(cashModal);
+     cashModalInstance.show();
+    }
+   }
+
+   // Function to display the total amount in the cashModal
+   function displayTotalInModal() {
+    const totalAmountText = document.getElementById("total").innerText;
+    const totalAmount = parseFloat(totalAmountText.replace('R', ''));
+    document.getElementById("totalAmountDisplay").innerText = 'Total Amount: R' + totalAmount.toFixed(2);
+   }
+
+   // Function to calculate change
+   function calculateChange() {
+    const totalAmountText = document.getElementById("total").innerText;
+    const totalAmount = parseFloat(totalAmountText.replace('R', ''));
+    const cashGiven = parseFloat(document.getElementById('cashGiven').value);
+
+    if (cashGiven < totalAmount) {
+     document.getElementById('changeAmount').innerText = 'Please enter an amount greater than the total.';
+     return;
+    }
+
+    const change = cashGiven - totalAmount;
+    document.getElementById('changeAmount').innerText = 'Change to be given: R' + change.toFixed(2);
+   }
+
+   // Attach event listener to show event of modal
+   document.addEventListener('DOMContentLoaded', function () {
+    const cashModal = document.getElementById('cashModal');
+    cashModal.addEventListener('shown.bs.modal', displayTotalInModal);
+   });
+
+   // Attach event listener to show event of modal
+   function CloseModalCash() {
+    const cashModal = document.getElementById('cashModal');
+    cashModal.style.display = "none"
+   };
+
+
+   function showPaymentModal() {
+    var paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+    paymentModal.show();
+   }
+
+
+   function highlightCategory(clickedElement) {
+    // Remove the 'active' class from all categories
+    const categoryItems = document.querySelectorAll('.category-item');
+    categoryItems.forEach((element) => {
+     element.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked category
+    clickedElement.classList.add('active');
+
+    // Get the category id from data-category attribute
+    const selectedCategoryId = clickedElement.getAttribute('data-category');
+
+    // Filter products based on the selected category
+    const allProducts = document.querySelectorAll('.product-card');
+    allProducts.forEach((product) => {
+     const productCategoryId = product.getAttribute('data-category');
+     if (selectedCategoryId === 'all' || productCategoryId === selectedCategoryId) {
+      product.style.display = 'block';  // Show
+     } else {
+      product.style.display = 'none';  // Hide
+     }
+    });
+   }
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const scrollDiv = document.getElementById("categoryScrollDiv");
+    const scrollAmount = 100; // Set the scroll amount in pixels
+
+    document.getElementById("scrollLeft").addEventListener("click", function () {
+     scrollDiv.scrollLeft -= scrollAmount;
+    });
+
+    document.getElementById("scrollRight").addEventListener("click", function () {
+     scrollDiv.scrollLeft += scrollAmount;
+    });
+   });
+
+   function OpenModal(productId) {
+    const productsDataElement = document.getElementById('products-data');
+    const ProductArray = JSON.parse(productsDataElement.textContent);
+    const product = ProductArray.find(p => p.productId === productId);
+
+    if (product) {
+     document.querySelector("#ExtrasMenu h3").innerText = product.productName;
+     const ulElement = document.getElementById('linkedItemsList');
+     ulElement.innerHTML = '';
+
+     if (product.linkedItems && product.linkedItems.length > 0) {
+      product.linkedItems.forEach((linkedItem, index) => {
+       console.log(linkedItem)
+       if (linkedItem.avalibleOnExtra == true) {
+        const li = document.createElement('div');
+        li.innerHTML = `
+            <div style="margin-top:1rem">
+                <h5 style="font-weight: 400;margin-bottom: 1rem">${linkedItem.item.itemName}</h5>
+            </div>
+            <div style="display: grid;grid-template-columns: 79% 1fr;gap: 10px;">
+                <input id="extraInput_${index}" class="form-control" type="number" placeholder="Quantity" min="0"
+                data-item-id="${linkedItem.item.itemId}" 
+                data-item-name="${linkedItem.item.itemName}" 
+                data-unit-of-measurement="${linkedItem.item.unitOfMeasurement}">
+                <div>
+                    <button class="btn increment" onclick="updateQuantity(this, 1)">+</button>
+                    <button class="btn decrement" onclick="updateQuantity(this, -1)">-</button>
+                </div>
+            </div>
+        `;
+        ulElement.appendChild(li);
+       } else {
+
+       }
+      });
+
+      document.getElementById('AddToCart').onclick = () => {
+       const extras = Array.from(document.querySelectorAll('#linkedItemsList input')).map(inputElement => {
+        return {
+         itemId: parseInt(inputElement.dataset.itemId),
+         itemName: inputElement.dataset.itemName,
+         amountUsed: Number(inputElement.value)
+        };
+       });
+
+       console.log(extras);
+       addToCart(productId, product.productName, product.productSellingPrice, 1, extras);
+       closeExtrasModal();
+      };
+      openExtrasModal();
+     } else {
+      addToCart(productId, product.productName, product.productSellingPrice);
+     }
+    }
+   }
+
+   fetchNotifications()
+
+   // Cart Management
+   const cart = {
+    saleId: 0,
+    productsForSale: [],
+    total: 0,
+    subtotal: 0,
+    tax: 0,
+    saleDate: new Date().toISOString(),
+    userId: 0, // This will be set from the session later
+    additionalInfo: "",
+    paymentType: 0
+   };
+
+   function calculateCart() {
+    let subtotal = 0;
+    cart.productsForSale.forEach(product => {
+     subtotal += product.productSellingPrice * product.quantity;
+    });
+    cart.subtotal = subtotal;
+
+    // Assuming a tax rate of 10% for example
+    cart.tax = cart.subtotal * 0.10;
+
+    cart.total = cart.subtotal + cart.tax;
+   }
+
+   function addToCart(productId, productName, productSellingPrice, quantity = 1, extras = []) {
+    // Check if the product is already in the cart
+    const existingProductIndex = cart.productsForSale.findIndex(p => p.productId === productId);
+
+    if (existingProductIndex !== -1) {
+     // Update the quantity of the existing product
+     cart.productsForSale[existingProductIndex].quantity += quantity;
+    } else {
+     // Add the new product to the cart
+     const productInSale = {
+      productInSaleId: 0,
+      productId: productId,
+      productName: productName,
+      quantity: quantity,
+      productSellingPrice: productSellingPrice,
+      componentsInSale: extras.length > 0 ? extras.map(extra => ({
+       componentInSaleId: 0,
+       itemId: extra.itemId,
+       itemName: extra.itemName,
+       amountUsed: extra.amountUsed
+      })) : [{
+       componentInSaleId: 0,
+       itemId: 0,
+       itemName: "string",
+       amountUsed: 0
+      }]
+     };
+
+     cart.productsForSale.push(productInSale);
+    }
+
+    // Calculate the cart total, subtotal, and tax
+    calculateCart();
+
+    console.log("Current cart:", cart);
+
+    // Call LoadCart to update the cart table
+    LoadCart();
+   }
+
+   // Function to send the cart data to the endpoint
+   async function sendCartToEndpoint() {
+    // Include the userId from the session
+    cart.userId = '<%-user.userId%>'; // Replace this with the actual session variable
+    cart.saleDate = new Date().toISOString();
+
+    console.log(cart)
+    // Send the cart data to the endpoint
+    const response = await fetch('http://localhost:5358/api/Sales/CreateSale', {
+     method: 'POST',
+     headers: {
+      'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(cart)
+    });
+
+    if (response.ok) {
+     const data = await response.json();
+     showAlertModal("Success", "Sale made Successfully");
+
+     // Reload the page after 5 seconds
+     setTimeout(() => {
+      window.location.reload();
+     }, 1000);
+    } else {
+     console.log('Failed to send cart:', response.status, response.statusText);
+    }
+   }
+
+
+   //End Of Cart Management
+
+   async function fetchNotifications() {
+    const response = await fetch('http://localhost:5358/api/Notifications');
+    const notifications = await response.json();
+
+    const tableBody = document.getElementById('notificationTableBody');
+    tableBody.innerHTML = ''; // Clear the existing notifications
+
+    notifications.forEach((notification, index) => {
+     const row = tableBody.insertRow();
+     row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${notification.taskName}</td>
+      <td>${notification.priority}</td>
+      <td>${notification.dueDate}</td>
+      <td>
+        <button class="btn btn-info" data-toggle="collapse" data-target="#notificationDetails${index}">Details</button>
+        <button class="btn btn-danger" onclick="deleteNotification(${notification.notificationId})">Delete</button>
+      </td>
+    `;
+
+     const detailsRow = tableBody.insertRow();
+     detailsRow.innerHTML = `
+      <td colspan="5">
+        <div id="notificationDetails${index}" class="collapse">
+          <strong>Task Description:</strong> ${notification.taskDescription} <br>
+          <strong>Type:</strong> ${notification.type} <br>
+          <strong>Product:</strong> ${notification.product} <br>
+          <strong>Quantity:</strong> ${notification.quantity}
+        </div>
+      </td>
+    `;
+    });
+   }
+
+
+   function showAlertModal(title, message) {
+    // Set the modal's title and message
+    document.getElementById('alertModalLabel').innerText = title;
+    document.getElementById('alertModalBody').innerText = message;
+
+    // Display the modal
+    var modal = document.getElementById('alertModal');
+    modal.style.display = 'block';
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+   }
+
+   function closeAlertModal() {
+    var modal = document.getElementById('alertModal');
+    modal.style.display = 'none';
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+   }
+   function openExtrasModal() {
+    const extrasMenu = document.getElementById('ExtrasMenu');
+    extrasMenu.style.display = 'block';
+   }
+
+   function closeExtrasModal() {
+    const extrasMenu = document.getElementById('ExtrasMenu');
+    extrasMenu.style.display = 'none';
+   }
+
+   function updateQuantity(button, amount) {
+    const input = button.closest('div').querySelector('.form-control');
+    const currentQuantity = parseInt(input.value) || 0;
+    input.value = Math.max(0, currentQuantity + amount);
+   }
+
+   let modal = document.getElementById('ExtrasMenu');
+
+   function incrementQuantity(inputElement) {
+    const currentValue = parseInt(inputElement.value) || 0;
+    inputElement.value = currentValue + 1;
+   }
+
+   function decrementQuantity(inputElement) {
+    const currentValue = parseInt(inputElement.value) || 0;
+    inputElement.value = Math.max(currentValue - 1, 0);  // Ensure value doesn't go below 0
+   }
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function (event) {
+     const query = event.target.value.toLowerCase();
+     const productCards = document.querySelectorAll(".product-card");
+
+     productCards.forEach(function (card) {
+      const productName = card.querySelector(".product-name").textContent.toLowerCase();
+
+      if (productName.includes(query)) {
+       card.style.display = "block";
+       card.querySelector(".product-name").innerHTML = highlightText(productName, query);
+      } else {
+       card.style.display = "none";
+      }
+     });
+    });
+
+    function highlightText(text, query) {
+     const highlighted = text.replace(new RegExp(`(${query})`, "gi"), "<span style='background-color: yellow;'>$1</span>");
+     return highlighted;
+    }
+   });
+
+
+
+   // Load the cart into the menu
+   function LoadCart() {
+    // Clear the cart HTML
+    document.getElementById("Items").innerHTML = '';
+
+    // Get the cart from your new cart structure
+    const cartItems = cart.productsForSale;
+    let subtotal = 0;
+    let vat = 0.17;
+
+    cartItems.forEach(cartItem => {
+     const productId = cartItem.productId;
+     const product = cartItem;
+
+     if (product) {
+      let quantity = cartItem.quantity;
+
+      // Create an id for the product card based on the productId
+      let cardId = 'product-card-' + productId;
+      let cardElement = document.getElementById(cardId);
+
+      if (cardElement) {
+       // Product card already exists, update quantity field
+       cardElement.querySelector('.quantity').innerHTML = `Quantity: ${quantity}`;
+      } else {
+       // Product card doesn't exist, create new card
+       let html = `<div id="${cardId}" style="display:grid;grid-template-columns: 60% 1fr ;align-items: center;border: 1px solid #DBDBDB;padding: 0px;background-color: white; margin-bottom:0.4rem;width:100%">
+                      <div>
+                          <h3 style="font-size: 0.9rem;padding-left: 0.8rem;font-weight: 600;padding-top:1rem">${product.productName}</h3>
+                          <h4 style="padding-left: 0.8rem;font-weight: 600;">R${product.productSellingPrice}</h4>
+                          <h3 class="quantity" style="padding-left: 0.8rem;font-weight: 600;font-size:1rem">Quantity: ${quantity}</h3>
+                      </div>
+                      <div style="height:100%">
+                          <div style="display: flex;justify-content: center;height:100%">
+                              <button id="${productId}" onclick="removeFromCart(this.id)" class="btn" style="color: white;width: 100%;">
+                                  <span class="material-symbols-outlined">delete</span>
+                              </button>
+                          </div>
+                      </div>
+                  </div>`;
+
+       // Append new product card to cart HTML
+       document.getElementById("Items").insertAdjacentHTML('beforeend', html);
+      }
+
+      subtotal += product.productSellingPrice * quantity;
+     }
+    });
+
+    // Calculate and update subtotal, vat, and total
+    subtotal = roundToDecimal(subtotal, 2);
+    vat = roundToDecimal(subtotal * vat / 100, 2);
+    var total = roundToDecimal(subtotal + vat, 2);
+
+    document.getElementById("subtotal").innerHTML = "R" + subtotal;
+    document.getElementById("vat").innerHTML = "R" + vat;
+    document.getElementById("total").innerHTML = "R" + total;
+   }
+
+
+   // Function to round a number to given decimal places
+   function roundToDecimal(number, decimalPlaces) {
+    const factor = 10 ** decimalPlaces;
+    return Math.round(number * factor) / factor;
+   }
+
+
+
+   // Function to remove a product from the cart
+   function removeFromCart(productId) {
+    const index = cart.indexOf(productId);
+    if (index !== -1) {
+     cart.splice(index, 1);
+     localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in localStorage
+    }
+    LoadCart();
+    logCart(); // Log updated cart
+   }
+
+
+
+
+  </script>
+
+</body>
+
+</html>

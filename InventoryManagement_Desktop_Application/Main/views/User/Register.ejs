@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=0.8">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="/css/styles.css">
+ <link rel="icon" href="images/Layer-1" type="image/x-icon">
+ <title>Registration Page</title>
+
+
+</head>
+
+<body>
+ <%- include('NavbarDefault') %>
+
+
+
+  <div class="RegisterPage " style="width: 100%;margin-left:17rem;">
+
+   <!-- Card division -->
+   <div class="row " style="width: 100%;margin-left: 15rem;">
+
+
+    <div class="col-md-6 " style="padding-top: 1rem;">
+
+     <div class="card mt-2 " style="border: none;">
+
+
+      <!-- Top Label -->
+      <div class="card-header" style="
+                            background-color: #e7280b;">
+       <h3 style="    font-size: 1.75rem;
+              font-weight: bold;
+              color: white;
+              font-size: 21px;
+              font-weight: bold;">Register</h3>
+      </div>
+
+      <div class="card-body">
+       <form id="login-form" action="/api/auth/register" method="POST">
+        <div class="form-group">
+         <label for="username">Username</label>
+         <input type="text" name="username" class="form-control" id="Username" style="border-radius: 0;" required>
+        </div>
+        <div class="form-group">
+         <label for="password">Password:</label>
+         <input type="password" class="form-control" id="firstpassword" name="userPassword" style="border-radius: 0;"
+          required>
+        </div>
+
+
+
+        <div class="form-group">
+         <label for="userEmail">Email address:</label>
+         <input type="email" name="userEmail" class="form-control" id="userEmail" style="border-radius: 0;" required>
+        </div>
+
+        <div class="form-group">
+         <label for="userContact">Contact Number</label>
+         <input type="tel" name="userContact" class="form-control" id="userContact" style="border-radius: 0;" required>
+        </div>
+
+        <div class="form-group">
+         <label for="role">Role:</label>
+         <select id="role" name="role" class="form-control" required>
+          <option value="user">Employee</option>
+          <option value="admin">Manager</option>
+          <option value="supplier">Supplier</option>
+         </select>
+        </div>
+
+        <button type="submit" class="btn  mt-3" style="border-radius: 0;background-color:  #e82c10;color: white;"
+         href="/">Register</button>
+       </form>
+
+       <div style="padding: 1rem 0rem; display: flex;">
+        <h3 style="font-size: 1rem;font-weight: bold;">
+         <%= message %>
+        </h3>
+       </div>
+
+       <div class="mt-2">
+        <p style="color: #f15e47;font-weight: bold;">Have an account? <a style="font-weight: 300;" href="/">Login</a>
+        </p>
+       </div>
+      </div>
+
+
+     </div>
+
+    </div>
+   </div>
+
+  </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Ignore This Styling -->
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=0.2">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="/css/styles.css">
+
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+
+ <title>View Orders</title>
+ <style>
+  .form-control {
+   border: 1px solid black;
+   border-bottom: 5px solid black;
+  }
+
+
+
+  .modal {
+   padding-top: 3rem;
+  }
+
+
+
+
+  .custom-table-responsive {
+   margin: 2rem;
+   background-color: white !important;
+   padding: 20px;
+   border-radius: 15px;
+  }
+
+  #searchbar {
+   position: fixed;
+   width: 100%;
+   z-index: 2;
+   background-color: #fcfcfc;
+   height: 11vh;
+   display: grid;
+   grid-template-columns: 60% 1fr;
+   align-items: center;
+   flex-direction: row;
+   justify-content: left;
+   padding-right: 4rem;
+   border: 1px solid 1px solid rgb(230 230 230);
+  }
+
+  #searchbarInput {
+   text-align: center;
+   font-size: 0.8em;
+   width: 100%;
+   height: 2.3rem;
+   background-color: #ececec;
+   border: 1px #cfcfcf solid;
+   border-radius: 24px;
+   padding-left: 2.5rem;
+  }
+ </style>
+
+
+
+</head>
+
+<body>
+
+ <%- include('../NavbarAdmin') %>
+
+  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
+
+   <div class="shadowNav" style="    
+z-index: 2;
+background-color: #fcfcfc;
+display: grid;
+height: 11vh;
+grid-template-columns: 60% 1fr;
+align-items: center;
+flex-direction: row;
+padding-left:  4rem;
+position: fixed;
+width: 100%;
+justify-content: left;
+border: 1px solid 1px solid rgb(230 230 230);
+
+">
+    <h6 style="   font-weight: 800;
+font-size: 1.5em;
+">Confirm Orders
+
+    </h6>
+
+
+
+   </div>
+
+
+
+   <div style="height: 400px;width: 95%;margin: 3rem auto">
+    <div style="display: flex;gap: 3rem;">
+
+
+
+     <!--center-->
+     <div style="height: 400px; width: 95%; margin: 7rem auto">
+
+
+      <form id="orderForm">
+
+       <div style="display: flex; gap: 1rem;">
+        <div style="width: 70%;">
+         <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0,0,0);">
+          <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+           <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Order Details</h3>
+          </div>
+
+          <div id="myTable" class="container" style="margin: 0;">
+           <div class="table-responsive">
+            <table class="table table-striped">
+             <thead>
+              <tr>
+               <th scope="col">Reject</th>
+               <th scope="col">Product/Item Name</th>
+               <th scope="col">Ordered Quantity</th>
+               <th scope="col">Received Quantity</th>
+               <th scope="col">Sell By Date</th>
+              </tr>
+             </thead>
+             <tbody>
+              <% if (orderDetails.orderProducts && orderDetails.orderProducts.length> 0) { %>
+               <% orderDetails.orderProducts.forEach(product=> { %>
+                <tr id="productRow<%= product.productId %>">
+
+                 <td>
+                  <button onclick="rejectRow('productRow<%= product.productId %>')">Reject</button>
+                 </td>
+
+                 <td>
+                  <%= product.productName %>
+                 </td>
+                 <input type="hidden" name="productId[]" value="<%= product.productId %>">
+                 <td>
+                  <%= product.unitsOrdered %>
+                 </td>
+                 <td><input type="number" placeholder="Received Quantity" class="form-control"
+                   name="productReceivedQuantity[]"></td>
+                 <td><input type="date" class="form-control" name="productSellByDate[]"></td>
+                </tr>
+                <% }); %>
+                 <% } %>
+
+                  <% if (orderDetails.orderItems && orderDetails.orderItems.length> 0) { %>
+                   <% orderDetails.orderItems.forEach(item=> { %>
+                    <tr id="itemRow<%= item.itemId %>">
+                     <td>
+                      <button onclick="rejectRow('itemRow<%= item.itemId %>')">Reject</button>
+                     </td>
+                     <td>
+                      <%= item.itemName %>
+                     </td>
+                     <input type="hidden" name="itemId[]" value="<%= item.itemId %>">
+                     <td>
+                      <%= item.unitsOrdered %>
+                     </td>
+                     <td><input type="number" placeholder="Received Quantity" class="form-control"
+                       name="itemReceivedQuantity[]"></td>
+                     <td><input type="date" class="form-control" name="itemSellByDate[]"></td>
+                    </tr>
+                    <% }); %>
+                     <% } %>
+             </tbody>
+            </table>
+           </div>
+          </div>
+         </div>
+        </div>
+
+        <div style="width: 30%;">
+         <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0,0,0);">
+          <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+           <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Order Details</h3>
+          </div>
+
+          <div class="order-details" style="padding: 3rem 2rem;">
+           <p>
+            <strong>Order ID:</strong>
+            <span>
+             <%= orderDetails.supplierOrderId %>
+            </span>
+            <!-- Hidden Input for Order ID -->
+            <input type="hidden" name="supplierOrderId" value="<%= orderDetails.supplierOrderId %>">
+           </p>
+           <p>
+            <strong>Total Cost:</strong>
+            <span>
+             <%= orderDetails.totalCostOfOrder.toFixed(2) %>
+            </span>
+           </p>
+
+           <!-- Hidden Input for Supplier ID -->
+           <input type="hidden" name="supplierId" value="<%= orderDetails.supplierId %>">
+           <!-- Ratings Input -->
+           <div style="margin-top: 20px;">
+            <label for="order-rating" style="display: block; margin-bottom: 10px;"><strong>Rate your
+              experience (1-10):</strong></label>
+            <input type="number" id="order-rating" name="rating" min="1" max="10"
+             style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+           </div>
+
+           <!-- Confirm Order Button -->
+           <button type="submit"
+            style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin-top: 20px; cursor: pointer; border-radius: 5px;">Confirm
+            Order</button>
+
+
+          </div>
+         </div>
+        </div>
+       </div>
+
+      </form>
+
+     </div>
+
+    </div>
+
+
+
+
+   </div>
+
+   <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+       <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+       </button>
+      </div>
+      <div class="modal-body" id="alertModalBody">
+       Message goes here...
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+      </div>
+     </div>
+    </div>
+
+
+
+
+
+
+   </div>
+
+   <script>
+
+    function rejectRow(rowId) {
+     event.preventDefault();
+
+     let row = document.getElementById(rowId);
+     let inputs = row.querySelectorAll('input');
+     let receivedQuantityInput = row.querySelector('input[type="number"]');
+
+     inputs.forEach(input => {
+      input.disabled = true;
+     });
+
+     receivedQuantityInput.value = '0';
+    }
+
+
+    function showAlertModal(title, message) {
+     // Set the modal's title and message
+     document.getElementById('alertModalLabel').innerText = title;
+     document.getElementById('alertModalBody').innerText = message;
+
+     // Display the modal
+     var modal = document.getElementById('alertModal');
+     modal.style.display = 'block';
+     modal.classList.add('show');
+     document.body.classList.add('modal-open');
+    }
+
+    function closeAlertModal() {
+     var modal = document.getElementById('alertModal');
+     modal.style.display = 'none';
+     modal.classList.remove('show');
+     document.body.classList.remove('modal-open');
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', async function (event) {
+     event.preventDefault();
+
+     // Extracting products data
+     let productCheckboxes = document.querySelectorAll("input[name='productConfirm[]']");
+     let productQuantities = document.querySelectorAll("input[name='productReceivedQuantity[]']");
+     let productDates = document.querySelectorAll("input[name='productSellByDate[]']");
+     let productIDs = document.querySelectorAll("input[name='productId[]']");
+     let productsReceived = [];
+     productCheckboxes.forEach((checkbox, index) => {
+      if (checkbox.checked) {
+       productsReceived.push({
+        productId: parseInt(productIDs[index].value),
+        quantityReceived: Number(productQuantities[index].value),
+        sellByDate: new Date(productDates[index].value).toISOString()
+       });
+      }
+     });
+
+     // Extracting items data
+     let itemCheckboxes = document.querySelectorAll("input[name='itemConfirm[]']");
+     let itemQuantities = document.querySelectorAll("input[name='itemReceivedQuantity[]']");
+     let itemDates = document.querySelectorAll("input[name='itemSellByDate[]']");
+     let itemIDs = document.querySelectorAll("input[name='itemId[]']");
+     let itemsReceived = [];
+     itemCheckboxes.forEach((checkbox, index) => {
+      if (checkbox.checked) {
+       itemsReceived.push({
+        itemId: parseInt(itemIDs[index].value),
+        quantityReceived: Number(itemQuantities[index].value),
+        sellByDate: new Date(itemDates[index].value).toISOString()
+       });
+      }
+     });
+
+
+     let dto = {
+      supplierOrderId: parseInt(document.querySelector("input[name='supplierOrderId']").value),
+      supplierId: parseInt(document.querySelector("input[name='supplierId']").value),  // Getting the supplierId from hidden input
+      productsReceived: productsReceived,
+      itemsReceived: itemsReceived,
+      receivedDate: new Date().toISOString(),
+      supplierRating: parseInt(document.getElementById('order-rating').value)
+     };
+     try {
+      let response = await fetch('/ConfirmOrder', {
+       method: 'POST',
+       headers: {
+        'Content-Type': 'application/json',
+       },
+       body: JSON.stringify(dto)
+      });
+
+
+      if (response.ok) {
+       // Redirect to the desired page after successful order confirmation
+       window.location.href = "/Orders";
+      } else {
+       // Handle any other responses if you need to
+       console.log(data.message); // Optionally display other messages
+      }
+
+     } catch (error) {
+      console.error('Error:', error);
+     }
+
+    });
+
+
+    // Create The function To Confirm the order
+    function populateForm(id, sellByDate, quantity) {
+     document.getElementById('productItemSelect').value = id;
+     document.getElementById('sellByDateInput').value = sellByDate;
+     document.getElementById('quantityInput').value = quantity;
+    }
+
+    document.getElementById('confirmForm').addEventListener('submit', function (e) {
+     e.preventDefault();
+
+     const productId = document.getElementById('productItemSelect').value;
+
+     // Update the order details list (set its status to checked)
+     const ordersList = document.getElementById('ordersList');
+     const orderItems = ordersList.getElementsByTagName('li');
+     for (let item of orderItems) {
+      if (item.innerText.includes(productId)) {
+       item.style.textDecoration = 'line-through';
+       item.innerHTML += ' (Checked)';
+      }
+     }
+
+     // Check if all items are confirmed and enable rating
+     let allChecked = true;
+     for (let item of orderItems) {
+      if (!item.innerText.includes('(Checked)')) {
+       allChecked = false;
+       break;
+      }
+     }
+     if (allChecked) {
+      document.getElementById('ratingInput').disabled = false;
+      document.getElementById('finalConfirmButton').disabled = false;
+     }
+    });
+
+   </script>
+
+
+
+
+</body>
+
+
+
+</html>

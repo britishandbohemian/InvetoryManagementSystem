@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Ignore This Styling -->
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=0.2">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="/css/styles.css">
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+ <title>View Orders</title>
+ <style>
+  /* Modal Styles */
+  .modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+   background-color: #fefefe;
+   padding: 6REM;
+   border: 1px solid #888;
+   width: 40%;
+  }
+
+  .form-control {
+   border: 1px solid black;
+   border-bottom: 5px solid black;
+  }
+
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+  .modal {
+   padding-top: 3rem;
+  }
+
+
+
+
+  .custom-table-responsive {
+   margin: 2rem;
+   background-color: white !important;
+   padding: 20px;
+   border-radius: 15px;
+  }
+
+  #searchbar {
+   position: fixed;
+   width: 100%;
+   z-index: 2;
+   background-color: #fcfcfc;
+   height: 11vh;
+   display: grid;
+   grid-template-columns: 60% 1fr;
+   align-items: center;
+   flex-direction: row;
+   justify-content: left;
+   padding-right: 4rem;
+   border: 1px solid 1px solid rgb(230 230 230);
+  }
+
+  #searchbarInput {
+   text-align: center;
+   font-size: 0.8em;
+   width: 100%;
+   height: 2.3rem;
+   background-color: #ececec;
+   border: 1px #cfcfcf solid;
+   border-radius: 24px;
+   padding-left: 2.5rem;
+  }
+ </style>
+
+
+
+</head>
+
+<body>
+
+ <%- include('../NavbarAdmin') %>
+
+
+  <!-- Floating Bar  -->
+  <div class="floating-btn-container" style="bottom: 8rem;right: 4rem">
+   <button class="floating-btn" onclick="OpenModalProduct()" style="background-color: #FF0000;border: none;">
+    <i class="material-icons"> fastfood</i>
+   </button>
+  </div>
+
+  <!-- Floating Bar  -->
+  <div class="floating-btn-container" style="bottom: 2rem;right: 4rem">
+   <button class="floating-btn" onclick="OpenModal()" style="background:#191716;border: none;">
+    <i class="material-icons"> lunch_dining</i>
+   </button>
+  </div>
+
+
+  <!-- Where all my content is -->
+  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
+
+   <div class="shadowNav" style="    
+z-index: 2;
+background-color: #fcfcfc;
+display: grid;
+height: 11vh;
+grid-template-columns: 60% 1fr;
+align-items: center;
+flex-direction: row;
+padding-left:  4rem;
+position: fixed;
+width: 100%;
+justify-content: left;
+border: 1px solid 1px solid rgb(230 230 230);
+
+">
+    <h6 style="   font-weight: 800;
+font-size: 1.5em;
+">Product and Supplies, Orders
+
+    </h6>
+
+    <div style="display: flex;">
+
+
+
+
+
+
+
+
+    </div>
+
+   </div>
+
+
+
+
+   <!-- center -->
+   <div style="width: 95%;margin: 8rem auto;display: flex;gap: 1rem;">
+
+
+
+    <div
+     style="min-height: 500px;background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0); width: 90%;">
+     <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px 15px 0 0;">
+      <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Orders of Products And Items Waiting to be
+       placed to supplier</h3>
+      <h5 style="font-size: 1rem; font-weight: 400; margin-top: 1rem; color: #F7F4F3;">Overview of all your
+       supplier orders</h5>
+     </div>
+
+     <div id="myTable" style="margin-top: 1rem; padding: 1rem;">
+      <div class="table-container" style="max-height: 600px; overflow-y: auto;">
+       <table class="table table-striped">
+        <thead>
+         <tr>
+          <th scope="col"><label class="control control--checkbox"></label></th>
+          <th scope="col">Name</th>
+          <th scope="col">Units Ordered</th>
+          <th scope="col">Total Cost</th>
+         </tr>
+        </thead>
+        <tbody>
+         <% if(Orders.orderProducts && Orders.orderProducts.length> 0) { %>
+          <% Orders.orderProducts.forEach(product=> { %>
+           <% if(product.status !==1 ) { %> <!-- Add this line -->
+            <tr scope="row">
+             <th scope="row">
+              <input type="checkbox" name="selectedProduct" value="<%= product.orderedProductId %>"
+               onchange="updateFormFields()">
+             </th>
+             <td>
+              <%= product.productName %>
+             </td>
+             <td>
+              <%= product.unitsOrdered %>
+             </td>
+             <td>
+              <%= product.totalCostOfOrder %>
+             </td>
+            </tr>
+            <% } %> <!-- Add this line -->
+             <% }); %>
+              <% } %>
+
+               <% if(Orders.orderItems && Orders.orderItems.length> 0) { %>
+                <% Orders.orderItems.forEach(item=> { %>
+                 <% if(item.status !==1 ) { %> <!-- Add this line -->
+                  <tr scope="row">
+                   <th scope="row">
+                    <input type="checkbox" name="selectedItem" value="<%= item.orderedItemId %>"
+                     onchange="updateFormFields()">
+                   </th>
+                   <td>
+                    <%= item.itemName %>
+                   </td>
+                   <td>
+                    <%= item.unitsOrdered %>
+                   </td>
+                   <td>
+                    <%= item.totalCostOfOrder %>
+                   </td>
+                  </tr>
+                  <% } %> <!-- Add this line -->
+                   <% }); %>
+                    <% } %>
+        </tbody>
+       </table>
+      </div>
+     </div>
+
+    </div>
+
+
+
+
+    <div
+     style="min-height: 500px;border-radius: 20px;background-color: rgb(255, 255, 255);width: 100%;border: 2px solid black;">
+
+
+     <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px 15px 0 0;">
+      <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Orders of Products And Items Waiting to be
+       placed to supplier</h3>
+      <h5 style="font-size: 1rem; font-weight: 400; margin-top: 1rem; color: #F7F4F3;">Overview of all your
+       supplier orders</h5>
+     </div>
+
+     <form method="POST" style="padding: 2rem 2rem 1rem 1rem; background-color: #ffffff; border-radius: 10px;">
+
+      <div style="margin-bottom: 1.5rem;">
+       <label>Supplier:</label>
+       <select class="form-control" name="SupplierId" id="SupplierId" required>
+        <% Supplier.forEach(supplier=> { %>
+         <option value="<%= supplier.supplierId %>">
+          <%= supplier.supplierName %>
+         </option>
+         <% }) %>
+       </select>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+       <label>Lead Time From Supplier (in days):</label>
+       <input class="form-control" type="number" name="LeadTimeFromSupplier" id="LeadTimeFromSupplier" required>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+       <input class="form-control" type="number" name="PlacedByUserId" id="placedByUserIdInput"
+        value="<%= JSON.stringify(user.userId) %>" hidden>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+       <input class="form-control" type="text" name="UserName" id="placedByUserIdInput"
+        value="<%= JSON.stringify(user.username) %>" hidden>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+       <label>Order Date:</label>
+       <input class="form-control" type="date" name="OrderDate" id="OrderDate"
+        value="<%= new Date().toISOString().split('T')[0] %>">
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+       <label>Expected Delivery Date:</label>
+       <input class="form-control" type="date" name="ExpectedDeliveryDate" id="ExpectedDeliveryDate">
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+       <input hidden class="form-control" type="text" name="itemOrder" id="itemOrder" placeholder="unitsOrdered">
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+
+       <input hidden class="form-control" type="text" name="productOrder" id="productOrder" placeholder="unitsOrdered">
+      </div>
+
+      <div style="text-align: center;">
+       <button style="width: 200px; height: 40px;" class="btn" type="submit" name="submitOrder" id="submitOrder">
+        Place Order To DC
+       </button>
+      </div>
+
+     </form>
+
+
+    </div>
+
+
+
+   </div>
+
+
+
+
+   <div id="myModalProduct" class="modal" style="margin-top: 4rem;margin-left: 7rem;">
+
+
+    <div class="form-container" style="margin-top: 8rem;border-radius: 10px;margin:auto;">
+     <form id="ProductOrderForm" method="post">
+      <div style="display: flex;justify-content: right;">
+       <i class="material-icons close-icon" onclick="CloseModalProduct()">close</i>
+
+      </div>
+      <label for="productId">Product:</label>
+      <select class="form-control" id="productId" name="productId" required>
+       <% Products.forEach(product=> { %>
+        <option value="<%= product.productId %>">
+         <%= product.productName %>
+        </option>
+        <% }) %>
+      </select><br><br>
+
+      <div id="recommendationSection" class="border p-3 rounded mb-3" style="display: none;">
+       <!-- Recommendation data will be populated here -->
+      </div>
+
+      <label for="unitsOrdered">Units Ordered:</label>
+      <input class="form-control" type="number" id="unitsOrdered" name="unitsOrdered" required><br><br>
+
+
+
+      <label for="piecesPerUnit">Pieces Per Unit</label>
+      <input class="form-control" type="number" id="piecesPerUnit" name="piecesPerUnit" required><br><br>
+
+      <label for="orderDate">Order Date:</label>
+      <input class="form-control" type="datetime-local" id="orderDate" name="orderDate" required><br><br>
+
+
+      <label for="totalCostOfOrder">Total Cost of Order:</label>
+      <input class="form-control" type="number" step="0.01" id="totalCostOfOrder" name="totalCostOfOrder"
+       required><br><br>
+
+
+      <input class="btn" type="submit" value="Place Product Order">
+     </form>
+    </div>
+
+
+   </div>
+
+   <div id="myModalItem" class="modal" style="margin-top: 4rem;margin-left: 7rem;">
+
+    <div class="form-container" style="margin-top: 1rem;border-radius: 10px">
+     <form id="ItemOrderForm" method="post">
+      <div style="display: flex;justify-content: right;">
+       <i class="material-icons close-icon" onclick="CloseModalItem()">close</i>
+      </div>
+
+      <label for="itemId">Item:</label>
+      <select class="form-control" id="itemId" name="itemId" required>
+       <% Items.forEach(item=> { %>
+        <option value="<%= item.itemId %>">
+         <%= item.itemName %>
+        </option>
+        <% }) %>
+      </select><br><br>
+
+      <div id="itemRecommendationSection" class="border p-3 rounded mb-3" style="display: none;">
+       <!-- Item Recommendation data will be populated here -->
+      </div>
+
+
+
+      <label for="unitsOrdered">Units Needed:</label>
+      <input class="form-control" type="number" id="unitsOrdered" name="unitsOrdered" required><br><br>
+
+      <label for="piecesPerUnit">Pieces Per Unit</label>
+      <input class="form-control" type="number" id="piecesPerUnit" name="piecesPerUnit" required><br><br>
+      <label for="totalCostOfOrder">Total Cost of Order:</label>
+      <input class="form-control" type="number" step="0.01" id="totalCostOfOrder" name="totalCostOfOrder"
+       required><br><br>
+
+      <label for="orderDate">Order Date:</label>
+      <input class="form-control" type="datetime-local" id="orderDate" name="orderDate" required><br><br>
+
+      <input class="btn" type="submit" value="Place Item Order">
+     </form>
+    </div>
+
+   </div>
+  </section>
+
+
+
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+      <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+      </button>
+     </div>
+     <div class="modal-body" id="alertModalBody">
+      Message goes here...
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
+
+
+
+  <!-- CCreate a seperate page that will hold all the the products ordered and items ordered before they are placed to a selected supplier
+    on that page ill be able to check the products and items I want to send to a supplier select the supplier and send the list of products and items i want from them
+    -->
+
+  <script>
+
+   const ordersData = JSON.parse('<%- JSON.stringify(Orders) %>');
+   let items = JSON.parse('<%- JSON.stringify(Items) %>');
+   let products = JSON.parse('<%- JSON.stringify(Products) %>');
+
+
+
+
+
+   let modal = document.getElementById('myModalItem');
+   let modalTwo = document.getElementById('myModalProduct');
+   let modalThree = document.getElementById('confirmOrder');
+
+
+
+
+   function showAlertModal(title, message) {
+    // Set the modal's title and message
+    document.getElementById('alertModalLabel').innerText = title;
+    document.getElementById('alertModalBody').innerText = message;
+
+    // Display the modal
+    var modal = document.getElementById('alertModal');
+    modal.style.display = 'block';
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+   }
+
+   function closeAlertModal() {
+    var modal = document.getElementById('alertModal');
+    modal.style.display = 'none';
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+   }
+   document.getElementById('productId').addEventListener('change', showRecommendation);
+   document.getElementById('itemId').addEventListener('change', showItemRecommendation);
+
+
+   document.addEventListener('DOMContentLoaded', function () {
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Check for product reorder
+    const reorderProduct = urlParams.get('reorderProduct');
+    if (reorderProduct) {
+     // Open product modal and set values
+     OpenModalProduct();
+     document.getElementById('productId').value = reorderProduct;
+     showRecommendation();
+    }
+
+    // Check for item reorder
+    const reorderItem = urlParams.get('reorderItem');
+    if (reorderItem) {
+     // Open item modal and set values
+     OpenModal();
+     console.log('Hello')
+     document.getElementById('itemId').value = reorderItem;
+     showItemRecommendation();  // if you have a similar function for items
+    }
+    // Event listener for product checkboxes
+    document.querySelectorAll('input[name="selectedProduct"]').forEach(function (checkbox) {
+     checkbox.addEventListener('change', function () {
+      updateInputField('productOrder', this.value, this.checked);
+     });
+    });
+
+    // Event listener for item checkboxes
+    document.querySelectorAll('input[name="selectedItem"]').forEach(function (checkbox) {
+     checkbox.addEventListener('change', function () {
+      updateInputField('itemOrder', this.value, this.checked);
+     });
+    });
+   });
+
+   function updateInputField(inputId, value, isChecked) {
+    let input = document.getElementById(inputId);
+    let currentValues = input.value.split(',').filter(Boolean); // to ensure we don't get empty strings
+
+    if (isChecked) {
+     // Add the value if it doesn't exist
+     if (currentValues.indexOf(value) === -1) {
+      currentValues.push(value);
+     }
+    } else {
+     // Remove the value
+     currentValues = currentValues.filter(item => item !== value);
+    }
+
+    input.value = currentValues.join(',');
+   }
+
+
+   document.addEventListener('DOMContentLoaded', function () {
+    // Event listener for product checkboxes
+    document.querySelectorAll('input[name="selectedProduct"]').forEach(function (checkbox) {
+     checkbox.addEventListener('change', function () {
+      updateInputField('productOrder', this.value, this.checked);
+     });
+    });
+
+    // Event listener for item checkboxes
+    document.querySelectorAll('input[name="selectedItem"]').forEach(function (checkbox) {
+     checkbox.addEventListener('change', function () {
+      updateInputField('itemOrder', this.value, this.checked);
+     });
+    });
+   });
+
+   function updateInputField(inputId, value, isChecked) {
+    let input = document.getElementById(inputId);
+    let currentValues = input.value.split(',').filter(Boolean); // to ensure we don't get empty strings
+
+    if (isChecked) {
+     // Add the value if it doesn't exist
+     if (currentValues.indexOf(value) === -1) {
+      currentValues.push(value);
+     }
+    } else {
+     // Remove the value
+     currentValues = currentValues.filter(item => item !== value);
+    }
+
+    input.value = currentValues.join(',');
+   }
+
+
+
+
+   // Open the modal
+   function OpenModal() {
+    modal.style.display = 'block';
+    showItemRecommendation()
+
+   }
+
+
+   // Open the modal
+   function OpenModalProduct() {
+    modalTwo.style.display = 'block';
+    showRecommendation()
+   }
+
+
+   function CloseModalItem() {
+    modal.style.display = 'none';
+   }
+
+   function CloseModalProduct() {
+    modalTwo.style.display = 'none';
+   }
+
+
+   function CloseModalOrder() {
+    modalThree.style.display = 'none';
+   }
+
+
+   document.getElementById('LeadTimeFromSupplier').addEventListener('change', function () {
+    const leadTime = parseInt(this.value);
+    if (!isNaN(leadTime)) {
+     const currentDate = new Date();
+     currentDate.setDate(currentDate.getDate() + leadTime); // Add lead time to current date
+
+     // Convert date to the format YYYY-MM-DD which is expected by date inputs
+     const dateString = currentDate.toISOString().split('T')[0];
+
+     document.getElementById('ExpectedDeliveryDate').value = dateString;
+    }
+   });
+
+
+
+   document.getElementById('ProductOrderForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = {
+     productId: parseInt(document.getElementById('productId').value),
+     unitsOrdered: parseInt(document.getElementById('unitsOrdered').value),
+     piecesPerUnit: parseInt(document.getElementById('piecesPerUnit').value),
+     orderDate: document.getElementById('orderDate').value,
+     totalCostOfOrder: parseFloat(document.getElementById('totalCostOfOrder').value),
+    };
+
+    const result = await sendData('/submitProductOrder', formData);
+
+    if (result) {
+     CloseModalProduct()
+     showAlertModal("Success", "Product Successfully Placed In pending orders");
+     window.location.reload();
+
+    } else {
+     showAlertModal("UnSuccessfull", "Product Order Not Placed");
+
+    }
+   });
+
+
+
+   // More existing code...
+
+
+
+   async function sendData(url, data) {
+    try {
+     const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+       'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+     });
+     return response.ok;  // Returns true for response status 200-299, otherwise false
+    } catch (err) {
+     console.error("Error:", err);
+     return false;
+    }
+   }
+
+   document.getElementById('ItemOrderForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    let form = document.getElementById('ItemOrderForm');
+    let formData = {};
+
+    // Extract data from each element in the form
+    for (let element of form.elements) {
+     if (element.name) {
+      if (element.type === "number" || element.type === "range") {
+       formData[element.name] = parseFloat(element.value);
+      } else if (element.type === "checkbox" || element.type === "radio") {
+       formData[element.name] = element.checked;
+      } else {
+       formData[element.name] = element.value;
+      }
+     }
+    }
+
+    const result = await sendData('/submitItemOrder', formData);
+
+    if (result) {
+     CloseModalItem()
+     showAlertModal('Success', "Item Successfully Placed In pending orders");
+     window.location.reload();
+    } else {
+     showAlertModal("Unsuccessfull", "Error placing the item order.");
+
+    }
+   });
+
+
+
+
+   function showItemRecommendation() {
+    const itemId = document.getElementById('itemId').value;
+    const selectedItemName = document.getElementById('itemId').options[document.getElementById('itemId').selectedIndex].text;
+    const item = items.find(i => i.itemId == itemId);
+
+    // Validate the item name
+    if (item.itemName !== selectedItemName) {
+     console.error('Mismatched item name!');
+     return;
+    }
+
+    const recommendedMinOrder = Math.max(0, item.minimumThreshold - item.unitsInInventory);
+    const recommendedMaxOrder = Math.max(0, item.maximumThreshold - item.unitsInInventory);
+
+    let recommendationBaseText = `<strong>Item Name:</strong> ${item.itemName} <br>
+                              <strong>Units In Inventory:</strong> ${item.unitsInInventory} <br>`;
+
+    let recommendationDetailText = recommendedMinOrder === 0 && recommendedMaxOrder === 0
+     ? `<span class="material-symbols-outlined">lightbulb</span> Based on the current stock and thresholds, you should order <strong>0</strong> units.`
+     : `<span class="material-symbols-outlined">lightbulb</span> Based on the current stock and thresholds, you should order between <strong>${recommendedMinOrder}</strong> and <strong>${recommendedMaxOrder}</strong> units.`;
+
+    let recommendationText = `${recommendationBaseText}${recommendationDetailText}`;
+
+
+    document.getElementById('itemRecommendationSection').innerHTML = recommendationText;
+    document.getElementById('itemRecommendationSection').style.display = 'block';
+   }
+
+
+   function showRecommendation() {
+    const productId = document.getElementById('productId').value;
+    const selectedProductName = document.getElementById('productId').options[document.getElementById('productId').selectedIndex].text;
+    const product = products.find(p => p.productId == productId);
+
+    // Validate the product name
+    if (product.productName !== selectedProductName) {
+     console.error('Mismatched product name!');
+     return;
+    }
+
+    const recommendedMinOrder = Math.max(0, product.minimumThreshold - product.unitsInInventory);
+    const recommendedMaxOrder = Math.max(0, product.maximumThreshold - product.unitsInInventory);
+
+    let recommendationBaseText = `<strong>Product Name:</strong> ${product.productName} <br>
+                              <strong>Units In Inventory:</strong> ${product.unitsInInventory} <br>`;
+
+    let recommendationDetailText = recommendedMinOrder === 0 && recommendedMaxOrder === 0
+     ? `<div style="margin:1rem;display:flex;gap:10px"><span class="material-symbols-outlined" style="display:flex;align-items:center">batch_prediction</span> <div>Based on the current stock and thresholds, you should order <strong>0</strong> units.</div></div>`
+     : `<div style="margin:1rem;display:flex;gap:10px"><span class="material-symbols-outlined" style="display:flex;align-items:center">batch_prediction</span> <div>Based on the current stock and thresholds, you should order between <strong>${recommendedMinOrder}</strong> and <strong>${recommendedMaxOrder}</strong> units.</div></div>`;
+
+    let recommendationText = `${recommendationBaseText}${recommendationDetailText}`;
+
+
+    document.getElementById('recommendationSection').innerHTML = recommendationText;
+    document.getElementById('recommendationSection').style.display = 'block';
+   }
+
+
+   document.getElementById('submitOrder').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    const productOrderValue = document.getElementById('productOrder').value;
+    const itemOrderValue = document.getElementById('itemOrder').value;
+
+    // Convert comma-separated string values to arrays of integers
+    const productOrderIds = productOrderValue ? productOrderValue.split(",").map(Number) : [];
+    const itemOrderIds = itemOrderValue ? itemOrderValue.split(",").map(Number) : [];
+
+    const formData = {
+     leadTimeFromSupplier: parseInt(document.getElementById('LeadTimeFromSupplier').value, 10),
+     supplierId: parseInt(document.getElementById('SupplierId').value, 10),
+     expectedDeliveryDate: new Date(document.getElementById('ExpectedDeliveryDate').value).toISOString(),
+     placedByUserId: parseInt(document.getElementById('placedByUserIdInput').value, 10),
+     orderProductIds: productOrderIds,
+     orderItemIds: itemOrderIds
+    };
+
+    console.log(formData)
+
+    fetch('/submitSupplierOrder', {
+     method: 'POST',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(formData),
+    })
+     .then(response => response.json())
+     .then(data => {
+      console.log('Success:', data);
+      window.location.href = '/Orders'
+      // Do something on success, like redirecting or displaying a message
+     })
+     .catch((error) => {
+      console.error('Error:', error);
+      // Handle error
+     });
+   });
+
+  </script>
+
+
+</body>
+
+
+
+</html>

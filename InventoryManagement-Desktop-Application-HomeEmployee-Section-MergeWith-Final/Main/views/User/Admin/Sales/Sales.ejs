@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Ignore This Styling -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <title>View Sales</title>
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      width: 50%;
+    }
+
+    #searchbar {
+      top: 0;
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+      background-color: #fcfcfc;
+      height: 11vh;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      align-items: center;
+      flex-direction: row;
+      justify-content: left;
+      padding-right: 4rem;
+      border: 1px solid 1px solid rgb(230 230 230);
+    }
+
+    #searchbarInput {
+      text-align: center;
+      font-size: 0.8em;
+      width: 100%;
+      height: 2.3rem;
+      background-color: #ececec;
+      border: 1px #cfcfcf solid;
+      border-radius: 24px;
+      padding-left: 2.5rem;
+    }
+
+    .custom-table-responsive {
+      margin: 2rem;
+      background-color: white !important;
+      padding: 20px;
+      border-radius: 15px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <%- include('../NavbarAdmin') %>
+
+
+
+    <!-- Where all my content is -->
+    <div class="main-content" style="margin-top: 6rem;">
+
+
+
+      <!-- Search Bar -->
+      <div class="shadowNav" id="searchbar">
+        <h6 style="   font-weight: 800;
+      font-size: 1.5em;
+      padding-left: 5rem;">Book Keeping
+
+        </h6>
+
+        <div style="display: flex;width: 100%;justify-content: right;">
+
+
+          <div style="position: relative; width: 20vw; margin-right: 24rem;">
+            <input class="shadowNav" id="searchbarInput" type="text" placeholder="Search Inventory">
+            <i style="position: absolute; 
+                      left: 1rem; 
+                      top: 0.5rem; 
+                      font-size: 0.8em;
+                      color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;"
+                class="material-symbols-outlined">
+                search
+              </span></i>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+      <div style="margin-left: 1rem;">
+
+        <div style="display: flex;margin-left: 3rem;margin-top: 7rem;">
+
+
+          <div style="margin-left: 1rem;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+        border: 1px solid rgb(216, 216, 216);
+        width: 300px;
+        border-radius: 15px;
+        height: 300px;
+        display: grid;
+        grid-template-rows: 33% 33% 33%;
+        padding-top: 1rem;
+        justify-content: center;
+        align-items: left;
+        ">
+            <span style="color: white;" class="material-symbols-outlined">
+              savings
+            </span>
+            <H3 style="color: white;font-size: 1.5rem;">Total Profit</H3>
+            <h4 style="color: white;">
+              2 days
+            </h4>
+          </div>
+
+
+          <div style="margin-left: 1rem;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+        border: 1px solid rgb(216, 216, 216);
+        width: 300px;
+        border-radius: 15px;
+        height: 300px;
+        display: grid;
+        grid-template-rows: 33% 33% 33%;
+        padding-top: 1rem;
+        justify-content: center;
+        align-items: left;
+        ">
+            <span style="color: white;" class="material-symbols-outlined">
+              savings
+            </span>
+            <H3 style="color: white;font-size: 1.5rem;">Total Profit</H3>
+            <h4 style="color: white;">
+              2 days
+            </h4>
+          </div>
+        </div>
+
+
+        <div
+          style="background-color: white;border-radius: 15px;border:  1px solid rgb(216, 216, 216);margin-bottom: 1REM;margin-top: 7rem;margin: 7rem 4rem ;">
+
+          <div style="padding-bottom:2rem;padding-left: 5rem;padding-top: 3rem;">
+            <h3 style="font-weight: bold;font-size: 1.5rem;">Reliable Suppliers
+            </h3>
+            <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;">These Suppliers have an
+              execellent lead time</h5>
+          </div>
+
+
+
+          <hr>
+
+
+          <div id="myTable" class="container" style="margin-top: 3rem;margin-left: 0rem;">
+            <div class="table-responsive custom-table-responsive">
+              <table class="table custom-table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <label class="control control--checkbox">
+                        <input type="checkbox" class="js-check-all" />
+                        <div class="control__indicator"></div>
+                      </label>
+                    </th>
+                    <th scope="col">Invoice Number</th>
+                    <!--<th scope="col">Product Number</th>-->
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total Price</th>
+                    <th scope="col">Sale Date</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% Sales.forEach(function(sale, index) { %>
+                    <tr scope="row">
+                      <th scope="row">
+                        <label class="control control--checkbox">
+                          <input type="checkbox" />
+                          <div class="control__indicator"></div>
+                        </label>
+                      </th>
+                      <td>
+                        <%= sale.saleId %>
+                      </td>
+                      <!--<td>
+                      <%= sale.productId %>
+                    </td>-->
+                      <td>
+                        <%= sale.quantity %>
+                      </td>
+                      <td>
+                        <%= sale.totalPrice %>
+                      </td>
+                      <td>
+                        <%= sale.saleDate %>
+                      </td>
+                      <td>
+                        <button class="btn" style="background-color: transparent;color: black;"
+                          onclick="yourActionFunction(<%= sale.saleId %>)">
+                          <span class="material-symbols-outlined">check</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr class="spacer">
+                      <td colspan="100"></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+    <script>
+      function toggleDetails(index) {
+        const detailsRow = document.getElementById(`details-${index}`);
+        if (detailsRow.style.display === 'none') {
+          detailsRow.style.display = 'table-row';
+        } else {
+          detailsRow.style.display = 'none';
+        }
+      }
+
+      async function confirmOrder(orderId) {
+        try {
+          const response = await fetch('/confirmOrder', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ orderId }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert(data.message);
+          } else {
+            alert(`Failed to confirm order: ${data.message}`);
+          }
+        } catch (error) {
+          alert(`Failed to confirm order: ${error.message}`);
+        }
+      }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

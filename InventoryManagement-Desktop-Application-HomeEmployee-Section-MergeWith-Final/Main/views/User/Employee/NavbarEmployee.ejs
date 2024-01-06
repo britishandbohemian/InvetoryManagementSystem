@@ -1,0 +1,95 @@
+<!-- Navigation Bar -->
+<div class="navbar theme-orange shadowNav " style="border: 1px solid 1px solid rgb(230 230 230);">
+
+
+    <div class="header">
+        <div class="user-label" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;gap: 2rem;padding-top: 4rem;">
+            <img src="/images/1.png" alt="" class="avatar">
+            <h2 style="font-size: 0.8rem;color: #2d2d2d;font-weight: bold;">
+                Welcome back <%=user.username%>
+            </h2>
+        </div>
+    </div>
+
+    <ul class="navbar-nav" style="    display: flex;
+    flex-direction: column;">
+        <li class="nav-item ">
+            <a class="nav-link" href="/homeEmployee"><i style="margin: 0;font-weight: bold;" class="fas fa-home"></i>
+                Dashboard</a>
+        </li>
+
+
+
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="/ViewProductsEmp"><i style="margin: 0;" class="fas fa-shopping-cart"></i>Manage
+                Products</a>
+        </li>
+
+        x
+        <li class="nav-item">
+            <a class="nav-link" href="/OrdersEmp"><i style="margin: 0;" class="fas fa-shopping-cart"></i>
+                Manage Orders</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/viewSalesEmp"><i style="margin: 0;" class="fas fa-shopping-cart"></i>
+                Manage Sales</a>
+        </li>
+
+        <hr class="Custome-hr"> <!-- New general line -->
+
+        <li class="nav-item">
+            <a class="nav-link" style="font-weight: bold;display: flex;align-items: center; gap: 1rem;"
+                href="/ManOrders"><i class="fas fa-shopping-cart"></i>
+                Store Front<span class="material-symbols-outlined">
+                    store
+                </span></a>
+        </li>
+
+
+
+        <li class="nav-item" style="margin-bottom: 2rem;">
+            <a class="nav-link" href="/"><i style="margin: 0;" class="fas fa-sign-out-alt"></i> Log Out</a>
+        </li>
+    </ul>
+
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all nav items
+        const navItems = document.querySelectorAll('.nav-item');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Function to remove active class from all items
+        function removeActiveClass() {
+            navItems.forEach((innerItem) => innerItem.classList.remove('active-nav-item'));
+        }
+
+        // Add click event listener to each nav item
+        navItems.forEach((item, index) => {
+            item.addEventListener('click', function () {
+                removeActiveClass();
+                // Add active class to clicked item
+                this.classList.add('active-nav-item');
+            });
+        });
+
+        // Check current URL and set active class
+        const currentURL = window.location.pathname;
+        navLinks.forEach((link, index) => {
+            if (link.getAttribute('href') === currentURL) {
+                removeActiveClass();
+                navItems[index].classList.add('active-nav-item');
+            }
+        });
+    });
+
+</script>

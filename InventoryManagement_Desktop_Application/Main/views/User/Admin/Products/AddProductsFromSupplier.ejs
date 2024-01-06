@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=0.8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="/css/styles.css">
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+
+ <title>
+  Add Product
+ </title>
+
+ <style>
+  #shadowNav {
+   z-index: 2;
+   background-color: #fcfcfc;
+   height: 5rem;
+   display: grid;
+   grid-template-columns: 60% 1fr;
+   align-items: center;
+   flex-direction: row;
+   position: fixed;
+   width: 100%;
+   justify-content: left;
+   border: 1px solid 1px solid rgb(230 230 230);
+  }
+
+  /* Make the table layout fixed to ensure column widths are equal */
+  table {
+   width: 100%;
+   table-layout: fixed;
+   border-collapse: collapse;
+  }
+
+  /* Set a fixed height and make it scrollable */
+  tbody {
+   display: block;
+   height: 200px;
+   /* or whatever height you want */
+   overflow-y: auto;
+  }
+
+  /* Since tbody is now a block, we need to make tr elements behave like rows */
+  tbody tr {
+   display: table;
+   width: 100%;
+   table-layout: fixed;
+  }
+
+  /* Optional: Add some styling to the header and cells */
+  thead,
+  tbody tr {
+   display: table;
+   width: 100%;
+  }
+
+  th,
+  td {
+   padding: 8px 20px;
+  }
+
+  thead {
+   width: calc(100% - 1em);
+   /* Subtract the scrollbar width */
+  }
+
+  #popupFormSupplier,
+  #popupFormCategory {
+   display: none;
+   /* Initially hide the popup */
+   position: fixed;
+   /* Fixed position */
+   left: 0;
+   top: 0;
+   width: 100%;
+   /* Full width */
+   height: 100%;
+   /* Full height */
+   overflow: auto;
+   /* Enable scroll if needed */
+   background-color: rgba(0, 0, 0, 0.4);
+   /* Black w/ opacity */
+  }
+
+  #headerNav {
+   font-weight: 800;
+   font-size: 1.5em;
+   padding-left: 5rem;
+  }
+
+  #InputDiv {
+   margin-top: 5rem;
+   background-color: #fefefe;
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+ </style>
+
+
+
+
+</head>
+
+<body>
+
+
+ <%- include('../NavbarAdmin') %>
+
+
+
+  <!-- Where all my content is -->
+  <section class="main-content" style="display: grid;grid-template-columns: 1fr 1fr;">
+   <!-- Navbar top -->
+   <div class="shadowNav" id="shadowNav">
+    <h6 id="headerNav">Add Product Bought </h6>
+   </div>
+
+
+   <!-- Inputs -->
+   <div id="InputDiv">
+    <!-- Summary Of Product To be added -->
+    <form id="productForm" method="post" style="width: 400px;margin-left: 7rem;">
+     <label for="productName">Product Name:</label>
+     <input class="form-control" type="text" id="productName" name="productName" placeholder="Product Name"
+      required><br>
+
+     <label for="productMarkup">Product Markup:</label>
+     <input class="form-control" type="number" id="productMarkup" name="productMarkup" placeholder="markup"
+      required><br>
+
+
+     <label for="minimumThreshold">Minimum Threshold:</label>
+     <input class="form-control" type="number" id="minimumThreshold" name="minimumThreshold"
+      placeholder="Minimum Threshold" required><br>
+
+     <label for="maximumThreshold">Maxmium Threshold:</label>
+     <input class="form-control" type="number" id="maximumThreshold" name="maximumThreshold"
+      placeholder="Maxmium Threshold" required><br>
+
+
+     <div style="display: flex; flex-direction: column;">
+      <label for="supplier">Select A Supplier:</label>
+      <select class="form-control" name="supplier" id="supplier">
+       <% Supplier.forEach(supplier=> { %>
+        <option value="<%= supplier.supplierId %>">
+         <%= supplier.supplierName %>
+        </option>
+        <% }) %>
+      </select>
+     </div>
+
+
+
+     <!-- Category -->
+     <div style="margin-top: 1rem;">
+      <label for="category">Select A Category:</label>
+      <select class="form-control" name="category" id="categoryProduct">
+       <% Categories.forEach(category=> { %>
+        <option value="<%= category.categoryId %>">
+         <%= category.categoryName %>
+        </option>
+        <% }) %>
+      </select>
+     </div>
+
+     <!-- Unit of Measurement -->
+     <div style="margin-top: 1rem;">
+      <label for="unitOfMeasurement">Unit of Measurement:</label>
+      <select class="form-control" name="unitOfMeasurement" id="unitOfMeasurement">
+       <option value="Liter">Liter</option>
+       <option value="Kilogram">Kilogram</option>
+       <option value="Count">Count</option>
+       <option value="Gram">Gram</option>
+      </select>
+
+     </div>
+
+     <br>
+
+     <input style="margin-top: 2rem;" type="button" value="Add Product" class="btn" onclick="addProductToList()">
+    </form>
+   </div>
+
+
+   <div style="margin-top: 2rem;
+            background-color: #fefefe;
+            padding: 2rem;
+            display: grid;
+            grid-template-rows: 92% 1fr;
+            justify-content: center;">
+
+
+    <div id="myTable" class="container" style="margin-left: 0;margin-top: 4.5rem;">
+     <div class="table-responsive custom-table-responsive">
+      <table class="table custom-table">
+       <thead>
+        <tr>
+
+         <th scope="col">Product Name</th>
+         <th scope="col">Product Markup</th>
+         <th scope="col">Action</th>
+
+        </tr>
+       </thead>
+       <tbody style="overflow-y: scroll; height: 100%;">
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div style="padding: 1rem;"> <input type="button" value="Add Product" class="btn" onclick="sendProducts()"></div>
+
+   </div>
+
+
+
+
+  </section>
+
+
+
+
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+      <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+      </button>
+     </div>
+     <div class="modal-body" id="alertModalBody">
+      Message goes here...
+     </div>
+     <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+  <script>
+
+   // Event listener for productMarkup input
+   document.querySelector('input').addEventListener('input', function () {
+    if (this.value) {
+     this.style.borderColor = ''; // Set to default color
+    } else {
+     this.style.borderColor = 'red';
+    }
+   });
+
+   let productsArray = [];
+
+   function addProductToList() {
+
+    const ProductUnitsOfMeasurement = {
+     Liter: 0,
+     Kilogram: 1,
+     Count: 2,
+     Gram: 3
+    };
+
+
+    // Get values from the form
+    let productName = document.getElementById('productName').value;
+    let productMarkup = parseFloat(document.getElementById('productMarkup').value);
+    let minimumThreshold = parseFloat(document.getElementById('minimumThreshold').value);
+    let maximumThreshold = parseFloat(document.getElementById('maximumThreshold').value);
+    let supplier = document.getElementById('supplier').value;
+    let category = document.getElementById('categoryProduct').value;
+    let unitOfMeasurementSelect = document.getElementById('unitOfMeasurement');
+    let selectedValue = unitOfMeasurementSelect.value;
+
+    let selectedEnumValue = ProductUnitsOfMeasurement[selectedValue];
+
+    // Get the image location value
+
+
+    // Validation: Check if all fields are filled
+    if (!productName || isNaN(productMarkup)) {
+     console.error("Please fill in all the fields.");
+     // Change the border color of the input fields to red if they are not filled
+     if (!productName) {
+      document.getElementById('productName').style.borderColor = 'red';
+     } else {
+      document.getElementById('productName').style.borderColor = 'black';
+     }
+     if (isNaN(productMarkup)) {
+      document.getElementById('productMarkup').style.borderColor = 'red';
+     } else {
+      document.getElementById('productMarkup').style.borderColor = 'black';
+     }
+     return;
+    }
+
+
+
+    // Update the newProduct object to include the image location
+    const newProduct = {
+     productName: productName,
+     productMarkup: productMarkup,
+     minimumThreshold: minimumThreshold,
+     maximumThreshold: maximumThreshold,
+     supplierId: supplier,
+     categoryId: category,
+     unitOfMeasurement: selectedEnumValue + 1,
+    };
+
+
+
+    // Push the product to the productsArray
+    productsArray.push(newProduct);
+
+    // Append the product to the table
+    let tableBody = document.querySelector('#myTable tbody');
+    let newRow = document.createElement('tr');
+
+    let productNameCell = document.createElement('td');
+    productNameCell.style = 'padding-left:3rem;'
+    productNameCell.textContent = productName;
+    newRow.appendChild(productNameCell);
+
+    let markupCell = document.createElement('td');
+    markupCell.style = 'padding-left:2.8rem;'
+    markupCell.textContent = `${productMarkup.toFixed(2)}%`; // Display as a percentage
+    newRow.appendChild(markupCell);
+
+    let removeIconCell = document.createElement('td');
+    let removeIcon = document.createElement('i');
+    removeIcon.className = 'material-icons';
+    removeIcon.style = 'padding-left:6rem;'
+    removeIcon.textContent = 'delete';
+    removeIcon.onclick = function () {
+     // Remove the product from the productsArray
+     let productIndex = productsArray.findIndex(p => p.name === productName);
+     if (productIndex > -1) {
+      productsArray.splice(productIndex, 1);
+     }
+
+     // Remove the row from the table
+     tableBody.removeChild(newRow);
+    };
+    removeIconCell.appendChild(removeIcon);
+    newRow.appendChild(removeIconCell);
+
+    tableBody.appendChild(newRow);
+
+    // Clear the form fields for the next entry
+    document.getElementById('productName').value = '';
+    document.getElementById('productMarkup').value = '';
+   }
+   function sendProducts() {
+    // Get today's date and add 5 days
+    let sellBy = new Date();
+    sellBy.setDate(sellBy.getDate() + 5);
+    // Convert the date to the desired format (e.g., "2023-09-22T18:50:46.914Z")
+    let formattedSellByDate = sellBy.toISOString();
+
+    // Map the products array to the expected DTO structure
+    // Update the productsToBeSent mapping to include the image location
+    var productsToBeSent = productsArray.map(product => {
+     return {
+      categoryId: parseInt(product.categoryId),
+      productName: product.productName,
+      productCostPrice: 0,
+      markupPercentage: product.productMarkup,
+      supplierId: parseInt(product.supplierId),
+      unitOfMeasurement: product.unitOfMeasurement,
+      minimumThreshold: product.minimumThreshold,
+      maximumThreshold: product.maximumThreshold,
+      sellByDate: formattedSellByDate,
+      status: 0,
+     };
+    });
+
+    console.log(productsToBeSent)
+
+    // Make a fetch request to send the products
+    fetch("/AddProductsFromSupplier", {
+     method: "POST",
+     headers: {
+      "Content-Type": "application/json",
+     },
+     body: JSON.stringify(productsToBeSent),
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();  // Assuming the server sends back JSON data
+     })
+     .then(data => {
+      // Display a success alert. Replace with your custom alert function if needed.
+      showAlertModal("Succes", "Products added successfully!");
+      setTimeout(function () {
+       window.location.href = "/ViewProducts";
+      }, 2000);
+
+     })
+     .catch(error => {
+      console.error("Error creating products:", error);
+      // Handle error logic, for example, show an error modal or message
+     });
+   }
+
+
+
+
+
+
+
+   function showAlertModal(title, message) {
+    // Set the modal's title and message
+    document.getElementById('alertModalLabel').innerText = title;
+    document.getElementById('alertModalBody').innerText = message;
+
+    // Display the modal
+    var modal = document.getElementById('alertModal');
+    modal.style.display = 'block';
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+   }
+
+   function closeAlertModal() {
+    var modal = document.getElementById('alertModal');
+    modal.style.display = 'none';
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+   }
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

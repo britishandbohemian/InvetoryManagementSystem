@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+ <link rel="stylesheet" href="/css/styles.css">
+
+
+ <title>Add product</title>
+
+
+</head>
+
+<body>
+
+ <%- include('../navbarAdmin') %>
+
+  <div class="main-content" style="display: flex;justify-content: center;align-items: center;">
+
+   <div class="shadow"
+    style="border-radius: 14px; border: 1px solid rgb(217, 217, 217);padding-bottom: 2rem;margin-top: 1rem; margin-bottom: 2rem ;margin: 6rem;padding: 3rem;background-color: white;">
+
+    <!-- Header -->
+
+    <div>
+     <h2 style=" margin: auto;width: auto;font-size: 1.2em;text-align: center;font-weight: bold;">
+      Welcome lets
+      take the time to add
+      <br style="font-weight: bold;" </br>products </spans>to you inventory
+     </h2>
+
+    </div>
+
+    <hr style="height: 1rem; margin-bottom: 2rem;margin-top: 2rem;">
+
+    <!-- Select Type pf product -->
+    <div style="display: flex;justify-content: center;gap:7rem;">
+     <div
+      style="display: flex;flex-direction: column;gap: 4rem;justify-content: center;align-items: center;width: 100%;align-items: center;">
+      <div
+       style="width: 12rem;height: 12rem;border: 1px solid rgb(176, 176, 176);display: flex;justify-content: center;align-items: center;border-radius: 15px;">
+       <a href="/Add-Product-From-Supplier">
+        <span style="font-size: 3rem;" class="material-symbols-outlined">
+         local_shipping
+        </span>
+       </a>
+      </div>
+      <h4 style="font-size: 1em;">Add Product From Supplier</h4>
+     </div>
+
+
+     <div style="display: flex;flex-direction: column;gap: 4rem;justify-content: center;align-items: center;">
+      <div
+       style="width: 12rem;height: 12rem;border: 1px solid rgb(162, 162, 162);display: flex;justify-content: center;align-items: center;border-radius: 15px;">
+       <a href="/Add-Product-Made-In-Store">
+        <span style="font-size: 3rem;" class="material-symbols-outlined">
+         storefront
+        </span>
+       </a>
+      </div>
+      <h4 style="font-size: 1em;">Add Product Made in Store</h4>
+     </div>
+    </div>
+
+
+
+
+   </div>
+  </div>
+
+
+
+</body>
+
+</html>

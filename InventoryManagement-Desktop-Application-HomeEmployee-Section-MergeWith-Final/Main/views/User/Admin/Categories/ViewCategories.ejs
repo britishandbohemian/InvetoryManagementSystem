@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="css/style.css">
+
+      <title>View Categories</title>
+
+      <style>
+            .custom-table-responsive {
+                  margin: 2rem;
+                  background-color: white !important;
+                  padding: 20px;
+                  border-radius: 15px;
+            }
+
+            .modal {
+                  display: none;
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-color: rgba(0, 0, 0, 0.7);
+                  z-index: 999;
+            }
+
+            .modal-content {
+                  background-color: #fff;
+                  border-radius: 8px;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .close-btn {
+                  cursor: pointer;
+            }
+
+
+            #searchbar {
+                  position: fixed;
+                  width: 100%;
+                  z-index: 2;
+                  background-color: #fcfcfc;
+                  height: 11vh;
+                  display: grid;
+                  grid-template-columns: 60% 1fr;
+                  align-items: center;
+                  flex-direction: row;
+                  justify-content: left;
+                  padding-right: 4rem;
+                  border: 1px solid 1px solid rgb(230 230 230);
+            }
+
+            #searchbarInput {
+                  text-align: center;
+                  font-size: 0.8em;
+                  width: 100%;
+                  height: 2.3rem;
+                  background-color: #ececec;
+                  border: 1px #cfcfcf solid;
+                  border-radius: 24px;
+                  padding-left: 2.5rem;
+            }
+      </style>
+
+
+</head>
+
+<body>
+
+      <%- include('../NavbarAdmin') %>
+
+            <div class="main-content">
+                  <!-- Search Bar -->
+                  <div class="shadowNav" id="searchbar">
+                        <h6 style="   font-weight: 800;
+      font-size: 1.5em;
+      padding-left: 5rem;">Catergories
+
+                        </h6>
+
+                        <div style="display: flex;width: 100%;justify-content: right;">
+
+
+                              <div style="position: relative; width: 20vw; margin-right: 24rem;">
+                                    <input class="shadowNav" id="searchbarInput" type="text"
+                                          placeholder="Search Inventory">
+                                    <i style="position: absolute; 
+                      left: 1rem; 
+                      top: 0.5rem; 
+                      font-size: 0.8em;
+                      color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;"
+                                                class="material-symbols-outlined">
+                                                search
+                                          </span></i>
+                              </div>
+
+
+
+                        </div>
+
+                  </div>
+                  <section style="margin-top:6rem; padding:  7rem 5rem;">
+
+
+
+
+                        <div style="display: flex;gap: 2rem;">
+                              <div style="margin-left: 1rem;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+      border: 1px solid rgb(216, 216, 216);
+      width: 300px;
+      border-radius: 15px;
+      height: 300px;     height: 300px;      display: grid;
+      grid-template-rows: 33% 33% 33%;
+      padding-top: 1rem;
+      justify-content: center;
+      align-items: left;
+      ">
+                                    <span style="color: white;" class="material-symbols-outlined">
+                                          savings
+                                    </span>
+                                    <H3 style="color: white;font-size: 1.5rem;">Star categories Worth
+                                    </H3>
+                                    <h4 style="color: white;">
+                                          R 10000
+                                    </h4>
+                              </div>
+
+
+                              <div style="margin-left: 1rem;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+      border: 1px solid rgb(216, 216, 216);
+      width: 300px;
+      border-radius: 15px;
+      height: 300px;
+      display: grid;
+      grid-template-rows: 33% 33% 33%;
+      padding-top: 1rem;
+      padding-left: 2rem;
+      justify-content: left;
+      align-items: left;
+      ">
+                                    <span style="color: white;" class="material-symbols-outlined">
+                                          savings
+                                    </span>
+                                    <H3 style="color: white;font-size: 1.5rem;">Profit made
+                                    </H3>
+                                    <h4 style="color: white;">
+                                          R 10000
+                                    </h4>
+                              </div>
+                        </div>
+
+
+
+                        <div
+                              style="background-color: white;border-radius: 15px;border:  1px solid rgb(216, 216, 216);margin-bottom: 1REM;margin-top: 7rem;margin: 7rem auto;">
+
+                              <div style="padding: 1rem;padding-left: 3rem;padding-top: 2rem;">
+                                    <h3 style="font-weight: bold;font-size: 1.5rem;">Star Categories Doing Well
+                                    </h3>
+                                    <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;">It is recommended
+                                          that you focus on these categories</h5>
+                              </div>
+
+
+
+                              <hr>
+
+
+                              <div style="margin-top:1rem ;width: fit-content;" id="myTable" class="">
+                                    <div class="table-responsive custom-table-responsive">
+                                          <table class="table custom-table">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col">
+                                                                  <!-- ... existing checkbox -->
+                                                            </th>
+                                                            <th scope="col">Action</th>
+                                                            <th scope="col">Category Name</th>
+                                                            <th scope="col">Category Worth</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <% Categories.forEach(category=> { %>
+                                                            <tr scope="row">
+                                                                  <th scope="row">
+                                                                        <!-- ... existing checkbox -->
+                                                                  </th>
+                                                                  <td style="display: flex;gap: 1rem;">
+                                                                        <button class="edit-btn"
+                                                                              style="display: flex;align-items: center;background-color: transparent;color: black;border: none;">
+                                                                              <span
+                                                                                    class="material-symbols-outlined">edit</span>
+                                                                        </button>
+                                                                        <!-- ... existing delete button -->
+                                                                  </td>
+                                                                  <td>
+                                                                        <span class="category-name">
+                                                                              <%= category.categoryName %>
+                                                                        </span>
+                                                                        <div class="category-edit"
+                                                                              style="display: none;">
+                                                                              <input type="text"
+                                                                                    value="<%= category.categoryName %>"
+                                                                                    class="category-input">
+                                                                              <button class="save-btn">Save</button>
+                                                                        </div>
+                                                                  </td>
+                                                                  <td>
+                                                                        <%= category.categoryWorth %>
+
+                                                                  </td>
+                                                            </tr>
+                                                            <tr class="spacer">
+                                                                  <td colspan="100"></td>
+                                                            </tr>
+                                                            <% }); %>
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>
+
+
+
+                        </div>
+
+                        <div style="margin-left: 1rem;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+                              border: 1px solid rgb(216, 216, 216);
+                              width: 300px;
+                              border-radius: 15px;
+                              height: 300px;
+                              display: grid;
+                              grid-template-rows: 33% 33% 33%;
+                              padding-top: 1rem;
+                              justify-content: center;
+                              align-items: left;
+                              ">
+                              <span style="color: white;" class="material-symbols-outlined">
+                                    savings
+                              </span>
+                              <H3 style="color: white;font-size: 1.5rem;">Potential Loss Today</H3>
+                              <h4 style="color: white;">
+                                    R 10000
+                              </h4>
+                        </div>
+
+                        <div
+                              style="background-color: white;border-radius: 15px;border:  1px solid rgb(216, 216, 216);margin-bottom: 1REM;margin-top: 7rem;margin: 7rem auto;">
+
+                              <div style="padding: 1rem;padding-left: 3rem;padding-top: 2rem;">
+                                    <h3 style="font-weight: bold;font-size: 1.5rem;">Categories Doing Bad
+                                    </h3>
+                                    <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;">It Is
+                                          recommended you inspect the products in this category</h5>
+                              </div>
+
+
+
+                              <hr>
+
+
+                              <div style="margin-top:1rem ;width: fit-content;" id="myTable" class="">
+                                    <div class="table-responsive custom-table-responsive">
+                                          <table class="table custom-table">
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col">
+                                                                  <!-- ... existing checkbox -->
+                                                            </th>
+                                                            <th scope="col">Action</th>
+                                                            <th scope="col">Category Name</th>
+                                                            <th scope="col">Category Worth</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <% Categories.forEach(category=> { %>
+                                                            <tr scope="row">
+                                                                  <th scope="row">
+                                                                        <!-- ... existing checkbox -->
+                                                                  </th>
+                                                                  <td style="display: flex;gap: 1rem;">
+                                                                        <button class="edit-btn"
+                                                                              style="display: flex;align-items: center;background-color: transparent;color: black;border: none;">
+                                                                              <span
+                                                                                    class="material-symbols-outlined">edit</span>
+                                                                        </button>
+                                                                        <!-- ... existing delete button -->
+                                                                  </td>
+                                                                  <td>
+                                                                        <span class="category-name">
+                                                                              <%= category.categoryName %>
+                                                                        </span>
+                                                                        <div class="category-edit"
+                                                                              style="display: none;">
+                                                                              <input type="text"
+                                                                                    value="<%= category.categoryName %>"
+                                                                                    class="category-input">
+                                                                              <button class="save-btn">Save</button>
+                                                                        </div>
+                                                                  </td>
+                                                            </tr>
+                                                            <tr class="spacer">
+                                                                  <td colspan="100"></td>
+                                                            </tr>
+                                                            <% }); %>
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>
+
+
+
+                        </div>
+
+
+
+
+                  </section>
+
+
+                  <!-- Form to add Category -->
+
+
+                  <!-- Category Modal -->
+                  <div id="categoryModal" class="modal">
+                        <div class="modal-content"
+                              style="padding: 2rem; margin-top: 3rem; width: 40%; margin: 3rem auto auto auto;">
+                              <form id="categoryForm" method="post" action="/api/categories" style="padding: 2rem;">
+                                    <label for="categoryName">Category Name:</label>
+                                    <input class="form-control" type="text" id="categoryName" name="categoryName"
+                                          required><br><br>
+                                    <input style="margin-top: 2rem;" class="btn" type="submit" value="Add Category">
+                              </form>
+                        </div>
+                  </div>
+
+
+
+
+                  <!-- Floating Bar  -->
+                  <div class="floating-btn-container">
+                        <a id="showFormCompomentBtn" class="floating-btn" style="background-color: #f15e47;"
+                              onclick="openCategoryModal()">
+                              <i class="material-icons"> add</i>
+                        </a>
+                  </div>
+                  <script>
+
+
+                        // Get the modal element
+                        let categoryModal = document.getElementById('categoryModal');
+
+                        // Close the modal if clicked outside of the modal content
+                        window.onclick = function (event) {
+                              if (event.target === categoryModal) {
+                                    categoryModal.style.display = 'none';
+                              }
+                        }
+
+                        // Open the Category modal
+                        function openCategoryModal() {
+                              document.getElementById("categoryModal").style.display = "block";
+                        }
+
+                        // Close the Category modal
+                        function closeCategoryModal() {
+                              document.getElementById("categoryModal").style.display = "none";
+                        }
+
+                        // Close modal when the close button is clicked
+                        document.getElementById("closeCategoryBtn").addEventListener("click", function () {
+                              closeCategoryModal();
+                        });
+
+                        document.addEventListener("DOMContentLoaded", function () {
+                              const nameContainer = document.getElementById("nameContainer");
+                              const nameText = document.getElementById("nameText");
+                              const editButton = document.getElementById("editButton");
+
+                              editButton.addEventListener("click", function () {
+                                    // Remove current nameText and editButton
+                                    nameText.remove();
+                                    editButton.remove();
+
+                                    // Create editable text box
+                                    const textBox = document.createElement("input");
+                                    textBox.type = "text";
+                                    textBox.id = "nameTextBox";
+                                    textBox.value = nameText.textContent;
+
+                                    // Create save button
+                                    const saveButton = document.createElement("button");
+                                    saveButton.id = "saveButton";
+                                    saveButton.textContent = "Save";
+
+                                    // Append text box and save button
+                                    nameContainer.appendChild(textBox);
+                                    nameContainer.appendChild(saveButton);
+
+                                    // Listen for save button click
+                                    saveButton.addEventListener("click", function () {
+                                          // Update nameText with new value and revert back to original state
+                                          nameText.textContent = textBox.value;
+                                          textBox.remove();
+                                          saveButton.remove();
+                                          nameContainer.appendChild(nameText);
+                                          nameContainer.appendChild(editButton);
+                                    });
+                              });
+                        });
+<!--
+  document.addEventListener("DOMContentLoaded", function() {
+    const editButtons = document.querySelectorAll(".edit-btn");
+    const saveButtons = document.querySelectorAll(".save-btn");
+
+    editButtons.forEach((button, index) => {
+      button.addEventListener("click", function() {
+        const row = button.closest("tr");
+        const nameSpan = row.querySelector(".category-name");
+        const editDiv = row.querySelector(".category-edit");
+
+        // Toggle visibility
+        nameSpan.style.display = "none";
+        editDiv.style.display = "block";
+      });
+    });
+
+    saveButtons.forEach((button, index) => {
+      button.addEventListener("click", function() {
+        const row = button.closest("tr");
+        const nameSpan = row.querySelector(".category-name");
+        const editInput = row.querySelector(".category-input");
+        const editDiv = row.querySelector(".category-edit");
+
+        // Update the name and toggle visibility
+        nameSpan.textContent = editInput.value;
+        nameSpan.style.display = "block";
+        editDiv.style.display = "none";
+
+        // Here, you can also send the updated name to the server
+        // For example:
+        // updateCategoryNameOnServer(editInput.value);
+      });
+    });
+  });
+
+
+
+                  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="stylesheet" href="/css/styles.css">
+
+      <title>Edit Item</title>
+
+</head>
+
+<body>
+
+      <%- include('../NavbarAdmin') %>
+
+            <div class="main-content">
+
+
+                  <div
+                        style="width: 80%;display: flex;flex-direction: row;gap:3rem;justify-content: center;align-items: center;margin: 1rem 7rem; ">
+
+                        <span class="material-symbols-outlined" style="font-size: 4rem;">
+                              barcode
+                        </span>
+                        <form action="/api/EditProductWithComponents/<%= product.productId %>" method="POST"
+                              style="padding: 4rem 6rem; width: 100%;">
+                              <label for="productName">Product Name:</label>
+                              <input type="text" id="productName" name="productName" class="form-control"
+                                    value="<%= product.productName %>" required>
+                              <br>
+
+                              <label for="productSellingPrice">Recommended Selling Price:</label>
+                              <input type="number" id="productSellingPrice" name="productSellingPrice"
+                                    class="form-control" value="<%= product.productSellingPrice %>" step="0.01"
+                                    required>
+                              <br>
+
+                              <label for="productCostPrice">Cost Price:</label>
+                              <input type="number" id="productCostPrice" name="productCostPrice" class="form-control"
+                                    value="<%= product.productCostPrice %>" step="0.01" required>
+                              <br>
+
+                              <label for="productMarkup">Product Markup:</label>
+                              <input type="number" id="productMarkup" name="productMarkup" class="form-control"
+                                    value="<%= product.prodcutMarkup %>" step="0.01" required>
+                              <br>
+
+                              <label for="status">Status:</label>
+                              <input type="number" id="status" name="status" class="form-control"
+                                    value="<%= product.status %>" readonly>
+                              <br>
+
+                              <label for="supplierId">Supplier ID:</label>
+                              <input type="text" id="supplierId" name="supplierId" class="form-control"
+                                    value="<%= product.supplierId %>" readonly>
+                              <br>
+
+                              <label for="categoryId">Category:</label>
+                              <select id="categoryId" name="categoryId" class="form-control" required>
+                                    <% Categories.forEach(category=> { %>
+                                          <option value="<%= category.categoryId %>" <% if
+                                                (category.categoryId===product.categoryId) { %>selected<% } %>><%=
+                                                            category.categoryName %>
+                                          </option>
+                                          <% }); %>
+                              </select>
+                              <br>
+
+                              <label for="componentIds">Components:</label>
+                              <select id="componentIds" name="componentIds" class="form-control" multiple>
+                                    <% if (Components && Components.length> 0) { %>
+                                          <% Components.forEach(component=> { %>
+                                                <option value="<%= component.componentId %>">
+                                                      <%= component.componentName %> (Units Used: <%=
+                                                                  component.unitsUsed %>)
+                                                </option>
+                                                <% }); %>
+                                                      <% } else { %>
+                                                            <option value="none">None</option>
+                                                            <% } %>
+                              </select>
+                              <button onclick="removeSelectedComponents()">Remove Selected Components</button>
+
+                              <br>
+
+                              <button class="btn" type="submit">Save</button>
+                        </form>
+
+
+
+                  </div>
+
+
+                  <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                              const costPriceInput = document.getElementById("productCostPrice");
+                              const markupInput = document.getElementById("productMarkup");
+                              const sellingPriceInput = document.getElementById("productSellingPrice");
+
+                              costPriceInput.addEventListener("input", updateSellingPrice);
+                              markupInput.addEventListener("input", updateSellingPrice);
+
+                              function updateSellingPrice() {
+                                    const costPrice = parseFloat(costPriceInput.value) || 0;
+                                    const markup = parseFloat(markupInput.value) || 0;
+
+                                    // Calculate new selling price
+                                    let newSellingPrice = costPrice * (1 + markup / 100);
+
+                                    // Make the price more appealing by rounding down to the nearest .99
+                                    newSellingPrice = Math.floor(newSellingPrice) + 0.99;
+
+                                    // Update the "Recommended Selling Price" input
+                                    sellingPriceInput.value = newSellingPrice.toFixed(2);
+                              }
+                        });
+
+                  </script>
+</body>
+
+</html>

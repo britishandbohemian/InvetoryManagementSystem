@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Ignore This Styling -->
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=0.7">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="/css/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+
+
+ <title>View Sales</title>
+ <style>
+  button:focus {
+   outline: none;
+  }
+
+  /* Basic styling for the menu */
+  .menu {
+   margin-left: 1.5rem;
+   display: flex;
+   gap: 20px;
+   position: relative;
+  }
+
+  .menu a {
+   text-decoration: none;
+   padding: 5px 10px;
+   color: #191716;
+   /* non-active color */
+   position: relative;
+  }
+
+  .menu a.active {
+   color: #F3B61F;
+   /* active color */
+  }
+
+  /* The underline for active link */
+  .menu a.active::before {
+   content: '';
+   position: absolute;
+   bottom: -5px;
+   /* Adjusts the position of the underline */
+   left: 0;
+   height: 2px;
+   width: 100%;
+   background: #F3B61F;
+  }
+
+
+
+  .modal {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+   margin: 4rem auto;
+   padding: 20px;
+   background-color: #fff;
+   width: 50%;
+  }
+
+  #searchbar {
+   top: 0;
+   position: fixed;
+   width: 100%;
+   z-index: 2;
+   background-color: #fcfcfc;
+   height: 11vh;
+   display: grid;
+   grid-template-columns: 60% 1fr;
+   align-items: center;
+   flex-direction: row;
+   justify-content: left;
+   padding-right: 4rem;
+   border: 1px solid 1px solid rgb(230 230 230);
+  }
+
+  #searchbarInput {
+   text-align: center;
+   font-size: 0.8em;
+   width: 100%;
+   height: 2.3rem;
+   background-color: #ececec;
+   border: 1px #cfcfcf solid;
+   border-radius: 24px;
+   padding-left: 2.5rem;
+  }
+
+  .custom-table-responsive {
+   margin: 2rem;
+   background-color: white !important;
+   padding: 20px;
+   border-radius: 15px;
+  }
+
+
+  .profit-card {
+   font-family: 'Poppins', sans-serif;
+   width: 250px;
+   background-color: #191716;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   color: #F3B61F;
+  }
+
+  .card-content {
+   text-align: center;
+   padding: 16px;
+  }
+
+  .profit-card h3 {
+   margin: 0;
+   opacity: 0.8;
+  }
+
+  .profit-card h2 {
+   margin-top: 8px;
+   margin-bottom: 8px;
+  }
+
+  .chart-container {
+   font-family: 'Poppins', sans-serif;
+  }
+
+  .profit-icon {
+   font-size: 40px;
+   opacity: 0.7;
+  }
+
+
+
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+  .menu {
+   display: flex;
+   gap: 1rem;
+   margin-bottom: 1rem;
+  }
+
+  .menu a {
+   padding: 0.5rem 1rem;
+   text-decoration: none;
+   color: #191716;
+   background-color: #f7f4f3;
+   cursor: pointer;
+   transition: background-color 0.3s;
+  }
+
+  .menu a.active {
+   background-color: #191716;
+   color: #f7f4f3;
+  }
+
+  .menu a:hover {
+   background-color: #ddd;
+  }
+
+  .content {
+   display: none;
+  }
+
+  .content.active {
+   display: block;
+  }
+ </style>
+
+</head>
+
+<body>
+
+ <%- include('../NavbarAdmin') %>
+
+
+
+  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;margin-bottom: 3rem;">
+
+   <div class="shadowNav" style="    
+z-index: 2;
+background-color: #fcfcfc;
+display: grid;
+height: 11vh;
+grid-template-columns: 60% 1fr;
+align-items: center;
+flex-direction: row;
+padding-left:  4rem;
+position: fixed;
+width: 100%;
+justify-content: left;
+border: 1px solid 1px solid rgb(230 230 230);
+
+">
+    <h6 style="   font-weight: 800;
+font-size: 1.5em;
+">Reports
+
+    </h6>
+
+
+
+   </div>
+   <div class="chart-container" style="height: 400px;width: 95%;margin: 8rem auto;">
+    <!-- Tab Navigation -->
+
+    <div style="margin: 2rem auto;">
+
+
+
+    </div>
+    <!-- Tab Content -->
+    <div class="tab-content">
+     <div
+      style="background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0); padding: 10px; margin: 0rem 3rem 1rem 3rem;">
+      <div style="padding: 1.6rem 5rem;  background-color: #191716; border-radius: 15px;">
+       <h3 style="font-weight: bold; font-size: 1.5rem; color: white;">My Stores Performance</h3>
+       <h5 id="Sales" style="font-size: 1rem; font-weight: 400; margin-top: 20px; color: white;"></h5>
+      </div>
+
+      <div style="padding: 2rem;display: flex;justify-content: end;"> <!-- Button to Open the Add Expense Modal -->
+       <button id="showAddExpenseModal" type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="#addExpenseModal">
+        Add Expense
+       </button>
+      </div>
+
+
+      <div style="display: flex;gap: 2rem;"> <!-- Expenses Table -->
+       <div id="myExpensesTable" class="container" style="margin: 0;">
+        <div class="table-responsive">
+         <table class="table table-striped">
+          <thead>
+           <tr>
+            <th scope="col">Expense ID</th>
+            <th scope="col">Expense Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Action</th>
+           </tr>
+          </thead>
+
+          <tbody>
+           <!-- Rows for expenses will be appended here -->
+           <!-- Example row -->
+           <tr>
+            <th scope="row">1</th>
+            <td>Groceries</td>
+            <td>$200</td>
+            <td>
+             <button class="btn btn-primary" onclick="editExpense(1)">Edit</button>
+             <button class="btn btn-danger" onclick="removeExpense(1)">Remove</button>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+
+       <div>
+        <div style="margin-bottom: 10px;background-color: #ffffff;border: 1px solid black;border-radius: 15px;">
+         <div style="padding: 1.6rem 2rem;  background-color: #ffffff;border-radius: 15px;">
+          <h3 style="font-weight: bold;font-size: 1.5rem;color: rgb(0, 0, 0);">Gross Profit After Expenses
+          </h3>
+          <h5 id="GrossProfitExpensesAdded"
+           style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: rgb(0, 0, 0);">
+
+          </h5>
+         </div>
+        </div>
+       </div>
+      </div>
+
+
+     </div>
+
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+     <div
+      style="background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0); padding: 10px; margin: 0rem 3rem 1rem 3rem;">
+      <div style="padding: 1.6rem 5rem;  background-color: #191716; border-radius: 15px;">
+       <h3 style="font-weight: bold; font-size: 1.5rem; color: white;">Best Perfoming Products & Employees</h3>
+       <h5 id="Sales" style="font-size: 1rem; font-weight: 400; margin-top: 20px; color: white;">See What products
+        Selling the best and which employee is helping you meet your targets</h5>
+      </div>
+
+      <div style="display: flex; gap: 2rem;"> <!-- Flex container for both tables -->
+
+
+       <!-- Second table: Profitable Products Table -->
+       <div id="profitableProductsTable" class="container" style="margin: 0;">
+        <div class="table-responsive">
+         <table class="table table-striped">
+          <thead>
+           <tr>
+            <th scope="col">Product ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Profit</th>
+           </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+         </table>
+        </div>
+       </div>
+
+       <!-- Third table: Employee Sales Data Table -->
+       <div id="employeeSalesDataTable" class="container" style="margin: 0;">
+        <div class="table-responsive">
+         <table class="table table-striped">
+          <thead>
+           <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Sales</th>
+            <th scope="col">Number of Sales</th>
+           </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+      <!-- End of flex container -->
+     </div>
+    </div>
+
+
+
+
+    <!-- Sales Stats Content -->
+    <div style="padding-top: 0rem;margin: 1rem auto;" id="salesStatsContent" class="content active">
+     <div style="width: 100%;padding: 1rem 3rem;">
+
+
+      <div style="margin: 2rem auto;">
+       <div style="background-color: white;border-radius: 15px;border:  1px solid rgb(0, 0, 0);padding: 10px; ">
+        <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;">
+         <h3 style="padding-left: 2rem;font-weight: bold;font-size: 1.5rem;color: white;">Your Stores Sales Report
+         </h3>
+         <h5 style="padding-left: 2rem;font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
+          See how your stores doing over time
+         </h5>
+        </div>
+
+        <div style="display: grid;grid-template-columns: 1fr 1fr 1fr;margin-top: 3rem;gap: 10px;">
+         <div style="margin-bottom: 10px;background-color: #ffffff;border: 1px solid black;border-radius: 15px;">
+          <div style="padding: 1.6rem 2rem;  background-color: #ffffff;border-radius: 15px;">
+           <h3 style="font-weight: bold;font-size: 1.5rem;color: rgb(0, 0, 0);">Potential Profit
+           </h3>
+           <h5 id="predictedProfit" style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: rgb(0, 0, 0);">
+
+           </h5>
+          </div>
+         </div>
+
+         <div style="margin-bottom: 10px;background-color: #ffffff;border: 1px solid black;border-radius: 15px;">
+          <div style="padding: 1.6rem 2rem;  background-color: #ffffff;border-radius: 15px;">
+           <h3 style="font-weight: bold;font-size: 1.5rem;color: rgb(0, 0, 0);">Gross Profit Without Expenses
+           </h3>
+           <h5 id="gross" style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: rgb(0, 0, 0);">
+
+           </h5>
+          </div>
+         </div>
+
+
+         <div style="margin-bottom: 10px;background-color: #ffffff;border: 1px solid black;border-radius: 15px;">
+          <div style="padding: 1.6rem 2rem;  background-color: #ffffff;border-radius: 15px;">
+           <h3 style="font-weight: bold;font-size: 1.5rem;color: rgb(0, 0, 0);">Total Revenue From Sales</h3>
+           <h5 id="SalesData" style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: rgb(0, 0, 0);"></h5>
+          </div>
+         </div>
+
+
+
+        </div>
+
+        <hr>
+
+
+        <div style="padding: 1rem;">
+         <!-- Date input field -->
+         <div style="display: flex;gap: 1rem;">
+          <label for="toDate">Select Date:</label>
+          <input class="form-control" style="width: 9rem;" type="date" id="toDate" name="toDate">
+          <button class="btn" onclick="fetchAndRenderChart()">Fetch Data</button>
+         </div>
+
+
+         <!-- Chart canvas -->
+         <canvas id="salesChart" width="2000px" height="800px"></canvas>
+        </div>
+       </div>
+
+
+      </div>
+
+     </div>
+
+
+
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div id="addExpenseModal" class="modal" tabindex="-1" role="dialog" style="display: none;">
+     <div class="modal-dialog">
+      <div class="modal-content">
+       <div class="modal-header">
+        <h5 class="modal-title">Add New Expense</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
+       <div class="modal-body">
+        <form id="addExpenseForm">
+         <div class="form-group">
+          <label for="expenseName">Expense Name:</label>
+          <input type="text" class="form-control" id="expenseName" required>
+         </div>
+         <div class="form-group">
+          <label for="expenseAmount">Amount:</label>
+          <input type="number" class="form-control" id="expenseAmount" required>
+         </div>
+         <button type="submit" class="btn btn-primary">Add Expense</button>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+
+
+
+
+
+
+  </section>
+
+
+  <script>
+
+
+
+
+
+   Chart.defaults.font.family = 'Poppins, sans-serif';
+
+
+   document.addEventListener('DOMContentLoaded', function () {
+    fetch("http://localhost:5358/api/users/employee-sales", {
+     method: "GET",
+     headers: {
+      "Content-Type": "application/json"
+     }
+    })
+     .then(response => response.json())
+     .then(data => {
+      const tableBody = document.querySelector("#employeeSalesDataTable tbody");
+
+      data.forEach(employee => {
+       const row = document.createElement("tr");
+
+       // Create Employee ID cell
+       const cellEmployeeId = document.createElement("th");
+       cellEmployeeId.setAttribute("scope", "row");
+       cellEmployeeId.innerText = employee.userId;
+
+       // Create Employee Name cell
+       const cellEmployeeName = document.createElement("td");
+       cellEmployeeName.innerText = employee.username;
+
+       // Create Sales cell
+       const cellSales = document.createElement("td");
+       cellSales.innerText = `R${employee.totalSalesAmount.toFixed(2)}`; // Format as currency
+
+       // Create Number of Sales cell
+       const cellNumSales = document.createElement("td");
+       cellNumSales.innerText = employee.numberOfSales;
+
+       // Append cells to row
+       row.appendChild(cellEmployeeId);
+       row.appendChild(cellEmployeeName);
+       row.appendChild(cellSales);
+       row.appendChild(cellNumSales);
+       // Append row to table
+       tableBody.appendChild(row);
+      });
+     })
+     .catch(error => {
+      console.error("Error fetching data:", error);
+     });
+
+
+   });
+
+
+   function calculateGrossProfit(totalRevenue) { // totalRevenue is passed as an argument
+    let expenseSum = 0;  // Initialize sum for expenses
+
+    // Grab the table body containing the expense rows
+    const tableBody = document.querySelector('#myExpensesTable tbody');
+
+    // Loop through each table row to sum up the expenses
+    for (const row of tableBody.rows) {
+     const amountCell = row.cells[2].innerText.replace('R', '');
+     const amount = parseFloat(amountCell);
+     if (!isNaN(amount)) {
+      expenseSum += amount;
+     }
+    }
+
+    // Calculate Gross Profit After Expenses
+    const grossProfit = totalRevenue - expenseSum;
+
+    // Update GrossProfitExpensesAdded element
+    const grossProfitElement = document.getElementById('GrossProfitExpensesAdded');
+    grossProfitElement.innerText = `R${grossProfit.toFixed(2)}`;
+   }
+
+   function fetchExpensesAndUpdateTable() {
+    fetch('http://localhost:5358/api/Expenses')
+     .then(response => response.json())
+     .then(data => {
+      // Get the table body to insert expenses into
+      const tableBody = document.querySelector('#myExpensesTable tbody');
+
+      // Remove existing rows
+      tableBody.innerHTML = '';
+
+      // Add new rows
+      data.forEach(expense => {
+       const row = tableBody.insertRow();
+       const idCell = row.insertCell(0);
+       const nameCell = row.insertCell(1);
+       const amountCell = row.insertCell(2);
+       const actionCell = row.insertCell(3);
+
+       idCell.textContent = expense.id;
+       nameCell.textContent = expense.name;
+       amountCell.textContent = `R${expense.amount}`;
+       actionCell.innerHTML = `<button class="btn btn-primary" onclick="editExpense(${expense.id})">Edit</button>
+                                <button class="btn btn-danger" onclick="removeExpense(${expense.id})">Remove</button>`;
+      });
+
+      // Recalculate Gross Profit after updating the table
+      calculateGrossProfit();
+     })
+     .catch(error => console.error('There was an error fetching expenses:', error));
+   }
+
+   // Call the function to fetch expenses and populate the table when the page loads
+   window.addEventListener('load', fetchExpensesAndUpdateTable);
+
+
+   // Call the function to populate the table
+
+
+   // Function to show modal
+   function showModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+   }
+
+   // Function to hide modal
+   function hideModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+   }
+
+   // Event listener for "Add Expense" button
+   document.getElementById('showAddExpenseModal').addEventListener('click', function () {
+    showModal('addExpenseModal');
+   });
+
+   // Event listener for closing the modal
+   // Assuming you have a button with class `close` inside your modal
+   document.querySelector('#addExpenseModal .close').addEventListener('click', function () {
+    hideModal('addExpenseModal');
+   });
+
+   async function fetchTopSellingProducts() {
+    const url = 'http://localhost:5358/Product/top-selling?top=10';
+
+    try {
+     const response = await fetch(url, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+       'Content-Type': 'application/json'
+      },
+     });
+
+     if (response.ok) {
+      const data = await response.json();
+      const tableBody = document.querySelector('#profitableProductsTable tbody');
+
+      // Clear the existing rows
+      tableBody.innerHTML = '';
+      console.log("hello")
+      // Populate the table with new data
+      data.forEach((product, index) => {
+       const row = tableBody.insertRow(index);
+       const cell1 = row.insertCell(0);
+       const cell2 = row.insertCell(1);
+       const cell3 = row.insertCell(2);
+
+       cell1.innerHTML = product.productId;
+       cell2.innerHTML = product.productName;
+       cell3.innerHTML = product.salesRevenue;
+      });
+     } else {
+      console.error(`Fetch failed: ${response.status} ${response.statusText}`);
+     }
+    } catch (error) {
+     console.error('An error occurred:', error);
+    }
+   }
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+
+    fetchTopSellingProducts();
+    // Event listener for form submission
+    document.getElementById("addExpenseForm").addEventListener("submit", function (event) {
+     event.preventDefault();
+
+     const name = document.getElementById("expenseName").value;
+     const amount = document.getElementById("expenseAmount").value;
+
+     // Validate fields
+     if (!name || !amount) {
+      alert("All fields are required");
+      return;
+     }
+
+     const payload = {
+      Name: name,
+      Amount: parseFloat(amount)
+     };
+
+     // Post data to the server
+     fetch("http://localhost:5358/api/Expenses", {
+      method: "POST",
+      headers: {
+       "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+     })
+      .then(response => response.json())
+      .then(data => {
+       window.location.reload();
+       // Close the modal
+       $('#addExpenseModal').modal('hide');
+       // TODO: Update the expenses table or refresh the page
+      })
+      .catch(error => {
+       console.error("Error:", error);
+       alert("Failed to add expense");
+      });
+    });
+   });
+
+
+
+
+   //plot Sales Graph
+
+   // Fetch function to get the predicted profit from stock on hand
+   async function fetchPredictedProfit() {
+    try {
+     const response = await fetch('http://localhost:5358/api/Stats/potential-profit'); // Replace with your actual API endpoint
+     const data = await response.json();
+
+     // Update the HTML
+     document.getElementById('predictedProfit').innerHTML = `R${data.potentialProfit.toFixed(2)}`;
+    } catch (error) {
+     console.error('Error fetching predicted profit:', error);
+    }
+   }
+
+   // Call the fetch function when the page loads
+   window.addEventListener('load', fetchPredictedProfit);
+
+   // Fetch function to get the predicted profit from stock on hand
+   async function fetchGross() {
+    try {
+     const response = await fetch('http://localhost:5358/api/Stats/GetGrossProfitForPast30Days'); // Replace with your actual API endpoint
+     const data = await response.text();
+
+     // Update the HTML
+     document.getElementById('gross').innerHTML = `${data}`;
+    } catch (error) {
+     console.error('Error fetching predicted profit:', error);
+    }
+   }
+
+   // Call the fetch function when the page loads
+   window.addEventListener('load', fetchGross);
+
+
+
+   window.onload = function () {
+    let defaultDate = new Date();
+    defaultDate.setDate(defaultDate.getDate() - 7);
+    let defaultDateString = defaultDate.toISOString().split('T')[0];  // Convert to YYYY-MM-DD format
+
+    document.getElementById("toDate").value = defaultDateString;
+
+    // Fetch and render the chart with the default date
+    fetchAndRenderChart();
+   };
+
+   let chart;
+
+   async function fetchAndRenderChart() {
+    let toDateElement = document.getElementById("toDate");
+    let toDate = toDateElement.value;  // Get the user input
+
+    // Destroy the existing chart if it exists
+    if (chart) {
+     chart.destroy();
+    }
+
+    // If no date is selected, use the current date - 7 days as the default
+    if (!toDate) {
+     let defaultDate = new Date();
+     defaultDate.setDate(defaultDate.getDate() - 7);
+     toDate = defaultDate.toISOString().split('T')[0];  // Convert to YYYY-MM-DD format
+    }
+
+    const url = `http://localhost:5358/api/Stats/totalrevenue?toDate=${toDate}`;
+
+    const response = await fetch(url, {
+     method: 'GET',
+     mode: 'cors',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+    });
+
+
+
+    if (response.ok) {
+     const responseData = await response.json();
+     const salesData = responseData.value;  // Extract the 'value' key
+
+
+
+     if (Array.isArray(salesData)) {
+      const salesDates = salesData.map(data => data.saleDate);
+      const totalSales = salesData.map(data => data.total);
+
+      const ctxSales = document.getElementById('salesChart').getContext('2d');
+      // Calculate total revenue from sales data
+      const totalRevenue = salesData.reduce((acc, data) => acc + data.total, 0);
+
+      // Update the h5 element with the total revenue
+      document.getElementById("Sales").innerText = `In the past ${calculateDays(toDate)} days, you've made R${totalRevenue.toFixed(2)}`;
+      document.getElementById("SalesData").innerText = `In the past ${calculateDays(toDate)} days, you've made R${totalRevenue.toFixed(2)}`;
+
+
+      chart = new Chart(ctxSales, {
+       type: 'line',
+       data: {
+        labels: salesDates,
+        datasets: [{
+         label: 'Sales Over Time',
+         backgroundColor: '#FF0000',
+         borderColor: '#FF0000',
+         data: totalSales,
+         fill: true,
+        }]
+       },
+       options: {
+        responsive: true,
+        scales: {
+         x: {
+          title: {
+           display: true,
+           text: 'Date',
+          },
+         },
+         y: {
+          beginAtZero: true,
+          title: {
+           display: true,
+           text: 'Total Sales Revenue',
+          },
+         }
+        }
+
+
+       }
+      });
+      calculateGrossProfit(totalRevenue);
+     } else {
+      console.error("Received data is not an array");
+     }
+    } else {
+     console.error(`Fetch failed: ${response.status} ${response.statusText}`);
+    }
+   }
+
+   // Function to calculate the number of days from the selected date to today
+   function calculateDays(toDate) {
+    const today = new Date();
+    const selectedDate = new Date(toDate);
+    const diffTime = Math.abs(today - selectedDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+   }
+
+
+   function toggleDetails(index) {
+    const detailsRow = document.getElementById(`details-${index}`);
+    if (detailsRow.style.display === 'none') {
+     detailsRow.style.display = 'table-row';
+    } else {
+     detailsRow.style.display = 'none';
+    }
+   }
+
+
+  </script>
+
+
+
+</body>
+
+</html>

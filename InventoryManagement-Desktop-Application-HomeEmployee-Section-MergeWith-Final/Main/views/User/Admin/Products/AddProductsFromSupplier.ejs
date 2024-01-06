@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>
+        Add Product
+    </title>
+
+    <style>
+        #popupFormSupplier,
+        #popupFormCategory {
+            display: none;
+            /* Initially hide the popup */
+            position: fixed;
+            /* Fixed position */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+    <%- include('../NavbarAdmin') %>
+
+
+
+        <!-- Where all my content is -->
+        <section class="main-content" style="display: grid;grid-template-columns: 1fr 1fr;">
+            <div class="shadowNav" style="    
+            z-index: 2;
+            background-color: #fcfcfc;
+      height: 5rem;
+            display: grid;
+            grid-template-columns: 60% 1fr;
+      align-items: center;
+            flex-direction: row;
+            position: fixed;
+            width: 100%;
+            justify-content: left;
+      border: 1px solid 1px solid rgb(230 230 230);
+      
+      ">
+                <h6 style="   font-weight: 800;
+            font-size: 1.5em;
+            padding-left: 5rem;">Add Product Bought
+
+                </h6>
+
+
+
+
+            </div>
+
+
+            <div style="margin-top: 5rem;
+                background-color: #fefefe;
+                padding: 2rem;
+                display: grid;
+                grid-template-rows: 20% 1fr;
+                justify-content: center;">
+
+                <!-- Span Products icon -->
+                <div style="display: flex;justify-content: center;margin-bottom: 3rem;">
+                    <span style="font-size: 4rem;" class="material-symbols-outlined">
+                        barcode_scanner
+                    </span>
+                </div>
+                <!-- Summary Of Product To be added -->
+                <form id="productForm" method="post" style="width: 400px;margin-left: 7rem;">
+                    <label for="productName">Product Name:</label>
+                    <input class="form-control" type="text" id="productName" name="productName"
+                        placeholder="Product Name" required><br>
+
+
+
+
+
+                    <label for="productMarkup">Product Markup:</label>
+                    <input class="form-control" type="number" id="productMarkup" name="productMarkup"
+                        placeholder="markup" required><br>
+
+
+                    <div style="display: flex; gap: 1rem;flex-direction: column;">
+                        <label for="supplier">Select A Supplier:</label>
+                        <select class="form-control" name="supplier" id="supplier">
+                            <% Supplier.forEach(supplier=> { %>
+                                <option value="<%= supplier.supplierId %>">
+                                    <%= supplier.supplierName %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+
+
+
+                    <br>
+                    <!-- Category -->
+                    <div style="margin-top: 1rem;">
+                        <label for="category">Select A Category:</label>
+                        <select class="form-control" name="category" id="categoryProduct">
+                            <% Categories.forEach(category=> { %>
+                                <option value="<%= category.categoryId %>">
+                                    <%= category.categoryName %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+                    </div>
+
+
+                    <br>
+
+
+
+
+                    <input style="margin-top: 2rem;" type="button" value="Add Product" class="btn"
+                        onclick="addProductToList()">
+
+                </form>
+            </div>
+
+
+            <div style="margin-top: 5rem;
+            background-color: #fefefe;
+            padding: 2rem;
+            display: grid;
+            grid-template-rows: 20% 60% 1fr;
+            justify-content: center;">
+
+                <div style="display: flex;justify-content: center;"> <span style="font-size: 4rem;"
+                        class="material-symbols-outlined">
+                        inventory
+                    </span>
+                </div>
+
+
+                <div id="myTable" class="container" style="margin-left: 0;margin-top: 1rem;">
+                    <div class="table-responsive custom-table-responsive">
+                        <table class="table custom-table">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Selling Price</th>
+                                    <th scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div> <input type="button" value="Add Product" class="btn" onclick="sendProducts()"></div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Success</h5>
+                        <button type="button" class="close" onclick="closeSuccessModal()" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Products successfully created!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeSuccessModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            // Event listener for productMarkup input
+            document.querySelector('input').addEventListener('input', function () {
+                if (this.value) {
+                    this.style.borderColor = ''; // Set to default color
+                } else {
+                    this.style.borderColor = 'red';
+                }
+            });
+
+            let productsArray = [];
+
+            function addProductToList() {
+                // Get values from the form
+                let productName = document.getElementById('productName').value;
+                let productMarkup = parseFloat(document.getElementById('productMarkup').value);
+
+                // Validation: Check if all fields are filled
+                if (!productName || isNaN(productMarkup)) {
+                    console.error("Please fill in all the fields.");
+                    // Change the border color of the input fields to red if they are not filled
+                    if (!productName) {
+                        document.getElementById('productName').style.borderColor = 'red';
+                    } else {
+                        document.getElementById('productName').style.borderColor = 'black';
+                    }
+                    if (isNaN(productMarkup)) {
+                        document.getElementById('productMarkup').style.borderColor = 'red';
+                    } else {
+                        document.getElementById('productMarkup').style.borderColor = 'black';
+                    }
+                    return;
+                }
+
+                // Create a new product object (since costPrice is removed, only name and markup are included)
+                const newProduct = {
+                    name: productName,
+                    markup: productMarkup
+                };
+
+                // Push the product to the productsArray
+                productsArray.push(newProduct);
+
+                // Append the product to the table
+                let tableBody = document.querySelector('#myTable tbody');
+                let newRow = document.createElement('tr');
+
+                let productNameCell = document.createElement('td');
+                productNameCell.textContent = productName;
+                newRow.appendChild(productNameCell);
+
+                let markupCell = document.createElement('td');
+                markupCell.textContent = `${productMarkup.toFixed(2)}%`; // Display as a percentage
+                newRow.appendChild(markupCell);
+
+                let removeIconCell = document.createElement('td');
+                let removeIcon = document.createElement('i');
+                removeIcon.className = 'material-icons';
+                removeIcon.textContent = 'delete';
+                removeIcon.onclick = function () {
+                    // Remove the product from the productsArray
+                    let productIndex = productsArray.findIndex(p => p.name === productName);
+                    if (productIndex > -1) {
+                        productsArray.splice(productIndex, 1);
+                    }
+
+                    // Remove the row from the table
+                    tableBody.removeChild(newRow);
+                };
+                removeIconCell.appendChild(removeIcon);
+                newRow.appendChild(removeIconCell);
+
+                tableBody.appendChild(newRow);
+
+                // Clear the form fields for the next entry
+                document.getElementById('productName').value = '';
+                document.getElementById('productMarkup').value = '';
+            }
+
+            function sendProducts() {
+                // Map the products array to the expected DTO structure
+                var productsToBeSent = productsArray.map(product => {
+                    return {
+                        categoryId: product.categoryId,
+                        productName: product.productName,
+                        productMarkup: product.productMarkup,
+                        supplierId: product.supplierId
+                    };
+                });
+
+
+                // Make a fetch request to send the products
+                fetch("/AddProductsFromSupplier", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(productsToBeSent),
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        showSuccessModal()
+                        setTimeout(function () {
+                            window.location.href = "/ViewProducts";
+                        }, 3000);
+
+                        // Handle success logic, such as redirecting to another page
+                    })
+                    .catch(error => {
+                        console.error("Error creating products:", error);
+                        // Handle error logic
+                    });
+            }
+
+            function showSuccessModal() {
+                var modal = document.getElementById('successModal');
+                modal.style.display = 'block';
+                modal.classList.add('show');
+                document.body.classList.add('modal-open');
+            }
+
+            function closeSuccessModal() {
+                var modal = document.getElementById('successModal');
+                modal.style.display = 'none';
+                modal.classList.remove('show');
+                document.body.classList.remove('modal-open');
+            }
+
+            // Get references to the input elements
+            const costPriceInput = document.getElementById('costPrice');
+            const productMarkupInput = document.getElementById('productMarkup');
+            const sellingPriceInput = document.getElementById('sellingPrice');
+
+            // Function to calculate the selling price
+            const calculateSellingPrice = () => {
+                const costPrice = parseFloat(costPriceInput.value) || 0;
+                const markup = parseFloat(productMarkupInput.value) || 0;
+
+                const productMarkupValue = markup / 100;
+                const sellingPrice = Math.round(costPrice * (1 + productMarkupValue));
+                sellingPriceInput.value = sellingPrice.toFixed(2); // Round to 2 decimal places
+            };
+
+            // Add event listeners to the costPrice and productMarkup input fields
+            costPriceInput.addEventListener('input', calculateSellingPrice);
+            productMarkupInput.addEventListener('input', calculateSellingPrice);
+
+            // Initialize the selling price
+            calculateSellingPrice();
+
+
+        </script>
+
+</body>
+
+</html>

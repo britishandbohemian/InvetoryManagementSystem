@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+ <!-- Custom Styles -->
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="/css/styles.css">
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+ <!-- Fonts & Icons -->
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+ <!-- jQuery, Popper.js, and Bootstrap JavaScript -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+
+
+ <title>View Items</title>
+
+ <style>
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+  /* Default button styling */
+  .button {
+   background-color: #FF0000;
+   border: 3px solid #191716;
+   color: white;
+   padding: 10px;
+   margin: 5px;
+   cursor: pointer;
+  }
+
+  /* Styling for active state */
+  .button.active {
+   background-color: blue;
+  }
+
+  .modal-dialog {
+   max-width: 500px;
+   margin: -5.25rem auto;
+  }
+
+
+  /* Modal Styles */
+  .modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.4);
+   padding-top: 60px;
+  }
+
+  .modal-content {
+   background-color: #fefefe;
+   padding: 3REM;
+   border: 1px solid #888;
+   scale: 0.80;
+  }
+
+  .custom-table-responsive {
+   margin: 2rem;
+   background-color: white !important;
+   padding: 20px;
+   border-radius: 15px;
+  }
+
+  #popupFormComponent {
+   display: none;
+   /* Initially hide the popup */
+   position: fixed;
+   /* Fixed position */
+   left: 0;
+   top: 0;
+   width: 100%;
+   /* Full width */
+   height: 100%;
+   /* Full height */
+   overflow: auto;
+   /* Enable scroll if needed */
+   background-color: rgba(0, 0, 0, 0.4);
+   /* Black w/ opacity */
+  }
+
+  .form-container {
+   background-color: #ffffff;
+   margin: 1rem auto;
+   /* 15% from the top and centered */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 50%;
+   /* Could be more or less, depending on screen size */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   transition: 0.3s;
+  }
+
+  #searchbar {
+   position: fixed;
+   width: 100%;
+   z-index: 2;
+   background-color: #fcfcfc;
+   height: 11vh;
+   display: grid;
+   grid-template-columns: 60% 1fr;
+   align-items: center;
+   flex-direction: row;
+   justify-content: left;
+   padding-right: 4rem;
+   border: 1px solid 1px solid rgb(230 230 230);
+  }
+
+  #searchbarInput {
+   text-align: center;
+   font-size: 0.8em;
+   width: 100%;
+   height: 2.3rem;
+   background-color: #ececec;
+   border: 1px #cfcfcf solid;
+   border-radius: 24px;
+   padding-left: 2.5rem;
+  }
+
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+  .invalid-input {
+   border-bottom: 2px solid red;
+  }
+
+  #circle-container {
+   position: relative;
+   width: 100px;
+   height: 100px;
+  }
+
+  #circle {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background: lightgray;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  #percentage {
+   font-size: 24px;
+  }
+
+  #circle-border {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   border: 8px solid transparent;
+   border-top-color: rgb(255, 0, 0);
+   transform-origin: 50% 50%;
+   transform: rotate(-90deg);
+  }
+ </style>
+
+
+
+</head>
+
+<body>
+
+ <%- include('../NavbarAdmin') %>
+
+  <!-- Main Content -->
+
+  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;margin-bottom: 1rem;overflow-y: hidden;">
+
+
+   <!-- Search Bar -->
+   <div class="shadowNav" style="    
+z-index: 2;
+background-color: #fcfcfc;
+display: grid;
+height: 11vh;
+grid-template-columns: 70% 1fr;
+align-items: center;
+flex-direction: row;
+padding-left:  4rem;
+position: fixed;
+width: 100%;
+justify-content: left;
+border: 1px solid 1px solid rgb(230 230 230);
+
+">
+    <h6 style="   font-weight: 800;
+font-size: 1.5em;
+">Supplies
+
+    </h6>
+
+    <div style="display: flex;">
+
+
+
+     <input oninput="filterTable()" id="searchInput" class="shadowNav" style="text-align: center;
+font-size: 0.8em;
+width: 300px;
+height: 2.3rem;
+background-color: #ececec;
+border: 1px #cfcfcf solid;
+border-radius: 24px;
+" type="text" placeholder="Search Inventory">
+     <i style="position: relative;
+left: 1.2rem; 
+top: 0.5rem; 
+font-size: 0.8em;
+color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;" class="material-symbols-outlined">
+       search
+      </span></i>
+
+
+
+
+
+    </div>
+
+   </div>
+   <!-- center -->
+   <div style="width: 95%;margin: 9rem auto;">
+
+
+
+
+    <div style="width: 100%; display: flex; margin: 1rem 0.5rem; gap: 4rem; flex-wrap: wrap;">
+
+     <div class="card-container" style=" border-radius: 15px; border: 1px solid black;">
+      <div class="card-content" style="
+        background: 
+        linear-gradient(rgba(0, 0, 0, 0.532), rgba(0, 0, 0, 0.582)), 
+        url('images/ingredients.png');
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+width: 600px;
+        display: flex;
+flex-direction: column;
+        align-items: left;
+        padding: 2rem;
+        position: relative;border-radius: 14px;">
+       <h3 class="metric-title" style="color: rgb(255, 255, 255); font-size: 1rem;">
+        Total Value And Sales
+       </h3>
+       <span class="info-icon material-icons" style="color: white;">
+        bar_chart
+       </span>
+
+       <div class="metric-description" style="color: white;margin-top: 1rem;">
+        <h5 id="totalInventoryValue">Total number Of Items</h6>
+         <h5 id="totalSalesValueOne">Items Below Minimum Threshold</h5>
+         <h5 id="areSalesEnough">Total number Of Items</h5>
+       </div>
+      </div>
+     </div>
+
+     <div class="card-container" style=" border-radius: 15px; border: 1px solid black;">
+      <div class="card-content" style="
+        background: black;
+        background-size: contain;
+        background-position: center;
+        height: 200px;
+width: 600px;
+
+        display: flex;
+flex-direction: column;
+        align-items: left;
+        padding: 2rem;
+        position: relative;border-radius: 14px;">
+       <h3 class="metric-title" style="color: rgb(255, 255, 255); font-size: 1rem;">
+        Average Inventory Turnover
+       </h3>
+
+       <span class="info-icon material-icons" style="color: white;">
+        autorenew
+       </span>
+
+       <div class="metric-description" style="color:white;margin-top: 1rem;">
+        <h5 id="averageInventoryValue">Total number Of Items</h5>
+        <h5 id="totalSalesValue">Items Below Minimum Threshold</h5>
+        <h5 id="averageInventoryTurnoverRatio">Total number Of Items</h5>
+       </div>
+      </div>
+     </div>
+
+     <div class="card-container" style=" border-radius: 15px; border: 1px solid black;">
+      <div class="card-content" style="
+       background: linear-gradient(rgba(0, 0, 0, 0.614), rgba(0, 0, 0, 0.722)), 
+        url('images/Inventory.png');
+        background-size: contain;
+        background-position: center;
+        height: 200px;
+width: 600px;
+
+        display: flex;
+flex-direction: column;
+        align-items: left;
+        padding: 2rem;
+        position: relative;border-radius: 14px;">
+       <h3 class="metric-title" style="color: rgb(255, 255, 255); font-size: 1rem;">
+        Stock Out Risk indicator
+       </h3>
+       <span class="info-icon material-icons" style="color: white;">
+        warning
+       </span>
+
+       <div class="metric-description" style=" color: rgb(255, 255, 255);margin-top: 1rem;">
+
+        <h5 id="totalNumberOfItems">Total number Of Items</h5>
+        <h5 id="itemsBelowMinThreshold">Items Below Minimum Threshold</h5>
+        <h5 id="stockOutRiskStatus">Total number Of Items</h5>
+       </div>
+      </div>
+     </div>
+
+    </div>
+
+
+    <script>
+     $(document).ready(function () {
+      $(".info-icon").hover(
+       function () {
+        $(this).siblings(".metric-description").show();
+       },
+       function () {
+        $(this).siblings(".metric-description").hide();
+       }
+      );
+     });
+
+    </script>
+
+
+    <hr style="margin: 3rem auto;width: 98%;border-color: rgb(129, 129, 129);">
+
+
+    <div style="display: flex;gap: 1rem;margin: 3rem auto;">
+
+     <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="stockLevelDropdown" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+       Filter by Stock Level
+      </button>
+      <div class="dropdown-menu" aria-labelledby="stockLevelDropdown">
+       <a class="dropdown-item" href="#" onclick="fetchFilteredItems('low')">Low
+        Stock</a>
+       <a class="dropdown-item" href="#" onclick="fetchFilteredItems('medium')">Medium Stock</a>
+       <a class="dropdown-item" href="#" onclick="fetchFilteredItems('high')">High
+        Stock</a>
+
+      </div>
+     </div>
+
+     <button onclick="fetchMostUsedItems()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Filter by most used Items
+     </button>
+
+     <button onclick="fetchItemsExpiringSoon()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Filter by Close to Experation
+     </button>
+
+     <button onclick="clearFilters()" class="btn btn-secondary" type="button">
+      Clear Filters
+     </button>
+
+
+    </div>
+
+    <div style="display: flex;gap: 1rem;">
+     <div style="width: 70%;">
+      <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0,0,0);">
+       <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+        <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">All Supplies</h3>
+       </div>
+      </div>
+
+
+      <div id="myTable" class="" style="margin: 0;padding: 10px;height: 55%;overflow-y: scroll;">
+       <div class="table-responsive">
+        <table class="table table-striped" style="height: 700px;">
+         <thead>
+          <tr>
+           <th scope="col">
+            <label class="control control--checkbox"></label>
+           </th>
+           <th scope="col">Component Inventory Indicator
+           </th>
+
+           <th scope="col">Component Name</th>
+           <th scope="col">Quantity</th>
+           <th scope="col">More Information</th>
+           <th scope="col">Edit</th>
+          </tr>
+         </thead>
+         <tbody>
+          <% Components.forEach(Component=> {
+           var getInventoryStatus = function(units,
+           minThreshold, maxThreshold) {
+           var status = {
+           color: 'black',
+           recommendation: ''
+           };
+           if(units <= minThreshold) { status.color='red' ; status.recommendation='Reorder Immediately, stock is low.' ;
+            } else if(units> minThreshold && units < maxThreshold) { status.color='yellow' ;
+             status.recommendation='Stock Levels Reaching minumthreshold, Schedule Reorder' ; } else if(units>=
+             maxThreshold &&
+             units < maxThreshold + 5) { status.color='green' ; status.recommendation='Stock is in good levels.' ; }
+              else { status.color='purple' ; status.recommendation='Overflowing, consider reducing order amount.' ; }
+              return status; }; var status=getInventoryStatus(Component.unitsInInventory, Component.minimumThreshold,
+              Component.maximumThreshold); %>
+              <tr scope="row">
+               <th scope="row">
+
+               </th>
+               <td>
+                <span style='color: <%= status.color %>'>●</span>
+                <%= Component.itemName %><br>
+                 <small>
+                  <%= status.recommendation %>
+                 </small>
+               </td>
+
+
+               <td>
+                <%= Component.itemName %>
+               </td>
+               <td>
+                <%= Component.unitsInInventory %>
+               </td>
+               <td><button onclick="fetchItemPerformanceNarrative(<%= Component.itemId %>,'thisWeek');" class="btn">More
+                 Information</button>
+               </td>
+
+               <td>
+                <button style="border: none; color: black;background-color: transparent;" class="btn-link" type="button"
+                 data-toggle="collapse" data-target="#componentEdit_<%= Component.itemId %>" aria-expanded="false">
+                 <span class="material-symbols-outlined">edit</span>
+                </button>
+               </td>
+              </tr>
+              <tr>
+               <td colspan="6">
+                <!-- The collapse content for the editing form -->
+                <div id="componentEdit_<%= Component.itemId %>" class="collapse">
+                 <form action="/api/editProducts/<%= Component.itemId %>" method="POST" class="form-horizontal">
+                  <div class="form-row">
+                   <div class="col">
+                    <label for="componentName">Component
+                     Name:</label>
+                    <input type="text" id="componentName" name="componentName" class="form-control"
+                     placeholder="Enter Component Name" value="<%= Component.itemName %>">
+                   </div>
+                   <div class="col">
+                    <label for="costPricePerUnit">Cost
+                     Price
+                     Per
+                     Unit:</label>
+                    <input type="number" id="costPricePerUnit" name="costPricePerUnit" class="form-control"
+                     placeholder="Enter Cost Price Per Unit" value="<%= Component.pricePerPiece %>">
+                   </div>
+                   <div class="col">
+                    <label for="sellByDate">Sell By Date:</label>
+                    <input class="form-control" type="date" id="sellByDate" name="sellByDate"
+                     value="<%= new Date(Component.sellByDate).toISOString().split('T')[0] %>">
+                   </div>
+
+                   <div class="mt-3">
+                    <button class="btn" type="submit">Save</button>
+                   </div>
+                 </form>
+                </div>
+               </td>
+              </tr>
+              <% }); %>
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
+
+
+     <div style="width: 30%;">
+      <div style="background-color: white;border-radius: 15px;border:  1px solid rgb(0, 0, 0);">
+       <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;">
+        <h3 style="font-weight: bold;font-size: 1.5rem;color: white;">Components
+         Running Low
+        </h3>
+        <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
+         Re Order
+         These Components
+        </h5>
+       </div>
+
+
+       <div id="myTable" class="container" style="margin: 0; ">
+        <div class="table-responsive ">
+         <table class="table table-striped">
+          <thead>
+           <tr>
+            <th scope="col">#</th>
+            <th scope="col">Component Name</th>
+            <th scope="col">Units In Inventory</th>
+            <th scope="col">Actions</th> <!-- New Column for actions -->
+           </tr>
+          </thead>
+          <tbody>
+           <% var index=0; Components.forEach((Component)=> {
+            if(Component.unitsInInventory < Component.minThreshold || Component.unitsInInventory <=0 ) { index++; %>
+             <tr>
+              <th scope="row">
+               <%= index %>
+              </th>
+              <td>
+               <%= Component.itemName %>
+              </td>
+              <td>
+               <%= Component.unitsInInventory %>
+              </td>
+              <td>
+               <!-- Reorder Button -->
+               <% if (Component.unitsInInventory <=0) { %>
+                <a class="btn btn-danger" href="/OrderProductsAndItems?reorderItem=<%= Component.itemId %>">Urgent
+                 Reorder</a>
+                <% } else { %>
+                 <a class="btn btn-primary"
+                  href="/OrderProductsAndItems?reorderItem=<%= Component.itemId %>">Reorder</a>
+                 <% } %>
+              </td>
+             </tr>
+             <% } }); %>
+          </tbody>
+
+
+         </table>
+        </div>
+       </div>
+
+
+
+
+
+      </div>
+     </div>
+
+
+
+
+
+    </div>
+
+
+
+
+   </div>
+
+   <div id="baseModal" class="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content" style="display: flex;flex-direction: column;width: 190%;margin: auto;">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+       <h3 id="productNameModal" class="modal-title font-weight-bold"
+        style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">
+        Name
+       </h3>
+
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body" style="background-color: white; margin-top: 1rem; border-radius: 15px; padding: 2rem;">
+       <div>
+        <div style="background-color: black; padding: 1rem;">
+         <h4 style="color: white; font-weight: 600;">Profitability</h4>
+        </div>
+        <div style="margin-top: 1rem;">
+
+         <div>
+          <button class="button" id="button1">Filter by This Week</button>
+          <button class="button" id="button2">Filter by Last Week</button>
+          <button class="button" id="button3">Filter By This Month</button>
+         </div>
+
+         <div>
+
+
+          <ul style="display: flex;padding: 30px;padding-left: 0px; gap: 2rem;">
+           <li
+            style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+            <h4 style="font-weight: 500;">Total Revenue Made</h4>
+            <h4 id="RevenueMade" style="font-weight: bold;">Amount</h4>
+           </li>
+
+           <li
+            style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+            <h4 style="font-weight: 500;">Total Profit Made</h4>
+            <h4 id="ProfitMade" style="font-weight: bold;">Amount</h4>
+           </li>
+
+           <li
+            style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+            <h4 style="font-weight: 500;">Impact To The Store</h4>
+            <div id="circle-container">
+             <div id="circle">
+              <div id="percentage"></div>
+             </div>
+             <div id="circle-border"></div>
+            </div>
+
+
+           </li>
+
+          </ul>
+         </div>
+
+        </div>
+       </div>
+       <div>
+        <div style="background-color: black; padding: 1rem;">
+         <h4 style="color: white; font-weight: 600;">Products linked to this Supply </h4>
+        </div>
+        <div style="margin-top: 1rem;">
+         <div></div>
+         <ul style="display: flex; padding: 20px; padding-left: 0px;">
+          <li
+           style="text-decoration: none; list-style: none; display: flex; align-items: left; border-left: 1px solid black; padding-left: 1rem;flex-direction: column;width: 900px;">
+           <div id="Supplies" style="max-height: 200px;overflow-y: scroll;">
+
+
+
+           </div>
+
+          </li>
+
+         </ul>
+        </div>
+       </div>
+
+       <div>
+        <div style="background-color: black; padding: 1rem;">
+         <h4 style="color: white; font-weight: 600;">Stock information </h4>
+        </div>
+        <div style="margin-top: 1rem;">
+         <div></div>
+         <ul style="display: flex; padding: 20px; padding-left: 0px;">
+          <li
+           style="text-decoration: none; list-style: none; display: flex; align-items: left; border-left: 1px solid black; padding-left: 1rem;flex-direction: column;width: 900px;">
+           <h4 id="estimatedReorderDate">"estimatedReorderDate"</h4>
+           <h4 id="estimatedAmountToOrder">"estimatedAmountToOrder"</h4>
+           <h4 id="itemHealth">"Item Health: "</h4>
+           <span id="healthIndicator"
+            style="width: 20px; height: 20px; border-radius: 50%; display: inline-block;"></span>
+
+
+
+          </li>
+
+         </ul>
+        </div>
+       </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer" style="background-color: white; padding: 1.5rem;">
+       <button type="button" class="btn" onclick="closeModal()">Close</button>
+       <div class="form-group">
+        <!-- inside the modal -->
+        <button id="btnReorder" onclick='' id="reorderButton" class="btn btn-primary">Reorder</button>
+
+       </div>
+      </div>
+
+     </div>
+    </div>
+   </div>
+
+
+   <!-- Add Component -->
+   <div id="popupFormComponent" style="">
+    <div class="form-container" style="margin-top: 20vh;border-radius: 10px;margin-left: 50vw;width: 40vw;">
+     <form id="ComponentForm" onsubmit="submitComponentForm(event)">
+
+      <!-- Item Name -->
+      <label for="itemName">Component Name:</label>
+      <input class="form-control" type="text" id="itemName" name="itemName" required>
+      <br><br>
+      <!-- Category -->
+      <label for="category">Select A Category:</label>
+      <select class="form-control" name="category" id="category" required>
+       <% Categories.forEach(category=> { %>
+        <option value="<%= category.categoryId %>">
+         <%= category.categoryName %>
+        </option>
+        <% }) %>
+      </select><br><br>
+
+      <!-- Unit of Measurement -->
+      <label for="unitOfMeasurement">Unit of Measurement:</label>
+      <select class="form-control" id="unitOfMeasurement" name="unitOfMeasurement" required>
+       <option value="0">Unit</option>
+       <option value="1">Kilogram</option>
+       <option value="2">Liter</option>
+       <option value="3">Grams</option>
+      </select><br>
+
+      <!-- Minimum Threshold -->
+      <label for="minimumThreshold">Minimum Threshold:</label>
+      <input class="form-control" type="number" id="minimumThreshold" name="minimumThreshold" min="1" required>
+      <br><br>
+
+      <!-- Maximum Threshold -->
+      <label for="maximumThreshold">Maximum Threshold:</label>
+      <input class="form-control" type="number" id="maximumThreshold" name="maximumThreshold" min="1" required>
+      <br><br>
+
+      <!-- Supplier No -->
+      <label for="supplier">Select A Supplier:</label>
+      <select class="form-control" name="supplier" id="supplier" required>
+       <% Supplier.forEach(supplier=> { %>
+        <option value="<%=supplier.supplierId%>">
+         <%= supplier.supplierName %>
+          <!-- Assuming the supplier object has an ' id' and 'name'
+                      property -->
+        </option>
+        <% }) %>
+      </select><br><br>
+
+      <!-- Submit Button -->
+      <input class="btn" type="submit" value="Add Item">
+     </form>
+    </div>
+   </div>
+
+   <!-- Floating Bar  -->
+   <div class="floating-btn-container">
+    <a id="showFormCompomentBtn" class="floating-btn" style="  background: #191716 " ;" onclick="OpenModal()">
+     <i class="material-icons"> add</i>
+    </a>
+   </div>
+
+  </section>
+
+
+
+
+
+
+
+  <script>
+
+   const percentageElement = document.getElementById('percentage');
+   const circleBorder = document.getElementById('circle-border');
+
+   const percentage = parseInt(percentageElement.innerText, 10);
+   const degree = (360 * percentage) / 100;
+
+   circleBorder.style.transform = `rotate(${degree}deg)`;
+
+
+
+   // Function to open the modal
+   function openModal() {
+    const modal = document.getElementById("baseModal");
+    modal.style.display = "block";
+   }
+
+   // Function to close the modal
+   function closeModal() {
+    const modal = document.getElementById("baseModal");
+    modal.style.display = "none";
+   }
+
+   // Close the modal when clicking outside of the modal content
+   window.onclick = function (event) {
+    const modal = document.getElementById("baseModal");
+    if (event.target == modal) {
+     modal.style.display = "none";
+    }
+   }
+
+   function getInventoryStatus(units, minThreshold, maxThreshold) {
+    var status = {
+     color: 'black',
+     recommendation: ''
+    };
+    if (units <= minThreshold) {
+     status.color = 'red';
+     status.recommendation = 'Reorder more, stock is low.';
+    } else if (units > minThreshold && units < maxThreshold) {
+     status.color = 'yellow';
+     status.recommendation = 'This is enough.';
+    } else if (units >= maxThreshold && units < maxThreshold + 5) {
+     status.color = 'green';
+     status.recommendation = 'Stock is in good levels.';
+    } else {
+     status.color = 'purple';
+     status.recommendation = 'Overflowing, consider reducing order amount.';
+    }
+    return status;
+   }
+
+   function submitComponentForm(event) {
+    // Prevent the form from submitting normally
+    event.preventDefault();
+
+    let form = document.getElementById("ComponentForm");
+    const currentDate = new Date().toISOString();
+
+    // Use the values directly from the form
+    const componentModel = {
+     categoryId: parseInt(form.category.value),
+     unitOfMeasurement: parseInt(form.unitOfMeasurement.value),
+     minimumThreshold: parseInt(form.minimumThreshold.value),
+     maximumThreshold: parseInt(form.maximumThreshold.value),
+     supplierId: parseInt(form.supplier.value),
+     itemName: form.itemName.value,  // Directly use the form value
+     pricePerUnit: 0, // You didn't have this field in the form, but I'm adding a default value
+     piecesPerUnit: 0, // Same as above
+     expiryDate: currentDate,
+     status: 0,  // Default value
+     unitsInInventory: 0  // Default value
+    };
+
+    console.log(componentModel);
+
+    // Use the Fetch API to send the component model
+    fetch('/CreateComponent', {
+     method: 'POST',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(componentModel)
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error('Network response was not ok');
+      }
+      return response.json();
+     })
+     .then(data => {
+      console.log(data);
+      closeFormComponent();
+      window.location.reload();
+     })
+     .catch(error => {
+      console.error('There was an error adding the component:', error);
+     });
+   }
+
+   function submitUpdateComponentForm(event) {
+    // Prevent the form from submitting normally
+    event.preventDefault();
+
+
+    let form = document.getElementById("ComponentForm");
+    const currentDate = new Date().toISOString();
+
+    // Check if a form element exists before extracting its value
+    const componentModel = {
+     categoryId: parseInt(form.category.value),
+     unitOfMeasurement: parseInt(form.unitOfMeasurement.value),
+     minimumThreshold: parseInt(form.minimumThreshold.value),
+     maximumThreshold: parseInt(form.maximumThreshold.value),
+     supplierId: parseInt(form.supplier.value),
+     itemName: "string",  // If you add an itemName input in the form, this can be updated
+     pricePerUnit: 0, // Default value
+     piecesPerUnit: 0, // Default value
+     expiryDate: new Date().toISOString(),
+     status: 0,  // Default value
+     unitsInInventory: 0  // Default value
+    };
+
+
+    console.log(componentModel);
+
+    // Use the Fetch API to send the component model
+    fetch('/CreateComponent', {
+     method: 'POST',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(componentModel)
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error('Network response was not ok');
+      }
+      return response.json();
+     })
+     .then(data => {
+      console.log(data);
+      closeFormComponent();
+      window.location.reload();
+     })
+     .catch(error => {
+      console.error('There was an error adding the component:', error);
+     });
+   }
+
+
+
+   // Show Component Form
+   document.getElementById('showFormCompomentBtn').addEventListener('click', function () {
+    document.getElementById('popupFormComponent').style.display = 'block';
+   });
+
+   // Close Component Form
+   function closeFormComponent() {
+    document.getElementById('popupFormComponent').style.display = 'none';
+   }
+
+
+   async function fetchAndDisplayLinkedProducts(itemId) {
+    try {
+     const url = `http://localhost:5358/Items/CalculateItemUsageInLinkedProducts/${itemId}`;
+     const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+     }
+
+     const data = await response.json();
+     const suppliesDiv = document.getElementById('Supplies');
+
+     // Clear any existing content
+     suppliesDiv.innerHTML = '';
+
+     data.itemUsages.forEach((usage) => {
+      const supplyInfo = document.createElement('div');
+      supplyInfo.style.cssText = "display: grid; grid-template-columns: 70% 30%; align-items: center; margin-top: 10px;";
+
+      supplyInfo.innerHTML = `
+        <h5>${usage.productName}</h5>
+        <h5>Impact on Product${usage.itemUsageProportion.toFixed(2)}%</h5>
+      `;
+
+      suppliesDiv.appendChild(supplyInfo);
+     });
+
+    } catch (error) {
+     console.error('There was a problem with your fetch operation:', error);
+    }
+   }
+
+
+   // Close the modal if clicked outside
+   window.onclick = function (event) {
+    if (event.target === modal) {
+     modal.style.display = 'none';
+    }
+   }
+   function filterTable() {
+    const searchInput = document.getElementById('searchInput');
+    const searchText = searchInput.value.toLowerCase();
+    const table = document.getElementById('myTable');
+    const rows = table.querySelectorAll('tbody tr');
+
+    if (searchText === '') {
+     // Reset table to original state
+     rows.forEach(row => {
+      row.style.display = '';
+      row.classList.remove('highlight');
+     });
+    } else {
+     // Perform table filtering
+     rows.forEach(row => {
+      const cells = Array.from(row.querySelectorAll('td'));
+      const rowText = cells.map(cell => cell.textContent.toLowerCase()).join(' ');
+
+      if (rowText.includes(searchText)) {
+       row.style.display = '';
+       row.classList.add('highlight');
+      } else {
+       row.style.display = 'none';
+      }
+     });
+    }
+   }
+
+   let modal = document.getElementById('popupFormComponent');
+
+
+
+   function validateAndHighlightFields() {
+    let hasInvalidFields = false;
+    const requiredFields = document.querySelectorAll('#ComponentForm [required]');
+
+    requiredFields.forEach(field => {
+     if (!field.value.trim()) {
+      field.classList.add('invalid-input');
+      hasInvalidFields = true;
+     } else {
+      field.classList.remove('invalid-input');
+     }
+    });
+
+    return !hasInvalidFields; // Return true if all fields are valid
+   }
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const requiredFields = document.querySelectorAll('#ComponentForm [required]');
+    requiredFields.forEach(field => {
+     field.addEventListener('focus', () => {
+      field.classList.remove('invalid-input');
+     });
+    });
+   });
+
+
+   document.addEventListener('DOMContentLoaded', () => {
+    fetchAndUpdateMetrics();
+   });
+
+   function setBoldForNumbers(id, text, number) {
+    const element = document.getElementById(id);
+    element.innerHTML = `${text} <span style="font-weight:bold">${number}</span>`;
+   }
+
+
+   async function fetchAndUpdateMetrics() {
+    const fetchOptions = { // Fetch options
+     method: 'GET',
+     headers: {
+      'Content-Type': 'application/json',
+     }
+    };
+
+    try {
+     // First API call
+     const stockOutResp = await fetch('http://localhost:5358/Items/StockOutRiskIndicator', fetchOptions);
+     const stockOutData = await stockOutResp.json();
+
+     // Update DOM
+     setBoldForNumbers('totalNumberOfItems', 'Total Number of Items:', Math.round(stockOutData.totalNumberOfItems));
+     setBoldForNumbers('itemsBelowMinThreshold', 'Items Below Minimum Threshold:', Math.round(stockOutData.itemsBelowMinThreshold));
+     setBoldForNumbers('stockOutRiskStatus', 'Stock Out Risk Status:', stockOutData.stockOutRiskStatus);
+
+     const statusElement = document.getElementById('stockOutRiskStatus');
+
+     switch (stockOutData.stockOutRiskStatus) {
+      case "Immediate Attention":
+       statusElement.style.color = 'red';
+       break;
+      case "Caution":
+       statusElement.style.color = 'orange';
+       break;
+      case "Good":
+       statusElement.style.color = 'green';
+       break;
+      case "No Items":
+       statusElement.style.color = 'gray';
+       break;
+      default:
+       statusElement.style.color = 'black';
+     }
+
+
+     // Second API call
+     const avgInvResp = await fetch('http://localhost:5358/Items/AverageInventoryTurnover', fetchOptions);
+     const avgInvData = await avgInvResp.json();
+
+     // Update DOM
+     setBoldForNumbers('averageInventoryValue', 'Average Inventory Value:', avgInvData.averageInventoryValue.toFixed(2));
+     setBoldForNumbers('totalSalesValue', 'Total Sales Value:', avgInvData.totalSalesValue.toFixed(2));
+     setBoldForNumbers('averageInventoryTurnoverRatio', 'Average Inventory Turnover Ratio:', avgInvData.averageInventoryTurnoverRatio.toFixed(2));
+
+
+     // Third API call
+     const totalValResp = await fetch('http://localhost:5358/Items/TotalValueAndSales', fetchOptions);
+     const totalValData = await totalValResp.json();
+     console.log(totalValData);
+
+
+     setBoldForNumbers('totalInventoryValue', 'Total Inventory Value: R', totalValData.totalInventoryValue.toFixed(2));
+     setBoldForNumbers('totalSalesValueOne', 'Total Sales Value: R', totalValData.totalSalesValue.toFixed(2));
+     setBoldForNumbers('areSalesEnough', 'Will Cover Cost of Goods:', totalValData.areSalesEnough);
+    } catch (error) { // Error handling
+     console.error('Fetch Error:', error);
+    }
+   }
+
+
+
+   function renderItemsTable(items) {
+    const tableBody = document.querySelector('#myTable tbody');
+    tableBody.innerHTML = '';  // Clear the existing table rows
+
+    items.forEach((item, index) => {
+     let stockStatus;
+     let stockRecommendation;
+
+     if (item.unitsInInventory <= item.minimumThreshold) {
+      stockStatus = 'red';
+      stockRecommendation = 'Reorder more, stock is low.';
+     } else if (
+      item.unitsInInventory > item.minimumThreshold &&
+      item.unitsInInventory < item.maximumThreshold
+     ) {
+      stockStatus = 'yellow';
+      stockRecommendation = 'This is enough.';
+     } else if (item.unitsInInventory >= item.maximumThreshold) {
+      stockStatus = 'green';
+      stockRecommendation = 'Stock is in good levels.';
+     } else {
+      stockStatus = 'purple';
+      stockRecommendation = 'Overflowing, consider reducing order amount.';
+     }
+
+     const row = `
+      < tr >
+<th scope="row">${index + 1}</th>
+<td>
+<span style="color: ${stockStatus};">●</span>
+${item.itemName}<br>
+<small>${stockRecommendation}</small>
+</td>
+<td>${item.itemName}</td>
+<td>${item.unitsInInventory}</td>
+<td><button onclick=fetchItemPerformanceNarrative(${item.itemId}, 'thisWeek'); class="btn">More Information</button></td >
+      <td>
+       <button style="border: none; color: black;" class="btn-link" type="button" data-toggle="collapse" data-target="#componentEdit_${item.ItemId}" aria-expanded="false">
+        <span class="material-symbols-outlined">edit</span>
+       </button>
+      </td>
+</ >
+      <tr>
+       <td colspan="6">
+<!-- The collapse content for the editing form -->
+        <div id="componentEdit_${item.itemId}" class="collapse">
+         <!-- Your form for editing the component goes here -->
+        </div>
+       </td>
+      </tr>
+     `;
+
+     tableBody.insertAdjacentHTML('beforeend', row);  // Insert the new row at the end of the table body
+    });
+   }
+
+   async function fetchFilteredItems(stockLevel) {
+    try {
+     const response = await fetch(`/ ItemsByStockLevels / ${stockLevel} `, {
+      method: "GET",
+      headers: {
+       "Content-Type": "application/json",
+      },
+     });
+
+     if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status} `);
+     }
+
+     const items = await response.json();
+     renderItemsTable(items);
+    } catch (error) {
+     console.error("Error:", error);
+    }
+   }
+
+   function clearFilters() {
+    fetch('/getItems', {
+     method: 'GET',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error(`HTTP error! status: ${response.status} `);
+      }
+      return response.json();
+     })
+     .then(items => {
+      renderItemsTable(items);
+     })
+     .catch(error => {
+      console.error('Error:', error);
+     });
+   }
+
+
+   function fetchMostUsedItems() {
+    fetch('/MostUsedItems', {
+     method: 'GET',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error(`HTTP error! status: ${response.status} `);
+      }
+      return response.json();
+     })
+     .then(items => {
+      renderItemsTable(items);
+     })
+     .catch(error => {
+      console.error('Error:', error);
+     });
+   }
+
+   function fetchItemsExpiringSoon() {
+    fetch(`/ ItemsExpiringSoon / ${7} `, {
+     method: 'GET',
+     headers: {
+      'Content-Type': 'application/json',
+     },
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error(`HTTP error! status: ${response.status} `);
+      }
+      return response.json();
+     })
+     .then(items => {
+      renderItemsTable(items);
+     })
+     .catch(error => {
+      console.error('Error:', error);
+     });
+   }
+
+   let ItemId = null;
+
+   async function fetchItemPerformanceNarrative(itemId, timeFrame) {
+    ItemId = itemId;
+    let Reorder = document.getElementById("btnReorder");
+    Reorder.onclick = function () {
+     window.location.href = `/OrderProductsAndItems?reorderItem=${itemId}`;
+    };
+
+    try {
+     const salesUrl = `http://localhost:5358/Items/CalculateItemSalesAndProfit/${itemId}/${timeFrame}`;
+     const impactUrl = `http://localhost:5358/Items/ItemImpact/${itemId}`;
+     const estimateReorderUrl = `http://localhost:5358/Items/EstimateReorderDateAndQuantity/${itemId}`;
+     // Fetch sales and profit data
+     const salesResponse = await fetch(salesUrl, {
+      method: 'GET',
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!salesResponse.ok) {
+      throw new Error(`HTTP error! status: ${salesResponse.status}`);
+     }
+
+     fetchAndDisplayLinkedProducts(itemId);
+     const salesData = await salesResponse.json();
+
+     // Fetch impact data
+     const impactResponse = await fetch(impactUrl, {
+      method: 'GET',
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!impactResponse.ok) {
+      throw new Error(`HTTP error! status: ${impactResponse.status}`);
+     }
+
+     const impactData = await impactResponse.json();
+
+     // Fetch estimated reorder data
+     const estimateReorderResponse = await fetch(estimateReorderUrl, {
+      method: 'GET',
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!estimateReorderResponse.ok) {
+      throw new Error(`HTTP error! status: ${estimateReorderResponse.status}`);
+     }
+
+     const estimateReorderData = await estimateReorderResponse.json();
+
+     // Combine all the fetched data
+     const combinedData = {
+      salesData,
+      impactPercentage: impactData.impactPercentage,
+      estimateReorderData
+     };
+
+     console.log(combinedData);
+
+     // Update the modal with the combined data
+     updateModal(combinedData);
+     openModal();
+
+    } catch (error) {
+     console.error('There was a problem with your fetch operation:', error);
+    }
+
+
+
+
+
+    function updateModal(data) {
+     // Update product name if you have that data
+     // document.getElementById('productNameModal').innerText = data.productName;
+
+     console.log(data)
+     document.getElementById('RevenueMade').innerText = `R${data.salesData.totalRevenue.toFixed(2)}`;
+     document.getElementById('ProfitMade').innerText = `R${data.salesData.totalProfit.toFixed(2)}`;
+
+
+     // Update the circle percentage based on impact data
+     const percentageElement = document.getElementById('percentage');
+     const circleBorder = document.getElementById('circle-border');
+
+     const impactPercentage = data.impactPercentage.toFixed(2);
+     percentageElement.innerText = `${impactPercentage}%`;
+     console.log(impactPercentage)
+
+     const degree = (360 * impactPercentage / 100) - 90;  // Subtracting 90 to adjust for initial rotation
+     circleBorder.style.transform = `rotate(${degree}deg)`;
+
+     // Optionally, you can update the 'itemHealth' field based on some criteria
+     // Example:
+     // Update item health and color indicator
+     // Update estimated reorder date and amount
+     document.getElementById('estimatedReorderDate').innerText = `Estimated Reorder Date: ${data.estimateReorderData.estimatedReorderDate}`;
+     document.getElementById('estimatedAmountToOrder').innerText = `Estimated Amount to Order: ${data.estimateReorderData.estimatedAmountToOrder}`;
+
+     // Directly use itemHealth from the backend
+     document.getElementById('itemHealth').innerText = `Item Health: ${data.estimateReorderData.itemHealth}`;
+
+     // Set the health color indicator
+     let healthIndicator = document.getElementById('healthIndicator');
+     if (data.estimateReorderData.itemHealth === "Good") {
+      healthIndicator.style.backgroundColor = "green";
+     } else {
+      healthIndicator.style.backgroundColor = "red";
+     }
+
+     // Optionally, you can check the estimated reorder date to adjust the item health
+     let reorderDate = new Date(data.estimateReorderData.estimatedReorderDate);
+     let currentDate = new Date();
+     if (reorderDate <= currentDate) {
+      document.getElementById('itemHealth').innerText = "Item Health: Immediate Attention Needed";
+      healthIndicator.style.backgroundColor = "orange";
+     }
+
+    }
+   }
+
+   // Set up event listeners for the buttons
+   document.getElementById('button1').addEventListener('click', () => fetchItemPerformanceNarrative(ItemId, 'thisWeek'));
+   document.getElementById('button2').addEventListener('click', () => fetchItemPerformanceNarrative(ItemId, 'lastWeek'));
+   document.getElementById('button3').addEventListener('click', () => fetchItemPerformanceNarrative(ItemId, 'thisMonth'));
+
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>

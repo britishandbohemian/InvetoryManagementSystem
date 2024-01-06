@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+
+ <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="/css/styles.css">
+ <link rel="stylesheet" href="css/style.css">
+
+
+ <!-- Bootstrap JavaScript -->
+ <!-- jQuery, Popper.js, and Bootstrap JavaScript -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+
+ <title>View Categories</title>
+
+ <style>
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+  /* Default button styling */
+  .button {
+   background-color: #FF0000;
+   border: 3px solid #191716;
+   color: white;
+   padding: 10px;
+   margin: 5px;
+   cursor: pointer;
+  }
+
+  .custom-table-responsive {
+   margin: 2rem;
+   background-color: white !important;
+   padding: 20px;
+   border-radius: 15px;
+  }
+
+  .modal-dialog {
+   max-width: 500px;
+   margin: -2.25rem auto;
+  }
+
+
+  /* Modal Styles */
+  .modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.4);
+   padding-top: 60px;
+  }
+
+  .modal-content {
+   top: 4;
+   background-color: #fefefe;
+   padding: 1REM;
+   border: 1px solid #888;
+   scale: 0.85;
+  }
+
+  .btn {
+   background-color: #FF0000;
+   color: white;
+   border: 3px solid #191716;
+  }
+
+
+  .close-btn {
+   cursor: pointer;
+  }
+
+
+  #searchbar {
+   position: fixed;
+   width: 100%;
+   z-index: 2;
+   background-color: #fcfcfc;
+   height: 11vh;
+   display: grid;
+   grid-template-columns: 60% 1fr;
+   align-items: center;
+   flex-direction: row;
+   justify-content: left;
+   padding-right: 4rem;
+   border: 1px solid 1px solid rgb(230 230 230);
+  }
+
+  #searchbarInput {
+   text-align: center;
+   font-size: 0.8em;
+   width: 100%;
+   height: 2.3rem;
+   background-color: #ececec;
+   border: 1px #cfcfcf solid;
+   border-radius: 24px;
+   padding-left: 2.5rem;
+  }
+
+  #circle-container {
+   position: relative;
+   width: 100px;
+   height: 100px;
+  }
+
+  #circle {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background: lightgray;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  #percentage {
+   font-size: 24px;
+  }
+
+  #circle-border {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   border: 8px solid transparent;
+   border-top-color: rgb(255, 0, 0);
+   transform-origin: 50% 50%;
+   transform: rotate(-90deg);
+  }
+ </style>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+
+ <%- include('../NavbarAdmin') %>
+  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
+   <div class="shadowNav" style="    
+z-index: 2;
+background-color: #fcfcfc;
+display: grid;
+height: 11vh;
+grid-template-columns: 60% 1fr;
+align-items: center;
+flex-direction: row;
+padding-left:  4rem;
+position: fixed;
+width: 100%;
+justify-content: left;
+border: 1px solid 1px solid rgb(230 230 230);
+
+">
+    <h6 style="   font-weight: 800;
+font-size: 1.5em;
+">Categories
+
+    </h6>
+
+    <div style="display: flex;">
+
+
+
+     <input id="itemsSearchInput" class="shadowNav" style="text-align: center;
+font-size: 0.8em;
+width: 300px;
+height: 2.3rem;
+background-color: #ececec;
+border: 1px #cfcfcf solid;
+border-radius: 24px;
+" type="text" placeholder="Search Inventory">
+     <i style="position: relative;
+left: 1.2rem; 
+top: 0.5rem; 
+font-size: 0.8em;
+color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;" class="material-symbols-outlined">
+       search
+      </span></i>
+
+
+
+
+
+    </div>
+
+   </div>
+
+
+
+
+   <!-- center -->
+   <div style="height: 400px;width: 95%;margin: 8rem auto">
+
+
+
+
+
+    <div style="display: flex;gap: 1rem;">
+     <div style="width: 100%;border: 1px solid black;border-radius: 15px;">
+      <!-- Main Categories Table -->
+      <div style="background-color: white;border-radius: 15px;">
+       <div style="padding: 3rem 2rem; background-color: #191716;border-radius: 15px;">
+        <h3 style="font-weight: bold; font-size: 1.5rem;color: #F7F4F3;">All Categories</h3>
+       </div>
+       <div class="table-responsive">
+        <table class="table table-striped">
+         <thead>
+          <tr>
+           <th scope="col"><!--... existing checkbox --></th>
+           <th scope="col">Action</th>
+           <th scope="col">Category Name</th>
+           <th scope="col">Number Of Products</th>
+           <th scope="col">How Much is this Worth?</th>
+          </tr>
+         </thead>
+         <tbody id="categoryTableBody">
+
+          <% Categories.forEach(category=> { %>
+           <tr scope="row">
+            <th scope="row"><!--... existing checkbox --></th>
+            <td style="display:flex; gap:1rem;">
+             <button class="edit-btn"
+              style="display:flex; align-items:center; background-color:transparent; color:black; border:none;"
+              onclick="toggleEditCategory('<%= category.categoryId %>')">
+              <span class="material-symbols-outlined">edit</span>
+             </button>
+
+             <button class="btn" style="border: none;" onclick="fetchCategoryNarrative(<%=category.categoryId %>)">More
+              information</button>
+            </td>
+
+            <td>
+             <span class="category-name" id="categoryName_<%= category.categoryId %>">
+              <%= category.categoryName %>
+             </span>
+
+            </td>
+            <td>
+             <%= category.products.length %>
+            </td>
+
+            <td>
+             R <%= category.categoryWorth %>
+            </td>
+
+
+           </tr>
+           <tr class="spacer">
+            <td colspan="100"></td>
+           </tr>
+           <% }); %>
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+
+
+
+
+
+    <!-- Form to add Category -->
+
+
+
+  </section>
+
+
+  <!-- Category Modal -->
+  <div id="categoryModal" class="modal">
+   <div class="modal-content" style="padding: 2rem; margin-top: 3rem; width: 40%; margin: 3rem auto auto auto;">
+    <form id="categoryForm" method="post" action="/api/categories" style="padding: 2rem;">
+     <label for="categoryName">Category Name:</label>
+     <input class="form-control" type="text" id="categoryName" name="categoryName" required><br>
+     <input style="margin-top: 2rem;" class="btn" type="submit" value="Add Category">
+    </form>
+   </div>
+  </div>
+
+
+  <!-- Base Modal -->
+
+  <div id="baseModal" class="modal" style="">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="display: flex;flex-direction: column;width: 150%;margin: auto;">
+
+     <!-- Modal Header -->
+     <div class="modal-header" style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+      <h3 id="productNameModal" class="modal-title font-weight-bold"
+       style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">
+       Name
+      </h3>
+
+     </div>
+
+     <!-- Modal Body -->
+     <div class="modal-body" style="background-color: white; margin-top: 1rem; border-radius: 15px; padding: 2rem;">
+      <div>
+       <div style="background-color: black; padding: 1rem;">
+        <h4 style="color: white; font-weight: 600;">Profitability</h4>
+       </div>
+       <div style="margin-top: 1rem;">
+
+        <div>
+         <button class="button" id="button1">Filter by This Week</button>
+         <button class="button" id="button2">Filter by Last Week</button>
+         <button class="button" id="button3">Filter By This Month</button>
+        </div>
+
+        <div>
+
+
+         <ul style="display: flex;padding: 30px;padding-left: 0px; gap: 2rem;">
+          <li
+           style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+           <h4 style="font-weight: 500;">Total Revenue Made</h4>
+           <h4 id="RevenueMade" style="font-weight: bold;">Amount</h4>
+          </li>
+
+          <li
+           style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+           <h4 style="font-weight: 500;">Total Profit Made</h4>
+           <h4 id="ProfitMade" style="font-weight: bold;">Amount</h4>
+          </li>
+
+          <li
+           style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+           <h4 style="font-weight: 500;">Impact To The Store</h4>
+           <div id="circle-container">
+            <div id="circle">
+             <div id="percentage">50</div>
+            </div>
+            <div id="circle-border"></div>
+           </div>
+
+          </li>
+
+         </ul>
+        </div>
+
+       </div>
+      </div>
+      <div>
+       <div style="background-color: black; padding: 1rem;">
+        <h4 style="color: white; font-weight: 600;">Performance Information</h4>
+       </div>
+       <div style="margin-top: 1rem;">
+
+        <ul style="display: flex; padding: 20px; padding-left: 0px;flex-direction: column;">
+         <li
+          style="text-decoration: none; list-style: none; display: flex; align-items: left; border-left: 1px solid black; padding-left: 1rem;flex-direction: column;width: 900px;">
+          <div id="Supplies" style="">
+           <h4>Best Days</h4>
+           <div style="width: 500px;">
+            <canvas style="height: 300px;" id="bestDaysChart"></canvas>
+           </div>
+           <div>
+           </div>
+
+
+          </div>
+
+         <li
+          style="text-decoration: none; list-style: none; display: flex; align-items: left; border-left: 1px solid black; padding-left: 1rem;flex-direction: column;width: 900px;">
+          <div id="Supplies" style="">
+           <h4 id="BestMonth" style="width: 485px;"></h4>
+
+
+
+          </div>
+
+         </li>
+
+        </ul>
+       </div>
+      </div>
+     </div>
+
+     <!-- Modal Footer -->
+     <div class=" modal-footer" style="margin-top: 1rem; background-color: white; padding: 1.5rem;">
+      <button type="button" class="btn" onclick="closeModal()">Close</button>
+
+     </div>
+    </div>
+
+   </div>
+  </div>
+
+  <!-- Floating Bar  -->
+  <div class="floating-btn-container">
+   <a id="showFormCompomentBtn" class="floating-btn" style=" background: #191716 " onclick=" openCategoryModal()">
+    <i class="material-icons"> add</i>
+   </a>
+  </div>
+  <script>
+
+   document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('itemsSearchInput');
+
+    searchInput.addEventListener('keyup', function () {
+     const query = searchInput.value.toLowerCase();
+     const tableBody = document.getElementById('categoryTableBody');
+     const rows = tableBody.querySelectorAll('tr');
+
+     rows.forEach(row => {
+      const categoryNameCell = row.querySelector('.category-name');
+      if (categoryNameCell) {
+       const categoryName = categoryNameCell.textContent.toLowerCase();
+
+       if (categoryName.includes(query)) {
+        row.style.display = '';
+       } else {
+        row.style.display = 'none';
+       }
+      }
+     });
+    });
+   });
+
+
+   function filterCategoriesByProfit(profitLevel) {
+    const tableBody = document.getElementById('categoryTableBody');
+    const rows = tableBody.querySelectorAll('tr');
+
+    rows.forEach(row => {
+     const profitCell = row.querySelector('.profit-margin');
+     if (profitCell) {
+      const profitValue = parseFloat(profitCell.textContent);
+
+      if (profitLevel === 'low' && profitValue < 20) {
+       row.style.display = '';
+      } else if (profitLevel === 'medium' && profitValue >= 20 && profitValue < 50) {
+       row.style.display = '';
+      } else if (profitLevel === 'high' && profitValue >= 50) {
+       row.style.display = '';
+      } else {
+       row.style.display = 'none';
+      }
+     }
+    });
+   }
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const categorySearchInput = document.getElementById('categorySearchInput');  // Make sure your input ID matches
+
+    categorySearchInput.addEventListener('keyup', function (event) {
+     const query = event.target.value.toLowerCase();
+     const rows = document.querySelectorAll("#categoryTableBody tr");
+
+     rows.forEach((row) => {
+      const categoryNameCell = row.cells[2];  // Assuming category name is in the 3rd column
+
+      if (categoryNameCell && categoryNameCell.innerText.trim() !== "") {
+       const categoryName = categoryNameCell.innerText.toLowerCase();
+       row.style.display = categoryName.includes(query) ? "" : "none";
+      } else {
+       row.style.display = "none";  // Hide rows that don't have category name
+      }
+     });
+    });
+   });
+
+   function toggleEditCategory(categoryId) {
+    const editDiv = document.getElementById(`categoryEdit_${categoryId}`);
+    const nameSpan = document.getElementById(`categoryName_${categoryId}`);
+    if (editDiv.style.display === 'none') {
+     editDiv.style.display = 'block';
+     nameSpan.style.display = 'none';
+    } else {
+     editDiv.style.display = 'none';
+     nameSpan.style.display = 'block';
+    }
+   }
+
+   function saveCategory(categoryId) {
+    // Get the value from the input field
+    const categoryName = document.querySelector(`#categoryEdit_${categoryId} .category-input`).value;
+
+    // Create the DTO
+    const categoryUpdateDto = {
+     CategoryId: categoryId,
+     CategoryName: categoryName
+    };
+
+    // Define the API endpoint URL
+    const apiUrl = `/UpdateCategoryName/${categoryId}`;
+
+    // Fetch the route
+    fetch(apiUrl, {
+     method: 'POST',
+     headers: {
+      'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(categoryUpdateDto)
+    })
+     .then(response => {
+      if (!response.ok) {
+       throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+     })
+     .then(data => {
+      console.log("Category updated successfully:", data);
+      // Optionally, hide the edit div after saving
+      document.querySelector(`#categoryEdit_${categoryId}`).style.display = 'none';
+     })
+     .catch(error => {
+      console.error("Error updating category:", error);
+     });
+   }
+
+
+   // Get the modal element
+   let categoryModal = document.getElementById('categoryModal');
+
+   // Close the modal if clicked outside of the modal content
+   window.onclick = function (event) {
+    if (event.target === categoryModal) {
+     categoryModal.style.display = 'none';
+    }
+   }
+
+   // Open the Category modal
+   function openCategoryModal() {
+    document.getElementById("categoryModal").style.display = "block";
+   }
+
+   // Close the Category modal
+   function closeCategoryModal() {
+    document.getElementById("categoryModal").style.display = "none";
+   }
+
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const nameContainer = document.getElementById("nameContainer");
+    const nameText = document.getElementById("nameText");
+    const editButton = document.getElementById("editButton");
+
+    editButton.addEventListener("click", function () {
+     // Remove current nameText and editButton
+     nameText.remove();
+     editButton.remove();
+
+     // Create editable text box
+     const textBox = document.createElement("input");
+     textBox.type = "text";
+     textBox.id = "nameTextBox";
+     textBox.value = nameText.textContent;
+
+     // Create save button
+     const saveButton = document.createElement("button");
+     saveButton.id = "saveButton";
+     saveButton.textContent = "Save";
+
+     // Append text box and save button
+     nameContainer.appendChild(textBox);
+     nameContainer.appendChild(saveButton);
+
+     // Listen for save button click
+     saveButton.addEventListener("click", function () {
+      // Update nameText with new value and revert back to original state
+      nameText.textContent = textBox.value;
+      textBox.remove();
+      saveButton.remove();
+      nameContainer.appendChild(nameText);
+      nameContainer.appendChild(editButton);
+     });
+    });
+   });
+
+   document.addEventListener("DOMContentLoaded", function () {
+    const editButtons = document.querySelectorAll(".edit-btn");
+    const saveButtons = document.querySelectorAll(".save-btn");
+
+    editButtons.forEach((button, index) => {
+     button.addEventListener("click", function () {
+      const row = button.closest("tr");
+      const nameSpan = row.querySelector(".category-name");
+      const editDiv = row.querySelector(".category-edit");
+
+      // Toggle visibility
+      nameSpan.style.display = "none";
+      editDiv.style.display = "block";
+     });
+    });
+
+    saveButtons.forEach((button, index) => {
+     button.addEventListener("click", function () {
+      const row = button.closest("tr");
+      const nameSpan = row.querySelector(".category-name");
+      const editInput = row.querySelector(".category-input");
+      const editDiv = row.querySelector(".category-edit");
+
+      // Update the name and toggle visibility
+      nameSpan.textContent = editInput.value;
+      nameSpan.style.display = "block";
+      editDiv.style.display = "none";
+
+      // Here, you can also send the updated name to the server
+      // For example:
+      // updateCategoryNameOnServer(editInput.value);
+     });
+    });
+   });
+
+
+   async function fetchFilteredCategories(stockLevel) {
+    try {
+     const response = await fetch(`/FilterCategories//${stockLevel}`, {
+      method: "GET",
+      headers: {
+       "Content-Type": "application/json",
+      },
+     });
+     if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+     }
+
+     const categories = await response.json();
+     renderCategoriesTable(categories);
+    } catch (error) {
+     console.error("Error:", error);
+    }
+   }
+
+   function renderCategoriesTable(categories) {
+    const tableBody = document.querySelector('#categoriesTable tbody');
+    tableBody.innerHTML = '';  // Clear the existing table rows
+
+    categories.forEach((category, index) => {
+     const row = `
+<tr>
+<th scope="row">${index + 1}</th>
+<td>
+  <button class="edit-btn" onclick="toggleEditCategory('${category.categoryId}');">
+    <span class="material-symbols-outlined">edit</span>
+  </button>
+</td>
+<td>${category.categoryName}</td>
+<td>${category.products.length}</td>
+<td>${category.items.length}</td>
+<td>${parseFloat(category.profitMargin).toFixed(2)}%</td>
+<td>${JSON.stringify(category.seasonalTrends)}</td>
+</tr>
+<tr class="spacer">
+  <td colspan="100"></td>
+</tr>
+`;
+
+     tableBody.insertAdjacentHTML('beforeend', row);  // Insert the new row at the end of the table body
+    });
+   }
+
+
+
+
+   // Function to open the modal
+   function openModal() {
+    const modal = document.getElementById("baseModal");
+    modal.style.display = "block";
+   }
+
+   // Function to close the modal
+   function closeModal() {
+    const modal = document.getElementById("baseModal");
+    modal.style.display = "none";
+   }
+   async function fetchBestDays(categoryId) {
+    const url = `http://localhost:5358/api/categories/${categoryId}/bestdays`;
+    const options = {
+     method: 'GET',
+     headers: {
+      'Content-Type': 'application/json',
+      // Add other headers if necessary
+     },
+    };
+
+    const response = await fetch(url, options);
+    if (response.ok) {
+     const data = await response.json();
+     const ctx = document.getElementById('bestDaysChart').getContext('2d');
+     new Chart(ctx, {
+      type: 'bar',
+      data: {
+       labels: data.labels.filter(day => day !== 'Saturday' && day !== 'Sunday'),
+       datasets: [{
+        label: 'Best Sales Days',
+        data: data.data,
+        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+       }]
+      },
+      options: {
+       responsive: true,
+       maintainAspectRatio: false, // Disable maintaining aspect ratio
+       scales: {
+        y: {
+         beginAtZero: true
+        }
+       },
+       animation: {
+        duration: 0
+       }
+      }
+     });
+    } else {
+     console.error('Failed to fetch best days data');
+    }
+   }
+
+   function fetchCategoryNarrative(categoryId) {
+    openModal();  // Assuming openModal is a function that shows the modal
+    const timeFrame = 'ThisWeek';  // You can change this based on what button is clicked
+    const url = `http://localhost:5358/api/categories/${categoryId}/metrics?timeFrame=${timeFrame}`;
+    const options = {
+     method: 'GET',
+     headers: {
+      'Content-Type': 'application/json',
+      // Other headers here
+     },
+    };
+
+    fetch(url, options)
+     .then(response => response.json())
+     .then(data => {
+      document.getElementById('RevenueMade').innerText = data.totalSales.toFixed(2);
+      document.getElementById('ProfitMade').innerText = data.totalProfit.toFixed(2);
+      document.getElementById('BestMonth').innerHTML = data.bestMonthAndSeason;
+      const impactPercentage = document.getElementById('percentage');
+      impactPercentage.innerText = data.categoryImpact.toFixed(2);
+
+      // Fetch best days data and populate chart
+      fetchBestDays(categoryId);
+
+      openModal();
+     })
+     .catch(error => {
+      console.error('Error fetching data:', error);
+     });
+   }
+
+
+  </script>
+
+
+
+</body>
+
+</html>
