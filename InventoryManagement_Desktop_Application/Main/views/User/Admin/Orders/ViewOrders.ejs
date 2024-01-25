@@ -2,110 +2,94 @@
 <html lang="en">
 <!-- Ignore This Styling -->
 
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=0.2">
- <link rel="stylesheet" href="/css/style.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
- <link rel="stylesheet" href="/css/styles.css">
- <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<%- include('../DefaultHead') %>
+
+  <title>View Orders</title>
+  <style>
+    .table-responsive {
+      max-height: 600px;
+      /* or whatever height you want */
+      overflow-y: auto;
+      display: block;
+      margin-bottom: 3rem;
+    }
+
+    .form-control {
+      border: 1px solid black;
+      border-bottom: 5px solid black;
+    }
 
 
- <title>View Orders</title>
- <style>
-  .table-responsive {
-   max-height: 600px;
-   /* or whatever height you want */
-   overflow-y: auto;
-   display: block;
-   margin-bottom: 3rem;
-  }
-
-  .form-control {
-   border: 1px solid black;
-   border-bottom: 5px solid black;
-  }
-
-
-  .modal {
-   padding-top: 3rem;
-  }
+    .modal {
+      padding-top: 3rem;
+    }
 
 
 
 
-  .custom-table-responsive {
-   margin: 2rem;
-   background-color: white !important;
-   padding: 20px;
-   border-radius: 15px;
-  }
+    .custom-table-responsive {
+      margin: 2rem;
+      background-color: white !important;
+      padding: 20px;
+      border-radius: 15px;
+    }
 
-  #searchbar {
-   position: fixed;
-   width: 100%;
-   z-index: 2;
-   background-color: #fcfcfc;
-   height: 11vh;
-   display: grid;
-   grid-template-columns: 60% 1fr;
-   align-items: center;
-   flex-direction: row;
-   justify-content: left;
-   padding-right: 4rem;
-   border: 1px solid 1px solid rgb(230 230 230);
-  }
+    #searchbar {
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+      background-color: #fcfcfc;
+      height: 11vh;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      align-items: center;
+      flex-direction: row;
+      justify-content: left;
+      padding-right: 4rem;
+      border: 1px solid 1px solid rgb(230 230 230);
+    }
 
-  #searchbarInput {
-   text-align: center;
-   font-size: 0.8em;
-   width: 100%;
-   height: 2.3rem;
-   background-color: #ececec;
-   border: 1px #cfcfcf solid;
-   border-radius: 24px;
-   padding-left: 2.5rem;
-  }
+    #searchbarInput {
+      text-align: center;
+      font-size: 0.8em;
+      width: 100%;
+      height: 2.3rem;
+      background-color: #ececec;
+      border: 1px #cfcfcf solid;
+      border-radius: 24px;
+      padding-left: 2.5rem;
+    }
 
 
-  .btn {
-   background-color: #FF0000;
-   color: white;
-   border: 3px solid #191716;
-  }
- </style>
+    .btn {
+      background-color: #FF0000;
+      color: white;
+      border: 3px solid #191716;
+    }
+  </style>
 
- <!-- To Do Add A Filter By Date Method Add Filters -->
+  <!-- To Do Add A Filter By Date Method Add Filters -->
 
-</head>
+  <body>
 
-<body>
+    <%- include('../NavbarAdmin') %>
 
- <%- include('../NavbarAdmin') %>
+      <!-- Floating Bar  -->
+      <div class="floating-btn-container" style="bottom: 2rem;right:3rem;">
+        <button onclick="window.location.href='/OrderProductsAndItems'"
+          style="background-color: #191716;border: none;border-radius: 70px;align-items: center;justify-content: center;display: flex;gap: 1rem;padding: 20px;border: 4px solid #191716;">
+          <h5 style="color:#F7F4F3;display: flex;align-items: center;justify-content: center;height: 100%;margin: 0;">
+            Order Products
+            And Items
+          </h5>
+        </button>
+      </div>
 
-  <!-- Floating Bar  -->
-  <div class="floating-btn-container" style="bottom: 2rem;right:3rem;">
-   <button onclick="window.location.href='/OrderProductsAndItems'"
-    style="background-color: #191716;border: none;border-radius: 70px;align-items: center;justify-content: center;display: flex;gap: 1rem;padding: 20px;border: 4px solid #191716;">
-    <h5 style="color:#F7F4F3;display: flex;align-items: center;justify-content: center;height: 100%;margin: 0;">
-     Order Products
-     And Items
-    </h5>
-   </button>
-  </div>
+      <!-- Where all my content is -->
 
-  <!-- Where all my content is -->
+      <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
 
-  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
-
-   <div class="shadowNav" style="    
+        <div class="shadowNav" style="    
 z-index: 2;
 background-color: #fcfcfc;
 display: grid;
@@ -120,266 +104,268 @@ justify-content: left;
 border: 1px solid 1px solid rgb(230 230 230);
 
 ">
-    <h6 style="   font-weight: 800;
+          <h6 style="   font-weight: 800;
 font-size: 1.5em;
 ">Supplies Orders
 
-    </h6>
+          </h6>
 
-    <div style="display: flex;">
-
-
+          <div style="display: flex;">
 
 
 
 
 
-    </div>
-
-   </div>
 
 
+          </div>
 
-   <!-- center -->
-   <div style="height: 400px;width: 95%;margin: 9rem auto">
-
-    <div style="margin: 3rem auto;">
-     <button class="btn" onclick="filterOrdersByStatus(0)">Filter by Waiting For Supplier To Confirm</button>
-     <button class="btn" onclick="filterOrdersByStatus(1)">Filter by Arrived</button>
-     <button class="btn" onclick="filterOrdersByStatus(2)">Filter by Cancelled</button>
-     <button class="btn" onclick="filterOrdersByStatus(3)">Filter by En Route</button>
-     <button class="btn" onclick="filterOrdersByStatus(4)">Filter by Confirmed</button>
-     <button class="btn" onclick="filterOrdersByStatus(5)">Filter by Rejected</button>
-     <button class="btn" onclick="undoFilters()">Show All</button>
-    </div>
-
-
-
-    <!-- center -->
-    <div style="height: 400px;width: 95%;">
-     <div style="display: flex; gap: 1rem;">
-      <div style="width: 100%;">
-       <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0);">
-        <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
-         <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Supplier Orders</h3>
         </div>
-        <div class="table-responsive" style="margin: 0;">
-         <% if (Orders.length===0) { %>
-          <label>No Orders</label>
-          <% } else { %>
-           <div class="table-responsive" style="margin: 0;">
-            <table class="table table-striped">
-             <thead>
-              <tr>
-               <th scope="col"></th>
-               <th scope="col">Action</th>
-               <th scope="col">Order ID</th>
-               <th scope="col">Supplier Name</th> <!-- New column for Supplier ID -->
-               <th scope="col">Total Cost</th>
-               <th scope="col">Order Date</th>
-               <th scope="col">Expected Delivery Date</th>
-               <th scope="col">Status</th>
-              </tr>
-             </thead>
-             <tbody id="orderTableBody">
-              <% Orders.forEach(order=> { %>
-               <tr scope="row" data-status="<%= order.status %>" data-pair="<%= order.supplierOrderId %>">
 
-                <th scope="row"></th>
-                <td style="display: flex; align-items: center; gap: 1rem;">
-                 <a style="display: flex; align-items: center;"
-                  href="/ConfirmOrder/<%= order.supplierOrderId %>/<%= order.supplierId %>">
-                  <button class="btn">Confirm Order</button>
-                 </a>
-                 |
-                 <button class="btn" onclick="confirmSupplierReceivedOrder(<%= order.supplierOrderId %>)">
-                  Confirm Supplier Has Recieved Order
-                 </button>
-                </td>
-                <td>
-                 <%= order.supplierOrderId %>
-                </td>
-                <td>
-                 <%= order.supplierName %>
-                </td>
 
-                <td>
-                 <%= order.totalCostOfOrder %>
-                </td>
-                <td>
-                 <%= order.orderDate.split('T')[0] %>
-                </td> <!-- Simplified the date display -->
-                <td>
-                 <%= order.expectedDeliveryDate.split('T')[0] %>
-                </td> <!-- Simplified the date display -->
-                <td>
-                 <script>
-                  function getStatusText(statusNumber) {
-                   const statuses = ['Arrived', 'Waiting For Supplier Confirmation', 'Cancelled', 'EnRoute', 'Confirmed', 'Rejected'];
-                   return statuses[statusNumber] || 'Unknown';
-                  }
-                  document.write(getStatusText(<%= order.status %>));
-                 </script>
-                </td>
-               </tr>
-               <tr class="spacer">
-                <td colspan="100"></td>
-               </tr>
-               <% }); %>
-             </tbody>
-            </table>
-            </table>
-           </div>
-           <% } %>
+
+        <!-- center -->
+        <div style="height: 400px;width: 95%;margin: 9rem auto">
+
+          <div style="margin: 3rem auto;">
+            <button class="btn" onclick="filterOrdersByStatus(0)">Filter by Waiting For Supplier To Confirm</button>
+            <button class="btn" onclick="filterOrdersByStatus(1)">Filter by Arrived</button>
+            <button class="btn" onclick="filterOrdersByStatus(2)">Filter by Cancelled</button>
+            <button class="btn" onclick="filterOrdersByStatus(3)">Filter by En Route</button>
+            <button class="btn" onclick="filterOrdersByStatus(4)">Filter by Confirmed</button>
+            <button class="btn" onclick="filterOrdersByStatus(5)">Filter by Rejected</button>
+            <button class="btn" onclick="undoFilters()">Show All</button>
+          </div>
+
+
+
+          <!-- center -->
+          <div style="height: 400px;width: 95%;">
+            <div style="display: flex; gap: 1rem;">
+              <div style="width: 100%;">
+                <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0);">
+                  <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+                    <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Supplier Orders</h3>
+                  </div>
+                  <div class="table-responsive" style="margin: 0;">
+                    <% if (Orders.length===0) { %>
+                      <label>No Orders</label>
+                      <% } else { %>
+                        <div class="table-responsive" style="margin: 0;">
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Action</th>
+                                <th scope="col">Order ID</th>
+                                <th scope="col">Supplier Name</th> <!-- New column for Supplier ID -->
+                                <th scope="col">Total Cost</th>
+                                <th scope="col">Order Date</th>
+                                <th scope="col">Expected Delivery Date</th>
+                                <th scope="col">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody id="orderTableBody">
+                              <% Orders.forEach(order=> { %>
+                                <tr scope="row" data-status="<%= order.status %>"
+                                  data-pair="<%= order.supplierOrderId %>">
+
+                                  <th scope="row"></th>
+                                  <td style="display: flex; align-items: center; gap: 1rem;">
+                                    <a style="display: flex; align-items: center;"
+                                      href="/ConfirmOrder/<%= order.supplierOrderId %>/<%= order.supplierId %>">
+                                      <button class="btn">Confirm Order</button>
+                                    </a>
+                                    |
+                                    <button class="btn"
+                                      onclick="confirmSupplierReceivedOrder(<%= order.supplierOrderId %>)">
+                                      Confirm Supplier Has Recieved Order
+                                    </button>
+                                  </td>
+                                  <td>
+                                    <%= order.supplierOrderId %>
+                                  </td>
+                                  <td>
+                                    <%= order.supplierName %>
+                                  </td>
+
+                                  <td>
+                                    <%= order.totalCostOfOrder %>
+                                  </td>
+                                  <td>
+                                    <%= order.orderDate.split('T')[0] %>
+                                  </td> <!-- Simplified the date display -->
+                                  <td>
+                                    <%= order.expectedDeliveryDate.split('T')[0] %>
+                                  </td> <!-- Simplified the date display -->
+                                  <td>
+                                    <script>
+                                      function getStatusText(statusNumber) {
+                                        const statuses = ['Arrived', 'Waiting For Supplier Confirmation', 'Cancelled', 'EnRoute', 'Confirmed', 'Rejected'];
+                                        return statuses[statusNumber] || 'Unknown';
+                                      }
+                                      document.write(getStatusText(<%= order.status %>));
+                                    </script>
+                                  </td>
+                                </tr>
+                                <tr class="spacer">
+                                  <td colspan="100"></td>
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                          </table>
+                          </table>
+                        </div>
+                        <% } %>
+                  </div>
+                </div>
+                <!-- This div is to balance the layout, you might have other content here -->
+                <div style="width: 30%;">
+                  <!-- ... Any other content that should be on the right side -->
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
-       </div>
-       <!-- This div is to balance the layout, you might have other content here -->
-       <div style="width: 30%;">
-        <!-- ... Any other content that should be on the right side -->
-       </div>
+
+
+
+      </section>
+      <!-- Success Modal -->
+      <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+              <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="alertModalBody">
+              Message goes here...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-     </div>
-    </div>
-   </div>
 
-
-
-  </section>
-  <!-- Success Modal -->
-  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-    <div class="modal-content">
-     <div class="modal-header">
-      <h5 class="modal-title" id="alertModalLabel">Alert</h5>
-      <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-      </button>
-     </div>
-     <div class="modal-body" id="alertModalBody">
-      Message goes here...
-     </div>
-     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
-     </div>
-    </div>
-   </div>
-  </div>
-
-
-  <script type="application/json" id="products-data">
+      <script type="application/json" id="products-data">
     <%- JSON.stringify(Orders) %>
 </script>
 
 
 
-  <script>
+      <script>
 
-   function showAlertModal(title, message) {
-    // Set the modal's title and message
-    document.getElementById('alertModalLabel').innerText = title;
-    document.getElementById('alertModalBody').innerText = message;
+        function showAlertModal(title, message) {
+          // Set the modal's title and message
+          document.getElementById('alertModalLabel').innerText = title;
+          document.getElementById('alertModalBody').innerText = message;
 
-    // Display the modal
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-   }
+          // Display the modal
+          var modal = document.getElementById('alertModal');
+          modal.style.display = 'block';
+          modal.classList.add('show');
+          document.body.classList.add('modal-open');
+        }
 
-   function closeAlertModal() {
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'none';
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
-   }
-
-
-   window.filterOrdersByStatus = function (statusIndex) {
-    const rows = document.querySelectorAll("tbody tr");
-    let rowsVisible = 0;
-
-    // Remove any existing "No Orders Match the Filter" row
-    const noMatchRow = document.querySelector(".no-match-row");
-    if (noMatchRow) {
-     noMatchRow.remove();
-    }
-
-    rows.forEach((row) => {
-     const rowStatus = row.getAttribute('data-status');
-
-     if (rowStatus === null) {
-      console.log("Status is undefined, skipping this row.");
-      return;
-     }
-
-     if (parseInt(rowStatus, 10) === statusIndex) {
-      row.style.display = "";
-      rowsVisible++;
-     } else {
-      row.style.display = "none";
-     }
-    });
-
-    // Handle case when there are no rows to show
-    const tableBody = document.getElementById("orderTableBody");
-    if (rowsVisible === 0) {
-     const messageRow = `<tr class="no-match-row"><td colspan="100">No Orders Match the Filter</td></tr>`;
-     tableBody.insertAdjacentHTML("beforeend", messageRow);
-    }
-   };
-
-   function undoFilters() {
-    const rows = document.querySelectorAll("tbody tr");
-
-    // Reset all rows to their initial state
-    rows.forEach((row) => {
-     row.style.display = "";
-    });
-
-    // Remove any existing "No Orders Match the Filter" row
-    const noMatchRow = document.querySelector(".no-match-row");
-    if (noMatchRow) {
-     noMatchRow.remove();
-    }
-   }
-
-   function getStatusText(statusNumber) {
-    const statuses = ['WaitingForSupplierToConfirm', 'Arrived', 'Cancelled', 'EnRoute', 'Confirmed', 'Rejected'];
-    return statuses[statusNumber] || 'Unknown';
-   }
+        function closeAlertModal() {
+          var modal = document.getElementById('alertModal');
+          modal.style.display = 'none';
+          modal.classList.remove('show');
+          document.body.classList.remove('modal-open');
+        }
 
 
-   async function confirmSupplierReceivedOrder(supplierOrderId) {
-    try {
-     const response = await fetch(`http://localhost:5358/api/SupplierOrders/ConfirmSupplierReceivedOrder/${supplierOrderId}`, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-       'Content-Type': 'application/json',
-      },
-     });
+        window.filterOrdersByStatus = function (statusIndex) {
+          const rows = document.querySelectorAll("tbody tr");
+          let rowsVisible = 0;
 
-     if (response.ok) {
-      const data = await response.json();
-      console.log('Success:', data);
-      window.location.reload();
-     } else {
-      showAlertModal("Order Already Confirmed", "This order has already been confirmed")
-      console.error('Failed to confirm order:', response.statusText);
-     }
-    } catch (error) {
-     console.error('There was a problem with the fetch operation:', error);
-    }
-   }
+          // Remove any existing "No Orders Match the Filter" row
+          const noMatchRow = document.querySelector(".no-match-row");
+          if (noMatchRow) {
+            noMatchRow.remove();
+          }
+
+          rows.forEach((row) => {
+            const rowStatus = row.getAttribute('data-status');
+
+            if (rowStatus === null) {
+              console.log("Status is undefined, skipping this row.");
+              return;
+            }
+
+            if (parseInt(rowStatus, 10) === statusIndex) {
+              row.style.display = "";
+              rowsVisible++;
+            } else {
+              row.style.display = "none";
+            }
+          });
+
+          // Handle case when there are no rows to show
+          const tableBody = document.getElementById("orderTableBody");
+          if (rowsVisible === 0) {
+            const messageRow = `<tr class="no-match-row"><td colspan="100">No Orders Match the Filter</td></tr>`;
+            tableBody.insertAdjacentHTML("beforeend", messageRow);
+          }
+        };
+
+        function undoFilters() {
+          const rows = document.querySelectorAll("tbody tr");
+
+          // Reset all rows to their initial state
+          rows.forEach((row) => {
+            row.style.display = "";
+          });
+
+          // Remove any existing "No Orders Match the Filter" row
+          const noMatchRow = document.querySelector(".no-match-row");
+          if (noMatchRow) {
+            noMatchRow.remove();
+          }
+        }
+
+        function getStatusText(statusNumber) {
+          const statuses = ['WaitingForSupplierToConfirm', 'Arrived', 'Cancelled', 'EnRoute', 'Confirmed', 'Rejected'];
+          return statuses[statusNumber] || 'Unknown';
+        }
+
+
+        async function confirmSupplierReceivedOrder(supplierOrderId) {
+          try {
+            const response = await fetch(`http://localhost:5358/api/SupplierOrders/ConfirmSupplierReceivedOrder/${supplierOrderId}`, {
+              method: 'POST',
+              mode: 'cors',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              console.log('Success:', data);
+              window.location.reload();
+            } else {
+              showAlertModal("Order Already Confirmed", "This order has already been confirmed")
+              console.error('Failed to confirm order:', response.statusText);
+            }
+          } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+          }
+        }
 
 
 
 
-  </script>
+      </script>
 
 
-</body>
+  </body>
 
 
 

@@ -1,231 +1,213 @@
 <!DOCTYPE html>
 <html>
 
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="/css/style.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
- <!-- Bootstrap JavaScript -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
-
-
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
- <link rel="stylesheet" href="/css/styles.css">
-
- <title>View Products</title>
-
- <style>
-  .btn {
-   background-color: #FF0000;
-   color: white;
-   border: 3px solid #191716;
-  }
-
-  /* Default button styling */
-  .button {
-   background-color: #FF0000;
-   border: 3px solid #191716;
-   color: white;
-   padding: 10px;
-   margin: 5px;
-   cursor: pointer;
-  }
-
-  /* Styling for active state */
-  .button.active {
-   background-color: blue;
-  }
-
-  .section-header {
-   font-size: 18px;
-   font-weight: bold;
-   margin-bottom: 10px;
-  }
-
-  .sales-data {
-   margin-bottom: 10px;
-  }
-
-  .modal-backdrop {
-   position: inherit;
-   width: 0px;
-   background-color: transparent;
-  }
-
-  .performance {
-   margin-bottom: 10px;
-  }
-
-  .low-stock {
-   margin-bottom: 10px;
-   color: red;
-  }
-
-  .table-responsive {
-   max-height: 600px;
-   /* or whatever height you want */
-   overflow-y: auto;
-   display: block;
-   margin-bottom: 3rem;
-  }
-
-  .highlight {
-   background-color: yellow;
-  }
-
-
-  /* Modal Styles */
-  .modal-dialog {
-   max-width: 500px;
-   margin: auto auto;
-  }
-
-
-  /* Modal Styles */
-  .modal {
-   display: none;
-   position: fixed;
-   z-index: 1;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   overflow: auto;
-   background-color: rgb(0, 0, 0);
-   background-color: rgba(0, 0, 0, 0.4);
-   padding-top: 60px;
-  }
-
-  .modal-content {
-   background-color: #fefefe;
-   padding: 3REM;
-   border: 1px solid #888;
-   scale: 0.98;
-
-  }
-
-  .close-button {
-   color: #aaa;
-   float: right;
-   font-size: 28px;
-   font-weight: bold;
-  }
-
-  .close-button:hover,
-  .close-button:focus {
-   color: black;
-   text-decoration: none;
-   cursor: pointer;
-  }
+<%- include('../DefaultHead') %>
 
 
 
-  .custom-table-responsive {
-   margin: 2rem;
-   background-color: white !important;
-   padding: 20px;
-   border-radius: 15px;
-  }
+  <title>View Products</title>
 
-  .gradient-border {
-   --borderWidth: 3px;
+  <style>
+    .btn {
+      background-color: #FF0000;
+      color: white;
+      border: 3px solid #191716;
+    }
 
-   border-radius: var(--borderWidth);
-  }
+    /* Default button styling */
+    .button {
+      background-color: #FF0000;
+      border: 3px solid #191716;
+      color: white;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
 
-  .gradient-border:after {
-   content: '';
-   position: absolute;
-   top: calc(-1 * var(--borderWidth));
-   left: calc(-1 * var(--borderWidth));
-   height: calc(100% + var(--borderWidth) * 2);
-   width: calc(100% + var(--borderWidth) * 2);
-   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-   border-radius: calc(2 * var(--borderWidth));
-   z-index: -1;
-   animation: animatedgradient 3s ease alternate infinite;
-   background-size: 300% 300%;
-  }
+    /* Styling for active state */
+    .button.active {
+      background-color: blue;
+    }
 
+    .section-header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-  @keyframes animatedgradient {
-   0% {
-    background-position: 0% 50%;
-   }
+    .sales-data {
+      margin-bottom: 10px;
+    }
 
-   50% {
-    background-position: 100% 50%;
-   }
+    .modal-backdrop {
+      position: inherit;
+      width: 0px;
+      background-color: transparent;
+    }
 
-   100% {
-    background-position: 0% 50%;
-   }
-  }
+    .performance {
+      margin-bottom: 10px;
+    }
 
-  .narrative-line {
-   margin-bottom: 1em;
-   /* Adjust as needed */
-  }
+    .low-stock {
+      margin-bottom: 10px;
+      color: red;
+    }
 
-  #circle-container {
-   position: relative;
-   width: 100px;
-   height: 100px;
-  }
+    .table-responsive {
+      max-height: 600px;
+      /* or whatever height you want */
+      overflow-y: auto;
+      display: block;
+      margin-bottom: 3rem;
+    }
 
-  #circle {
-   width: 100px;
-   height: 100px;
-   border-radius: 50%;
-   background: lightgray;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
-
-  #percentage {
-   font-size: 24px;
-  }
-
-  #circle-border {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100px;
-   height: 100px;
-   border-radius: 50%;
-   border: 8px solid transparent;
-   border-top-color: rgb(255, 0, 0);
-   transform-origin: 50% 50%;
-  }
-
-  .modal-content {
-   transform: scale(0.9);
-   /* 90% of the original size */
-  }
- </style>
+    .highlight {
+      background-color: yellow;
+    }
 
 
-</head>
+    /* Modal Styles */
+    .modal-dialog {
+      max-width: 500px;
+      margin: auto auto;
+    }
 
-<body>
 
- <%- include('../NavbarAdmin') %>
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
 
-  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;margin-bottom: 2rem;">
+    .modal-content {
+      background-color: #fefefe;
+      padding: 3REM;
+      border: 1px solid #888;
+      scale: 0.98;
 
-   <div class="shadowNav" style="    
+    }
+
+    .close-button {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+
+    .custom-table-responsive {
+      margin: 2rem;
+      background-color: white !important;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .gradient-border {
+      --borderWidth: 3px;
+
+      border-radius: var(--borderWidth);
+    }
+
+    .gradient-border:after {
+      content: '';
+      position: absolute;
+      top: calc(-1 * var(--borderWidth));
+      left: calc(-1 * var(--borderWidth));
+      height: calc(100% + var(--borderWidth) * 2);
+      width: calc(100% + var(--borderWidth) * 2);
+      background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+      border-radius: calc(2 * var(--borderWidth));
+      z-index: -1;
+      animation: animatedgradient 3s ease alternate infinite;
+      background-size: 300% 300%;
+    }
+
+
+    @keyframes animatedgradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .narrative-line {
+      margin-bottom: 1em;
+      /* Adjust as needed */
+    }
+
+    #circle-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    #circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: lightgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #percentage {
+      font-size: 24px;
+    }
+
+    #circle-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 8px solid transparent;
+      border-top-color: rgb(255, 0, 0);
+      transform-origin: 50% 50%;
+    }
+
+    .modal-content {
+      transform: scale(0.9);
+      /* 90% of the original size */
+    }
+  </style>
+
+
+
+
+  <body>
+
+    <%- include('../NavbarAdmin') %>
+
+      <section class="main-content" style="margin:0rem;background-color: #F7F4F3;margin-bottom: 2rem;">
+
+        <div class="shadowNav" style="    
 z-index: 2;
 background-color: #fcfcfc;
 display: grid;
@@ -240,17 +222,17 @@ justify-content: left;
 border: 1px solid 1px solid rgb(230 230 230);
 
 ">
-    <h6 style="   font-weight: 800;
+          <h6 style="   font-weight: 800;
 font-size: 1.5em;
 ">My Products
 
-    </h6>
+          </h6>
 
-    <div style="display: flex;">
+          <div style="display: flex;">
 
 
 
-     <input id="searchInput" class="shadowNav" style="text-align: center;
+            <input id="searchInput" class="shadowNav" style="text-align: center;
 font-size: 0.8em;
 width: 300px;
 height: 2.3rem;
@@ -258,29 +240,29 @@ background-color: #ececec;
 border: 1px #cfcfcf solid;
 border-radius: 24px;
 " type="text" placeholder="Search Inventory">
-     <i style="position: relative;
+            <i style="position: relative;
 left: 1.2rem; 
 top: 0.5rem; 
 font-size: 0.8em;
 color: rgb(158, 158, 158);" class="search-icon"><span style="font-size: 1.5em;" class="material-symbols-outlined">
-       search
-      </span></i>
+                search
+              </span></i>
 
 
 
 
 
-    </div>
+          </div>
 
-   </div>
-
-
-   <!-- center -->
-   <div style="height: 300px;width: 95%;margin: 9rem auto;">
+        </div>
 
 
-    <div style="width: 25vw; display: flex; margin: 1rem 0.5rem; gap: 1rem;height: 195px;">
-     <div style="
+        <!-- center -->
+        <div style="height: 300px;width: 95%;margin: 9rem auto;">
+
+
+          <div style="width: 25vw; display: flex; margin: 1rem 0.5rem; gap: 1rem;">
+            <div style="
         background: 
             linear-gradient(rgba(0, 0, 0, 0.398), rgba(0, 0, 0, 0.452)), 
             url('images/Store.png');
@@ -296,31 +278,31 @@ align-items: center;
 
 
 
-      <div class="card-body d-flex flex-column justify-content-between" style="">
+              <div class="card-body d-flex flex-column justify-content-between" style="">
 
-       <div style="display: flex;justify-content: space-between;">
-        <h3 class="card-title fw-bold fs-4 d-flex align-content-center" style="color: white;">
-         Products About to Expire
-        </h3>
-        <span style="margin-left: 10px;color: white;" class="material-symbols-outlined">
-         info
-        </span>
-       </div>
-       <h5 class="fs-4 fw-medium" id="ExpiringPotentialSavings" style="color: white;">
-        are about to expire soon place on sale
-       </h5>
-       <a id="btnAboutToExpire" class="btn"
-        style="margin-top: 1rem;width: 60%;border-radius: 40px;display: flex; gap: 10px;"
-        onclick="showAlertModal('Place on Sale', 'Expiring Soon')" class="text-white">
-        <span class="material-symbols-outlined">open_in_new</span>Place On sale
-       </a>
-      </div>
+                <div style="display: flex;justify-content: space-between;">
+                  <h3 class="card-title fw-bold fs-4 d-flex align-content-center" style="color: white;">
+                    Products About to Expire
+                  </h3>
+                  <span style="margin-left: 10px;color: white;" class="material-symbols-outlined">
+                    info
+                  </span>
+                </div>
+                <h5 class="fs-4 fw-medium" id="ExpiringPotentialSavings" style="color: white;">
+                  are about to expire soon place on sale
+                </h5>
+                <a id="btnAboutToExpire" class="btn"
+                  style="margin-top: 1rem;width: 60%;border-radius: 40px;display: flex; gap: 10px;"
+                  onclick="showAlertModal('Place on Sale', 'Expiring Soon')" class="text-white">
+                  <span class="material-symbols-outlined">open_in_new</span>Place On sale
+                </a>
+              </div>
 
 
 
-     </div>
+            </div>
 
-     <div style="
+            <div style="
         background: black; 
             url('images/Store.png');
         background-size: cover;
@@ -335,1026 +317,1035 @@ align-items: center;
 
 
 
-      <div class="card-body d-flex flex-column justify-content-between" style="">
+              <div class="card-body d-flex flex-column justify-content-between" style="">
 
-       <div style="display: flex;justify-content: space-between;">
-        <h3 class="card-title fw-bold fs-4 d-flex align-content-center" style="color: white;">
-         Products are not Doing well
-        </h3>
-        <span style="margin-left: 10px;color: white;" class="material-symbols-outlined">
-         info
-        </span>
-       </div>
-       <h5 class="fs-4 fw-medium" id="NotPerforming" style="color: white;">
-        0 are not doing well, place them on sale
-       </h5>
-       <a id="btnLeastSelling" class="btn"
-        style="margin-top: 1rem;width: 60%;border-radius: 40px;display: flex; gap: 10px;"
-        onclick="showAlertModal('Place on Sale', 'Performance Poor')" class="text-white">
-        <span class="material-symbols-outlined">open_in_new</span>Place On sale
-       </a>
-      </div>
-
-
-
-     </div>
+                <div style="display: flex;justify-content: space-between;">
+                  <h3 class="card-title fw-bold fs-4 d-flex align-content-center" style="color: white;">
+                    Products are not Doing well
+                  </h3>
+                  <span style="margin-left: 10px;color: white;" class="material-symbols-outlined">
+                    info
+                  </span>
+                </div>
+                <h5 class="fs-4 fw-medium" id="NotPerforming" style="color: white;">
+                  0 are not doing well, place them on sale
+                </h5>
+                <a id="btnLeastSelling" class="btn"
+                  style="margin-top: 1rem;width: 60%;border-radius: 40px;display: flex; gap: 10px;"
+                  onclick="showAlertModal('Place on Sale', 'Performance Poor')" class="text-white">
+                  <span class="material-symbols-outlined">open_in_new</span>Place On sale
+                </a>
+              </div>
 
 
 
-
-    </div>
-
-
-    <hr style="margin: 3rem auto;width: 98%;border-color: rgb(129, 129, 129);">
-
-
-    <div style="display: flex;gap: 1rem;margin: 3rem auto;">
-     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="stockLevelDropdown" data-toggle="dropdown"
-       aria-haspopup="true" aria-expanded="false">
-       Filter by Stock Level
-      </button>
-      <div class="dropdown-menu" aria-labelledby="stockLevelDropdown">
-       <a class="dropdown-item" href="#" onclick="fetchProductsByStockLevels('low')">Low Stock</a>
-       <a class="dropdown-item" href="#" onclick="fetchProductsByStockLevels('medium')">Medium Stock</a>
-       <a class="dropdown-item" href="#" onclick="fetchProductsByStockLevels('high')">High Stock</a>
-
-      </div>
-     </div>
-
-     <button onclick="fetchTopSellingProducts()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Filter by Best Selling
-     </button>
-
-     <button onclick="fetchLeastSellingProducts()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Filter by Least Selling
-     </button>
-
-     <button onclick="fetchProductsNearExpiration()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Filter by Close to Experation
-     </button>
-
-     <button onclick="undoFilter()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Undo Filter
-     </button>
-
-    </div>
+            </div>
 
 
 
-    <div style="display: flex;gap: 1rem;margin-bottom: 3rem;">
-     <div style="width: 70%">
-      <div style="background-color: white;border-radius: 15px;border:  1px solid rgb(0, 0, 0);">
-       <div style="padding: 3rem 2rem;  background-color: #191716;border-radius: 15px;">
-        <h3 style="font-weight: bold; font-size: 1.5rem;color: #F7F4F3;">
-         All
-         Products
-        </h3>
 
-       </div>
+          </div>
 
 
-       <div id="myTable" style="margin: 0;width: 100%;">
-        <div class="table-responsive">
-         <table id="productTable" class="table table-striped" style="width: 100%;">
+          <hr style="margin: 3rem auto;width: 98%;border-color: rgb(129, 129, 129);">
 
-          <thead>
-           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Level
-             indicator</th>
-            <th scope="col">Product
-             Name</th>
-            <th scope="col">
-             Performance</th>
-            <th scope="col">Edit
-            </th>
-           </tr>
-          </thead>
-          <tbody>
-           <% products.forEach((product, index)=> {
-            %>
-            <tr>
-             <th scope="row">
-              <%= index + 1 %>
-             </th>
-             <!-- Color Indicator based on stock levels -->
-             <td>
-              <% var stockStatus=(product.unitsInInventory <=product.minimumThreshold) ? 'red' :
-               (product.unitsInInventory>
-               product.minimumThreshold
-               &&
-               product.unitsInInventory
-               < product.maximumThreshold) ? 'yellow' : 'green' ; var stockRecommendation=(stockStatus==='red' )
-                ? 'Critical Low Stock: Immediate Reorder Needed' : (stockStatus==='yellow' )
-                ? 'Stock Adequate: Reorder for Safety' : 'Stock Levels Healthy: No Immediate Action' ; %>
-                <span style="color: <%= stockStatus %>;">●</span>
-                <span>
-                 <%= stockRecommendation %>
-                </span>
-             </td>
 
-             <td>
-              <%= product.productName %>
-             </td>
-             <td>
-              <button onclick="openProductInfo('<%= product.productId %>' , '<%=product.productName %>')"
-               class="btn btn-info">More
-               Information</button>
-             </td>
-
-             <td>
-              <button style="border: none;color: black;" class="btn-link" type="button" data-toggle="collapse"
-               data-target="#productEdit_<%= product.productId %>" aria-expanded="false"
-               onclick="populateDTO(<%= JSON.stringify(product) %>)"> <!-- Pass the product info here -->
-               <span class="material-symbols-outlined">
-                edit
-               </span>
+          <div style="display: flex;gap: 1rem;margin: 3rem auto;">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="stockLevelDropdown"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filter by Stock Level
               </button>
-             </td>
-            </tr>
-            <tr>
-             <td colspan="4">
-              <!-- The collapse content -->
-              <div id="productEdit_<%= product.productId %>" class="collapse">
-               <form action="/api/EditProductWithComponents/<%= product.productId %>" method="POST"
-                class="form-horizontal">
-                <div class="form-row">
-                 <!-- Product Name -->
-                 <div class="col">
-                  <label for="productName">Product
-                   Name:</label>
-                  <input type="text" id="productName" name="productName" class="form-control"
-                   value="<%= product.productName %>" required>
-                 </div>
-                 <!-- Recommended Selling Price -->
-                 <div class="col">
-                  <label for="productSellingPrice">Selling
-                   Price:</label>
-                  <input type="number" id="productSellingPrice" name="productSellingPrice" class="form-control"
-                   value="<%= product.productSellingPrice %>" step="0.01" required>
-                 </div>
-                 <!-- Cost Price -->
-                 <div class="col">
-                  <label for="productCostPrice">Cost
-                   Price:</label>
-                  <input type="number" id="productCostPrice" name="productCostPrice" class="form-control"
-                   value="<%= product.productCostPrice %>" step="0.01" required>
-                 </div>
+              <div class="dropdown-menu" aria-labelledby="stockLevelDropdown">
+                <a class="dropdown-item" href="#" onclick="fetchProductsByStockLevels('low')">Low Stock</a>
+                <a class="dropdown-item" href="#" onclick="fetchProductsByStockLevels('medium')">Medium Stock</a>
+                <a class="dropdown-item" href="#" onclick="fetchProductsByStockLevels('high')">High Stock</a>
+
+              </div>
+            </div>
+
+            <button onclick="fetchTopSellingProducts()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Filter by Best Selling
+            </button>
+
+            <button onclick="fetchLeastSellingProducts()" class="btn btn-secondary " type="button"
+              id="stockLevelDropdown" aria-haspopup="true" aria-expanded="false">
+              Filter by Least Selling
+            </button>
+
+            <button onclick="fetchProductsNearExpiration()" class="btn btn-secondary " type="button"
+              id="stockLevelDropdown" aria-haspopup="true" aria-expanded="false">
+              Filter by Close to Experation
+            </button>
+
+            <button onclick="undoFilter()" class="btn btn-secondary " type="button" id="stockLevelDropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Undo Filter
+            </button>
+
+          </div>
+
+
+
+          <div style="display: flex;gap: 1rem;margin-bottom: 3rem;">
+            <div style="width: 70%">
+              <div style="background-color: white;border-radius: 15px;border:  1px solid rgb(0, 0, 0);">
+                <div style="padding: 3rem 2rem;  background-color: #191716;border-radius: 15px;">
+                  <h3 style="font-weight: bold; font-size: 1.5rem;color: #F7F4F3;">
+                    All
+                    Products
+                  </h3>
+
                 </div>
 
-                <div class="form-row mt-3">
-                 <!-- Product Markup -->
-                 <div class="col">
-                  <label for="productMarkup">Markup:</label>
-                  <input type="number" id="productMarkup" name="productMarkup" class="form-control"
-                   value="<%= product.prodcutMarkup %>" step="0.01" required>
-                 </div>
-                 <!-- Status -->
-                 <div class="col">
-                  <label for="status">Status:</label>
-                  <input type="text" id="status" name="status" class="form-control" value="<% 
+
+                <div id="myTable" style="margin: 0;width: 100%;">
+                  <div class="table-responsive">
+                    <table id="productTable" class="table table-striped" style="width: 100%;">
+
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Level
+                            indicator</th>
+                          <th scope="col">Product
+                            Name</th>
+                          <th scope="col">
+                            Performance</th>
+                          <th scope="col">Edit
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% products.forEach((product, index)=> {
+                          %>
+                          <tr>
+                            <th scope="row">
+                              <%= index + 1 %>
+                            </th>
+                            <!-- Color Indicator based on stock levels -->
+                            <td>
+                              <% var stockStatus=(product.unitsInInventory <=product.minimumThreshold) ? 'red' :
+                                (product.unitsInInventory>
+                                product.minimumThreshold
+                                &&
+                                product.unitsInInventory
+                                < product.maximumThreshold) ? 'yellow' : 'green' ; var
+                                  stockRecommendation=(stockStatus==='red' )
+                                  ? 'Critical Low Stock: Immediate Reorder Needed' : (stockStatus==='yellow' )
+                                  ? 'Stock Adequate: Reorder for Safety' : 'Stock Levels Healthy: No Immediate Action' ;
+                                  %>
+                                  <span style="color: <%= stockStatus %>;">●</span>
+                                  <span>
+                                    <%= stockRecommendation %>
+                                  </span>
+                            </td>
+
+                            <td>
+                              <%= product.productName %>
+                            </td>
+                            <td>
+                              <button
+                                onclick="openProductInfo('<%= product.productId %>' , '<%=product.productName %>')"
+                                class="btn btn-info">More
+                                Information</button>
+                            </td>
+
+                            <td>
+                              <button style="border: none;color: black;" class="btn-link" type="button"
+                                data-toggle="collapse" data-target="#productEdit_<%= product.productId %>"
+                                aria-expanded="false" onclick="populateDTO(<%= JSON.stringify(product) %>)">
+                                <!-- Pass the product info here -->
+                                <span class="material-symbols-outlined">
+                                  edit
+                                </span>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="4">
+                              <!-- The collapse content -->
+                              <div id="productEdit_<%= product.productId %>" class="collapse">
+                                <form action="/api/EditProductWithComponents/<%= product.productId %>" method="POST"
+                                  class="form-horizontal">
+                                  <div class="form-row">
+                                    <!-- Product Name -->
+                                    <div class="col">
+                                      <label for="productName">Product
+                                        Name:</label>
+                                      <input type="text" id="productName" name="productName" class="form-control"
+                                        value="<%= product.productName %>" required>
+                                    </div>
+                                    <!-- Recommended Selling Price -->
+                                    <div class="col">
+                                      <label for="productSellingPrice">Selling
+                                        Price:</label>
+                                      <input type="number" id="productSellingPrice" name="productSellingPrice"
+                                        class="form-control" value="<%= product.productSellingPrice %>" step="0.01"
+                                        required>
+                                    </div>
+                                    <!-- Cost Price -->
+                                    <div class="col">
+                                      <label for="productCostPrice">Cost
+                                        Price:</label>
+                                      <input type="number" id="productCostPrice" name="productCostPrice"
+                                        class="form-control" value="<%= product.productCostPrice %>" step="0.01"
+                                        required>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-row mt-3">
+                                    <!-- Product Markup -->
+                                    <div class="col">
+                                      <label for="productMarkup">Markup:</label>
+                                      <input type="number" id="productMarkup" name="productMarkup" class="form-control"
+                                        value="<%= product.prodcutMarkup %>" step="0.01" required>
+                                    </div>
+                                    <!-- Status -->
+                                    <div class="col">
+                                      <label for="status">Status:</label>
+                                      <input type="text" id="status" name="status" class="form-control" value="<% 
       if(product.status === 0) { %>Active<% } 
       else if(product.status === 1) { %>Inactive<% } 
       else if(product.status === 2) { %>SoldOut<% } 
       else if(product.status === 3) { %>Expired<% } 
       else { %>Unknown<% } 
     %>" readonly>
-                 </div>
+                                    </div>
 
-                 <!-- Supplier ID -->
-                 <div class="col">
-                  <label for="supplierId">Supplier
-                   ID:</label>
-                  <input type="text" id="supplierId" name="supplierId" class="form-control"
-                   value="<%= product.supplierName %>" readonly>
-                 </div>
+                                    <!-- Supplier ID -->
+                                    <div class="col">
+                                      <label for="supplierId">Supplier
+                                        ID:</label>
+                                      <input type="text" id="supplierId" name="supplierId" class="form-control"
+                                        value="<%= product.supplierName %>" readonly>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-row mt-3">
+                                    <!-- Category -->
+                                    <div class="col">
+                                      <label for="categoryId">Category:</label>
+                                      <select id="categoryId" name="categoryId" class="form-control" required>
+                                        <% Categories.forEach(category=>
+                                          {
+                                          %>
+                                          <option value="<%= category.categoryId %>" <% if
+                                            (category.categoryId===product.categoryId) { %>
+                                            selected
+                                            <% } %>
+                                              >
+                                              <%= category.categoryName %>
+                                          </option>
+                                          <% }); %>
+                                      </select>
+                                    </div>
+                                    <!-- Components -->
+                                    <!-- Components -->
+                                    <div class="col">
+                                      <label for="componentIds">Supplies Used:</label>
+                                      <select id="componentIds" name="componentIds" class="form-control" multiple>
+                                        <% if (Components && Components.length> 0) { %>
+                                          <% Components.forEach(component=> { %>
+                                            <option value="<%= component.componentId %>"
+                                              ondblclick="showItemModal(<%= JSON.stringify(component) %>)">
+                                              <%= component.itemName %>
+                                            </option>
+                                            <% }); %>
+                                              <% } else { %>
+                                                <option value="none">None</option>
+                                                <% } %>
+                                      </select>
+                                    </div>
+
+                                  </div>
+
+                                  <div class="mt-3">
+                                    <button onclick="removeSelectedComponents()" class="btn btn-danger">Remove
+                                      Selected
+                                      Components</button>
+                                    <button class="btn btn-primary" type="submit">Save</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </td>
+                          </tr>
+                          <% }); %>
+                      </tbody>
+                    </table>
+                  </div>
+
+
+
+
                 </div>
 
-                <div class="form-row mt-3">
-                 <!-- Category -->
-                 <div class="col">
-                  <label for="categoryId">Category:</label>
-                  <select id="categoryId" name="categoryId" class="form-control" required>
-                   <% Categories.forEach(category=>
-                    {
-                    %>
-                    <option value="<%= category.categoryId %>" <% if (category.categoryId===product.categoryId) { %>
-                     selected
-                     <% } %>
-                      >
-                      <%= category.categoryName %>
-                    </option>
-                    <% }); %>
-                  </select>
-                 </div>
-                 <!-- Components -->
-                 <!-- Components -->
-                 <div class="col">
-                  <label for="componentIds">Supplies Used:</label>
-                  <select id="componentIds" name="componentIds" class="form-control" multiple>
-                   <% if (Components && Components.length> 0) { %>
-                    <% Components.forEach(component=> { %>
-                     <option value="<%= component.componentId %>"
-                      ondblclick="showItemModal(<%= JSON.stringify(component) %>)">
-                      <%= component.itemName %>
-                     </option>
-                     <% }); %>
-                      <% } else { %>
-                       <option value="none">None</option>
-                       <% } %>
-                  </select>
-                 </div>
 
-                </div>
-
-                <div class="mt-3">
-                 <button onclick="removeSelectedComponents()" class="btn btn-danger">Remove
-                  Selected
-                  Components</button>
-                 <button class="btn btn-primary" type="submit">Save</button>
-                </div>
-               </form>
               </div>
-             </td>
-            </tr>
-            <% }); %>
-          </tbody>
-         </table>
+
+
+
+            </div>
+
+
+            <div style="width: 30%;">
+              <div style="background-color: white;border-radius: 15px;border:  1px solid rgb(0, 0, 0);">
+                <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;">
+                  <h3 style="font-weight: bold;font-size: 1.5rem;color: white;">
+                    Products
+                    Critically Low
+                  </h3>
+                  <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
+                    Please Reorder
+                  </h5>
+                </div>
+
+
+                <!-- ... existing HTML ... -->
+                <div id="myTableRunningLow" class="container" style="margin: 0;">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Product Index</th>
+                          <th scope="col">Product Name</th>
+                          <th scope="col">Units In Inventory</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <!-- Rows will be appended here -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- ... existing HTML ... -->
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="itemModal" class="modal">
+          <div
+            style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; padding-left: 6rem;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Item Quantity</h5>
+              </div>
+              <div class="modal-body">
+                <p id="itemName"></p> <!-- Item name will be displayed here -->
+                <input type="number" id="itemQuantity" class="form-control"> <!-- Input to edit the quantity -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="updateItemQuantity()">Update</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
 
 
-
-
-       </div>
-
-
-      </div>
-
-
-
-     </div>
-
-
-     <div style="width: 30%;">
-      <div style="background-color: white;border-radius: 15px;border:  1px solid rgb(0, 0, 0);">
-       <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;">
-        <h3 style="font-weight: bold;font-size: 1.5rem;color: white;">
-         Products
-         Critically Low
-        </h3>
-        <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
-         Please Reorder
-        </h5>
-       </div>
-
-
-       <!-- ... existing HTML ... -->
-       <div id="myTableRunningLow" class="container" style="margin: 0;">
-        <div class="table-responsive">
-         <table class="table table-striped">
-          <thead>
-           <tr>
-            <th scope="col">Product Index</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Units In Inventory</th>
-            <th scope="col">Action</th>
-           </tr>
-          </thead>
-
-          <tbody>
-           <!-- Rows will be appended here -->
-          </tbody>
-         </table>
-        </div>
-       </div>
-       <!-- ... existing HTML ... -->
-
-
-
-      </div>
-     </div>
-    </div>
-   </div>
-
-   <!-- The Modal -->
-   <div id="itemModal" class="modal">
-    <div
-     style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; padding-left: 6rem;">
-     <div class="modal-content">
-      <div class="modal-header">
-       <h5 class="modal-title">Edit Item Quantity</h5>
-      </div>
-      <div class="modal-body">
-       <p id="itemName"></p> <!-- Item name will be displayed here -->
-       <input type="number" id="itemQuantity" class="form-control"> <!-- Input to edit the quantity -->
-      </div>
-      <div class="modal-footer">
-       <button type="button" class="btn btn-primary" onclick="updateItemQuantity()">Update</button>
-       <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
-      </div>
-     </div>
-    </div>
-   </div>
-
-
-   <div style="margin-top: 2rem;" id="ProductsAction" class="modal fade" id="alertModal" tabindex="-1"
-    aria-labelledby="alertModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-     <div class="modal-content" style="width: 40vw;">
-      <div class="modal-header">
-       <h5 class="modal-title" id="alertModalLabel">Place on Sale</h5>
-       <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
-        <span aria-hidden="true">×</span>
-       </button>
-      </div>
-      <div class="modal-body" id="alertModalBody">
-       <div id="stockTable" class="" style="padding: 10px;">
-        <div class="table-responsive">
-         <table class="table table-striped">
-          <thead style="
+        <div style="margin-top: 2rem;" id="ProductsAction" class="modal fade" id="alertModal" tabindex="-1"
+          aria-labelledby="alertModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content" style="width: 40vw;">
+              <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Place on Sale</h5>
+                <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body" id="alertModalBody">
+                <div id="stockTable" class="" style="padding: 10px;">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead style="
     width: fit-content !important;
 ">
-           <tr style="width: 100%;display: flex;justify-content: space-between;">
-            <th scope="col">Name</th>
-            <th scope="col" style="
+                        <tr style="width: 100%;display: flex;justify-content: space-between;">
+                          <th scope="col">Name</th>
+                          <th scope="col" style="
     text-align: right;
 ">Action</th>
-           </tr>
-          </thead>
-          <tbody id="stockTableAlert" style="
+                        </tr>
+                      </thead>
+                      <tbody id="stockTableAlert" style="
     width: 100%;
 ">
 
-          </tbody>
-         </table>
-        </div>
-       </div>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
 
-      </div>
-      <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
-      </div>
-     </div>
-    </div>
-   </div>
-
-
-
-
-   </div>
-
-   <!-- Base Modal -->
-   <div id="baseModal" class="modal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-     <div class="modal-content" style="display: flex;flex-direction: column;width: 150%;margin: auto;">
-
-      <!-- Modal Header -->
-      <div class="modal-header" style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
-       <h3 id="productNameModal" class="modal-title font-weight-bold"
-        style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">
-        Name
-       </h3>
-
-      </div>
-
-      <!-- Modal Body -->
-      <div class="modal-body" style="background-color: white; margin-top: 1rem; border-radius: 15px; padding: 2rem;">
-       <div>
-        <div style="background-color: black; padding: 1rem;">
-         <h4 style="color: white; font-weight: 600;">Profitability</h4>
-        </div>
-        <div style="margin-top: 1rem;">
-
-         <div>
-          <button class="button" id="button1">Filter by This Week</button>
-          <button class="button" id="button2">Filter by Last Week</button>
-          <button class="button" id="button3">Filter By This Month</button>
-         </div>
-
-         <div>
-
-
-          <ul style="display: flex;padding: 30px;padding-left: 0px; gap: 2rem;">
-           <li
-            style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
-            <h4 style="font-weight: 500;">Total Revenue Made</h4>
-            <h4 id="RevenueMade" style="font-weight: bold;">Amount</h4>
-           </li>
-
-           <li
-            style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
-            <h4 style="font-weight: 500;">Total Profit Made</h4>
-            <h4 id="ProfitMade" style="font-weight: bold;">Amount</h4>
-           </li>
-
-           <li
-            style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
-            <h4 style="font-weight: 500;">Impact To The Store</h4>
-            <div id="circle-container">
-             <div id="circle">
-              <div id="percentage">50</div>
-             </div>
-             <div id="circle-border"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+              </div>
             </div>
+          </div>
+        </div>
 
-           </li>
 
-          </ul>
-         </div>
+
 
         </div>
-       </div>
-       <div>
-        <div style="background-color: black; padding: 1rem;">
-         <h4 style="color: white; font-weight: 600;">Supplies linked to Product Information</h4>
+
+        <!-- Base Modal -->
+        <div id="baseModal" class="modal">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="display: flex;flex-direction: column;width: 150%;margin: auto;">
+
+              <!-- Modal Header -->
+              <div class="modal-header" style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+                <h3 id="productNameModal" class="modal-title font-weight-bold"
+                  style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">
+                  Name
+                </h3>
+
+              </div>
+
+              <!-- Modal Body -->
+              <div class="modal-body"
+                style="background-color: white; margin-top: 1rem; border-radius: 15px; padding: 2rem;">
+                <div>
+                  <div style="background-color: black; padding: 1rem;">
+                    <h4 style="color: white; font-weight: 600;">Profitability</h4>
+                  </div>
+                  <div style="margin-top: 1rem;">
+
+                    <div>
+                      <button class="button" id="button1">Filter by This Week</button>
+                      <button class="button" id="button2">Filter by Last Week</button>
+                      <button class="button" id="button3">Filter By This Month</button>
+                    </div>
+
+                    <div>
+
+
+                      <ul style="display: flex;padding: 30px;padding-left: 0px; gap: 2rem;">
+                        <li
+                          style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+                          <h4 style="font-weight: 500;">Total Revenue Made</h4>
+                          <h4 id="RevenueMade" style="font-weight: bold;">Amount</h4>
+                        </li>
+
+                        <li
+                          style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+                          <h4 style="font-weight: 500;">Total Profit Made</h4>
+                          <h4 id="ProfitMade" style="font-weight: bold;">Amount</h4>
+                        </li>
+
+                        <li
+                          style="text-decoration: none;list-style: none;display: flex;align-items: left;border-left: 1px solid black;padding-left: 1rem;flex-direction: column;">
+                          <h4 style="font-weight: 500;">Impact To The Store</h4>
+                          <div id="circle-container">
+                            <div id="circle">
+                              <div id="percentage">50</div>
+                            </div>
+                            <div id="circle-border"></div>
+                          </div>
+
+                        </li>
+
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+                <div>
+                  <div style="background-color: black; padding: 1rem;">
+                    <h4 style="color: white; font-weight: 600;">Supplies linked to Product Information</h4>
+                  </div>
+                  <div style="margin-top: 1rem;">
+                    <div></div>
+                    <ul style="display: flex; padding: 20px; padding-left: 0px;">
+                      <li
+                        style="text-decoration: none; list-style: none; display: flex; align-items: left; border-left: 1px solid black; padding-left: 1rem;flex-direction: column;width: 900px;">
+                        <div id="Supplies" style="max-height: 200px;overflow-y: scroll;">
+
+
+
+                        </div>
+
+                      </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal Footer -->
+              <div class="modal-footer" style="margin-top: 1rem; background-color: white; padding: 1.5rem;">
+                <button type="button" class="btn" onclick="closeModal()">Close</button>
+                <div class="form-group">
+                  <!-- inside the modal -->
+                  <button id="reorderButton" class="btn btn-primary">Reorder</button>
+
+                  <button id="placeOnSaleButton" class="btn btn-warning">Place on Sale</button>
+                  <button id="DiscontniueButton" class="btn btn-danger">Discontinue</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div style="margin-top: 1rem;">
-         <div></div>
-         <ul style="display: flex; padding: 20px; padding-left: 0px;">
-          <li
-           style="text-decoration: none; list-style: none; display: flex; align-items: left; border-left: 1px solid black; padding-left: 1rem;flex-direction: column;width: 900px;">
-           <div id="Supplies" style="max-height: 200px;overflow-y: scroll;">
 
 
 
-           </div>
 
-          </li>
+        <div class="modal fade" id="alertModalSale" tabindex="-1" aria-labelledby="alertModalLabelSale"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabelSale">Alert</h5>
+                <button type="button" class="close" onclick="closeAlertModalSale()" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="alertModalBodySale">
 
-         </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeAlertModalSale()">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
-       </div>
+
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+      <!-- Floating Bar  -->
+      <div class="floating-btn-container">
+        <a id="showFormCompomentBtn" class="floating-btn" style="  background: #191716 " href="/SelectProductType">
+          <i class="material-icons"> add</i>
+        </a>
       </div>
 
-      <!-- Modal Footer -->
-      <div class="modal-footer" style="margin-top: 1rem; background-color: white; padding: 1.5rem;">
-       <button type="button" class="btn" onclick="closeModal()">Close</button>
-       <div class="form-group">
-        <!-- inside the modal -->
-        <button id="reorderButton" class="btn btn-primary">Reorder</button>
-
-        <button id="placeOnSaleButton" class="btn btn-warning">Place on Sale</button>
-        <button id="DiscontniueButton" class="btn btn-danger">Discontinue</button>
-       </div>
-      </div>
-
-     </div>
-    </div>
-   </div>
-
-
-
-
-   <div class="modal fade" id="alertModalSale" tabindex="-1" aria-labelledby="alertModalLabelSale" aria-hidden="true">
-    <div class="modal-dialog">
-     <div class="modal-content">
-      <div class="modal-header">
-       <h5 class="modal-title" id="alertModalLabelSale">Alert</h5>
-       <button type="button" class="close" onclick="closeAlertModalSale()" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-       </button>
-      </div>
-      <div class="modal-body" id="alertModalBodySale">
-
-      </div>
-      <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" onclick="closeAlertModalSale()">Close</button>
-      </div>
-     </div>
-    </div>
-   </div>
-
-
-
-
-  </section>
 
 
 
 
 
+      <script>
+
+        const percentageElement = document.getElementById('percentage');
+        const circleBorder = document.getElementById('circle-border');
+
+        const percentage = parseInt(percentageElement.innerText, 10);
+        const degree = (360 * percentage) / 100;
+
+        circleBorder.style.transform = `rotate(${degree}deg)`;
 
 
+        // Get buttons by ID
+        const button1 = document.getElementById("button1");
+        const button2 = document.getElementById("button2");
+        const button3 = document.getElementById("button3");
 
-  <!-- Floating Bar  -->
-  <div class="floating-btn-container">
-   <a id="showFormCompomentBtn" class="floating-btn" style="  background: #191716 " href="/SelectProductType">
-    <i class="material-icons"> add</i>
-   </a>
-  </div>
+        // Toggle active state on click
+        function toggleActive(event) {
+          event.target.classList.toggle("active");
+        }
 
+        // Attach click event listeners
+        button1.addEventListener("click", toggleActive);
+        button2.addEventListener("click", toggleActive);
+        button3.addEventListener("click", toggleActive);
 
+        // Function to fetch product sales statistics
+        async function fetchProductSalesStatistics(productId, timeFrame) {
+          try {
+            const url = `http://localhost:5358/Product/GetProductSalesStatistics?productId=${productId}&timeFrame=${timeFrame}`;
+            const response = await fetch(url, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
 
+            if (!response.ok) {
+              console.error('Failed to fetch data:', response.status, response.statusText);
+              return null;
+            }
 
+            const data = await response.json();
+            return data;
+          } catch (error) {
+            console.error('Error fetching product sales statistics:', error);
+            return null;
+          }
+        }
 
-
-  <script>
-
-   const percentageElement = document.getElementById('percentage');
-   const circleBorder = document.getElementById('circle-border');
-
-   const percentage = parseInt(percentageElement.innerText, 10);
-   const degree = (360 * percentage) / 100;
-
-   circleBorder.style.transform = `rotate(${degree}deg)`;
-
-
-   // Get buttons by ID
-   const button1 = document.getElementById("button1");
-   const button2 = document.getElementById("button2");
-   const button3 = document.getElementById("button3");
-
-   // Toggle active state on click
-   function toggleActive(event) {
-    event.target.classList.toggle("active");
-   }
-
-   // Attach click event listeners
-   button1.addEventListener("click", toggleActive);
-   button2.addEventListener("click", toggleActive);
-   button3.addEventListener("click", toggleActive);
-
-   // Function to fetch product sales statistics
-   async function fetchProductSalesStatistics(productId, timeFrame) {
-    try {
-     const url = `http://localhost:5358/Product/GetProductSalesStatistics?productId=${productId}&timeFrame=${timeFrame}`;
-     const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-       'Content-Type': 'application/json',
-      },
-     });
-
-     if (!response.ok) {
-      console.error('Failed to fetch data:', response.status, response.statusText);
-      return null;
-     }
-
-     const data = await response.json();
-     return data;
-    } catch (error) {
-     console.error('Error fetching product sales statistics:', error);
-     return null;
-    }
-   }
-
-   // Attach event listeners to buttons
-   window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('button1').addEventListener('click', () => onClickFunction('thisWeek'));
-    document.getElementById('button2').addEventListener('click', () => onClickFunction('lastWeek'));
-    document.getElementById('button3').addEventListener('click', () => onClickFunction('thisMonth'));
-   });
+        // Attach event listeners to buttons
+        window.addEventListener('DOMContentLoaded', () => {
+          document.getElementById('button1').addEventListener('click', () => onClickFunction('thisWeek'));
+          document.getElementById('button2').addEventListener('click', () => onClickFunction('lastWeek'));
+          document.getElementById('button3').addEventListener('click', () => onClickFunction('thisMonth'));
+        });
 
 
-   async function openProductInfo(productId, productName) {
-    currentProductId = productId;
-    let name = document.getElementById("productNameModal");
-    name.innerText = productName;
-    console.log(productId);
+        async function openProductInfo(productId, productName) {
+          currentProductId = productId;
+          let name = document.getElementById("productNameModal");
+          name.innerText = productName;
+          console.log(productId);
 
-    // Update the Reorder button to include the current product ID
-    const reorderButton = document.getElementById('reorderButton');
-    reorderButton.onclick = () => {
-     window.location.href = `/OrderProductsAndItems?reorderProduct=${productId}`;
-    };
+          // Update the Reorder button to include the current product ID
+          const reorderButton = document.getElementById('reorderButton');
+          reorderButton.onclick = () => {
+            window.location.href = `/OrderProductsAndItems?reorderProduct=${productId}`;
+          };
 
-    try {
-     // Fetch product sales statistics
-     const timeFrame = "thisWeek"; // Replace with the desired time frame
-     const salesData = await fetchProductSalesStatistics(productId, timeFrame);
-     if (salesData) {
-      // Populate the modal with the fetched data
-      document.getElementById("RevenueMade").innerText = `R${salesData.value.totalSalesAmount}`;
-      document.getElementById("ProfitMade").innerText = `R${salesData.value.totalProfit}`;
+          try {
+            // Fetch product sales statistics
+            const timeFrame = "thisWeek"; // Replace with the desired time frame
+            const salesData = await fetchProductSalesStatistics(productId, timeFrame);
+            if (salesData) {
+              // Populate the modal with the fetched data
+              document.getElementById("RevenueMade").innerText = `R${salesData.value.totalSalesAmount}`;
+              document.getElementById("ProfitMade").innerText = `R${salesData.value.totalProfit}`;
 
-      const percentageElement = document.getElementById('percentage');
-      const circleBorder = document.getElementById('circle-border');
-      const productImpactPercentage = parseFloat(salesData.value.productImpactPercentage).toFixed(2);
+              const percentageElement = document.getElementById('percentage');
+              const circleBorder = document.getElementById('circle-border');
+              const productImpactPercentage = parseFloat(salesData.value.productImpactPercentage).toFixed(2);
 
-      percentageElement.innerText = `${productImpactPercentage}%`;
-      const degree = (360 * productImpactPercentage) / 100;
-      circleBorder.style.transform = `rotate(${degree}deg)`;
+              percentageElement.innerText = `${productImpactPercentage}%`;
+              const degree = (360 * productImpactPercentage) / 100;
+              circleBorder.style.transform = `rotate(${degree}deg)`;
 
-      // Populate the supplies
-      const suppliesUsed = salesData.value.suppliesUsed;
-      const suppliesDiv = document.getElementById('Supplies'); // Target the div directly
-      suppliesDiv.innerHTML = ''; // Clear existing items
+              // Populate the supplies
+              const suppliesUsed = salesData.value.suppliesUsed;
+              const suppliesDiv = document.getElementById('Supplies'); // Target the div directly
+              suppliesDiv.innerHTML = ''; // Clear existing items
 
-      if (suppliesUsed) {
-       suppliesUsed.forEach((supply) => {
-        const supplyInfo = document.createElement('div');
-        supplyInfo.style.cssText = "display: grid; grid-template-columns: 40% 40% 1fr; align-items: center;  margin-top: 10px;";
-        supplyInfo.innerHTML = `
+              if (suppliesUsed) {
+                suppliesUsed.forEach((supply) => {
+                  const supplyInfo = document.createElement('div');
+                  supplyInfo.style.cssText = "display: grid; grid-template-columns: 40% 40% 1fr; align-items: center;  margin-top: 10px;";
+                  supplyInfo.innerHTML = `
           <h5>${supply.itemName}</h5>
           <h5>Stock Levels ${supply.currentHealth}</h5>
 <a class="btn" style="width: 100px;" href="/OrderProductsAndItems?reorderItem=${supply.itemId}">Re Order</a>
 
         `;
-        suppliesDiv.appendChild(supplyInfo);
-       });
-      } else {
-
-      }
-
-     }
-
-     // Open the modal
-     openModal();
-    } catch (error) {
-     console.error('There has been a problem with your fetch operation:', error);
-     alert('Product information could not be fetched.');
-    }
-   }
-
-   async function onClickFunction(timeFrame) {
-    // Fetch the product sales statistics
-    const data = await fetchProductSalesStatistics(currentProductId, timeFrame);
-
-    // Check if data fetched successfully
-    if (data && data.value) {
-     // Find the DOM elements
-     const revenueElement = document.getElementById('RevenueMade');
-     const profitElement = document.getElementById('ProfitMade');
-     const percentageElement = document.getElementById('percentage');
-     const circleBorder = document.getElementById('circle-border');
-
-     // Update the DOM elements
-     revenueElement.innerText = `R${data.value.totalSalesAmount.toFixed(2)}`;
-     profitElement.innerText = `R${data.value.totalProfit.toFixed(2)}`;
-
-     const percentage = data.value.productImpactPercentage;
-     percentageElement.innerText = `${percentage.toFixed(2)}%`;
-
-     const degree = (360 * percentage) / 100;
-     circleBorder.style.transform = `rotate(${degree}deg)`;
-    }
-   }
-
-   // Example usage: onClickFunction(1, 'weekly');
-
-
-
-   let currentProductId = null;
-
-   document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById('daysSlider');
-    slider.addEventListener('input', updateDaysLabel);
-   });
-   async function updateDaysLabel() {
-    console.log(currentProductId);
-
-    if (currentProductId === null) return; // Don't proceed if no product is selected
-
-    const days = document.getElementById('daysSlider').value;
-    document.getElementById('daysLabel').innerText = days;
-
-    try {
-     const response = await fetch(`http://localhost:5358/Product/GetSalesAndProfitOverDays?productId=${currentProductId}&days=${days}`, {
-      method: 'GET',
-      headers: {
-       'Content-Type': 'application/json',
-      },
-     });
-
-     if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      // Update the UI elements with the new data
-      document.getElementById('salesOverDays').innerText = `Sales Revenue over ${days} days: R${data.totalRevenue}`;
-      document.getElementById('roiForDays').innerText = `Return on Investment for the past ${days} days: R${data.totalProfit}`;
-      document.getElementById('percentageOfTotalProfit').innerText = `Percentage of Total Store Profit: ${data.percentageOfTotalProfit.toFixed(2)}%`; // Update new label
-     } else {
-      console.error('Server returned an error:', response);
-     }
-    } catch (error) {
-     console.error('Error fetching data:', error);
-    }
-   }
-
-   function openAlertModalSale(title, message) {
-    // Set the modal's title and message
-    document.getElementById('alertModalLabelSale').innerText = title;
-    document.getElementById('alertModalBodySale').innerText = message;
-
-    // Display the modal
-    var modal = document.getElementById('alertModalSale');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-   }
-
-   function closeAlertModalSale() {
-    var modal = document.getElementById('alertModalSale');
-    modal.style.display = 'none';
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
-   }
-
-
-   document.getElementById("placeOnSaleButton").onclick = async function () {
-    try {
-     const response = await fetch(`http://localhost:5358/Product/ReducePrice?productId=${currentProductId}`, {
-      method: 'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      }
-     });
-
-     if (response.ok) {
-      const updatedProduct = await response.json();
-      // Open the alert modal to notify the user that the product is now on sale
-      console.log(updatedProduct)
-      openAlertModalSale("Success", "The product is now on sale.");
-     } else {
-      console.error("Server returned an error:", response);
-     }
-    } catch (error) {
-     console.error("There was a problem with the request:", error);
-    }
-   };
-
-   document.getElementById("DiscontniueButton").onclick = async function () {
-    try {
-     const response = await fetch(`http://localhost:5358/Product/Dicontinue?productId=${currentProductId}`, {
-      method: 'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      }
-     });
-
-     if (response.ok) {
-      const updatedProduct = await response.json();
-      // Open the alert modal to notify the user that the product is now on sale
-      console.log(updatedProduct)
-      openAlertModalSale("Success", "The product has been place as inactive.");
-     } else {
-      console.error("Server returned an error:", response);
-     }
-    } catch (error) {
-     console.error("There was a problem with the request:", error);
-    }
-   };
-
-
-
-
-
-   async function fetchProductsRunningLow() {
-    try {
-     // Fetch data from your API
-     const response = await fetch('http://localhost:5358/Product/low-stock-products'); // Replace with your API endpoint
-     const data = await response.json();
-
-     // Get the table body element
-     const tableBody = document.querySelector("#myTableRunningLow tbody");
-
-     // Clear existing rows
-     tableBody.innerHTML = "";
-
-     // Populate the table
-     data.forEach((product, index) => {
-      const row = document.createElement("tr");
-
-      const indexCell = document.createElement("th");
-      indexCell.scope = "row";
-      indexCell.textContent = index + 1;
-
-      const nameCell = document.createElement("td");
-      nameCell.textContent = product.productName;
-
-      const unitsCell = document.createElement("td");
-      unitsCell.textContent = product.unitsInInventory;
-
-      const thresholdCell = document.createElement("td");
-      thresholdCell.textContent = product.minimumThreshold;
-
-      // Create a new table cell for the button
-      const buttonCell = document.createElement("td");
-      const reorderButton = document.createElement("button");
-
-      reorderButton.textContent = "Urgent Reorder";
-      reorderButton.className = "btn btn-primary";
-      reorderButton.addEventListener("click", () => {
-       // Implement your reorder logic here
-       console.log(`Reordering product: ${product.productName}`);
-
-       // Redirect to another page with the product ID as a query parameter
-       window.location.href = `/OrderProductsAndItems?reorderProduct=${product.productId}`;
-      });
-
-      buttonCell.appendChild(reorderButton);
-
-
-      buttonCell.appendChild(reorderButton);
-
-      row.appendChild(indexCell);
-      row.appendChild(nameCell);
-      row.appendChild(unitsCell);
-
-      row.appendChild(buttonCell);  // Append the button cell to the row
-
-      tableBody.appendChild(row);
-     });
-
-    } catch (error) {
-     console.error("An error occurred while fetching data:", error);
-    }
-   }
-
-   // Call the function to populate the table
-   fetchProductsRunningLow();
-
-
-
-
-   function filterTable(stockLevel) {
-    var table, rows, i, stockStatus;
-    table = document.querySelector("#myTable .table");
-    rows = table.getElementsByTagName("tr");
-
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 1; i < rows.length; i += 2) {  // Skipping header row and starting at first data row, increment by 2 to skip the collapse rows
-     stockStatus = rows[i].getElementsByTagName("td")[1].getElementsByTagName("span")[0].style.color;
-     if (stockLevel === 'all' || stockStatus === stockLevel) {
-      rows[i].style.display = "";
-      rows[i + 1].style.display = "";  // Show the corresponding collapse row as well
-     } else {
-      rows[i].style.display = "none";
-      rows[i + 1].style.display = "none";  // Hide the corresponding collapse row as well
-     }
-    }
-   }
-
-   // Function to open the modal
-   function openModal() {
-    const modal = document.getElementById("baseModal");
-    modal.style.display = "block";
-   }
-
-   // Function to close the modal
-   function closeModal() {
-    const modal = document.getElementById("baseModal");
-    modal.style.display = "none";
-   }
-
-   // Close the modal when clicking outside of the modal content
-   window.onclick = function (event) {
-    const modal = document.getElementById("baseModal");
-    if (event.target == modal) {
-     modal.style.display = "none";
-    }
-   }
-
-
-
-   function fetchTopSellingProducts() {
-    fetch("/TopSellingProducts/10", {
-     method: "GET",
-     headers: {
-      "Content-Type": "application/json",
-     },
-    })
-     .then(response => {
-      if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-     })
-     .then(products => {
-      renderTable(products);
-     })
-     .catch(error => {
-      console.error("Error:", error);
-     });
-   }
-
-   // Initialize the updateProductDTO variable globally so it can be accessed by other functions
-   let updateProductDTO = {};
-
-   // Function to populate the DTO when the edit button is clicked
-   function populateDTO(product) {
-    updateProductDTO = {
-     categoryId: product.categoryId,
-     productName: product.productName,
-     markupPercentage: product.markupPercentage,
-     minimumThreshold: product.minimumThreshold,
-     maximumThreshold: product.maximumThreshold,
-     status: product.status,
-     productSellingPrice: product.productSellingPrice,
-     // Populate with linked items if available
-     ItemQuantities: product.linkedItems.map(item => ({
-      ItemId: item.item.itemId,
-      QuantityUsed: item.quantityUsed
-     }))
-    };
-    console.log("Populated DTO: ", updateProductDTO);
-   }
-
-   // This will hold the current item being edited
-   let currentItem = null;
-
-   // Function to show the modal and populate it
-   function showItemModal(item) {
-    currentItem = item;
-    document.getElementById('itemName').innerText = `Item Name: ${item.itemName}`;
-    document.getElementById('itemQuantity').value = item.quantityUsed;
-    $('#itemModal').modal('show');
-   }
-
-   // Function to update the quantity and the DTO
-   function updateItemQuantity() {
-    const newQuantity = parseFloat(document.getElementById('itemQuantity').value);
-    if (currentItem && updateProductDTO.ItemQuantities) {
-     // Update the quantity in currentItem
-     currentItem.quantityUsed = newQuantity;
-
-     // Find the item in the DTO and update its quantity
-     const itemInDTO = updateProductDTO.ItemQuantities.find(i => i.ItemId === currentItem.itemId);
-     if (itemInDTO) {
-      itemInDTO.QuantityUsed = newQuantity;
-     }
-
-     console.log(`Updated ${currentItem.itemName} with new quantity ${newQuantity}`);
-     console.log("Updated DTO: ", updateProductDTO);
-    }
-    $('#itemModal').modal('hide');
-   }
-
-
-   document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById('searchInput');
-
-    searchInput.addEventListener('keyup', function (event) {
-     const query = event.target.value.toLowerCase();
-     const rows = document.querySelectorAll("#productTable tbody tr");
-
-     rows.forEach((row, rowIndex) => {
-      if (rowIndex % 2 === 0) { // Only target the product name rows, assuming the structure remains as it is.
-       let productName = row.cells[2].innerText.toLowerCase();
-       if (productName.includes(query)) {
-        // Highlight the matching text
-        const regex = new RegExp(`(${query})`, 'gi');
-        const highlightedText = row.cells[2].innerText.replace(regex, '<span class="highlight">$1</span>');
-        row.cells[2].innerHTML = highlightedText;
-
-        // Show the row and the next one
-        row.style.display = "";
-        if (row.nextElementSibling) {
-         row.nextElementSibling.style.display = "";
+                  suppliesDiv.appendChild(supplyInfo);
+                });
+              } else {
+
+              }
+
+            }
+
+            // Open the modal
+            openModal();
+          } catch (error) {
+            console.error('There has been a problem with your fetch operation:', error);
+            alert('Product information could not be fetched.');
+          }
         }
-       } else {
-        // Remove any remaining highlight
-        row.cells[2].innerText = row.cells[2].innerText;
 
-        // Hide the row and the next one
-        row.style.display = "none";
-        if (row.nextElementSibling) {
-         row.nextElementSibling.style.display = "none";
+        async function onClickFunction(timeFrame) {
+          // Fetch the product sales statistics
+          const data = await fetchProductSalesStatistics(currentProductId, timeFrame);
+
+          // Check if data fetched successfully
+          if (data && data.value) {
+            // Find the DOM elements
+            const revenueElement = document.getElementById('RevenueMade');
+            const profitElement = document.getElementById('ProfitMade');
+            const percentageElement = document.getElementById('percentage');
+            const circleBorder = document.getElementById('circle-border');
+
+            // Update the DOM elements
+            revenueElement.innerText = `R${data.value.totalSalesAmount.toFixed(2)}`;
+            profitElement.innerText = `R${data.value.totalProfit.toFixed(2)}`;
+
+            const percentage = data.value.productImpactPercentage;
+            percentageElement.innerText = `${percentage.toFixed(2)}%`;
+
+            const degree = (360 * percentage) / 100;
+            circleBorder.style.transform = `rotate(${degree}deg)`;
+          }
         }
-       }
-      }
-     });
-    });
-   });
 
-
-   function undoFilter() {
-    window.location.reload();
-
-   }
+        // Example usage: onClickFunction(1, 'weekly');
 
 
 
+        let currentProductId = null;
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const slider = document.getElementById('daysSlider');
+          slider.addEventListener('input', updateDaysLabel);
+        });
+        async function updateDaysLabel() {
+          console.log(currentProductId);
+
+          if (currentProductId === null) return; // Don't proceed if no product is selected
+
+          const days = document.getElementById('daysSlider').value;
+          document.getElementById('daysLabel').innerText = days;
+
+          try {
+            const response = await fetch(`http://localhost:5358/Product/GetSalesAndProfitOverDays?productId=${currentProductId}&days=${days}`, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              console.log(data);
+              // Update the UI elements with the new data
+              document.getElementById('salesOverDays').innerText = `Sales Revenue over ${days} days: R${data.totalRevenue}`;
+              document.getElementById('roiForDays').innerText = `Return on Investment for the past ${days} days: R${data.totalProfit}`;
+              document.getElementById('percentageOfTotalProfit').innerText = `Percentage of Total Store Profit: ${data.percentageOfTotalProfit.toFixed(2)}%`; // Update new label
+            } else {
+              console.error('Server returned an error:', response);
+            }
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        }
+
+        function openAlertModalSale(title, message) {
+          // Set the modal's title and message
+          document.getElementById('alertModalLabelSale').innerText = title;
+          document.getElementById('alertModalBodySale').innerText = message;
+
+          // Display the modal
+          var modal = document.getElementById('alertModalSale');
+          modal.style.display = 'block';
+          modal.classList.add('show');
+          document.body.classList.add('modal-open');
+        }
+
+        function closeAlertModalSale() {
+          var modal = document.getElementById('alertModalSale');
+          modal.style.display = 'none';
+          modal.classList.remove('show');
+          document.body.classList.remove('modal-open');
+        }
 
 
-   function renderTable(products) {
-    const tableBody = document.querySelector('#myTable tbody');
-    tableBody.innerHTML = '';  // Clear the existing table rows
+        document.getElementById("placeOnSaleButton").onclick = async function () {
+          try {
+            const response = await fetch(`http://localhost:5358/Product/ReducePrice?productId=${currentProductId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            });
 
-    products.forEach((product, index) => {
-     let stockStatus;
-     let stockRecommendation;
+            if (response.ok) {
+              const updatedProduct = await response.json();
+              // Open the alert modal to notify the user that the product is now on sale
+              console.log(updatedProduct)
+              openAlertModalSale("Success", "The product is now on sale.");
+            } else {
+              console.error("Server returned an error:", response);
+            }
+          } catch (error) {
+            console.error("There was a problem with the request:", error);
+          }
+        };
 
-     if (product.unitsInInventory <= product.minimumThreshold) {
-      stockStatus = 'red';
-      stockRecommendation = 'Reorder more, stock is low.';
-     } else if (
-      product.unitsInInventory > (product.minimumThreshold + 5) &&
-      product.unitsInInventory < (product.maximumThreshold - 5)
-     ) {
-      stockStatus = 'yellow';
-      stockRecommendation = 'Reorder, but not a large amount.';
-     } else if (product.unitsInInventory >= product.maximumThreshold) {
-      stockStatus = 'green';
-      stockRecommendation = 'Stock is in good condition.';
-     }
+        document.getElementById("DiscontniueButton").onclick = async function () {
+          try {
+            const response = await fetch(`http://localhost:5358/Product/Dicontinue?productId=${currentProductId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            });
 
-     const row = `
+            if (response.ok) {
+              const updatedProduct = await response.json();
+              // Open the alert modal to notify the user that the product is now on sale
+              console.log(updatedProduct)
+              openAlertModalSale("Success", "The product has been place as inactive.");
+            } else {
+              console.error("Server returned an error:", response);
+            }
+          } catch (error) {
+            console.error("There was a problem with the request:", error);
+          }
+        };
+
+
+
+
+
+        async function fetchProductsRunningLow() {
+          try {
+            // Fetch data from your API
+            const response = await fetch('http://localhost:5358/Product/low-stock-products'); // Replace with your API endpoint
+            const data = await response.json();
+
+            // Get the table body element
+            const tableBody = document.querySelector("#myTableRunningLow tbody");
+
+            // Clear existing rows
+            tableBody.innerHTML = "";
+
+            // Populate the table
+            data.forEach((product, index) => {
+              const row = document.createElement("tr");
+
+              const indexCell = document.createElement("th");
+              indexCell.scope = "row";
+              indexCell.textContent = index + 1;
+
+              const nameCell = document.createElement("td");
+              nameCell.textContent = product.productName;
+
+              const unitsCell = document.createElement("td");
+              unitsCell.textContent = product.unitsInInventory;
+
+              const thresholdCell = document.createElement("td");
+              thresholdCell.textContent = product.minimumThreshold;
+
+              // Create a new table cell for the button
+              const buttonCell = document.createElement("td");
+              const reorderButton = document.createElement("button");
+
+              reorderButton.textContent = "Urgent Reorder";
+              reorderButton.className = "btn btn-primary";
+              reorderButton.addEventListener("click", () => {
+                // Implement your reorder logic here
+                console.log(`Reordering product: ${product.productName}`);
+
+                // Redirect to another page with the product ID as a query parameter
+                window.location.href = `/OrderProductsAndItems?reorderProduct=${product.productId}`;
+              });
+
+              buttonCell.appendChild(reorderButton);
+
+
+              buttonCell.appendChild(reorderButton);
+
+              row.appendChild(indexCell);
+              row.appendChild(nameCell);
+              row.appendChild(unitsCell);
+
+              row.appendChild(buttonCell);  // Append the button cell to the row
+
+              tableBody.appendChild(row);
+            });
+
+          } catch (error) {
+            console.error("An error occurred while fetching data:", error);
+          }
+        }
+
+        // Call the function to populate the table
+        fetchProductsRunningLow();
+
+
+
+
+        function filterTable(stockLevel) {
+          var table, rows, i, stockStatus;
+          table = document.querySelector("#myTable .table");
+          rows = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 1; i < rows.length; i += 2) {  // Skipping header row and starting at first data row, increment by 2 to skip the collapse rows
+            stockStatus = rows[i].getElementsByTagName("td")[1].getElementsByTagName("span")[0].style.color;
+            if (stockLevel === 'all' || stockStatus === stockLevel) {
+              rows[i].style.display = "";
+              rows[i + 1].style.display = "";  // Show the corresponding collapse row as well
+            } else {
+              rows[i].style.display = "none";
+              rows[i + 1].style.display = "none";  // Hide the corresponding collapse row as well
+            }
+          }
+        }
+
+        // Function to open the modal
+        function openModal() {
+          const modal = document.getElementById("baseModal");
+          modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+          const modal = document.getElementById("baseModal");
+          modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside of the modal content
+        window.onclick = function (event) {
+          const modal = document.getElementById("baseModal");
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+
+
+
+        function fetchTopSellingProducts() {
+          fetch("/TopSellingProducts/10", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(products => {
+              renderTable(products);
+            })
+            .catch(error => {
+              console.error("Error:", error);
+            });
+        }
+
+        // Initialize the updateProductDTO variable globally so it can be accessed by other functions
+        let updateProductDTO = {};
+
+        // Function to populate the DTO when the edit button is clicked
+        function populateDTO(product) {
+          updateProductDTO = {
+            categoryId: product.categoryId,
+            productName: product.productName,
+            markupPercentage: product.markupPercentage,
+            minimumThreshold: product.minimumThreshold,
+            maximumThreshold: product.maximumThreshold,
+            status: product.status,
+            productSellingPrice: product.productSellingPrice,
+            // Populate with linked items if available
+            ItemQuantities: product.linkedItems.map(item => ({
+              ItemId: item.item.itemId,
+              QuantityUsed: item.quantityUsed
+            }))
+          };
+          console.log("Populated DTO: ", updateProductDTO);
+        }
+
+        // This will hold the current item being edited
+        let currentItem = null;
+
+        // Function to show the modal and populate it
+        function showItemModal(item) {
+          currentItem = item;
+          document.getElementById('itemName').innerText = `Item Name: ${item.itemName}`;
+          document.getElementById('itemQuantity').value = item.quantityUsed;
+          $('#itemModal').modal('show');
+        }
+
+        // Function to update the quantity and the DTO
+        function updateItemQuantity() {
+          const newQuantity = parseFloat(document.getElementById('itemQuantity').value);
+          if (currentItem && updateProductDTO.ItemQuantities) {
+            // Update the quantity in currentItem
+            currentItem.quantityUsed = newQuantity;
+
+            // Find the item in the DTO and update its quantity
+            const itemInDTO = updateProductDTO.ItemQuantities.find(i => i.ItemId === currentItem.itemId);
+            if (itemInDTO) {
+              itemInDTO.QuantityUsed = newQuantity;
+            }
+
+            console.log(`Updated ${currentItem.itemName} with new quantity ${newQuantity}`);
+            console.log("Updated DTO: ", updateProductDTO);
+          }
+          $('#itemModal').modal('hide');
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const searchInput = document.getElementById('searchInput');
+
+          searchInput.addEventListener('keyup', function (event) {
+            const query = event.target.value.toLowerCase();
+            const rows = document.querySelectorAll("#productTable tbody tr");
+
+            rows.forEach((row, rowIndex) => {
+              if (rowIndex % 2 === 0) { // Only target the product name rows, assuming the structure remains as it is.
+                let productName = row.cells[2].innerText.toLowerCase();
+                if (productName.includes(query)) {
+                  // Highlight the matching text
+                  const regex = new RegExp(`(${query})`, 'gi');
+                  const highlightedText = row.cells[2].innerText.replace(regex, '<span class="highlight">$1</span>');
+                  row.cells[2].innerHTML = highlightedText;
+
+                  // Show the row and the next one
+                  row.style.display = "";
+                  if (row.nextElementSibling) {
+                    row.nextElementSibling.style.display = "";
+                  }
+                } else {
+                  // Remove any remaining highlight
+                  row.cells[2].innerText = row.cells[2].innerText;
+
+                  // Hide the row and the next one
+                  row.style.display = "none";
+                  if (row.nextElementSibling) {
+                    row.nextElementSibling.style.display = "none";
+                  }
+                }
+              }
+            });
+          });
+        });
+
+
+        function undoFilter() {
+          window.location.reload();
+
+        }
+
+
+
+
+
+        function renderTable(products) {
+          const tableBody = document.querySelector('#myTable tbody');
+          tableBody.innerHTML = '';  // Clear the existing table rows
+
+          products.forEach((product, index) => {
+            let stockStatus;
+            let stockRecommendation;
+
+            if (product.unitsInInventory <= product.minimumThreshold) {
+              stockStatus = 'red';
+              stockRecommendation = 'Reorder more, stock is low.';
+            } else if (
+              product.unitsInInventory > (product.minimumThreshold + 5) &&
+              product.unitsInInventory < (product.maximumThreshold - 5)
+            ) {
+              stockStatus = 'yellow';
+              stockRecommendation = 'Reorder, but not a large amount.';
+            } else if (product.unitsInInventory >= product.maximumThreshold) {
+              stockStatus = 'green';
+              stockRecommendation = 'Stock is in good condition.';
+            }
+
+            const row = `
 <tr>
   <th scope="row">${index + 1}</th>
   <td>
@@ -1444,279 +1435,279 @@ align-items: center;
 </tr>
 `;
 
-     tableBody.insertAdjacentHTML('beforeend', row);  // Insert the new row at the end of the table body
-    });
-   }
-
-   function filterTable() {
-    // Get the input field value
-    var input, filter, table, tr, td, i, j, txtValue;
-    input = document.getElementById("searchInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 1; i < tr.length; i += 2) {  // Start from 1 to skip the header row, increment by 2 to skip the edit rows
-     td = tr[i].getElementsByTagName("td")[2];  // Get the Product Name column
-     if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-       tr[i].style.display = "";  // Show the row
-      } else {
-       tr[i].style.display = "none";  // Hide the row
-       tr[i + 1].style.display = "none";  // Hide the corresponding edit row
-      }
-     }
-    }
-   }
-
-   function fetchProductsNearExpiration() {
-    fetch(`/ProductsNearExpiration/${7}`, {
-     method: "GET",
-     headers: {
-      "Content-Type": "application/json",
-     },
-    })
-     .then(response => {
-      if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-     })
-     .then(products => {
-      renderTable(products);
-     })
-     .catch(error => {
-      console.error("Error:", error);
-     });
-   }
-
-
-   function fetchProductsByStockLevels(level) {
-    fetch(`/ProductsByStockLevels/${level}`, {
-     method: "GET",
-     headers: {
-      "Content-Type": "application/json",
-     },
-    })
-     .then(response => {
-      if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-     })
-     .then(products => {
-      renderTable(products);
-     })
-     .catch(error => {
-      console.error("Error:", error);
-     });
-   }
-
-
-   function fetchLeastSellingProducts() {
-    fetch(`http://localhost:5358/Product/least-selling`, {
-     method: "GET",
-     headers: {
-      "Content-Type": "application/json",
-     },
-    })
-     .then(response => {
-      if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-     })
-     .then(products => {
-      renderTable(products);
-     })
-     .catch(error => {
-      console.error("Error:", error);
-     });
-   }
-
-
-
-
-   // Function to fetch least selling products
-   async function fetchLeastSellingProducts() {
-    try {
-     const response = await fetch('http://localhost:5358/Product/least-selling'); // Replace with your API endpoint and bottom parameter
-     const data = await response.json();
-
-     // Filter out products that are already on sale
-     // Filter out products that are already on sale
-     const filteredData = data.filter(product => product.status !== 4);
-
-
-     return filteredData;
-    } catch (error) {
-     console.error("An error occurred while fetching data:", error);
-     return [];
-    }
-   }
-
-   // Populate the modal with least selling products
-   async function populateModal() {
-    const products = await fetchLeastSellingProducts();
-    const tableBody = document.querySelector("#stockTableAlert");
-    tableBody.innerHTML = "";
-
-    products.forEach(product => {
-     const row = document.createElement("tr");
-     row.className = "d-flex justify-content-between";
-
-     const nameCell = document.createElement("td");
-     nameCell.className = "flex-fill";
-     nameCell.textContent = product.productName;
-
-     const actionCell = document.createElement("td");
-     actionCell.className = "text-right";
-     const reduceButton = document.createElement("button");
-     reduceButton.className = "btn btn-primary";
-     reduceButton.textContent = "Reduce Price";
-
-     // Capture the productId in the closure
-     const productId = product.productId;
-
-     reduceButton.onclick = async function () {
-      try {
-       const response = await fetch(`http://localhost:5358/Product/ReducePrice?productId=${productId}`, {
-        method: 'POST',
-        headers: {
-         'Content-Type': 'application/json',
+            tableBody.insertAdjacentHTML('beforeend', row);  // Insert the new row at the end of the table body
+          });
         }
-       });
 
-       if (response.ok) {
-        const updatedProduct = await response.json();
-        // Open the alert modal to notify the user that the product is now on sale
-        console.log(updatedProduct);
-        openAlertModalSale("Success", "The product is now on sale.");
-       } else {
-        console.error("Server returned an error:", response);
-       }
-      } catch (error) {
-       console.error("There was a problem with the request:", error);
-      }
-     };
+        function filterTable() {
+          // Get the input field value
+          var input, filter, table, tr, td, i, j, txtValue;
+          input = document.getElementById("searchInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
 
-     // Append reduceButton to actionCell
-     actionCell.appendChild(reduceButton);
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 1; i < tr.length; i += 2) {  // Start from 1 to skip the header row, increment by 2 to skip the edit rows
+            td = tr[i].getElementsByTagName("td")[2];  // Get the Product Name column
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";  // Show the row
+              } else {
+                tr[i].style.display = "none";  // Hide the row
+                tr[i + 1].style.display = "none";  // Hide the corresponding edit row
+              }
+            }
+          }
+        }
 
-     row.appendChild(nameCell);
-     row.appendChild(actionCell);
-     tableBody.appendChild(row);
-    });
-   }
-
-   async function placeOnSale(productId) {
-    try {
-     const response = await fetch(`http://localhost:5358/Product/PlaceOnSale?productId=${productId}`, {
-      method: 'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      }
-     });
-
-     if (response.ok) {
-      const updatedProduct = await response.json();
-      // Open the alert modal to notify the user that the product is now on sale
-      console.log(updatedProduct);
-      openAlertModalSale("Success", "The product is now on sale.");
-     } else {
-      console.error("Server returned an error:", response);
-     }
-    } catch (error) {
-     console.error("There was a problem with the request:", error);
-    }
-   }
-
-   // Function to run on DOM load
-   document.addEventListener("DOMContentLoaded", async () => {
-    // Fetch and populate least selling products
-    const leastSellingProducts = await fetchLeastSellingProducts();
-    const leastSellingCount = leastSellingProducts.length;
-    document.getElementById("NotPerforming").textContent = `${leastSellingCount} are not doing well, place them on sale`;
-
-    // Fetch and populate products about to expire
-    const aboutToExpireProducts = await fetchProductsAboutToExpire(); // Make sure fetchProductsAboutToExpire is an async function and returns the fetched products
-    const aboutToExpireCount = aboutToExpireProducts.length;
-    document.getElementById("ExpiringPotentialSavings").textContent = `${aboutToExpireCount} are about to expire soon, place them on sale`;
-   });
+        function fetchProductsNearExpiration() {
+          fetch(`/ProductsNearExpiration/${7}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(products => {
+              renderTable(products);
+            })
+            .catch(error => {
+              console.error("Error:", error);
+            });
+        }
 
 
-   async function fetchProductsAboutToExpire() {
-    try {
-     // Fetch data from your API
-     const response = await fetch('http://localhost:5358/Product/near-expiration');
-     const products = await response.json();
-
-     // Update card text
-     document.getElementById("ExpiringPotentialSavings").textContent = `${products.length} are about to expire soon, place them on sale`;
-
-     // Get the table body element
-     const tableBody = document.getElementById("stockTableAlert");
-
-     // Clear existing rows
-     tableBody.innerHTML = "";
-
-     // Populate the table
-     products.forEach((product) => {
-      const row = document.createElement("tr");
-      row.className = "d-flex justify-content-between";
-
-      const nameCell = document.createElement("td");
-      nameCell.className = "flex-fill";
-      nameCell.textContent = product.productName;
-
-      actionCell.innerHTML = `                         <button class="btn btn-warning" onclick="placeOnSale(${product.productId})">Place on Sale</button>`;
+        function fetchProductsByStockLevels(level) {
+          fetch(`/ProductsByStockLevels/${level}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(products => {
+              renderTable(products);
+            })
+            .catch(error => {
+              console.error("Error:", error);
+            });
+        }
 
 
-      row.appendChild(nameCell);
-      row.appendChild(actionCell);
-      tableBody.appendChild(row);
-     });
-    } catch (error) {
-     console.error("An error occurred while fetching data:", error);
-    }
-   }
-
-   function showAlertModal(title, description, fetchType) {
-    // Set the modal title
-    document.getElementById("alertModalLabel").textContent = title;
-
-    // Fetch and populate data based on the type
-    if (fetchType === 'LeastSelling') {
-     populateModal();
-    } else if (fetchType === 'AboutToExpire') {
-     fetchProductsAboutToExpire();
-    }
-
-    // Show the modal (assuming you're using Bootstrap's modal)
-    $("#ProductsAction").modal('show');
-   }
-
-   function closeAlertModal() {
-    // Hide the modal (assuming you're using Bootstrap's modal)
-    $("#ProductsAction").modal('hide');
-   }
-
-   // For least selling products
-   document.querySelector("#btnLeastSelling").addEventListener("click", function () {
-    showAlertModal('Place on Sale', 'Least Selling Products', 'LeastSelling');
-   });
-
-   // For products about to expire
-   document.querySelector("#btnAboutToExpire").addEventListener("click", function () {
-    showAlertModal('Place on Sale', 'Products About to Expire', 'AboutToExpire');
-   });
-
-  </script>
+        function fetchLeastSellingProducts() {
+          fetch(`http://localhost:5358/Product/least-selling`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(products => {
+              renderTable(products);
+            })
+            .catch(error => {
+              console.error("Error:", error);
+            });
+        }
 
 
 
-</body>
+
+        // Function to fetch least selling products
+        async function fetchLeastSellingProducts() {
+          try {
+            const response = await fetch('http://localhost:5358/Product/least-selling'); // Replace with your API endpoint and bottom parameter
+            const data = await response.json();
+
+            // Filter out products that are already on sale
+            // Filter out products that are already on sale
+            const filteredData = data.filter(product => product.status !== 4);
+
+
+            return filteredData;
+          } catch (error) {
+            console.error("An error occurred while fetching data:", error);
+            return [];
+          }
+        }
+
+        // Populate the modal with least selling products
+        async function populateModal() {
+          const products = await fetchLeastSellingProducts();
+          const tableBody = document.querySelector("#stockTableAlert");
+          tableBody.innerHTML = "";
+
+          products.forEach(product => {
+            const row = document.createElement("tr");
+            row.className = "d-flex justify-content-between";
+
+            const nameCell = document.createElement("td");
+            nameCell.className = "flex-fill";
+            nameCell.textContent = product.productName;
+
+            const actionCell = document.createElement("td");
+            actionCell.className = "text-right";
+            const reduceButton = document.createElement("button");
+            reduceButton.className = "btn btn-primary";
+            reduceButton.textContent = "Reduce Price";
+
+            // Capture the productId in the closure
+            const productId = product.productId;
+
+            reduceButton.onclick = async function () {
+              try {
+                const response = await fetch(`http://localhost:5358/Product/ReducePrice?productId=${productId}`, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  }
+                });
+
+                if (response.ok) {
+                  const updatedProduct = await response.json();
+                  // Open the alert modal to notify the user that the product is now on sale
+                  console.log(updatedProduct);
+                  openAlertModalSale("Success", "The product is now on sale.");
+                } else {
+                  console.error("Server returned an error:", response);
+                }
+              } catch (error) {
+                console.error("There was a problem with the request:", error);
+              }
+            };
+
+            // Append reduceButton to actionCell
+            actionCell.appendChild(reduceButton);
+
+            row.appendChild(nameCell);
+            row.appendChild(actionCell);
+            tableBody.appendChild(row);
+          });
+        }
+
+        async function placeOnSale(productId) {
+          try {
+            const response = await fetch(`http://localhost:5358/Product/PlaceOnSale?productId=${productId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            });
+
+            if (response.ok) {
+              const updatedProduct = await response.json();
+              // Open the alert modal to notify the user that the product is now on sale
+              console.log(updatedProduct);
+              openAlertModalSale("Success", "The product is now on sale.");
+            } else {
+              console.error("Server returned an error:", response);
+            }
+          } catch (error) {
+            console.error("There was a problem with the request:", error);
+          }
+        }
+
+        // Function to run on DOM load
+        document.addEventListener("DOMContentLoaded", async () => {
+          // Fetch and populate least selling products
+          const leastSellingProducts = await fetchLeastSellingProducts();
+          const leastSellingCount = leastSellingProducts.length;
+          document.getElementById("NotPerforming").textContent = `${leastSellingCount} are not doing well, place them on sale`;
+
+          // Fetch and populate products about to expire
+          const aboutToExpireProducts = await fetchProductsAboutToExpire(); // Make sure fetchProductsAboutToExpire is an async function and returns the fetched products
+          const aboutToExpireCount = aboutToExpireProducts.length;
+          document.getElementById("ExpiringPotentialSavings").textContent = `${aboutToExpireCount} are about to expire soon, place them on sale`;
+        });
+
+
+        async function fetchProductsAboutToExpire() {
+          try {
+            // Fetch data from your API
+            const response = await fetch('http://localhost:5358/Product/near-expiration');
+            const products = await response.json();
+
+            // Update card text
+            document.getElementById("ExpiringPotentialSavings").textContent = `${products.length} are about to expire soon, place them on sale`;
+
+            // Get the table body element
+            const tableBody = document.getElementById("stockTableAlert");
+
+            // Clear existing rows
+            tableBody.innerHTML = "";
+
+            // Populate the table
+            products.forEach((product) => {
+              const row = document.createElement("tr");
+              row.className = "d-flex justify-content-between";
+
+              const nameCell = document.createElement("td");
+              nameCell.className = "flex-fill";
+              nameCell.textContent = product.productName;
+
+              actionCell.innerHTML = `                         <button class="btn btn-warning" onclick="placeOnSale(${product.productId})">Place on Sale</button>`;
+
+
+              row.appendChild(nameCell);
+              row.appendChild(actionCell);
+              tableBody.appendChild(row);
+            });
+          } catch (error) {
+            console.error("An error occurred while fetching data:", error);
+          }
+        }
+
+        function showAlertModal(title, description, fetchType) {
+          // Set the modal title
+          document.getElementById("alertModalLabel").textContent = title;
+
+          // Fetch and populate data based on the type
+          if (fetchType === 'LeastSelling') {
+            populateModal();
+          } else if (fetchType === 'AboutToExpire') {
+            fetchProductsAboutToExpire();
+          }
+
+          // Show the modal (assuming you're using Bootstrap's modal)
+          $("#ProductsAction").modal('show');
+        }
+
+        function closeAlertModal() {
+          // Hide the modal (assuming you're using Bootstrap's modal)
+          $("#ProductsAction").modal('hide');
+        }
+
+        // For least selling products
+        document.querySelector("#btnLeastSelling").addEventListener("click", function () {
+          showAlertModal('Place on Sale', 'Least Selling Products', 'LeastSelling');
+        });
+
+        // For products about to expire
+        document.querySelector("#btnAboutToExpire").addEventListener("click", function () {
+          showAlertModal('Place on Sale', 'Products About to Expire', 'AboutToExpire');
+        });
+
+      </script>
+
+
+
+  </body>
 
 </html>

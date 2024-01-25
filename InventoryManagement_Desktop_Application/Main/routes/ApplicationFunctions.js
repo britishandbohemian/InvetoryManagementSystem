@@ -30,7 +30,7 @@ const loginUser = async (username, userPassword) => {
 };
 
 
-
+const BaseUrlRegister = "http://localhost:5358/api/Auth/RegisterUser";
 const registerUser = async (
   username,
   userPassword,
@@ -39,7 +39,7 @@ const registerUser = async (
   role
 ) => {
   try {
-    const resp = await fetch("http://0.0.0.0:5358/api/Auth/RegisterUser", {
+    const resp = await fetch(BaseUrlRegister, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -68,7 +68,7 @@ const registerUser = async (
   }
 };
 
-const baseUrl = "http://0.0.0.0:5358/api/users"; // replace with your actual API address
+const baseUrl = "http://localhost:5358/api/users"; // replace with your actual API address
 
 // GET ALL THE USERS
 async function getAllUsers() {
@@ -103,90 +103,96 @@ async function deleteUser(id) {
   return response;
 }
 
-async function SalesRevenue() {
+const RevenueUrl = "http://0.0.0.0:5358/api/Stats/totalrevenue";
+// Get Sales Revenue
+async function SalesRevenue(RevenueUrl) {
   try {
     // Make a GET request to the API endpoint
-    const response = await fetch('http://0.0.0.0:5358/api/Stats/totalrevenue');
-    
+    const response = await fetch();
+
     if (!response.ok) {
       throw new Error('Request failed with status ' + response.status);
     }
-    
+
     // Parse the response as JSON
     const data = await response.json();
-    
+
 
     return data
     // You can perform further actions with the data here
-    
+
   } catch (error) {
     console.error('Error:', error);
     // Handle the error as needed
   }
 }
 
+// Get Potential Profit
 
 async function Potentialprofit() {
   try {
     // Make a GET request to the API endpoint
     const response = await fetch('http://0.0.0.0:5358/api/Stats/potential-profit');
-    
+
     if (!response.ok) {
       throw new Error('Request failed with status ' + response.status);
     }
-    
+
     // Parse the response as JSON
     const data = await response.json();
-    
+
 
     return data
     // You can perform further actions with the data here
-    
+
   } catch (error) {
     console.error('Error:', error);
     // Handle the error as needed
   }
 }
 
+// Get the Stores Narrative for the day
 async function StoreNarrative() {
   try {
     // Make a GET request to the API endpoint
     const response = await fetch('http://0.0.0.0:5358/api/Stats/StorePerformanceNarrative');
-    
+
     if (!response.ok) {
       throw new Error('Request failed with status ' + response.status);
     }
-    
+
     // Parse the response as JSON
     const data = await response.json();
-    
+
 
     return data
     // You can perform further actions with the data here
-    
+
   } catch (error) {
     console.error('Error:', error);
     // Handle the error as needed
   }
 }
 
+
+// Get the sales Data
 async function getSalesData() {
   try {
     // Make a GET request to the API endpoint
     const response = await fetch('http://0.0.0.0:5358/api/sales/GetSales');
-    
+
     if (!response.ok) {
       throw new Error('Request failed with status ' + response.status);
     }
-    
+
     // Parse the response as JSON
     const data = await response.json();
-    
+
     // Use the data (e.g., log it to the console)
     console.log(data);
-    
+
     // You can perform further actions with the data here
-    
+
   } catch (error) {
     console.error('Error:', error);
     // Handle the error as needed
@@ -230,26 +236,27 @@ async function addSupplier(SupplierDto) {
 
 
 
-
+//Get Order Details From supplier
 async function fetchOrderDetails(orderId) {
   const endpoint = `http://0.0.0.0:5358/api/SupplierOrders/supplier-order/${orderId}/details`;
 
   try {
-      const response = await fetch(endpoint);
-      if (response.ok) {
-          const data = await response.json();
-          return data;
-      } else {
-          console.error("Failed to fetch data: ", response.status, response.statusText);
-          return null;
-      }
-  } catch (error) {
-      console.error("Error fetching data:", error);
+    const response = await fetch(endpoint);
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      console.error("Failed to fetch data: ", response.status, response.statusText);
       return null;
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
   }
 }
 
 
+// Get All the suppliers
 async function getSuppliers() {
   try {
     const response = await fetch("http://0.0.0.0:5358/api/Suppliers");
@@ -267,6 +274,7 @@ async function getSuppliers() {
 }
 
 
+// Get Order Details
 async function getOrderDetails(id) {
   try {
     const response = await fetch(`http://0.0.0.0:5358/api/SupplierOrders/supplier-order-details/${id}`);
@@ -324,7 +332,7 @@ async function getSupplierById(id) {
       })),
       rating: supplier.rating
     };
-  } catch (error) {}
+  } catch (error) { }
 }
 
 
@@ -414,7 +422,7 @@ async function updateSupplier(supplierId, updatedSupplier) {
       return response.json();
     })
     .then((data) => {
-return data;
+      return data;
       // handle successful response
     })
     .catch((error) => {
@@ -510,8 +518,13 @@ async function deleteProduct(productId) {
       console.error("Failed to delete product:", error);
     });
 }
+
+
+
+
+// ADD PRODUCTS
 async function addProducts(productsArray) {
-  const apiUrl = "http://0.0.0.0:5358/Product/CreateProductsWithoutComponents"; // Replace with your actual API URL
+  const apiUrl = "http://localhost:5358/Product/CreateProductsWithoutComponents"; // Replace with your actual API URL
 
   try {
     const response = await fetch(apiUrl, {
@@ -535,8 +548,9 @@ async function addProducts(productsArray) {
   }
 }
 
+// GET SUPPLIER ORDERS
 async function fetchSupplierOrderDetails(orderId) {
-  const apiUrl = `http://0.0.0.0:5358/api/SupplierOrders/supplier-order/${orderId}/details`; 
+  const apiUrl = `http://0.0.0.0:5358/api/SupplierOrders/supplier-order/${orderId}/details`;
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
@@ -559,52 +573,55 @@ async function fetchSupplierOrderDetails(orderId) {
 }
 
 
+// UPDATE CATEGORY NAME
 function updateCategoryName(categoryUpdateDto) {
-    const apiUrl = `http://0.0.0.0:5358/api/categories/${categoryUpdateDto.CategoryId}`;
+  const apiUrl = `http://0.0.0.0:5358/api/categories/${categoryUpdateDto.CategoryId}`;
 
-    fetch(apiUrl, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(categoryUpdateDto)
-    })
+  fetch(apiUrl, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(categoryUpdateDto)
+  })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
     })
     .then(data => {
-        console.log("Category updated successfully:", data);
+      console.log("Category updated successfully:", data);
     })
     .catch(error => {
-        console.error("Error updating category:", error);
+      console.error("Error updating category:", error);
     });
 }
 
 
+// uPDATE SUPPLIER DETAILS
+//Test THis to see if it works
 function updateSupplier(supplierDto) {
-    const apiUrl = `http://0.0.0.0:5358/api/Suppliers/${supplierDto.supplierId}`;
+  const apiUrl = `http://localhost:5358/api/Suppliers/${supplierDto.supplierId}`;
 
-    fetch(apiUrl, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(supplierDto)
-    })
+  fetch(apiUrl, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(supplierDto)
+  })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
     })
     .then(data => {
-        console.log("Supplier updated successfully:", data);
+      console.log("Supplier updated successfully:", data);
     })
     .catch(error => {
-        console.error("Error updating category:", error);
+      console.error("Error updating category:", error);
     });
 }
 
@@ -614,12 +631,12 @@ function updateSupplier(supplierDto) {
 
 
 
-
+// ADD A PRODUCT LIKE AN EDIBLE MEAL
 async function addProductsWithComponent(productsArray) {
   const apiUrl = "http://0.0.0.0:5358/Product/CreateProductsWithComponents"; // Replace with your actual API URL
-console.log(JSON.stringify(productsArray))  
+  console.log(JSON.stringify(productsArray))
 
-try {
+  try {
     const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
@@ -627,7 +644,7 @@ try {
 
       },
       body: JSON.stringify(productsArray)
-// Pass an array of products
+      // Pass an array of products
     });
 
     const jsonData = await response.json();
@@ -687,173 +704,175 @@ async function getAllOrders() {
   return orders;
 }
 
+// ORDER A PRODUCT FROM THE SUPPLIER
 async function orderProduct(data) {
   try {
-      const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-product', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-      });
+    const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-product', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
 
-      const result = await response.json();
-      
-      if (result) { // Simply checking for the presence of data
-          return result; // Return the result on successful submission
-      } else {
-          console.error("Error: Received empty data or null from the server.");
-          return null;
-      }
-  } catch (error) {
-      console.error("Fetch error:", error);
+    const result = await response.json();
+
+    if (result) { // Simply checking for the presence of data
+      return result; // Return the result on successful submission
+    } else {
+      console.error("Error: Received empty data or null from the server.");
       return null;
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
   }
 }
 
+// FETCH PREDITED STOCK FOR THE DAY
 async function fetchPredictedStockForToday() {
-    try {
-        const endpoint = `http://0.0.0.0:5358/api/Stats/predicted-stock-for-today`;
-        
-        const response = await fetch(endpoint, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  try {
+    const endpoint = `http://0.0.0.0:5358/api/Stats/predicted-stock-for-today`;
 
-        if (!response.ok) {
-            throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
-        }
+    const response = await fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        const result = await response.json();
-
-        if (result && Array.isArray(result) && result.length > 0) {
-            return result;  // Return the fetched predicted stocks
-        } else {
-            console.warn("Warning: Received empty data or null from the server.");
-            return [];
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-        return [];
+    if (!response.ok) {
+      throw new Error(`Server responded with ${response.status}: ${response.statusText}`);
     }
+
+    const result = await response.json();
+
+    if (result && Array.isArray(result) && result.length > 0) {
+      return result;  // Return the fetched predicted stocks
+    } else {
+      console.warn("Warning: Received empty data or null from the server.");
+      return [];
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return [];
+  }
 }
 
 
-
+//FETCH SALES IN THE DATE RANGE
 async function fetchSalesInDateRange(startDate, endDate) {
-    try {
-        // Assuming your backend server is running on the same IP and port 5358
-        const url = `http://0.0.0.0:5358/api/sales/GetSales?startDate=${startDate}&endDate=${endDate}`;
+  try {
+    // Assuming your backend server is running on the same IP and port 5358
+    const url = `http://0.0.0.0:5358/api/sales/GetSales?startDate=${startDate}&endDate=${endDate}`;
 
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        const result = await response.json();
+    const result = await response.json();
 
-        if (result && result.length) {
-            return result;
-        } else {
-            console.error("Error: Received empty data or null from the server.");
-            return null;
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-        return null;
+    if (result && result.length) {
+      return result;
+    } else {
+      console.error("Error: Received empty data or null from the server.");
+      return null;
     }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
 }
 
 
 async function fetchAllOrderProducts() {
-    try {
-        const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-products', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  try {
+    const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-products', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        const result = await response.json();
+    const result = await response.json();
 
-        if (result && result.length) { // Check if data is present and it's an array with elements
-            return result; // Return the fetched order products
-        } else {
-            console.error("Error: Received empty data or null from the server.");
-            return null;
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-        return null;
+    if (result && result.length) { // Check if data is present and it's an array with elements
+      return result; // Return the fetched order products
+    } else {
+      console.error("Error: Received empty data or null from the server.");
+      return null;
     }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
 }
 
 async function fetchAllOrderItems() {
-    try {
-        const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-items', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  try {
+    const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-items', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-        const result = await response.json();
+    const result = await response.json();
 
-        if (result && result.length) { // Check if data is present and it's an array with elements
-            return result; // Return the fetched order products
-        } else {
-            console.error("Error: Received empty data or null from the server.");
-            return null;
-        }
-    } catch (error) {
-        console.error("Fetch error:", error);
-        return null;
+    if (result && result.length) { // Check if data is present and it's an array with elements
+      return result; // Return the fetched order products
+    } else {
+      console.error("Error: Received empty data or null from the server.");
+      return null;
     }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
 }
 
 
 async function orderFromSupplier(dto) {
   const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/create-supplier-order', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(dto)
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dto)
   });
 
-console.log(dto)
+  console.log(dto)
   if (response.ok) {
-      return await response.json();
+    return await response.json();
   } else {
-      const errorData = await response.text();
-      throw new Error(`Failed to order from supplier: ${errorData}`);
+    const errorData = await response.text();
+    throw new Error(`Failed to order from supplier: ${errorData}`);
   }
 }
 async function orderItem(data) {
   try {
-      const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-item', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-      });
+    const response = await fetch('http://0.0.0.0:5358/api/SupplierOrders/order-item', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
 
-      const result = await response.json();
-      
-      if (result) { // Simply checking for the presence of data
-          return result; // Return the result on successful submission
-      } else {
-          console.error("Error: Received empty data or null from the server.");
-          return null;
-      }
-  } catch (error) {
-      console.error("Fetch error:", error);
+    const result = await response.json();
+
+    if (result) { // Simply checking for the presence of data
+      return result; // Return the result on successful submission
+    } else {
+      console.error("Error: Received empty data or null from the server.");
       return null;
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
   }
 }
 
@@ -1075,27 +1094,27 @@ async function sellItems(cartData) {
 }
 
 function ConfirmOrder(dto) {
-    const url = 'http://0.0.0.0:5358/api/SupplierOrders/ConfirmOrder';  // Replace with the actual endpoint URL.
+  const url = 'http://0.0.0.0:5358/api/SupplierOrders/ConfirmOrder';  // Replace with the actual endpoint URL.
 
-console.log("Before Sent:", JSON.stringify(dto));
-    fetch(url, {
-        method: 'POST', // Assuming this is a POST request.
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dto)
-    })
+  console.log("Before Sent:", JSON.stringify(dto));
+  fetch(url, {
+    method: 'POST', // Assuming this is a POST request.
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dto)
+  })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();  // This line can be adjusted based on what the API endpoint returns.
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();  // This line can be adjusted based on what the API endpoint returns.
     })
     .then(data => {
-        console.log(data);  // Log the response data (if any).
+      console.log(data);  // Log the response data (if any).
     })
     .catch(error => {
-        console.error('There was a problem with the fetch operation:', error.message);
+      console.error('There was a problem with the fetch operation:', error.message);
     });
 }
 async function fetchAllOrders() {
@@ -1246,41 +1265,41 @@ async function getProductInformation(productId) {
 
 
 async function fetchBestSellingProducts() {
-    const url = `http://0.0.0.0:5358/api/Stats/best-performing-products?topN=10`;
+  const url = `http://0.0.0.0:5358/api/Stats/best-performing-products?topN=10`;
 
-    const response = await fetch(url);
-    if (response.ok) {
-        const BestSellingProducts = await response.json();
-        return BestSellingProducts;
-    } else {
-        throw new Error("Failed to fetch sales");
-    }
+  const response = await fetch(url);
+  if (response.ok) {
+    const BestSellingProducts = await response.json();
+    return BestSellingProducts;
+  } else {
+    throw new Error("Failed to fetch sales");
+  }
 }
 
 
 
 async function fetchTotalProducts() {
-    const url = `http://0.0.0.0:5358/api/Stats/total-products`;
+  const url = `http://0.0.0.0:5358/api/Stats/total-products`;
 
-    const response = await fetch(url);
-    if (response.ok) {
-        const res = await response.json();
-        return res;
-    } else {
-        throw new Error("Failed to fetch sales");
-    }
+  const response = await fetch(url);
+  if (response.ok) {
+    const res = await response.json();
+    return res;
+  } else {
+    throw new Error("Failed to fetch sales");
+  }
 }
 
 async function fetchTotalWorthProducts() {
-    const url = `http://0.0.0.0:5358/api/Stats/products-worth`;
+  const url = `http://0.0.0.0:5358/api/Stats/products-worth`;
 
-    const response = await fetch(url);
-    if (response.ok) {
-        const res = await response.json();
-        return res;
-    } else {
-        throw new Error("Failed to fetch sales");
-    }
+  const response = await fetch(url);
+  if (response.ok) {
+    const res = await response.json();
+    return res;
+  } else {
+    throw new Error("Failed to fetch sales");
+  }
 }
 
 
@@ -1353,16 +1372,26 @@ async function recommendSales() {
 
     if (response.status !== 200) {
       console.error("Error fetching data:", response.status);
-      return;
+      // Return a valid JSON object with an error message
+      return JSON.stringify({ error: "Error fetching data", status: response.status });
     }
 
     const data = await response.text();
-    return data;
-    // Further processing here, e.g., updating the UI
+
+    // Check if the data is not empty
+    if (data) {
+      return data;
+    } else {
+      // Return a valid JSON object indicating no data was found
+      return JSON.stringify({ message: "No product recommended for sale." });
+    }
   } catch (error) {
     console.error("Error fetching data:", error);
+    // Return a valid JSON object with the error message
+    return JSON.stringify({ error: "Error fetching data", message: error.message });
   }
 }
+
 
 async function createSale(data) {
   const response = await fetch("http://0.0.0.0:5358/api/Sales/CreateSale", {
@@ -1469,19 +1498,19 @@ async function buildCategoryNarrative(categoryId) {
 }
 
 async function filterCategoriesByWorthLevel(level) {
-    try {
-        const response = await fetch(`${apiBaseUrl}/api/categories/filter-by-worth-level?level=${level}`);
+  try {
+    const response = await fetch(`${apiBaseUrl}/api/categories/filter-by-worth-level?level=${level}`);
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(`Failed to filter categories by worth level: ${errorData.error}`);
-        }
-
-        const filteredCategories = await response.json();
-        return filteredCategories;
-    } catch (error) {
-        throw new Error(`Error: ${error.message}`);
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`Failed to filter categories by worth level: ${errorData.error}`);
     }
+
+    const filteredCategories = await response.json();
+    return filteredCategories;
+  } catch (error) {
+    throw new Error(`Error: ${error.message}`);
+  }
 }
 
 
@@ -1491,14 +1520,14 @@ async function filterCategoriesByWorthLevel(level) {
 //-------EXPORT ALL THE MODULES ---------
 
 module.exports = {
-filterCategoriesByWorthLevel,
-buildCategoryNarrative,
+  filterCategoriesByWorthLevel,
+  buildCategoryNarrative,
   getMostUsedItems,
   generateItemPerformanceNarrative,
   getAggregateItemMetrics,
   getItemsExpiringSoon,
   getItemsByStockLevels,
-StoreNarrative,
+  StoreNarrative,
   fetchAllOrderItems,
   fetchTotalProducts,
   fetchTotalWorthProducts,
@@ -1513,7 +1542,7 @@ StoreNarrative,
   fetchProductsThatNeedReordering,
   getComponent,
   fetchAllOrders,
-recommendSales,
+  recommendSales,
   getAllComponents,
   getAllCategories,
   addProducts,
@@ -1547,8 +1576,8 @@ recommendSales,
   orderComponent,
   getSalesData,
   ConfirmOrder,
-Potentialprofit,
-  fetchAllOrderProducts,  
+  Potentialprofit,
+  fetchAllOrderProducts,
   fetchSalesInDateRange,
   fetchBestSellingProducts,
   getProductsByStockLevels,

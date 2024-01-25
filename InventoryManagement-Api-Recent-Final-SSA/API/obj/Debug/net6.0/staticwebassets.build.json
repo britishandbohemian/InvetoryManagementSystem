@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "KrwKsOq0Tg/4Fc/S0ZxcS0JUfX2KnLKwytxHJ96bbfE=",
+  "Source": "InventoryAPI",
+  "BasePath": "_content/InventoryAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "InventoryAPI\\wwwroot",
+      "Source": "InventoryAPI",
+      "ContentRoot": "C:\\Users\\Onthatile Mosia\\Documents\\GitHub\\portfolio\\InvetoryManagementSystem\\InventoryManagement-Api-Recent-Final-SSA\\API\\wwwroot\\",
+      "BasePath": "_content/InventoryAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Onthatile Mosia\\Documents\\GitHub\\portfolio\\InvetoryManagementSystem\\InventoryManagement-Api-Recent-Final-SSA\\API\\wwwroot\\images\\3a6d2040-ca0d-49a2-b5e2-7300ec9e59ae.jpg",
+      "SourceId": "InventoryAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Onthatile Mosia\\Documents\\GitHub\\portfolio\\InvetoryManagementSystem\\InventoryManagement-Api-Recent-Final-SSA\\API\\wwwroot\\",
+      "BasePath": "_content/InventoryAPI",
+      "RelativePath": "images/3a6d2040-ca0d-49a2-b5e2-7300ec9e59ae.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3a6d2040-ca0d-49a2-b5e2-7300ec9e59ae.jpg"
+    }
+  ]
+}

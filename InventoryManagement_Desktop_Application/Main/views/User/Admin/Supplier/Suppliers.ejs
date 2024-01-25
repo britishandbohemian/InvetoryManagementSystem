@@ -1,119 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="/css/style.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
- <link rel="stylesheet" href="/css/styles.css">
-
- <!-- Bootstrap JavaScript -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+<%- include('../DefaultHead') %>
 
 
 
- <!-- Submint Supplier Form Not Operatin Fix -->
+  <!-- Submint Supplier Form Not Operatin Fix -->
 
- <!-- Edit Suppilier function Fix -->
- <title>
-  Suppliers
- </title>
+  <!-- Edit Suppilier function Fix -->
+  <title>
+    Suppliers
+  </title>
 
- <style>
-  .btn {
-   background-color: #FF0000;
-   color: white;
-   border: 3px solid #191716;
-  }
+  <style>
+    .btn {
+      background-color: #FF0000;
+      color: white;
+      border: 3px solid #191716;
+    }
 
-  .modal {
-   display: none;
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(0, 0, 0, 0.7);
-   z-index: 999;
-  }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
 
-  .modal-content {
-   background-color: #fff;
-   border-radius: 8px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+    .modal-content {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .close-btn {
-   cursor: pointer;
-  }
+    .close-btn {
+      cursor: pointer;
+    }
 
-  #searchbar {
-   position: fixed;
-   width: 100%;
-   z-index: 2;
-   background-color: #fcfcfc;
-   height: 11vh;
-   display: grid;
-   grid-template-columns: 60% 1fr;
-   align-items: center;
-   flex-direction: row;
-   justify-content: left;
-   padding-right: 4rem;
-   border: 1px solid 1px solid rgb(230 230 230);
-  }
+    #searchbar {
+      position: fixed;
+      width: 100%;
+      z-index: 2;
+      background-color: #fcfcfc;
+      height: 11vh;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      align-items: center;
+      flex-direction: row;
+      justify-content: left;
+      padding-right: 4rem;
+      border: 1px solid 1px solid rgb(230 230 230);
+    }
 
-  #searchbarInput {
-   text-align: center;
-   font-size: 0.8em;
-   width: 100%;
-   height: 2.3rem;
-   background-color: #ececec;
-   border: 1px #cfcfcf solid;
-   border-radius: 24px;
-   padding-left: 2.5rem;
-  }
+    #searchbarInput {
+      text-align: center;
+      font-size: 0.8em;
+      width: 100%;
+      height: 2.3rem;
+      background-color: #ececec;
+      border: 1px #cfcfcf solid;
+      border-radius: 24px;
+      padding-left: 2.5rem;
+    }
 
-  .custom-table-responsive {
-   margin: 2rem;
-   background-color: white !important;
-   padding: 20px;
-   border-radius: 15px;
-  }
- </style>
+    .custom-table-responsive {
+      margin: 2rem;
+      background-color: white !important;
+      padding: 20px;
+      border-radius: 15px;
+    }
+  </style>
 
-
-</head>
-
-<body>
+  <body>
 
 
- <%- include('../NavbarAdmin') %>
+    <%- include('../NavbarAdmin') %>
 
 
 
-  <!-- Floating Bar  -->
-  <div class="floating-btn-container">
-   <a id="openModalBtn" class="floating-btn" style="  background: #191716;" onclick="OpenModal()">
-    <i class="material-icons"> add</i>
-   </a>
-  </div>
+      <!-- Floating Bar  -->
+      <div class="floating-btn-container">
+        <a id="openModalBtn" class="floating-btn" style="  background: #191716;" onclick="OpenModal()">
+          <i class="material-icons"> add</i>
+        </a>
+      </div>
 
 
-  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
+      <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
 
-   <div class="shadowNav" style="    
+        <div class="shadowNav" style="    
 z-index: 2;
 background-color: #fcfcfc;
 display: grid;
@@ -128,167 +106,163 @@ justify-content: left;
 border: 1px solid 1px solid rgb(230 230 230);
 
 ">
-    <h6 style="   font-weight: 800;
+          <h6 style="   font-weight: 800;
 font-size: 1.5em;
 ">Suppliers
 
-    </h6>
+          </h6>
 
-    <div style="display: flex;">
-
-
+          <div style="display: flex;">
 
 
 
 
 
-    </div>
-
-   </div>
 
 
-   <!-- center -->
-   <div style="height: 400px;width: 95%;margin: 9rem auto">
+          </div>
 
-
-
-    <div style="display: flex; gap: 1rem;">
-     <div style="width: 100%;">
-      <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0);">
-       <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
-        <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">All Suppliers</h3>
-       </div>
-       <div id="supplierTable" style="padding: 0rem auto;">
-        <div class="table-responsive">
-         <table class="table table-striped" style="width: 100% !important;">
-          <thead>
-           <tr>
-            <th scope="col"></th>
-            <th scope="col">Action</th>
-            <th scope="col">Supplier Name</th>
-            <th scope="col">Contact Info</th>
-            <th scope="col">Rating</th>
-           </tr>
-          </thead>
-          <tbody>
-           <% Suppliers.forEach(supplier=> { %>
-            <tr scope="row">
-             <th scope="row"></th>
-             <td style="display: flex; gap: 1rem;">
-              <button class="btn-link" style="border: none; color: black;"
-               onclick="toggleEditSupplier('<%= supplier.supplierId %>')">
-               <span class="material-symbols-outlined">edit</span>
-              </button>
-
-             </td>
-             <td>
-              <%= supplier.supplierName %>
-             </td>
-             <td>
-              <div>Email: <%= supplier.emailAddress %>
-              </div>
-              <div>Phone: <%= supplier.phoneNumber %>
-              </div>
-              <div>Contact Person: <%= supplier.contactPerson %>
-              </div>
-             </td>
-             <td>
-              <%= supplier.rating %>
-             </td>
-            </tr>
-            <tr id="editForm_<%= supplier.supplierId %>" style="display: none;">
-             <td colspan="100" style="background-color: white;  padding: 1rem;">
-              <form id="supplierFormUpdate" method="POST" onsubmit="submitUpdateSupplierForm(event)">
-               <div class="form-row">
-                <!-- Hidden Supplier ID -->
-                <input type="hidden" id="supplierId" name="supplierId" value="<%= supplier.supplierId %>">
-
-                <div class="col">
-                 <label class="label" for="supplierName">Supplier
-                  Name:</label>
-                 <input class="form-control" type="text" id="supplierName" name="supplierName"
-                  value="<%= supplier.supplierName %>">
-                </div>
-                <!-- Supplier Name -->
-                <div class="col">
-                 <label class="label" for="supplierName">Supplier
-                  Name:</label>
-                 <input class="form-control" type="text" id="supplierName" name="supplierName"
-                  value="<%= supplier.supplierName %>">
-                </div>
-                <!-- Email Address -->
-                <div class="col">
-                 <label class="label" for="emailAddress">Email
-                  Address:</label>
-                 <input class="form-control" type="text" id="emailAddress" name="emailAddress"
-                  value="<%= supplier.emailAddress %>">
-                </div>
-                <!-- Phone Number -->
-                <div class="col">
-                 <label class="label" for="phoneNumber">Phone
-                  Number:</label>
-                 <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
-                  value="<%= supplier.phoneNumber %>">
-                </div>
-               </div>
-               <div class="form-row mt-3">
-                <!-- Contact Person -->
-                <div class="col">
-                 <label class="label" for="contactPerson">Contact
-                  Person:</label>
-                 <input class="form-control" type="text" id="contactPerson" name="contactPerson"
-                  value="<%= supplier.contactPerson %>">
-                </div>
-                <!-- Street -->
-                <div class="col">
-                 <label class="label" for="street">Street:</label>
-                 <input class="form-control" type="text" id="street" name="street" value="<%= supplier.street %>">
-                </div>
-                <!-- City -->
-                <div class="col">
-                 <label class="label" for="city">City:</label>
-                 <input class="form-control" type="text" id="city" name="city" value="<%= supplier.city %>">
-                </div>
-               </div>
-               <div class="form-row mt-3">
-                <!-- State -->
-                <div class="col">
-                 <label class="label" for="state">State:</label>
-                 <input class="form-control" type="text" id="state" name="state" value="<%= supplier.state %>">
-                </div>
-                <!-- Postal Code -->
-                <div class="col">
-                 <label class="label" for="postalCode">Postal
-                  Code:</label>
-                 <input class="form-control" type="text" id="postalCode" name="postalCode"
-                  value="<%= supplier.postalCode %>">
-                </div>
-                <!-- Rating -->
-                <div class="col">
-                 <label class="label" for="rating">Rating:</label>
-                 <input class="form-control" type="number" id="rating" name="rating" value="<%= supplier.rating %>">
-                </div>
-               </div>
-               <div class="mt-3">
-                <input class="btn" type="submit" value="Update Information">
-               </div>
-              </form>
-
-             </td>
-            </tr>
-            <% }); %>
-          </tbody>
-         </table>
         </div>
-       </div>
-      </div>
-     </div>
-     <!-- This div is to balance the layout, you might have other content here -->
 
-    </div>
+
+        <!-- center -->
+        <div style="height: 400px;width: 95%;margin: 9rem auto">
 
 
 
+          <div style="display: flex; gap: 1rem;">
+            <div style="width: 100%;">
+              <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0, 0, 0);">
+                <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+                  <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">All Suppliers</h3>
+                </div>
+                <div id="supplierTable" style="padding: 0rem auto;">
+                  <div class="table-responsive">
+                    <table class="table table-striped" style="width: 100% !important;">
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Action</th>
+                          <th scope="col">Supplier Name</th>
+                          <th scope="col">Contact Info</th>
+                          <th scope="col">Rating</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% Suppliers.forEach(supplier=> { %>
+                          <tr scope="row">
+                            <th scope="row"></th>
+                            <td style="display: flex; gap: 1rem;">
+                              <button class="btn-link" style="border: none; color: black;"
+                                onclick="toggleEditSupplier('<%= supplier.supplierId %>')">
+                                <span class="material-symbols-outlined">edit</span>
+                              </button>
+
+                            </td>
+                            <td>
+                              <%= supplier.supplierName %>
+                            </td>
+                            <td>
+                              <div>Email: <%= supplier.emailAddress %>
+                              </div>
+                              <div>Phone: <%= supplier.phoneNumber %>
+                              </div>
+                              <div>Contact Person: <%= supplier.contactPerson %>
+                              </div>
+                            </td>
+                            <td>
+                              <%= supplier.rating %>
+                            </td>
+                          </tr>
+                          <tr id="editForm_<%= supplier.supplierId %>" style="display: none;">
+                            <td colspan="100" style="background-color: white;  padding: 1rem;">
+                              <form id="supplierFormUpdate" method="POST" onsubmit="submitUpdateSupplierForm(event)">
+                                <div class="form-row">
+                                  <!-- Hidden Supplier ID -->
+                                  <input type="hidden" id="supplierId" name="supplierId"
+                                    value="<%= supplier.supplierId %>">
+
+                                  <!-- Supplier Name -->
+                                  <div class="col">
+                                    <label class="label" for="supplierName">Supplier
+                                      Name:</label>
+                                    <input class="form-control" type="text" id="supplierName" name="supplierName"
+                                      value="<%= supplier.supplierName %>">
+                                  </div>
+                                  <!-- Email Address -->
+                                  <div class="col">
+                                    <label class="label" for="emailAddress">Email
+                                      Address:</label>
+                                    <input class="form-control" type="text" id="emailAddress" name="emailAddress"
+                                      value="<%= supplier.emailAddress %>">
+                                  </div>
+                                  <!-- Phone Number -->
+                                  <div class="col">
+                                    <label class="label" for="phoneNumber">Phone
+                                      Number:</label>
+                                    <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
+                                      value="<%= supplier.phoneNumber %>">
+                                  </div>
+                                </div>
+                                <div class="form-row mt-3">
+                                  <!-- Contact Person -->
+                                  <div class="col">
+                                    <label class="label" for="contactPerson">Contact
+                                      Person:</label>
+                                    <input class="form-control" type="text" id="contactPerson" name="contactPerson"
+                                      value="<%= supplier.contactPerson %>">
+                                  </div>
+                                  <!-- Street -->
+                                  <div class="col">
+                                    <label class="label" for="street">Street:</label>
+                                    <input class="form-control" type="text" id="street" name="street"
+                                      value="<%= supplier.street %>">
+                                  </div>
+                                  <!-- City -->
+                                  <div class="col">
+                                    <label class="label" for="city">City:</label>
+                                    <input class="form-control" type="text" id="city" name="city"
+                                      value="<%= supplier.city %>">
+                                  </div>
+                                </div>
+                                <div class="form-row mt-3">
+                                  <!-- State -->
+                                  <div class="col">
+                                    <label class="label" for="state">State:</label>
+                                    <input class="form-control" type="text" id="state" name="state"
+                                      value="<%= supplier.state %>">
+                                  </div>
+                                  <!-- Postal Code -->
+                                  <div class="col">
+                                    <label class="label" for="postalCode">Postal
+                                      Code:</label>
+                                    <input class="form-control" type="text" id="postalCode" name="postalCode"
+                                      value="<%= supplier.postalCode %>">
+                                  </div>
+                                  <!-- Rating -->
+                                  <div class="col">
+                                    <label class="label" for="rating">Rating:</label>
+                                    <input class="form-control" type="number" id="rating" name="rating"
+                                      value="<%= supplier.rating %>">
+                                  </div>
+                                </div>
+                                <div class="mt-3">
+                                  <input class="btn" type="submit" value="Update Information">
+                                </div>
+                              </form>
+
+                            </td>
+                          </tr>
+                          <% }); %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- This div is to balance the layout, you might have other content here -->
+
+          </div>
 
 
 
@@ -296,7 +270,10 @@ font-size: 1.5em;
 
 
 
-   </div>
+
+
+
+        </div>
 
 
 
@@ -305,187 +282,183 @@ font-size: 1.5em;
 
 
 
-   <!-- Categories In the Database -->
+        <!-- Categories In the Database -->
 
 
 
-   </div>
+        </div>
 
-   <!-- Add Supplier -->
-   <div id="myModal" class="modal">
-    <div id="supplierFormModal" class="modal-content shadow"
-     style="border: 1px solid rgb(191, 191, 191);padding: auto;width: 40%;margin:10vh auto auto 45vw">
-     <div style="display: flex;justify-content: right;padding: 1rem;"> <span id="closeFormBtn"
-       class="material-symbols-outlined">
-       cancel
-      </span></div>
-     <h1 class="headerPageTwo" style="padding-bottom: 0;margin:1rem">Add Supplier</h1>
-
-
-     <form id="supplierFormCreate" onsubmit="submitSupplierForm(event);" style="padding: 2rem;">
-      <label for="supplierNameCreate">Supplier Name:</label>
-      <input class="form-control" type="text" id="supplierNameCreate" name="supplierName" required>
-
-      <label for="emailAddressCreate">Email Address:</label>
-      <input class="form-control" type="email" id="emailAddressCreate" name="emailAddress" required>
-
-      <label for="phoneNumberCreate">Phone Number:</label>
-      <input class="form-control" type="tel" id="phoneNumberCreate" name="phoneNumber" required>
-
-      <label for="contactPersonCreate">Contact Person:</label>
-      <input class="form-control" type="text" id="contactPersonCreate" name="contactPerson" required>
-
-      <label for="streetCreate">Street:</label>
-      <input class="form-control" type="text" id="streetCreate" name="street" required>
-
-      <label for="cityCreate">City:</label>
-      <input class="form-control" type="text" id="cityCreate" name="city" required>
-
-      <label for="stateCreate">State:</label>
-      <input class="form-control" type="text" id="stateCreate" name="state" required>
-
-      <<<<<<< HEAD:InventoryManagement-Desktop-Application-Recent-Final -
-       SSA/Main/views/User/Admin/Supplier/Suppliers.ejs <label for="postalCodeCreate">Postal Code:</label>
-       <input class="form-control" type="text" id="postalCodeCreate" name="postalCode" required>
-       =======
-       <label for="postalCode">Postal Code:</label>
-       <input class="form-control" type="text" id="postalCode" name="postalCode" required>
-
-       <label for="postalCode">Rating:</label>
-       <input class="form-control" type="text" id="rating" name="rating" required>
-       >>>>>>> 5e2310369aca1188842a3ff95aed846c870cd2af:InventoryManagement-Desktop-Application-Recent-Final -
-       Copy/Main/views/User/Admin/Supplier/Suppliers.ejs
-
-       <input style="margin-top: 2rem;" class="btn" type="submit" value="Submit">
-     </form>
-
-    </div>
-   </div>
-
-   </div>
-
-   <script>
+        <!-- Add Supplier -->
+        <div id="myModal" class="modal">
+          <div id="supplierFormModal" class="modal-content shadow"
+            style="border: 1px solid rgb(191, 191, 191);padding: auto;width: 40%;margin:10vh auto auto 45vw">
+            <div style="display: flex;justify-content: right;padding: 1rem;"> <span id="closeFormBtn"
+                class="material-symbols-outlined">
+                cancel
+              </span></div>
+            <h1 class="headerPageTwo" style="padding-bottom: 0;margin:1rem">Add Supplier</h1>
 
 
-    function submitSupplierForm(event) {
-     event.preventDefault();
+            <form id="supplierFormCreate" onsubmit="submitSupplierForm(event);" style="padding: 2rem;">
+              <label for="supplierNameCreate">Supplier Name:</label>
+              <input class="form-control" type="text" id="supplierNameCreate" name="supplierName" required>
+
+              <label for="emailAddressCreate">Email Address:</label>
+              <input class="form-control" type="email" id="emailAddressCreate" name="emailAddress" required>
+
+              <label for="phoneNumberCreate">Phone Number:</label>
+              <input class="form-control" type="tel" id="phoneNumberCreate" name="phoneNumber" required>
+
+              <label for="contactPersonCreate">Contact Person:</label>
+              <input class="form-control" type="text" id="contactPersonCreate" name="contactPerson" required>
+
+              <label for="streetCreate">Street:</label>
+              <input class="form-control" type="text" id="streetCreate" name="street" required>
+
+              <label for="cityCreate">City:</label>
+              <input class="form-control" type="text" id="cityCreate" name="city" required>
+
+              <label for="stateCreate">State:</label>
+              <input class="form-control" type="text" id="stateCreate" name="state" required>
+
+
+              <label for="postalCodeCreate">Postal Code:</label>
+              <input class="form-control" type="text" id="postalCodeCreate" name="postalCode" required>
+
+
+              <label for="postalCode">Rating:</label>
+              <input class="form-control" type="text" id="rating" name="rating" required>
+
+              <input style="margin-top: 2rem;" class="btn" type="submit" value="Submit">
+            </form>
+
+          </div>
+        </div>
+
+        </div>
+
+        <script>
+
+
+          function submitSupplierForm(event) {
+            event.preventDefault();
 
 
 
-     const supplierName = document.getElementById('supplierNameCreate').value;
-     const emailAddress = document.getElementById('emailAddressCreate').value;
-     const phoneNumber = document.getElementById('phoneNumberCreate').value;
-     const contactPerson = document.getElementById('contactPersonCreate').value;
-     const street = document.getElementById('streetCreate').value;
-     const city = document.getElementById('cityCreate').value;
-     const state = document.getElementById('stateCreate').value;
-     const postalCode = document.getElementById('postalCodeCreate').value;
+            const supplierName = document.getElementById('supplierNameCreate').value;
+            const emailAddress = document.getElementById('emailAddressCreate').value;
+            const phoneNumber = document.getElementById('phoneNumberCreate').value;
+            const contactPerson = document.getElementById('contactPersonCreate').value;
+            const street = document.getElementById('streetCreate').value;
+            const city = document.getElementById('cityCreate').value;
+            const state = document.getElementById('stateCreate').value;
+            const postalCode = document.getElementById('postalCodeCreate').value;
 
 
-     // Prepare the form data as per the DTO
-     const formData = {
-      supplierName: supplierName,
-      emailAddress: emailAddress,
-      phoneNumber: phoneNumber,
-      contactPerson: contactPerson,
-      street: street,
-      city: city,
-      state: state,
-      postalCode: postalCode,
-      rating: 10,
-     };
+            // Prepare the form data as per the DTO
+            const formData = {
+              supplierName: supplierName,
+              emailAddress: emailAddress,
+              phoneNumber: phoneNumber,
+              contactPerson: contactPerson,
+              street: street,
+              city: city,
+              state: state,
+              postalCode: postalCode,
+              rating: 10,
+            };
 
-     console.log(formData)
+            console.log(formData)
 
-     // Use Fetch API to send the data
-     fetch('api/suppliers', {
-      method: 'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-     })
-      .then(response => response.json())
-      .then(data => {
-       console.log(data)
-       // You can handle the response here if needed
-       window.location.reload();
-      })
-      .catch(error => {
-       console.error('There was an error:', error);
-      });
-    }
-
-
-    function submitUpdateSupplierForm(event) {
-     event.preventDefault();
-
-     // Get the form element by its ID
-     const form = document.getElementById('supplierFormUpdate');
-
-     // Prepare the form data as per the DTO
-     const formData = {
-      supplierName: form.supplierName.value,
-      emailAddress: form.emailAddress.value,
-      phoneNumber: form.phoneNumber.value,
-      contactPerson: form.contactPerson.value,
-      street: form.street.value,
-      city: form.city.value,
-      state: form.state.value,
-      postalCode: form.postalCode.value,
-      rating: parseInt(form.rating.value),
-      supplierId: parseInt(form.supplierId.value)  // Get the supplierId from the form
-     };
-
-     console.log(formData);
-
-     // Use Fetch API to send the data
-     // The URL is dynamically generated based on the actual supplierId
-     fetch(`/UpdateSupplier/${formData.supplierId}`, {
-      method: 'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-     })
-      .then(response => response.json())
-      .then(data => {
-       // You can handle the response here if needed
-       window.location.reload();
-      })
-      .catch(error => {
-       console.error('There was an error:', error);
-      });
-    }
-
-    function toggleEditSupplier(supplierId) {
-     const form = document.getElementById(`editForm_${supplierId}`);
-     if (form.style.display === "none" || form.style.display === "") {
-      form.style.display = "table-row";
-     } else {
-      form.style.display = "none";
-     }
-    }
-
-    // Get modal element
-    let modal = document.getElementById('myModal');
-    let btn = document.getElementById('openModalBtn');
-    let span = document.getElementById('closeFormBtn');
-
-    // Open the modal
-    function OpenModal() {
-     modal.style.display = 'block';
-    }
-
-    // Close the modal
-    span.onclick = function () {
-     modal.style.display = 'none';
-    }
+            // Use Fetch API to send the data
+            fetch('/Addsupplier', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData)
+            })
+              .then(response => response.json())
+              .then(data => {
+                console.log(data)
+                // You can handle the response here if needed
+                window.location.reload();
+              })
+              .catch(error => {
+                console.error('There was an error:', error);
+              });
+          }
 
 
-   </script>
+          function submitUpdateSupplierForm(event) {
+            event.preventDefault();
+
+            // Get the form element by its ID
+            const form = document.getElementById('supplierFormUpdate');
+
+            // Prepare the form data as per the DTO
+            const formData = {
+              supplierName: form.supplierName.value,
+              emailAddress: form.emailAddress.value,
+              phoneNumber: form.phoneNumber.value,
+              contactPerson: form.contactPerson.value,
+              street: form.street.value,
+              city: form.city.value,
+              state: form.state.value,
+              postalCode: form.postalCode.value,
+              rating: parseInt(form.rating.value),
+              supplierId: parseInt(form.supplierId.value)  // Get the supplierId from the form
+            };
+
+            console.log(formData);
+
+            // Use Fetch API to send the data
+            // The URL is dynamically generated based on the actual supplierId
+            fetch(`/UpdateSupplier/${formData.supplierId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData)
+            })
+              .then(response => response.text())
+              .then(data => {
+                // You can handle the response here if needed
+                window.location.reload();
+              })
+              .catch(error => {
+                console.error('There was an error:', error);
+              });
+          }
+
+          function toggleEditSupplier(supplierId) {
+            const form = document.getElementById(`editForm_${supplierId}`);
+            if (form.style.display === "none" || form.style.display === "") {
+              form.style.display = "table-row";
+            } else {
+              form.style.display = "none";
+            }
+          }
+
+          // Get modal element
+          let modal = document.getElementById('myModal');
+          let btn = document.getElementById('openModalBtn');
+          let span = document.getElementById('closeFormBtn');
+
+          // Open the modal
+          function OpenModal() {
+            modal.style.display = 'block';
+          }
+
+          // Close the modal
+          span.onclick = function () {
+            modal.style.display = 'none';
+          }
 
 
-</body>
+        </script>
+
+
+  </body>
 
 </html>

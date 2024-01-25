@@ -1,610 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
- <link rel="stylesheet" href="/css/styles.css">
- <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
-
- <!-- Font Awesome -->
-
- <title>
-  Add Product
- </title>
- <style>
-  #shadowNav {
-   z-index: 2;
-   background-color: #fcfcfc;
-   height: 5rem;
-   display: grid;
-   grid-template-columns: 60% 1fr;
-   align-items: center;
-   flex-direction: row;
-   position: fixed;
-   width: 100%;
-   justify-content: left;
-   border: 1px solid 1px solid rgb(230 230 230);
-  }
-
-  #headerNav {
-   font-weight: 800;
-   font-size: 1.5em;
-   padding-left: 5rem;
-  }
-
-  #InputDiv {
-   margin-top: 5rem;
-   background-color: #fefefe;
-   padding: 2rem;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-  }
-
-  #popupFormSupplier,
-  #popupFormCategory,
-  #popupFormComponent {
-   display: none;
-   /* Initially hide the popup */
-   position: fixed;
-   /* Fixed position */
-   left: 0;
-   top: 0;
-   width: 100%;
-   /* Full width */
-   height: 100%;
-   /* Full height */
-   overflow: auto;
-   /* Enable scroll if needed */
-   background-color: rgba(0, 0, 0, 0.4);
-   /* Black w/ opacity */
-  }
-
-  .form-container {
-   background-color: #fefefe;
-   margin: 1rem auto;
-   /* 15% from the top and centered */
-   padding: 20px;
-   border: 1px solid #888;
-   width: 50%;
-   /* Could be more or less, depending on screen size */
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-   transition: 0.3s;
-  }
-
-  .modal.show {
-   display: block;
-  }
- </style>
+<%- include('../DefaultHead') %>
 
 
-</head>
+  <style>
+    #shadowNav {
+      z-index: 2;
+      background-color: #fcfcfc;
+      height: 5rem;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      align-items: center;
+      flex-direction: row;
+      position: fixed;
+      width: 100%;
+      justify-content: left;
+      border: 1px solid 1px solid rgb(230 230 230);
+    }
 
-<body>
+    #headerNav {
+      font-weight: 800;
+      font-size: 1.5em;
+      padding-left: 5rem;
+    }
+
+    #InputDiv {
+      margin-top: 5rem;
+      background-color: #fefefe;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #popupFormSupplier,
+    #popupFormCategory,
+    #popupFormComponent {
+      display: none;
+      /* Initially hide the popup */
+      position: fixed;
+      /* Fixed position */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    .form-container {
+      background-color: #fefefe;
+      margin: 1rem auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+      /* Could be more or less, depending on screen size */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .modal.show {
+      display: block;
+    }
+  </style>
+
+  <body>
 
 
- <%- include('../NavbarAdmin') %>
+    <%- include('../NavbarAdmin') %>
 
 
 
 
-  <!-- Where all my content is -->
-  <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
+      <!-- Where all my content is -->
+      <section class="main-content" style="margin:0rem;background-color: #F7F4F3;">
 
-   <!-- Navbar top -->
-   <div class="shadowNav" id="shadowNav">
-    <h6 id="headerNav">Add Product Made in Store </h6>
-   </div>
-
-
-   <!-- Inputs -->
-   <div style=" display: grid;grid-template-columns: 49% 49%;margin-top: 5rem;padding: 3rem;">
+        <!-- Navbar top -->
+        <div class="shadowNav" id="shadowNav">
+          <h6 id="headerNav">Add Product Made in Store </h6>
+        </div>
 
 
-    <!-- Product Inputs -->
-    <div style="padding: 2rem;">
-     <!-- Inputs -->
-     <div style="display: flex;flex-direction: column;width: 30vw;margin-top: 10px;">
-
-      <form action="" id="productForm">
-       <label for="productName">Product Name:</label>
-       <input class="form-control" type="text" id="productName" name="productName" placeholder="Product Name" required>
-       <br>
-
-       <br>
-       <label style="margin-top: 10px;" for="productMarkup">Product Markup:</label>
-       <input class="form-control" type="number" id="productMarkup" name="productMarkup" placeholder="markup" required>
-       <br>
-
-       <label for="minimumThreshold">Minimum Threshold:</label>
-       <input class="form-control" type="number" id="minimumThreshold" name="minimumThreshold"
-        placeholder="Minimum Threshold" required><br>
+        <!-- Inputs -->
+        <div style=" display: grid;grid-template-columns: 49% 49%;margin-top: 5rem;padding: 3rem;">
 
 
-       <label for="maximumThreshold">Maxmium Threshold:</label>
-       <input class="form-control" type="number" id="maximumThreshold" name="maximumThreshold"
-        placeholder="Maxmium Threshold" required><br>
+          <!-- Product Inputs -->
+          <div style="padding: 2rem;">
+            <!-- Inputs -->
+            <div style="display: flex;flex-direction: column;width: 30vw;margin-top: 10px;">
+
+              <!-- The Form To Input Product Data -->
+              <form action="" id="productForm">
+                <label for="productName">Product Name:</label>
+                <input class="form-control" type="text" id="productName" name="productName" placeholder="Product Name"
+                  required>
+                <br>
+
+                <br>
+                <label style="margin-top: 10px;" for="productMarkup">Product Markup:</label>
+                <input class="form-control" type="number" id="productMarkup" name="productMarkup" placeholder="markup"
+                  required>
+                <br>
+
+                <label for="minimumThreshold">Minimum Threshold:</label>
+                <input class="form-control" type="number" id="minimumThreshold" name="minimumThreshold"
+                  placeholder="Minimum Threshold" required><br>
 
 
-       <!-- Ingredients  -->
-       <!-- Components Selection and Quantity Input -->
-       <div id="ingredientInputContainer">
-        <br>
-        <label for="componentSelect">Select a Component:</label>
-        <select class="form-control" name="components" id="components">
-         <% Components.forEach(component=> { %>
-          <option value="<%= component.itemId %>">
-           <%= component.itemName %> : <%= component.pricePerPiece %>
-          </option>
-          <% }) %>
-        </select>
-        <br>
-        <label for="quantityUsed">Quantity Used:</label>
-        <input class="form-control" type="number" id="quantityUsed" name="quantityUsed" min="1" required>
-        <br>
-        <button class="btn" onclick="addSelectedIngredient()">Add Component</button>
-       </div>
-       <br>
-       <!-- Display selected ingredients and their quantities -->
-       <ul id="selectedComponentsList">
-        <!-- dynamically added components will be listed here -->
-       </ul>
+                <label for="maximumThreshold">Maxmium Threshold:</label>
+                <input class="form-control" type="number" id="maximumThreshold" name="maximumThreshold"
+                  placeholder="Maxmium Threshold" required><br>
+
+                <label for="Description">Description</label>
+                <input class="form-control" type="text" id="Description" name="Description" placeholder="Description"
+                  required><br>
+
+                <label for="Description">Qoute</label>
+                <input class="form-control" type="text" id="Qoute" name="Qoute" placeholder="Qoute" required><br>
 
 
-       <br>
-
-       <label style="margin-top: 10px;" for="productMarkup">Product Recommended Selling
-        Price:</label>
-       <input class="form-control" type="number" id="productSellingPrice" name="productSellingPrice"
-        placeholder="Selling Price" required>
-       <!-- Category -->
-       <div style="margin-top: 1rem;">
-        <label for="category">Select A Category:</label>
-        <select class="form-control" name="category" id="categoryProduct">
-         <% Categories.forEach(category=> { %>
-          <option value="<%= category.categoryId %>">
-           <%= category.categoryName %>
-          </option>
-          <% }) %>
-        </select>
-
-       </div>
-
-       <br>
-       <button class="btn" style="margin-top: 10px;" type="button" onclick="addProductToList()">Add
-        To
-        List</button>
-      </form>
-     </div>
-    </div>
+                <!-- Ingredients  -->
+                <!-- Components Selection and Quantity Input -->
+                <div id="ingredientInputContainer">
+                  <br>
+                  <label for="componentSelect">Select a Component:</label>
+                  <select class="form-control" name="components" id="components">
+                    <% Components.forEach(component=> { %>
+                      <option value="<%= component.itemId %>">
+                        <%= component.itemName %> : <%= component.pricePerPiece %>
+                      </option>
+                      <% }) %>
+                  </select>
+                  <br>
+                  <label for="quantityUsed">Quantity Used:</label>
+                  <input class="form-control" type="number" id="quantityUsed" name="quantityUsed" min="1" required>
+                  <br>
+                  <button class="btn" onclick="addSelectedIngredient()">Add Component</button>
+                </div>
+                <br>
+                <!-- Display selected ingredients and their quantities -->
+                <ul id="selectedComponentsList">
+                  <!-- dynamically added components will be listed here -->
+                </ul>
 
 
-    <!-- List Of Prodcuts to add to Inventory -->
-    <div style="padding: 3rem;display: grid;grid-template-rows: 80% 1fr;">
+                <br>
 
-     <div id="myTable" class="container" style="margin-left: 0;margin-top: 1rem;">
-      <div class="table-responsive custom-table-responsive">
-       <table class="table custom-table">
-        <thead>
-         <tr>
-          <th scope="col">
+                <label style="margin-top: 10px;" for="productMarkup">Product Recommended Selling
+                  Price:</label>
+                <input class="form-control" type="number" id="productSellingPrice" name="productSellingPrice"
+                  placeholder="Selling Price" required>
+                <!-- Category -->
+                <div style="margin-top: 1rem;">
+                  <label for="category">Select A Category:</label>
+                  <select class="form-control" name="category" id="categoryProduct">
+                    <% Categories.forEach(category=> { %>
+                      <option value="<%= category.categoryId %>">
+                        <%= category.categoryName %>
+                      </option>
+                      <% }) %>
+                  </select>
 
-           </label>
-          </th>
-          <th scope="col">Product Name</th>
-          <th scope="col">Category</th>
-          <th scope="col">Selling Price
-          </th>
-         </tr>
-        </thead>
-        <tbody>
+                </div>
 
-        </tbody>
-       </table>
+                <br>
+                <button class="btn" style="margin-top: 10px;" type="button" onclick="addProductToList()">Add
+                  To
+                  List</button>
+              </form>
+            </div>
+          </div>
+
+
+          <!-- List Of Prodcuts to add to Inventory -->
+          <div style="padding: 3rem;display: grid;grid-template-rows: 80% 1fr;">
+
+            <div id="myTable" class="container" style="margin-left: 0;margin-top: 1rem;">
+              <div class="table-responsive custom-table-responsive">
+                <table class="table custom-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">
+
+                        </label>
+                      </th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Selling Price
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+            <div> <button style="margin-top: 20px;margin-left: 1rem;" class="btn" onclick="addProductsToStore()">Add to
+                My
+                Store</button></div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+
+      <!-- Success Modal -->
+      <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+              <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="alertModalBody">
+              Message goes here...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
-     </div>
-
-
-     <div> <button style="margin-top: 20px;margin-left: 1rem;" class="btn" onclick="addProductsToStore()">Add to My
-       Store</button></div>
-
-
-    </div>
-   </div>
-
-  </section>
-
-
-
-
-
-  <!-- Success Modal -->
-  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-    <div class="modal-content">
-     <div class="modal-header">
-      <h5 class="modal-title" id="alertModalLabel">Alert</h5>
-      <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-      </button>
-     </div>
-     <div class="modal-body" id="alertModalBody">
-      Message goes here...
-     </div>
-     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
-     </div>
-    </div>
-   </div>
-  </div>
-
-
-  <script>
-   function handleImageUpload(event) {
-    const file = event.target.files[0];
-    if (file) {
-     const reader = new FileReader();
-     reader.onload = function (e) {
-      // Display the image in the preview div
-      document.getElementById('imagePreview').style.backgroundImage = 'url(' + e.target.result + ')';
-
-      // Save the Data URL to the imageLocation input
-      document.getElementById('imageLocation').value = e.target.result;
-     };
-     reader.readAsDataURL(file);
-    }
-   }
-
-
-   function removeImage() {
-    document.getElementById('imageUpload').value = '';  // Clear the input
-    document.getElementById('imagePreview').style.backgroundImage = '';  // Clear the preview
-   }
-
-   // This function checks if there are any components on the page.
-   function areThereComponents() {
-    var componentSelect = document.getElementById('components');
-    return componentSelect && componentSelect.children.length > 0;
-   }
-
-   // This function disables all controls on the page.
-   function disableAllControls() {
-    var inputs = document.querySelectorAll('input, button, select, textarea');
-    inputs.forEach(input => {
-     input.disabled = true;
-    });
-   }
-
-   // When the page loads, check for components and if there aren't any, display the modal and disable controls.
-   window.onload = function () {
-    if (!areThereComponents()) {
-     showAlertModal("Alert", "No components found.");
-     disableAllControls();
-
-     // Redirect after 5 seconds
-     setTimeout(function () {
-      window.location.href = "/ViewItems"; // specify your desired URL here
-     }, 3000);
-    }
-   }
-
-
-   function showAlertModal(title, message) {
-    // Set the modal's title and message
-    document.getElementById('alertModalLabel').innerText = title;
-    document.getElementById('alertModalBody').innerText = message;
-
-    // Display the modal
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-   }
-
-   function closeAlertModal() {
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'none';
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
-   }
-
-
-   // Event listener for productName input
-   document.getElementById('productName').addEventListener('input', function () {
-    if (this.value) {
-     this.style.borderColor = ''; // Set to default color
-    } else {
-     this.style.borderColor = 'red';
-    }
-   });
-   // Event listener for productMarkup input
-   document.getElementById('productMarkup').addEventListener('input', function () {
-    if (this.value) {
-     this.style.borderColor = ''; // Set to default color
-    } else {
-     this.style.borderColor = 'red';
-    }
-
-    // Recalculate the selling price when the markup changes
-    recalculateSellingPrice();
-   });
-
-   function recalculateSellingPrice() {
-    let componentsList = document.getElementById('selectedComponentsList');
-    let totalCost = 0;
-
-    for (let li of componentsList.children) {
-     let itemId = parseInt(li.getAttribute('data-item-id'));
-     let component = ComponentsArr.find(comp => comp.itemId === itemId);
-     let quantityUsed = parseFloat(li.textContent.split('-')[1].trim()); // Extract quantity from the list item
-
-     if (component) {
-      totalCost += component.pricePerPiece * quantityUsed;
-     }
-    }
-
-    // Get the markup value
-    let markupValue = parseFloat(document.getElementById('productMarkup').value) / 100;
-
-    // Check if the markup value is filled
-    if (isNaN(markupValue)) {
-     console.error("Please fill in the markup value.");
-     return;
-    }
-
-    // Calculate the selling price
-    let sellingPrice = totalCost * (1 + markupValue);
-
-    // Update the productSellingPrice input field
-    document.getElementById('productSellingPrice').value = sellingPrice.toFixed(2); // Rounded to 2 decimal places
-   }
-
-   // Call the recalculateSellingPrice function when adding a component or updating quantities
-   // Add it to the respective areas in your code to keep the selling price updated
-
-   // Function to add a selected component to the list and array
-   var ComponentsArr = JSON.parse('<%- JSON.stringify(Components) %>');
-
-   // Products Array
-   let products = [];
-   function addSelectedIngredient() {
-    event.preventDefault();
-
-    // Get the selected component
-    let componentsDropdown = document.getElementById('components');
-    let selectedComponentId = parseInt(componentsDropdown.value);
-
-    // Find the selected component by ID
-    let selectedComponent = ComponentsArr.find(comp => comp.itemId === selectedComponentId);
-
-    if (!selectedComponent) {
-     console.error("No component found with the selected ID.");
-     return;
-    }
-
-    let quantityUsed = parseFloat(document.getElementById('quantityUsed').value);
-    if (isNaN(quantityUsed) || quantityUsed <= 0) {
-     console.error("Invalid quantity.");
-     return;
-    }
-
-    // Append the selected component to the "ComponentsList" ul
-    let componentsList = document.getElementById('selectedComponentsList');
-    let newLi = document.createElement('li');
-    newLi.textContent = `${selectedComponent.itemName} - ${document.getElementById('quantityUsed').value}`;
-    newLi.setAttribute('data-item-id', selectedComponent.itemId); // Storing itemId in the <li>
-    newLi.style.display = "flex";
-    newLi.style.alignItems = "center";
-    // Add a remove button next to the ingredient
-    let removeButton = document.createElement('button');
-    removeButton.innerHTML = `<i class="material-icons">delete</i>`;
-    removeButton.style.marginLeft = '10px'; // Spacing between text and delete icon
-    removeButton.style.width = '40px'; // Spacing between text and delete icon
-    removeButton.style.height = '40px'; // Spacing between text and delete icon
-    removeButton.style.display = 'flex'; // Spacing between text and delete icon
-    removeButton.style.justifyContent = 'center'; // Spacing between text and delete icon
-    removeButton.style.flexDirection = 'column'; // Spacing between text and delete icon
-    removeButton.style.alignItems = 'center'; // Spacing between text and delete icon
-
-    removeButton.style.borderRadius = '100%'; // Spacing between text and delete icon
-
-    removeButton.addEventListener('click', function () {
-     newLi.remove(); // Remove the list item from the DOM
-     recalculateSellingPrice(); // Recalculate the selling price after removal
-    });
-
-    newLi.appendChild(removeButton);
-    componentsList.appendChild(newLi);
-
-    // Calculate the total cost of all selected ingredients
-    let totalCost = 0;
-    for (let li of componentsList.children) {
-     let itemId = parseInt(li.getAttribute('data-item-id'));
-     let component = ComponentsArr.find(comp => comp.itemId === itemId);
-     if (component) {
-      totalCost += component.pricePerPiece * quantityUsed;
-     }
-    }
-
-    // Get the markup value
-    let markupValue = parseFloat(document.getElementById('productMarkup').value) / 100;
-
-    // Check if the markup value is filled
-    if (isNaN(markupValue)) {
-     console.error("Please fill in the markup value.");
-     return;
-    }
-
-    // Calculate the selling price
-    let sellingPrice = totalCost * (1 + markupValue);
-
-    // Update the productSellingPrice input field
-    document.getElementById('productSellingPrice').value = sellingPrice.toFixed(2); // Rounded to 2 decimal places
-   }
-
-   // Function to add product to the products array
-
-
-   function addProductToList() {
-    // Get values from the form
-    let productNameInput = document.getElementById('productName');
-    let productName = productNameInput.value;
-
-    let productMarkupInput = document.getElementById('productMarkup');
-    let productMarkup = parseFloat(productMarkupInput.value);
-
-
-
-    // Reset input styles
-    productNameInput.style.borderColor = '';
-    productMarkupInput.style.borderColor = '';
-
-    // Validation: Check if all fields are filled
-    if (!productName) {
-     showAlertModal('Error', 'Product Name is required.');
-     productNameInput.focus(); // Make the input active
-     productNameInput.style.borderColor = 'red'; // Highlight in red
-     return;
-    }
-
-    if (isNaN(productMarkup)) {
-     showAlertModal('Error', 'Product Markup is required.');
-     productMarkupInput.focus(); // Make the input active
-     productMarkupInput.style.borderColor = 'red'; // Highlight in red
-     return;
-    }
-
-
-
-    // Get the selected category ID and other needed fields
-    let categoryId = parseInt(document.getElementById('categoryProduct').value);
-    let minimumThreshold = parseInt(document.getElementById('minimumThreshold').value);
-    let maximumThreshold = parseInt(document.getElementById('maximumThreshold').value);
-    let sellByDate = new Date().toISOString();
-    let status = 1;  // Assuming 1 means "active" or similar
-
-    // Calculate the product cost price based on the components' prices
-    let componentsList = document.getElementById('selectedComponentsList');
-    let productCostPrice = 0;
-
-    let itemQuantities = [];
-
-    for (let li of componentsList.children) {
-     let itemId = li.getAttribute('data-item-id'); // Get itemId from <li>
-     let component = ComponentsArr.find(comp => comp.itemId === parseInt(itemId));
-     if (component) {
-      let quantityUsed = parseInt(li.textContent.split(" - ")[1]); // Extract quantity from <li>
-      productCostPrice += component.pricePerPiece * quantityUsed;
-      itemQuantities.push({
-       itemId: component.itemId,
-       quantityUsed: quantityUsed
-      });
-     }
-    }
-
-
-    // Create a new product object based on DTO
-    let product = {
-     "categoryId": categoryId,
-     "productName": productName,
-     "productCostPrice": productCostPrice,
-     "markupPercentage": productMarkup,
-     "supplierId": 0,
-     "unitOfMeasurement": 1,
-     "minimumThreshold": minimumThreshold,
-     "maximumThreshold": maximumThreshold,
-     "sellByDate": sellByDate,
-     "status": status,
-     "itemQuantities": itemQuantities
-    };
-
-    // Check if no ingredients are selected
-    if (componentsList.children.length === 0) {
-     showAlertModal('Error', 'No ingredients selected. Please select at least one ingredient.');
-     return;
-    }
-
-    // Assuming you're storing all created products in an array named products
-    products.push(product);
-    console.log(JSON.stringify(product))
-
-    // Append the product details to the "Products" table
-    let productsTableBody = document.querySelector('#myTable tbody');
-    let productRow = document.createElement('tr');
-    productRow.innerHTML = `
+
+
+      <script>
+        function handleImageUpload(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              // Display the image in the preview div
+              document.getElementById('imagePreview').style.backgroundImage = 'url(' + e.target.result + ')';
+
+              // Save the Data URL to the imageLocation input
+              document.getElementById('imageLocation').value = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        }
+
+
+        function removeImage() {
+          document.getElementById('imageUpload').value = '';  // Clear the input
+          document.getElementById('imagePreview').style.backgroundImage = '';  // Clear the preview
+        }
+
+        // This function checks if there are any components on the page.
+        function areThereComponents() {
+          var componentSelect = document.getElementById('components');
+          return componentSelect && componentSelect.children.length > 0;
+        }
+
+        // This function disables all controls on the page.
+        function disableAllControls() {
+          var inputs = document.querySelectorAll('input, button, select, textarea');
+          inputs.forEach(input => {
+            input.disabled = true;
+          });
+        }
+
+        // When the page loads, check for components and if there aren't any, display the modal and disable controls.
+        window.onload = function () {
+          if (!areThereComponents()) {
+            showAlertModal("Alert", "No components found.");
+            disableAllControls();
+
+            // Redirect after 5 seconds
+            setTimeout(function () {
+              window.location.href = "/ViewItems"; // specify your desired URL here
+            }, 3000);
+          }
+        }
+
+
+        function showAlertModal(title, message) {
+          // Set the modal's title and message
+          document.getElementById('alertModalLabel').innerText = title;
+          document.getElementById('alertModalBody').innerText = message;
+
+          // Display the modal
+          var modal = document.getElementById('alertModal');
+          modal.style.display = 'block';
+          modal.classList.add('show');
+          document.body.classList.add('modal-open');
+        }
+
+        function closeAlertModal() {
+          var modal = document.getElementById('alertModal');
+          modal.style.display = 'none';
+          modal.classList.remove('show');
+          document.body.classList.remove('modal-open');
+        }
+
+
+        // Event listener for productName input
+        document.getElementById('productName').addEventListener('input', function () {
+          if (this.value) {
+            this.style.borderColor = ''; // Set to default color
+          } else {
+            this.style.borderColor = 'red';
+          }
+        });
+        // Event listener for productMarkup input
+        document.getElementById('productMarkup').addEventListener('input', function () {
+          if (this.value) {
+            this.style.borderColor = ''; // Set to default color
+          } else {
+            this.style.borderColor = 'red';
+          }
+
+          // Recalculate the selling price when the markup changes
+          recalculateSellingPrice();
+        });
+
+        function recalculateSellingPrice() {
+          let componentsList = document.getElementById('selectedComponentsList');
+          let totalCost = 0;
+
+          for (let li of componentsList.children) {
+            let itemId = parseInt(li.getAttribute('data-item-id'));
+            let component = ComponentsArr.find(comp => comp.itemId === itemId);
+            let quantityUsed = parseFloat(li.textContent.split('-')[1].trim()); // Extract quantity from the list item
+
+            if (component) {
+              totalCost += component.pricePerPiece * quantityUsed;
+            }
+          }
+
+          // Get the markup value
+          let markupValue = parseFloat(document.getElementById('productMarkup').value) / 100;
+
+          // Check if the markup value is filled
+          if (isNaN(markupValue)) {
+            console.error("Please fill in the markup value.");
+            return;
+          }
+
+          // Calculate the selling price
+          let sellingPrice = totalCost * (1 + markupValue);
+
+          // Update the productSellingPrice input field
+          document.getElementById('productSellingPrice').value = sellingPrice.toFixed(2); // Rounded to 2 decimal places
+        }
+
+        // Call the recalculateSellingPrice function when adding a component or updating quantities
+        // Add it to the respective areas in your code to keep the selling price updated
+
+        // Function to add a selected component to the list and array
+        var ComponentsArr = JSON.parse('<%- JSON.stringify(Components) %>');
+
+        // Products Array
+        let products = [];
+        function addSelectedIngredient() {
+          event.preventDefault();
+
+          // Get the selected component
+          let componentsDropdown = document.getElementById('components');
+          let selectedComponentId = parseInt(componentsDropdown.value);
+
+          // Find the selected component by ID
+          let selectedComponent = ComponentsArr.find(comp => comp.itemId === selectedComponentId);
+
+          if (!selectedComponent) {
+            console.error("No component found with the selected ID.");
+            return;
+          }
+
+          let quantityUsed = parseFloat(document.getElementById('quantityUsed').value);
+          if (isNaN(quantityUsed) || quantityUsed <= 0) {
+            console.error("Invalid quantity.");
+            return;
+          }
+
+          // Append the selected component to the "ComponentsList" ul
+          let componentsList = document.getElementById('selectedComponentsList');
+          let newLi = document.createElement('li');
+          newLi.textContent = `${selectedComponent.itemName} - ${document.getElementById('quantityUsed').value}`;
+          newLi.setAttribute('data-item-id', selectedComponent.itemId); // Storing itemId in the <li>
+          newLi.style.display = "flex";
+          newLi.style.alignItems = "center";
+          // Add a remove button next to the ingredient
+          let removeButton = document.createElement('button');
+          removeButton.innerHTML = `<i class="material-icons">delete</i>`;
+          removeButton.style.marginLeft = '10px'; // Spacing between text and delete icon
+          removeButton.style.width = '40px'; // Spacing between text and delete icon
+          removeButton.style.height = '40px'; // Spacing between text and delete icon
+          removeButton.style.display = 'flex'; // Spacing between text and delete icon
+          removeButton.style.justifyContent = 'center'; // Spacing between text and delete icon
+          removeButton.style.flexDirection = 'column'; // Spacing between text and delete icon
+          removeButton.style.alignItems = 'center'; // Spacing between text and delete icon
+
+          removeButton.style.borderRadius = '100%'; // Spacing between text and delete icon
+
+          removeButton.addEventListener('click', function () {
+            newLi.remove(); // Remove the list item from the DOM
+            recalculateSellingPrice(); // Recalculate the selling price after removal
+          });
+
+          newLi.appendChild(removeButton);
+          componentsList.appendChild(newLi);
+
+          // Calculate the total cost of all selected ingredients
+          let totalCost = 0;
+          for (let li of componentsList.children) {
+            let itemId = parseInt(li.getAttribute('data-item-id'));
+            let component = ComponentsArr.find(comp => comp.itemId === itemId);
+            if (component) {
+              totalCost += component.pricePerPiece * quantityUsed;
+            }
+          }
+
+          // Get the markup value
+          let markupValue = parseFloat(document.getElementById('productMarkup').value) / 100;
+
+          // Check if the markup value is filled
+          if (isNaN(markupValue)) {
+            console.error("Please fill in the markup value.");
+            return;
+          }
+
+          // Calculate the selling price
+          let sellingPrice = totalCost * (1 + markupValue);
+
+          // Update the productSellingPrice input field
+          document.getElementById('productSellingPrice').value = sellingPrice.toFixed(2); // Rounded to 2 decimal places
+        }
+
+        // Function to add product to the products array
+
+
+        function addProductToList() {
+          // Get values from the form
+          let productNameInput = document.getElementById('productName');
+          let productName = productNameInput.value;
+
+          let productMarkupInput = document.getElementById('productMarkup');
+          let productMarkup = parseFloat(productMarkupInput.value);
+
+
+
+          // Reset input styles
+          productNameInput.style.borderColor = '';
+          productMarkupInput.style.borderColor = '';
+
+          // Validation: Check if all fields are filled
+          if (!productName) {
+            showAlertModal('Error', 'Product Name is required.');
+            productNameInput.focus(); // Make the input active
+            productNameInput.style.borderColor = 'red'; // Highlight in red
+            return;
+          }
+
+          if (isNaN(productMarkup)) {
+            showAlertModal('Error', 'Product Markup is required.');
+            productMarkupInput.focus(); // Make the input active
+            productMarkupInput.style.borderColor = 'red'; // Highlight in red
+            return;
+          }
+
+
+
+          // Get the selected category ID and other needed fields
+          let categoryId = parseInt(document.getElementById('categoryProduct').value);
+          let minimumThreshold = parseInt(document.getElementById('minimumThreshold').value);
+          let maximumThreshold = parseInt(document.getElementById('maximumThreshold').value);
+          let sellByDate = new Date().toISOString();
+          let status = 1;  // Assuming 1 means "active" or similar
+
+          // Calculate the product cost price based on the components' prices
+          let componentsList = document.getElementById('selectedComponentsList');
+          let productCostPrice = 0;
+
+          let itemQuantities = [];
+
+          for (let li of componentsList.children) {
+            let itemId = li.getAttribute('data-item-id'); // Get itemId from <li>
+            let component = ComponentsArr.find(comp => comp.itemId === parseInt(itemId));
+            if (component) {
+              let quantityUsed = parseInt(li.textContent.split(" - ")[1]); // Extract quantity from <li>
+              productCostPrice += component.pricePerPiece * quantityUsed;
+              itemQuantities.push({
+                itemId: component.itemId,
+                quantityUsed: quantityUsed
+              });
+            }
+          }
+
+
+          // Create a new product object based on DTO
+          let product = {
+            "categoryId": categoryId,
+            "productName": productName,
+            "productCostPrice": productCostPrice,
+            "markupPercentage": productMarkup,
+            "supplierId": 0,
+            "unitOfMeasurement": 1,
+            "minimumThreshold": minimumThreshold,
+            "maximumThreshold": maximumThreshold,
+            "sellByDate": sellByDate,
+            "status": status,
+            "itemQuantities": itemQuantities
+          };
+
+          // Check if no ingredients are selected
+          if (componentsList.children.length === 0) {
+            showAlertModal('Error', 'No ingredients selected. Please select at least one ingredient.');
+            return;
+          }
+
+          // Assuming you're storing all created products in an array named products
+          products.push(product);
+          console.log(JSON.stringify(product))
+
+          // Append the product details to the "Products" table
+          let productsTableBody = document.querySelector('#myTable tbody');
+          let productRow = document.createElement('tr');
+          productRow.innerHTML = `
         <td><i class="material-icons" onclick="removeProductFromList(this)">delete</i></td>
         <td>${product.productName}</td>
         <td>${product.categoryId}</td>
         <td>${product.productCostPrice}</td>
     `;
-    productsTableBody.appendChild(productRow);
+          productsTableBody.appendChild(productRow);
 
-   }
+        }
 
-   function removeProductFromList(iconElement) {
-    // Get the row of the clicked delete icon
-    let row = iconElement.closest('tr');
+        function removeProductFromList(iconElement) {
+          // Get the row of the clicked delete icon
+          let row = iconElement.closest('tr');
 
-    // Remove the row from the table
-    row.remove();
-   }
-
-
-
-   function addProductsToStore() {
-    // Map the products array to the expected DTO structure
-    var productsToBeSent = products.map(product => {
-     return {
-      categoryId: product.categoryId,
-      productName: product.productName,
-      productCostPrice: product.productCostPrice,
-      markupPercentage: product.markupPercentage,
-      supplierId: product.supplierId,// You may need to adjust this if the image is no longer relevant
-      unitOfMeasurement: product.unitOfMeasurement,
-      minimumThreshold: product.minimumThreshold,
-      maximumThreshold: product.maximumThreshold,
-      sellByDate: product.sellByDate,
-      status: product.status,
-      itemQuantities: product.itemQuantities
-     };
-    });
-    console.log(productsToBeSent)
-    // Send the product data
-    fetch("/AddProductsMadeInStore", {
-     method: "POST",
-     headers: {
-      "Content-Type": "application/json",
-     },
-     body: JSON.stringify(productsToBeSent),
-    })
-     .then(response => {
-      if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.text();
-     })
-     .then(data => {
-      showAlertModal('Success', 'Product added successfully!');
-      setTimeout(function () {
-       window.location.href = "/ViewProducts";
-      }, 2000);
-     })
-     .catch(error => {
-      console.error("Error:", error);
-     });
-   }
+          // Remove the row from the table
+          row.remove();
+        }
 
 
+        function addProductsToStore() {
+          var formData = new FormData();
 
-  </script>
+          // Map the products array to the expected DTO structure
+          var productsToBeSent = products.map(product => {
+            return {
+              categoryId: product.categoryId,
+              productName: product.productName,
+              productCostPrice: product.productCostPrice,
+              Description: product.Description,
+              Qoute: product.Qoute,
+              markupPercentage: product.markupPercentage,
+              unitOfMeasurement: product.unitOfMeasurement,
+              minimumThreshold: product.minimumThreshold,
+              maximumThreshold: product.maximumThreshold,
+              sellByDate: product.sellByDate,
+              status: product.status,
+              itemQuantities: product.itemQuantities
+            };
+          });
 
-</body>
+          // Append the JSON data to the FormData object
+          formData.append('dtos', JSON.stringify(productsToBeSent));
+
+          // Append the image file to the FormData object
+          var imageFile = document.getElementById('imageUpload').files[0];
+          if (imageFile) {
+            formData.append('imageFile', imageFile);
+          }
+
+          // Send the product data with the image file
+          fetch('/Product/CreateProductsWithoutComponents', {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              showAlertModal('Success', 'Products added successfully!');
+              console.log('Success:', data);
+              // Redirect or update UI as needed
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              showAlertModal('Error', 'Failed to add products.');
+            });
+        }
+
+
+
+      </script>
+
+  </body>
 
 </html>

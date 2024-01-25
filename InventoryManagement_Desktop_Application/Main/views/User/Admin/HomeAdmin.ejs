@@ -3,48 +3,48 @@
 <!-- Ignore This Styling -->
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="/css/style.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
- <link rel="stylesheet" href="/css/styles.css">
- <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
 
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
- <title>Home Page</title>
+  <title>Home Page</title>
 
- <style>
-  .custom-table-responsive {
-   margin: 0;
-   background-color: white !important;
-   padding: 20px;
-   border-radius: 15px;
-  }
+  <style>
+    .custom-table-responsive {
+      margin: 0;
+      background-color: white !important;
+      padding: 20px;
+      border-radius: 15px;
+    }
 
-  .btn {
-   background-color: #FF0000;
-   color: white;
-   border: 3px solid #191716;
-  }
+    .btn {
+      background-color: #FF0000;
+      color: white;
+      border: 3px solid #191716;
+    }
 
-  .list-group-item {
-   border: none;
-  }
+    .list-group-item {
+      border: none;
+    }
 
-  .tr {
-   display: block;
-  }
+    .tr {
+      display: block;
+    }
 
-  .thead {
-   width: 100%;
-  }
- </style>
+    .thead {
+      width: 100%;
+    }
+  </style>
 
 
 </head>
@@ -53,17 +53,17 @@
 
 
 
- <%- include('NavbarAdmin') %>
+  <%- include('NavbarAdmin') %>
 
 
 
 
-  <!-- Where all my content is -->
-  <div class="main-content" style="margin-bottom: 3rem;">
+    <!-- Where all my content is -->
+    <div class="main-content" style="margin-bottom: 3rem;">
 
-   <!-- Top navbar -->
+      <!-- Top navbar -->
 
-   <div class="shadowNav" style="    
+      <div class="shadowNav" style="    
       z-index: 2;
       background-color: #fcfcfc;
       display: grid;
@@ -77,589 +77,596 @@
       justify-content: left;
       border: 1px solid rgb(230 230 230);
       ">
-    <h6 style="font-weight: 800; font-size: 1.5em;">Home</h6>
+        <h6 style="font-weight: 800; font-size: 1.5em;">Home</h6>
 
 
 
-    <!-- Notifications Button -->
-    <div style="display: flex; justify-content: center; align-items: center;">
-     <div
-      style="width: 50px; height: 50px; background-color: #000000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-      <div
-       style="width: 40px; height: 40px; background-color: #FF0000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-       <a onclick="openNotificationModal()" style="display: flex;align-items: center;"><span class="material-icons"
-         style="color: white;">notifications</span></a>
-      </div>
-     </div>
-    </div>
-   </div>
-
-
-   <!-- Content -->
-   <div style="height: 400px;width: 95%;margin: 5rem auto">
-
-    <!-- Division Holding Content -->
-    <div style="display: flex;justify-content: center;flex-direction: column;">
-     <div style=" margin: 3rem 0.5rem;">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-       <h3 style="padding: 0.5rem 0; margin: 0;font-weight: bold;font-size: 1.4rem;">Notifications Center</h3>
-
+        <!-- Notifications Button -->
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <div
+            style="width: 50px; height: 50px; background-color: #000000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+            <div
+              style="width: 40px; height: 40px; background-color: #FF0000; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+              <a onclick="openNotificationModal()" style="display: flex;align-items: center;"><span
+                  class="material-icons" style="color: white;">notifications</span></a>
+            </div>
+          </div>
+        </div>
       </div>
 
 
-      <div class="d-flex justify-content-between gap-3 flex-wrap" style="gap: 2rem;">
-       <!-- Product Alerts Card -->
-       <div class="card text-white" style="flex: 1; 
+      <!-- Content -->
+      <div style="height: 400px;width: 95%;margin: 5rem auto">
+
+        <!-- Division Holding Content -->
+        <div style="display: flex;justify-content: center;flex-direction: column;">
+          <div style=" margin: 3rem 0.5rem;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h3 style="padding: 0.5rem 0; margin: 0;font-weight: bold;font-size: 1.4rem;">Notifications Center</h3>
+
+            </div>
+
+
+            <div class="d-flex justify-content-between gap-3 flex-wrap" style="gap: 2rem;">
+              <!-- Product Alerts Card -->
+              <div class="card text-white" style="flex: 1; 
             width: 49%; 
             border-radius: 15px; 
             background: linear-gradient(rgba(0, 0, 0, 0.656), rgba(0, 0, 0, 0.634)), url('images/Store.png');
             background-size: cover; 
             background-position: center;">
-        <div class="card-body d-flex flex-column justify-content-between" style="min-height: 200px; max-height: 250px;">
-         <div style="display: flex;justify-content: space-between;">
-          <h3 class="card-title fw-bold fs-4" style="display: flex; align-items: center; gap: 1rem;">
-           <span> Sales, Costs and Profit Last</span>
-           <span style="font-weight: bold;">30 Days</span>
+                <div class="card-body d-flex flex-column justify-content-between"
+                  style="min-height: 200px; max-height: 250px;">
+                  <div style="display: flex;justify-content: space-between;">
+                    <h3 class="card-title fw-bold fs-4" style="display: flex; align-items: center; gap: 1rem;">
+                      <span> Sales, Costs and Profit Last</span>
+                      <span style="font-weight: bold;">30 Days</span>
 
-          </h3>
-          <span class="material-symbols-outlined">
-           info
-          </span>
-         </div>
-
-
-         <h5 class="fs-4 fw-medium" id="totalRevenue">
-          <!-- Total revenue will be inserted here -->
-         </h5>
-         <a href="/ViewSales" class="text-white">
-          <span class="material-symbols-outlined">open_in_new</span>
-         </a>
-        </div>
-       </div>
+                    </h3>
+                    <span class="material-symbols-outlined">
+                      info
+                    </span>
+                  </div>
 
 
-       <!-- Item Alerts Card -->
-       <div class="card text-white" style="flex: 1; 
+                  <h5 class="fs-4 fw-medium" id="totalRevenue">
+                    <!-- Total revenue will be inserted here -->
+                  </h5>
+                  <a href="/ViewSales" class="text-white">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+
+
+              <!-- Item Alerts Card -->
+              <div class="card text-white" style="flex: 1; 
             width: 49%; 
             border-radius: 15px; 
             background: linear-gradient(rgba(0, 0, 0, 0.656), rgba(0, 0, 0, 0.634)), url('images/Stock.png');
             background-size: cover; 
             background-position: center;">
-        <div class="card-body d-flex flex-column justify-content-between" style="min-height: 200px; max-height: 250px;">
+                <div class="card-body d-flex flex-column justify-content-between"
+                  style="min-height: 200px; max-height: 250px;">
 
-         <div style="display: flex;justify-content: space-between;">
-          <h3 class="card-title fw-bold fs-4 d-flex align-content-center">
-           Stock Alert !
-          </h3>
-          <span style="margin-left: 10px;" class="material-symbols-outlined">
-           info
-          </span>
-         </div>
-         <h5 class="fs-4 fw-medium" id="ExpiringPotentialSavings">
-          <!-- Predicted profit will be populated here -->
-         </h5>
-         <a onclick="showAlertModal('Place on Sale', 'Expiring Soon')" class="text-white">
-          <span class="material-symbols-outlined">open_in_new</span>
-         </a>
-        </div>
-       </div>
+                  <div style="display: flex;justify-content: space-between;">
+                    <h3 class="card-title fw-bold fs-4 d-flex align-content-center">
+                      Stock Alert !
+                    </h3>
+                    <span style="margin-left: 10px;" class="material-symbols-outlined">
+                      info
+                    </span>
+                  </div>
+                  <h5 class="fs-4 fw-medium" id="ExpiringPotentialSavings">
+                    <!-- Predicted profit will be populated here -->
+                  </h5>
+                  <a onclick="showAlertModal('Place on Sale', 'Expiring Soon')" class="text-white">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                  </a>
+                </div>
+              </div>
 
 
 
-       <div class="card text-white" style="flex: 1; 
+              <div class="card text-white" style="flex: 1; 
             width: 49%; 
             border-radius: 15px; 
             background: linear-gradient(rgba(0, 0, 0, 0.431), rgba(0, 0, 0, 0.399)), url('images/Orders.png');
             background-size: cover; 
             background-position: center;">
-        <div class="card-body d-flex flex-column justify-content-between" style="min-height: 200px; max-height: 250px;">
-         <h3 class="card-title fw-bold fs-4">
-          Pending Orders
-          <span class="material-symbols-outlined">priority_high</span>
-         </h3>
-         <h5 class="fs-4 fw-medium" id="orderNarrative">
-          <!-- Narrative will be populated here -->
-         </h5>
-         <a href="/Orders" class="text-dark">
-          <span class="material-symbols-outlined">open_in_new</span>
-         </a>
+                <div class="card-body d-flex flex-column justify-content-between"
+                  style="min-height: 200px; max-height: 250px;">
+                  <h3 class="card-title fw-bold fs-4">
+                    Pending Orders
+                    <span class="material-symbols-outlined">priority_high</span>
+                  </h3>
+                  <h5 class="fs-4 fw-medium" id="orderNarrative">
+                    <!-- Narrative will be populated here -->
+                  </h5>
+                  <a href="/Orders" class="text-dark">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <hr style="margin: 1rem auto;width: 98%;border-color: black;">
+
+          <!-- tables with information -->
+
+
+          <div style="display: flex;gap: 1rem;">
+            <div style="width: 70%;gap: 3rem;display: flex;flex-direction: column;margin: 2rem 0rem;">
+
+              <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0,0,0); ">
+                <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
+                  <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Products And Supplies</h3>
+                  <h5 style="font-size: 1rem; font-weight: 400; margin-top: 20px;color: white;">A List of the Products
+                    List of Low Stock </h5>
+                </div>
+                <!-- Your existing HTML code -->
+                <div id="stockTable" class="" style="padding: 10px; max-height: 400px;overflow-y: scroll;">
+                  <div class="table-responsive">
+                    <table class="table table-striped" style="overflow-y: scroll;max-height: fit-content;">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="stockTableBody" style="max-height: 400px;overflow-y: scroll;">
+                        <!-- Data will be inserted here -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+
+
+
+            </div>
+
+            <div
+              style="width: 30%;margin: 2rem auto;border:  1px solid rgb(0, 0, 0);border-radius: 15px;background-color: white;">
+              <div style="border-radius: 15px;">
+                <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;height: 11rem;">
+                  <h3 style="font-weight: bold;font-size: 1.5rem;color: white;">Product Sale Ideas For Today
+                  </h3>
+                  <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
+                    Sales Reccomendations
+                  </h5>
+                </div>
+
+
+                <div style="background-color: #ffffff;width: 100%;border-radius: 15px;height: 100%;">
+                  <div style="padding: 3rem;height: 100%;">
+                    <ul class="list-group" style="font-size: 1.4rem;">
+                      <li class="list-group-item list-group-item-borderless">
+                        <strong>Name:</strong>
+                        <%= Recommendations.Name %>
+                      </li>
+                      <li class="list-group-item list-group-item-borderless">
+                        <strong>Units in Inventory:</strong>
+                        <%= Recommendations.UnitsInInventory %>
+                      </li>
+                      <li class="list-group-item list-group-item-borderless">
+                        <strong>Last Sold Date:</strong>
+                        2 May
+                        <!-- Replace with <%= Recommendations.LastSoldDate %> after formatting it on the server-side -->
+                      </li>
+                      <li class="list-group-item list-group-item-borderless">
+                        <strong>Reason:</strong> <span class="text-danger font-weight-bold">
+                          <%= Recommendations.Reason %>
+                        </span>
+                      </li>
+                      <li class="list-group-item list-group-item-borderless">
+                        <button id="placeOnSaleButton" onclick="PlaceonSale('<%= Recommendations.ProductId %>')"
+                          class="btn">Reduce
+                          price</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
         </div>
-       </div>
-
-
-
-
 
       </div>
 
-     </div>
-
-
-     <hr style="margin: 1rem auto;width: 98%;border-color: black;">
-
-     <!-- tables with information -->
-
-
-     <div style="display: flex;gap: 1rem;">
-      <div style="width: 70%;gap: 3rem;display: flex;flex-direction: column;margin: 2rem 0rem;">
-
-       <div style="background-color: white; border-radius: 15px; border: 1px solid rgb(0,0,0); ">
-        <div style="padding: 3rem 2rem; background-color: #191716; border-radius: 15px;">
-         <h3 style="font-weight: bold; font-size: 1.5rem; color: #F7F4F3;">Products And Supplies</h3>
-         <h5 style="font-size: 1rem; font-weight: 400; margin-top: 20px;color: white;">A List of the Products
-          List of Low Stock </h5>
-        </div>
-        <!-- Your existing HTML code -->
-        <div id="stockTable" class="" style="padding: 10px; max-height: 400px;overflow-y: scroll;">
-         <div class="table-responsive">
-          <table class="table table-striped" style="overflow-y: scroll;max-height: fit-content;">
-           <thead>
-            <tr>
-             <th scope="col">Name</th>
-             <th scope="col">Action</th>
-            </tr>
-           </thead>
-           <tbody id="stockTableBody" style="max-height: 400px;overflow-y: scroll;">
-            <!-- Data will be inserted here -->
-           </tbody>
-          </table>
-         </div>
-        </div>
-
-
-       </div>
 
 
 
-
-
-      </div>
-
-      <div
-       style="width: 30%;margin: 2rem auto;border:  1px solid rgb(0, 0, 0);border-radius: 15px;background-color: white;">
-       <div style="border-radius: 15px;">
-        <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;height: 11rem;">
-         <h3 style="font-weight: bold;font-size: 1.5rem;color: white;">Product Sale Ideas For Today
-         </h3>
-         <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
-          Sales Reccomendations
-         </h5>
-        </div>
-
-
-        <div style="background-color: #ffffff;width: 100%;border-radius: 15px;height: 100%;">
-         <div style="padding: 3rem;height: 100%;">
-          <ul class="list-group" style="font-size: 1.4rem;">
-           <li class="list-group-item list-group-item-borderless">
-            <strong>Name:</strong>
-            <%= Recommendations.Name %>
-           </li>
-           <li class="list-group-item list-group-item-borderless">
-            <strong>Units in Inventory:</strong>
-            <%= Recommendations.UnitsInInventory %>
-           </li>
-           <li class="list-group-item list-group-item-borderless">
-            <strong>Last Sold Date:</strong>
-            2 May <!-- Replace with <%= Recommendations.LastSoldDate %> after formatting it on the server-side -->
-           </li>
-           <li class="list-group-item list-group-item-borderless">
-            <strong>Reason:</strong> <span class="text-danger font-weight-bold">
-             <%= Recommendations.Reason %>
-            </span>
-           </li>
-           <li class="list-group-item list-group-item-borderless">
-            <button id="placeOnSaleButton" onclick="PlaceonSale('<%= Recommendations.ProductId %>')" class="btn">Reduce
-             price</button>
-           </li>
-          </ul>
-         </div>
-        </div>
-
-
-
-       </div>
-      </div>
-     </div>
-
-
-
-
-
-
-
-
-    </div>
-
-   </div>
-
-
-
-
-   <!-- Success Modal -->
-   <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-     <div class="modal-content">
-      <div class="modal-header">
-       <h5 class="modal-title" id="alertModalLabel">Place on Sale</h5>
-       <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
-        <span aria-hidden="true">×</span>
-       </button>
-      </div>
-      <div class="modal-body" id="alertModalBody">
-       <div id="stockTable" class="" style="padding: 10px;max-height: 400px;overflow-y: scroll;">
-        <div class="table-responsive">
-         <table class="table table-striped">
-          <thead style="
+      <!-- Success Modal -->
+      <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabel">Place on Sale</h5>
+              <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body" id="alertModalBody">
+              <div id="stockTable" class="" style="padding: 10px;max-height: 400px;overflow-y: scroll;">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead style="
     width: fit-content !important;
 ">
-           <tr style="width: 100%;display: flex;justify-content: space-between;">
-            <th scope="col">Name</th>
-            <th scope="col" style="
+                      <tr style="width: 100%;display: flex;justify-content: space-between;">
+                        <th scope="col">Name</th>
+                        <th scope="col" style="
     text-align: right;
 ">Action</th>
-           </tr>
-          </thead>
-          <tbody id="stockTableAlert" style="
+                      </tr>
+                    </thead>
+                    <tbody id="stockTableAlert" style="
     width: 100%;
 ">
 
-          </tbody>
-         </table>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+            </div>
+          </div>
         </div>
-       </div>
+      </div>
 
+      <div class="modal fade" id="alertModalSale" tabindex="-1" aria-labelledby="alertModalLabelSale"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabelSale">Alert</h5>
+              <button type="button" class="close" onclick="closeAlertModalSale()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="alertModalBodySale">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closeAlertModalSale()">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
-      </div>
-     </div>
+
     </div>
-   </div>
+    <!-- Notification Modal -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" style="width: 800px;">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title">Notification Center</h5>
+            <button type="button" style="margin: auto 30px;" class="btn btn-primary"
+              onclick="toggleAddNotification()">Add
+              Notification</button>
+            <button type="button" class="close" aria-label="Close" onclick="closeNotificationModal()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- Modal Body -->
+          <!-- Modal Body -->
+          <div id="NotificationBody" class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Notification</th>
+                  <th>Task Name</th>
+                  <th>Priority</th>
+                  <th>Due Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="notificationTableBody">
+                <!-- Notifications will be inserted here -->
+              </tbody>
+            </table>
+          </div>
 
-   <div class="modal fade" id="alertModalSale" tabindex="-1" aria-labelledby="alertModalLabelSale" aria-hidden="true">
-    <div class="modal-dialog">
-     <div class="modal-content">
-      <div class="modal-header">
-       <h5 class="modal-title" id="alertModalLabelSale">Alert</h5>
-       <button type="button" class="close" onclick="closeAlertModalSale()" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-       </button>
-      </div>
-      <div class="modal-body" id="alertModalBodySale">
 
+          <div id="notificationInputForm" style="display: none;padding: 1rem;">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="taskName" placeholder="Task Name">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="taskDescription" placeholder="Task Description"></textarea>
+            </div>
+            <div class="mb-3">
+              <input type="datetime-local" class="form-control" id="dueDate">
+            </div>
+            <div class="mb-3">
+              <select class="form-control" id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+                <option value="Urgent">Urgent</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <select class="form-control" id="notificationType">
+                <option value="Prepare">Prepare</option>
+                <option value="Reorder">Reorder</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <select id="productSelect" class="form-control">
+                <!-- Populate this dynamically -->
+              </select>
+            </div>
+            <div class="mb-3">
+              <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+            </div>
+            <div class="mb-3">
+              <button type="button" class="btn btn-success" onclick="createNotification()">Submit</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-       <button type="button" class="btn btn-secondary" onclick="closeAlertModalSale()">Close</button>
-      </div>
-     </div>
     </div>
-   </div>
-
-  </div>
-  <!-- Notification Modal -->
-  <div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
-   <div class="modal-dialog">
-    <div class="modal-content" style="width: 800px;">
-     <!-- Modal Header -->
-     <div class="modal-header">
-      <h5 class="modal-title">Notification Center</h5>
-      <button type="button" style="margin: auto 30px;" class="btn btn-primary" onclick="toggleAddNotification()">Add
-       Notification</button>
-      <button type="button" class="close" aria-label="Close" onclick="closeNotificationModal()">
-       <span aria-hidden="true">&times;</span>
-      </button>
-     </div>
-     <!-- Modal Body -->
-     <!-- Modal Body -->
-     <div id="NotificationBody" class="modal-body">
-      <table class="table">
-       <thead>
-        <tr>
-         <th>Notification</th>
-         <th>Task Name</th>
-         <th>Priority</th>
-         <th>Due Date</th>
-         <th>Action</th>
-        </tr>
-       </thead>
-       <tbody id="notificationTableBody">
-        <!-- Notifications will be inserted here -->
-       </tbody>
-      </table>
-     </div>
 
 
-     <div id="notificationInputForm" style="display: none;padding: 1rem;">
-      <div class="mb-3">
-       <input type="text" class="form-control" id="taskName" placeholder="Task Name">
-      </div>
-      <div class="mb-3">
-       <textarea class="form-control" id="taskDescription" placeholder="Task Description"></textarea>
-      </div>
-      <div class="mb-3">
-       <input type="datetime-local" class="form-control" id="dueDate">
-      </div>
-      <div class="mb-3">
-       <select class="form-control" id="priority">
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-        <option value="Urgent">Urgent</option>
-       </select>
-      </div>
-      <div class="mb-3">
-       <select class="form-control" id="notificationType">
-        <option value="Prepare">Prepare</option>
-        <option value="Reorder">Reorder</option>
-       </select>
-      </div>
-      <div class="mb-3">
-       <select id="productSelect" class="form-control">
-        <!-- Populate this dynamically -->
-       </select>
-      </div>
-      <div class="mb-3">
-       <input type="number" class="form-control" id="quantity" placeholder="Quantity">
-      </div>
-      <div class="mb-3">
-       <button type="button" class="btn btn-success" onclick="createNotification()">Submit</button>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
+    <script>
 
 
-  <script>
+      // Load products into the select element when the modal is opened
+      function openModal(productId = null) {
+        const fetchOptions = {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            // Add other headers as needed
+          },
+        };
+
+        const modal = document.getElementById('notificationModal');
 
 
-   // Load products into the select element when the modal is opened
-   function openModal(productId = null) {
-    const fetchOptions = {
-     method: 'GET',
-     headers: {
-      'Content-Type': 'application/json',
-      // Add other headers as needed
-     },
-    };
-
-    const modal = document.getElementById('notificationModal');
+        modal.classList.add('show');
+        modal.style.display = 'block';
 
 
-    modal.classList.add('show');
-    modal.style.display = 'block';
+        const productSelect = document.getElementById('productSelect');
+
+        fetch('http://localhost:5358/Product', fetchOptions)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+
+            productSelect.innerHTML = '';
+            data.forEach(product => {
+              const option = document.createElement('option');
+              option.value = product.productId;
+              option.textContent = product.productName;
+              productSelect.appendChild(option);
+
+              if (productId !== null && productId === product.productId) {
+                option.selected = true;
+              }
+            });
+          })
+          .catch(error => console.error('Error fetching products:', error));
+      }
+
+      // Function to create a notification
+      function createNotification(stockName = null) {
+        const taskName = document.getElementById('taskName').value;
+        const taskDescription = document.getElementById('taskDescription').value;
+        const dueDate = document.getElementById('dueDate').value;
+        const priority = document.getElementById('priority').selectedIndex;
+        const notificationType = document.getElementById('notificationType').selectedIndex;
+        const product = stockName || document.getElementById('productSelect').value;
+        const quantity = document.getElementById('quantity').value;
+
+        const newNotification = {
+          taskName: taskName,
+          taskDescription: taskDescription,
+          dueDate: dueDate,
+          priority: priority,
+          type: notificationType,
+          product: product,
+          quantity: parseInt(quantity)
+        };
+
+        console.log(newNotification)
 
 
-    const productSelect = document.getElementById('productSelect');
 
-    fetch('http://localhost:5358/Product', fetchOptions)
-     .then(response => response.json())
-     .then(data => {
-      console.log(data);
+        const fetchOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newNotification)
+        };
 
-      productSelect.innerHTML = '';
-      data.forEach(product => {
-       const option = document.createElement('option');
-       option.value = product.productId;
-       option.textContent = product.productName;
-       productSelect.appendChild(option);
+        fetch('http://localhost:5358/api/Notifications', fetchOptions)
+          .then(response => response.json())
+          .then(data => {
+            console.log('Notification created:', data);
+          })
+          .catch(error => {
+            console.error('Error creating notification:', error);
+          });
+      }
 
-       if (productId !== null && productId === product.productId) {
-        option.selected = true;
-       }
+
+
+      // Function to toggle the visibility of the Add Notification form
+      function toggleAddNotification() {
+        const inputForm = document.getElementById('notificationInputForm');
+        if (inputForm.style.display === 'none' || inputForm.style.display === '') {
+          inputForm.style.display = 'block';
+        } else {
+          inputForm.style.display = 'none';
+        }
+      }
+
+      // Function to open the Notification modal
+      function openNotificationModal() {
+        openModal();
+      }
+
+      // Function to close the Notification modal
+      function closeNotificationModal() {
+        const modal = document.getElementById('notificationModal');
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+      }
+
+
+
+
+      // Fetch the narrative from the server
+      async function fetchOrderNarrative() {
+        try {
+          const response = await fetch('http://localhost:5358/api/Stats/check-orders-status'); // Replace with your actual API endpoint
+          const data = await response.json();
+
+          // Populate the narrative in the HTML
+          document.getElementById('orderNarrative').innerText = data.narrative;
+        } catch (error) {
+          console.error('Error fetching order narrative:', error);
+        }
+      }
+
+      // Call the function when the page loads
+      window.addEventListener('load', fetchOrderNarrative);
+
+
+      // Function to delete a notification
+      function deleteNotification(notificationId) {
+        const fetchOptions = {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+
+        fetch(`http://localhost:5358/api/Notifications/${notificationId}`, fetchOptions)
+          .then(response => {
+            if (response.ok) {
+              console.log('Notification deleted');
+            } else {
+              console.log('Failed to delete notification');
+            }
+          })
+          .catch(error => {
+            console.error('Error deleting notification:', error);
+          });
+      }
+
+
+      async function PlaceonSale(id) {
+        try {
+          const response = await fetch(`http://localhost:5358/Product/ReducePrice?productId=${id}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          });
+
+          if (response.ok) {
+            const updatedProduct = await response.json();
+            // Open the alert modal to notify the user that the product is now on sale
+            console.log(updatedProduct)
+            openAlertModalSale("Success", "The product is now on sale.");
+          } else {
+            console.error("Server returned an error:", response);
+          }
+        } catch (error) {
+          console.error("There was a problem with the request:", error);
+        }
+      };
+
+
+      function openAlertModalSale(title, message) {
+        // Set the modal's title and message
+        document.getElementById('alertModalLabelSale').innerText = title;
+        document.getElementById('alertModalBodySale').innerText = message;
+
+        // Display the modal
+        var modal = document.getElementById('alertModalSale');
+        modal.style.display = 'block';
+        modal.classList.add('show');
+        document.body.classList.add('modal-open');
+      }
+
+      function closeAlertModalSale() {
+        var modal = document.getElementById('alertModalSale');
+        modal.style.display = 'none';
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      }
+
+
+      function showAlertModal(title, message) {
+        // Set the modal's title and message
+        document.getElementById('alertModalLabel').innerText = title;
+
+
+        // Display the modal
+        var modal = document.getElementById('alertModal');
+        modal.style.display = 'block';
+        modal.classList.add('show');
+        document.body.classList.add('modal-open');
+      }
+
+      function closeAlertModal() {
+        var modal = document.getElementById('alertModal');
+        modal.style.display = 'none';
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      }
+
+
+      // Update the HTML with the potential savings message
+      document.addEventListener('DOMContentLoaded', (event) => {
+        // Call the fetch function when the page loads
+        fetchPredictedProfit();
+        fetchNotifications()
       });
-     })
-     .catch(error => console.error('Error fetching products:', error));
-   }
+      async function fetchNotifications() {
+        const response = await fetch('http://localhost:5358/api/Notifications');
+        const notifications = await response.json();
 
-   // Function to create a notification
-   function createNotification(stockName = null) {
-    const taskName = document.getElementById('taskName').value;
-    const taskDescription = document.getElementById('taskDescription').value;
-    const dueDate = document.getElementById('dueDate').value;
-    const priority = document.getElementById('priority').selectedIndex;
-    const notificationType = document.getElementById('notificationType').selectedIndex;
-    const product = stockName || document.getElementById('productSelect').value;
-    const quantity = document.getElementById('quantity').value;
+        const tableBody = document.getElementById('notificationTableBody');
+        tableBody.innerHTML = ''; // Clear the existing notifications
 
-    const newNotification = {
-     taskName: taskName,
-     taskDescription: taskDescription,
-     dueDate: dueDate,
-     priority: priority,
-     type: notificationType,
-     product: product,
-     quantity: parseInt(quantity)
-    };
-
-    console.log(newNotification)
-
-
-
-    const fetchOptions = {
-     method: 'POST',
-     headers: {
-      'Content-Type': 'application/json'
-     },
-     body: JSON.stringify(newNotification)
-    };
-
-    fetch('http://localhost:5358/api/Notifications', fetchOptions)
-     .then(response => response.json())
-     .then(data => {
-      console.log('Notification created:', data);
-     })
-     .catch(error => {
-      console.error('Error creating notification:', error);
-     });
-   }
-
-
-
-   // Function to toggle the visibility of the Add Notification form
-   function toggleAddNotification() {
-    const inputForm = document.getElementById('notificationInputForm');
-    if (inputForm.style.display === 'none' || inputForm.style.display === '') {
-     inputForm.style.display = 'block';
-    } else {
-     inputForm.style.display = 'none';
-    }
-   }
-
-   // Function to open the Notification modal
-   function openNotificationModal() {
-    openModal();
-   }
-
-   // Function to close the Notification modal
-   function closeNotificationModal() {
-    const modal = document.getElementById('notificationModal');
-    modal.classList.remove('show');
-    modal.style.display = 'none';
-   }
-
-
-
-
-   // Fetch the narrative from the server
-   async function fetchOrderNarrative() {
-    try {
-     const response = await fetch('http://localhost:5358/api/Stats/check-orders-status'); // Replace with your actual API endpoint
-     const data = await response.json();
-
-     // Populate the narrative in the HTML
-     document.getElementById('orderNarrative').innerText = data.narrative;
-    } catch (error) {
-     console.error('Error fetching order narrative:', error);
-    }
-   }
-
-   // Call the function when the page loads
-   window.addEventListener('load', fetchOrderNarrative);
-
-
-   // Function to delete a notification
-   function deleteNotification(notificationId) {
-    const fetchOptions = {
-     method: 'DELETE',
-     headers: {
-      'Content-Type': 'application/json'
-     }
-    };
-
-    fetch(`http://localhost:5358/api/Notifications/${notificationId}`, fetchOptions)
-     .then(response => {
-      if (response.ok) {
-       console.log('Notification deleted');
-      } else {
-       console.log('Failed to delete notification');
-      }
-     })
-     .catch(error => {
-      console.error('Error deleting notification:', error);
-     });
-   }
-
-
-   async function PlaceonSale(id) {
-    try {
-     const response = await fetch(`http://localhost:5358/Product/ReducePrice?productId=${id}`, {
-      method: 'POST',
-      headers: {
-       'Content-Type': 'application/json',
-      }
-     });
-
-     if (response.ok) {
-      const updatedProduct = await response.json();
-      // Open the alert modal to notify the user that the product is now on sale
-      console.log(updatedProduct)
-      openAlertModalSale("Success", "The product is now on sale.");
-     } else {
-      console.error("Server returned an error:", response);
-     }
-    } catch (error) {
-     console.error("There was a problem with the request:", error);
-    }
-   };
-
-
-   function openAlertModalSale(title, message) {
-    // Set the modal's title and message
-    document.getElementById('alertModalLabelSale').innerText = title;
-    document.getElementById('alertModalBodySale').innerText = message;
-
-    // Display the modal
-    var modal = document.getElementById('alertModalSale');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-   }
-
-   function closeAlertModalSale() {
-    var modal = document.getElementById('alertModalSale');
-    modal.style.display = 'none';
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
-   }
-
-
-   function showAlertModal(title, message) {
-    // Set the modal's title and message
-    document.getElementById('alertModalLabel').innerText = title;
-
-
-    // Display the modal
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-   }
-
-   function closeAlertModal() {
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'none';
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
-   }
-
-
-   // Update the HTML with the potential savings message
-   document.addEventListener('DOMContentLoaded', (event) => {
-    // Call the fetch function when the page loads
-    fetchPredictedProfit();
-    fetchNotifications()
-   });
-   async function fetchNotifications() {
-    const response = await fetch('http://localhost:5358/api/Notifications');
-    const notifications = await response.json();
-
-    const tableBody = document.getElementById('notificationTableBody');
-    tableBody.innerHTML = ''; // Clear the existing notifications
-
-    notifications.forEach((notification, index) => {
-     const row = tableBody.insertRow();
-     row.innerHTML = `
+        notifications.forEach((notification, index) => {
+          const row = tableBody.insertRow();
+          row.innerHTML = `
       <td>${index + 1}</td>
       <td>${notification.taskName}</td>
       <td>${notification.priority}</td>
@@ -670,8 +677,8 @@
       </td>
     `;
 
-     const detailsRow = tableBody.insertRow();
-     detailsRow.innerHTML = `
+          const detailsRow = tableBody.insertRow();
+          detailsRow.innerHTML = `
       <td colspan="5">
         <div id="notificationDetails${index}" class="collapse">
           <strong>Task Description:</strong> ${notification.taskDescription} <br>
@@ -681,136 +688,136 @@
         </div>
       </td>
     `;
-    });
-   }
-
-
-   // Fetch function to get the predicted profit from stock on hand
-   async function fetchPredictedProfit() {
-    try {
-     const response = await fetch('http://localhost:5358/api/Stats/ExpiringAndPotentialSavings'); // Replace with your actual API endpoint
-     const data = await response.json();
-
-
-     // Update the HTML with the potential savings message
-     document.getElementById('ExpiringPotentialSavings').innerHTML = data.savingMessage;
-
-     // Populate the list of expiring products
-     // Populate the list of expiring products
-     const tableBody = document.getElementById('stockTableAlert');
-     let tableRows = '';
-     if (data.expiringProducts) {
-      data.expiringProducts.forEach(product => {
-       tableRows += `<tr class="d-flex justify-content-between style="width:100%">
-                    <td class="flex-fill">${product.productName}</td>
-                    <td class="text-right"><button class="btn btn-primary" onclick="reducePrice(${product.productId})">Reduce Price</button></td>
-                  </tr>`;
-      });
-     }
-     tableBody.innerHTML = tableRows;
-
-
-
-    } catch (error) {
-     console.error('Error fetching predicted profit:', error);
-    }
-   }
-
-
-   async function fetchTotalRevenue() {
-    try {
-     const response = await fetch("http://localhost:5358/api/Stats/totalrevenuePastThirtyDays");
-     const data = await response.text();
-
-
-
-     // Update the HTML element with the total revenue
-     document.getElementById("totalRevenue").innerText = data;
-
-    } catch (error) {
-     console.error("Error fetching total revenue:", error);
-    }
-   }
-
-   // Call the function to populate the data
-   fetchTotalRevenue();
-
-
-   // JavaScript code to fetch data and populate the table
-   document.addEventListener("DOMContentLoaded", function () {
-    fetch('http://localhost:5358/api/Stats/LowStockSummary') // Replace with your actual API endpoint
-     .then(response => response.json())
-     .then(data => {
-      const tableBody = document.getElementById('stockTableBody');
-      let tableRows = '';
-
-      if (data === "Good") {
-       tableRows = '<tr><td colspan="2">All stocks are good</td></tr>';
-      } else {
-       data.forEach(stock => {
-        const actionButton = `<a href="/OrderProductsAndItems?reorderProduct=${stock.id}" class="btn btn-link action-btn" data-name="${stock.name}" data-id="${stock.id}" id="reorderButton">Re Order</a>`;
-        const Remade = `<button onclick='createNotificationReorder("${stock.name}")' class="btn btn-link action-btn" data-name="${stock.name}" data-id="${stock.id}" >Notify Staff To prepare </button>`;
-        tableRows += `<tr>
-                <td>${stock.name} (${stock.type}) ${stock.description ? '- ' + stock.description : ''}</td>
-                <td>${stock.action === 'Remake' ? Remade : actionButton}</td>
-              </tr>`;
-       });
-
-       tableBody.innerHTML = tableRows;
-
-
-
+        });
       }
 
 
-     })
-     .catch(error => {
-      console.error('Error fetching low stock summary:', error);
-     });
-   });
+      // Fetch function to get the predicted profit from stock on hand
+      async function fetchPredictedProfit() {
+        try {
+          const response = await fetch('http://localhost:5358/api/Stats/ExpiringAndPotentialSavings'); // Replace with your actual API endpoint
+          const data = await response.json();
+
+
+          // Update the HTML with the potential savings message
+          document.getElementById('ExpiringPotentialSavings').innerHTML = data.savingMessage;
+
+          // Populate the list of expiring products
+          // Populate the list of expiring products
+          const tableBody = document.getElementById('stockTableAlert');
+          let tableRows = '';
+          if (data.expiringProducts) {
+            data.expiringProducts.forEach(product => {
+              tableRows += `<tr class="d-flex justify-content-between style="width:100%">
+                    <td class="flex-fill">${product.productName}</td>
+                    <td class="text-right"><button class="btn btn-primary" onclick="reducePrice(${product.productId})">Reduce Price</button></td>
+                  </tr>`;
+            });
+          }
+          tableBody.innerHTML = tableRows;
 
 
 
-   // Function to create a notification
-   function createNotificationReorder(stockName) {
+        } catch (error) {
+          console.error('Error fetching predicted profit:', error);
+        }
+      }
 
 
-    const newNotification = {
-     taskName: "Re Order",
-     taskDescription: "Re Order Product Urgently",
-     dueDate: new Date().toISOString(),
-     priority: 3,
-     type: 1,
-     product: stockName,
-     quantity: 10
-    };
+      async function fetchTotalRevenue() {
+        try {
+          const response = await fetch("http://localhost:5358/api/Stats/totalrevenuePastThirtyDays");
+          const data = await response.text();
 
 
 
+          // Update the HTML element with the total revenue
+          document.getElementById("totalRevenue").innerText = data;
+
+        } catch (error) {
+          console.error("Error fetching total revenue:", error);
+        }
+      }
+
+      // Call the function to populate the data
+      fetchTotalRevenue();
 
 
-    const fetchOptions = {
-     method: 'POST',
-     headers: {
-      'Content-Type': 'application/json'
-     },
-     body: JSON.stringify(newNotification)
-    };
+      // JavaScript code to fetch data and populate the table
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch('http://localhost:5358/api/Stats/LowStockSummary') // Replace with your actual API endpoint
+          .then(response => response.json())
+          .then(data => {
+            const tableBody = document.getElementById('stockTableBody');
+            let tableRows = '';
 
-    fetch('http://localhost:5358/api/Notifications', fetchOptions)
-     .then(response => response.json())
-     .then(data => {
-      console.log('Notification created:', data);
-     })
-     .catch(error => {
-      console.error('Error creating notification:', error);
-     });
-   }
+            if (data === "Good") {
+              tableRows = '<tr><td colspan="2">All stocks are good</td></tr>';
+            } else {
+              data.forEach(stock => {
+                const actionButton = `<a href="/OrderProductsAndItems?reorderProduct=${stock.id}" class="btn btn-link action-btn" data-name="${stock.name}" data-id="${stock.id}" id="reorderButton">Re Order</a>`;
+                const Remade = `<button onclick='createNotificationReorder("${stock.name}")' class="btn btn-link action-btn" data-name="${stock.name}" data-id="${stock.id}" >Notify Staff To prepare </button>`;
+                tableRows += `<tr>
+                <td>${stock.name} (${stock.type}) ${stock.description ? '- ' + stock.description : ''}</td>
+                <td>${stock.action === 'Remake' ? Remade : actionButton}</td>
+              </tr>`;
+              });
+
+              tableBody.innerHTML = tableRows;
+
+
+
+            }
+
+
+          })
+          .catch(error => {
+            console.error('Error fetching low stock summary:', error);
+          });
+      });
+
+
+
+      // Function to create a notification
+      function createNotificationReorder(stockName) {
+
+
+        const newNotification = {
+          taskName: "Re Order",
+          taskDescription: "Re Order Product Urgently",
+          dueDate: new Date().toISOString(),
+          priority: 3,
+          type: 1,
+          product: stockName,
+          quantity: 10
+        };
 
 
 
 
-  </script>
+
+        const fetchOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newNotification)
+        };
+
+        fetch('http://localhost:5358/api/Notifications', fetchOptions)
+          .then(response => response.json())
+          .then(data => {
+            console.log('Notification created:', data);
+          })
+          .catch(error => {
+            console.error('Error creating notification:', error);
+          });
+      }
+
+
+
+
+    </script>
 </body>
 
 </html>

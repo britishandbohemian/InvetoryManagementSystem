@@ -1,198 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=0.8">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <!-- Bootstrap CSS -->
+<%- include('../DefaultHead') %>
 
- <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
- <!-- Font Awesome -->
- <link rel="stylesheet" href="/css/styles.css">
- <link rel="icon" href="images/Layer-1.ico" type="image/x-icon">
 
- <title>
-  Add Product
- </title>
+  <title>
+    Add Product
+  </title>
 
- <style>
-  #shadowNav {
-   z-index: 2;
-   background-color: #fcfcfc;
-   height: 5rem;
-   display: grid;
-   grid-template-columns: 60% 1fr;
-   align-items: center;
-   flex-direction: row;
-   position: fixed;
-   width: 100%;
-   justify-content: left;
-   border: 1px solid 1px solid rgb(230 230 230);
-  }
+  <style>
+    #shadowNav {
+      z-index: 2;
+      background-color: #fcfcfc;
+      height: 5rem;
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      align-items: center;
+      flex-direction: row;
+      position: fixed;
+      width: 100%;
+      justify-content: left;
+      border: 1px solid 1px solid rgb(230 230 230);
+    }
 
-  /* Make the table layout fixed to ensure column widths are equal */
-  table {
-   width: 100%;
-   table-layout: fixed;
-   border-collapse: collapse;
-  }
+    /* Make the table layout fixed to ensure column widths are equal */
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
 
-  /* Set a fixed height and make it scrollable */
-  tbody {
-   display: block;
-   height: 200px;
-   /* or whatever height you want */
-   overflow-y: auto;
-  }
+    /* Set a fixed height and make it scrollable */
+    tbody {
+      display: block;
+      height: 200px;
+      /* or whatever height you want */
+      overflow-y: auto;
+    }
 
-  /* Since tbody is now a block, we need to make tr elements behave like rows */
-  tbody tr {
-   display: table;
-   width: 100%;
-   table-layout: fixed;
-  }
+    /* Since tbody is now a block, we need to make tr elements behave like rows */
+    tbody tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
 
-  /* Optional: Add some styling to the header and cells */
-  thead,
-  tbody tr {
-   display: table;
-   width: 100%;
-  }
+    /* Optional: Add some styling to the header and cells */
+    thead,
+    tbody tr {
+      display: table;
+      width: 100%;
+    }
 
-  th,
-  td {
-   padding: 8px 20px;
-  }
+    th,
+    td {
+      padding: 8px 20px;
+    }
 
-  thead {
-   width: calc(100% - 1em);
-   /* Subtract the scrollbar width */
-  }
+    thead {
+      width: calc(100% - 1em);
+      /* Subtract the scrollbar width */
+    }
 
-  #popupFormSupplier,
-  #popupFormCategory {
-   display: none;
-   /* Initially hide the popup */
-   position: fixed;
-   /* Fixed position */
-   left: 0;
-   top: 0;
-   width: 100%;
-   /* Full width */
-   height: 100%;
-   /* Full height */
-   overflow: auto;
-   /* Enable scroll if needed */
-   background-color: rgba(0, 0, 0, 0.4);
-   /* Black w/ opacity */
-  }
+    #popupFormSupplier,
+    #popupFormCategory {
+      display: none;
+      /* Initially hide the popup */
+      position: fixed;
+      /* Fixed position */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
 
-  #headerNav {
-   font-weight: 800;
-   font-size: 1.5em;
-   padding-left: 5rem;
-  }
+    #headerNav {
+      font-weight: 800;
+      font-size: 1.5em;
+      padding-left: 5rem;
+    }
 
-  #InputDiv {
-   margin-top: 5rem;
-   background-color: #fefefe;
-   padding: 2rem;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-  }
- </style>
+    #InputDiv {
+      margin-top: 5rem;
+      background-color: #fefefe;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
 
 
 
-
-</head>
-
-<body>
+  <body>
 
 
- <%- include('../NavbarAdmin') %>
+    <%- include('../NavbarAdmin') %>
 
 
 
-  <!-- Where all my content is -->
-  <section class="main-content" style="display: grid;grid-template-columns: 1fr 1fr;">
-   <!-- Navbar top -->
-   <div class="shadowNav" id="shadowNav">
-    <h6 id="headerNav">Add Product Bought </h6>
-   </div>
+      <!-- Where all my content is -->
+      <section class="main-content" style="display: grid;grid-template-columns: 1fr 1fr;">
+        <!-- Navbar top -->
+        <div class="shadowNav" id="shadowNav">
+          <h6 id="headerNav">Add Product Bought </h6>
+        </div>
 
 
-   <!-- Inputs -->
-   <div id="InputDiv">
-    <!-- Summary Of Product To be added -->
-    <form id="productForm" method="post" style="width: 400px;margin-left: 7rem;">
-     <label for="productName">Product Name:</label>
-     <input class="form-control" type="text" id="productName" name="productName" placeholder="Product Name"
-      required><br>
+        <!-- Inputs -->
+        <div id="InputDiv">
+          <!-- Summary Of Product To be added -->
+          <form id="productForm" method="post" style="width: 400px;margin-left: 7rem;">
+            <label for="productName">Product Name:</label>
+            <input class="form-control" type="text" id="productName" name="productName" placeholder="Product Name"
+              required><br>
 
-     <label for="productMarkup">Product Markup:</label>
-     <input class="form-control" type="number" id="productMarkup" name="productMarkup" placeholder="markup"
-      required><br>
-
-
-     <label for="minimumThreshold">Minimum Threshold:</label>
-     <input class="form-control" type="number" id="minimumThreshold" name="minimumThreshold"
-      placeholder="Minimum Threshold" required><br>
-
-     <label for="maximumThreshold">Maxmium Threshold:</label>
-     <input class="form-control" type="number" id="maximumThreshold" name="maximumThreshold"
-      placeholder="Maxmium Threshold" required><br>
+            <label for="productMarkup">Product Markup:</label>
+            <input class="form-control" type="number" id="productMarkup" name="productMarkup" placeholder="markup"
+              required><br>
 
 
-     <div style="display: flex; flex-direction: column;">
-      <label for="supplier">Select A Supplier:</label>
-      <select class="form-control" name="supplier" id="supplier">
-       <% Supplier.forEach(supplier=> { %>
-        <option value="<%= supplier.supplierId %>">
-         <%= supplier.supplierName %>
-        </option>
-        <% }) %>
-      </select>
-     </div>
+            <label for="CostPrice">Cost Price</label>
+            <input class="form-control" type="number" id="CostPrice" name="CostPrice" placeholder="Cost Price"
+              required><br>
+
+            <label style="margin-top: 10px;" for="productMarkup">Product Recommended Selling
+              Price:</label>
+            <input class="form-control" type="number" id="productSellingPrice" name="productSellingPrice"
+              placeholder="Selling Price" required>
+            <br>
+            <label for="minimumThreshold">Minimum Threshold:</label>
+            <input class="form-control" type="number" id="minimumThreshold" name="minimumThreshold"
+              placeholder="Minimum Threshold" required><br>
+
+            <label for="maximumThreshold">Maxmium Threshold:</label>
+            <input class="form-control" type="number" id="maximumThreshold" name="maximumThreshold"
+              placeholder="Maxmium Threshold" required><br>
+
+            <label for="Description">Description</label>
+            <input class="form-control" type="text" id="Description" name="Description" placeholder="Description"
+              required><br>
+
+            <label for="Qoute">Qoute</label>
+            <input class="form-control" type="text" id="Qoute" name="Qoute" placeholder="Qoute" required><br>
+
+
+            <div style="display: flex; flex-direction: column;">
+              <label for="supplier">Select A Supplier:</label>
+              <select class="form-control" name="supplier" id="supplier">
+                <% Supplier.forEach(supplier=> { %>
+                  <option value="<%= supplier.supplierId %>">
+                    <%= supplier.supplierName %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
 
 
 
-     <!-- Category -->
-     <div style="margin-top: 1rem;">
-      <label for="category">Select A Category:</label>
-      <select class="form-control" name="category" id="categoryProduct">
-       <% Categories.forEach(category=> { %>
-        <option value="<%= category.categoryId %>">
-         <%= category.categoryName %>
-        </option>
-        <% }) %>
-      </select>
-     </div>
+            <!-- Category -->
+            <div style="margin-top: 1rem;">
+              <label for="category">Select A Category:</label>
+              <select class="form-control" name="category" id="categoryProduct">
+                <% Categories.forEach(category=> { %>
+                  <option value="<%= category.categoryId %>">
+                    <%= category.categoryName %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
 
-     <!-- Unit of Measurement -->
-     <div style="margin-top: 1rem;">
-      <label for="unitOfMeasurement">Unit of Measurement:</label>
-      <select class="form-control" name="unitOfMeasurement" id="unitOfMeasurement">
-       <option value="Liter">Liter</option>
-       <option value="Kilogram">Kilogram</option>
-       <option value="Count">Count</option>
-       <option value="Gram">Gram</option>
-      </select>
+            <!-- Unit of Measurement -->
+            <div style="margin-top: 1rem;">
+              <label for="unitOfMeasurement">Unit of Measurement:</label>
+              <select class="form-control" name="unitOfMeasurement" id="unitOfMeasurement">
+                <option value="Liter">Liter</option>
+                <option value="Kilogram">Kilogram</option>
+                <option value="Count">Count</option>
+                <option value="Gram">Gram</option>
+              </select>
 
-     </div>
+            </div>
 
-     <br>
+            <br>
 
-     <input style="margin-top: 2rem;" type="button" value="Add Product" class="btn" onclick="addProductToList()">
-    </form>
-   </div>
+            <div style="margin-top: 1rem;">
+              <label for="imageUpload" style="cursor: pointer;">
+                <img id="imagePreview" height="80px" width="80px" alt=""
+                  style="width: 80px; height: 80px; background-color: grey; border-radius: 100%; vertical-align: middle; margin-right: 10px;">
+                Add Image
+              </label>
+              <input type="file" id="imageUpload" name="imageUpload" style="display: none;" accept="image/*"
+                onchange="handleImageUpload(event)">
+            </div>
 
 
-   <div style="margin-top: 2rem;
+            <input style="margin-top: 2rem;" type="button" value="Add Product" class="btn" onclick="addProductToList()">
+          </form>
+        </div>
+
+
+        <div style="margin-top: 2rem;
             background-color: #fefefe;
             padding: 2rem;
             display: grid;
@@ -200,254 +214,322 @@
             justify-content: center;">
 
 
-    <div id="myTable" class="container" style="margin-left: 0;margin-top: 4.5rem;">
-     <div class="table-responsive custom-table-responsive">
-      <table class="table custom-table">
-       <thead>
-        <tr>
+          <div id="myTable" class="container" style="margin-left: 0;margin-top: 4.5rem;">
+            <div class="table-responsive custom-table-responsive">
+              <table class="table custom-table">
+                <thead>
+                  <tr>
 
-         <th scope="col">Product Name</th>
-         <th scope="col">Product Markup</th>
-         <th scope="col">Action</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Markup</th>
+                    <th scope="col">Action</th>
 
-        </tr>
-       </thead>
-       <tbody style="overflow-y: scroll; height: 100%;">
+                  </tr>
+                </thead>
+                <tbody style="overflow-y: scroll; height: 100%;">
 
-       </tbody>
-      </table>
-     </div>
-    </div>
-    <div style="padding: 1rem;"> <input type="button" value="Add Product" class="btn" onclick="sendProducts()"></div>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div style="padding: 1rem;"> <input type="button" value="Add Product" class="btn" onclick="sendProducts()">
+          </div>
 
-   </div>
-
-
-
-
-  </section>
+        </div>
 
 
 
 
-
-  <!-- Success Modal -->
-  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-    <div class="modal-content">
-     <div class="modal-header">
-      <h5 class="modal-title" id="alertModalLabel">Alert</h5>
-      <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
-       <span aria-hidden="true">&times;</span>
-      </button>
-     </div>
-     <div class="modal-body" id="alertModalBody">
-      Message goes here...
-     </div>
-     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
-     </div>
-    </div>
-   </div>
-  </div>
-
-
-  <script>
-
-   // Event listener for productMarkup input
-   document.querySelector('input').addEventListener('input', function () {
-    if (this.value) {
-     this.style.borderColor = ''; // Set to default color
-    } else {
-     this.style.borderColor = 'red';
-    }
-   });
-
-   let productsArray = [];
-
-   function addProductToList() {
-
-    const ProductUnitsOfMeasurement = {
-     Liter: 0,
-     Kilogram: 1,
-     Count: 2,
-     Gram: 3
-    };
-
-
-    // Get values from the form
-    let productName = document.getElementById('productName').value;
-    let productMarkup = parseFloat(document.getElementById('productMarkup').value);
-    let minimumThreshold = parseFloat(document.getElementById('minimumThreshold').value);
-    let maximumThreshold = parseFloat(document.getElementById('maximumThreshold').value);
-    let supplier = document.getElementById('supplier').value;
-    let category = document.getElementById('categoryProduct').value;
-    let unitOfMeasurementSelect = document.getElementById('unitOfMeasurement');
-    let selectedValue = unitOfMeasurementSelect.value;
-
-    let selectedEnumValue = ProductUnitsOfMeasurement[selectedValue];
-
-    // Get the image location value
-
-
-    // Validation: Check if all fields are filled
-    if (!productName || isNaN(productMarkup)) {
-     console.error("Please fill in all the fields.");
-     // Change the border color of the input fields to red if they are not filled
-     if (!productName) {
-      document.getElementById('productName').style.borderColor = 'red';
-     } else {
-      document.getElementById('productName').style.borderColor = 'black';
-     }
-     if (isNaN(productMarkup)) {
-      document.getElementById('productMarkup').style.borderColor = 'red';
-     } else {
-      document.getElementById('productMarkup').style.borderColor = 'black';
-     }
-     return;
-    }
-
-
-
-    // Update the newProduct object to include the image location
-    const newProduct = {
-     productName: productName,
-     productMarkup: productMarkup,
-     minimumThreshold: minimumThreshold,
-     maximumThreshold: maximumThreshold,
-     supplierId: supplier,
-     categoryId: category,
-     unitOfMeasurement: selectedEnumValue + 1,
-    };
-
-
-
-    // Push the product to the productsArray
-    productsArray.push(newProduct);
-
-    // Append the product to the table
-    let tableBody = document.querySelector('#myTable tbody');
-    let newRow = document.createElement('tr');
-
-    let productNameCell = document.createElement('td');
-    productNameCell.style = 'padding-left:3rem;'
-    productNameCell.textContent = productName;
-    newRow.appendChild(productNameCell);
-
-    let markupCell = document.createElement('td');
-    markupCell.style = 'padding-left:2.8rem;'
-    markupCell.textContent = `${productMarkup.toFixed(2)}%`; // Display as a percentage
-    newRow.appendChild(markupCell);
-
-    let removeIconCell = document.createElement('td');
-    let removeIcon = document.createElement('i');
-    removeIcon.className = 'material-icons';
-    removeIcon.style = 'padding-left:6rem;'
-    removeIcon.textContent = 'delete';
-    removeIcon.onclick = function () {
-     // Remove the product from the productsArray
-     let productIndex = productsArray.findIndex(p => p.name === productName);
-     if (productIndex > -1) {
-      productsArray.splice(productIndex, 1);
-     }
-
-     // Remove the row from the table
-     tableBody.removeChild(newRow);
-    };
-    removeIconCell.appendChild(removeIcon);
-    newRow.appendChild(removeIconCell);
-
-    tableBody.appendChild(newRow);
-
-    // Clear the form fields for the next entry
-    document.getElementById('productName').value = '';
-    document.getElementById('productMarkup').value = '';
-   }
-   function sendProducts() {
-    // Get today's date and add 5 days
-    let sellBy = new Date();
-    sellBy.setDate(sellBy.getDate() + 5);
-    // Convert the date to the desired format (e.g., "2023-09-22T18:50:46.914Z")
-    let formattedSellByDate = sellBy.toISOString();
-
-    // Map the products array to the expected DTO structure
-    // Update the productsToBeSent mapping to include the image location
-    var productsToBeSent = productsArray.map(product => {
-     return {
-      categoryId: parseInt(product.categoryId),
-      productName: product.productName,
-      productCostPrice: 0,
-      markupPercentage: product.productMarkup,
-      supplierId: parseInt(product.supplierId),
-      unitOfMeasurement: product.unitOfMeasurement,
-      minimumThreshold: product.minimumThreshold,
-      maximumThreshold: product.maximumThreshold,
-      sellByDate: formattedSellByDate,
-      status: 0,
-     };
-    });
-
-    console.log(productsToBeSent)
-
-    // Make a fetch request to send the products
-    fetch("/AddProductsFromSupplier", {
-     method: "POST",
-     headers: {
-      "Content-Type": "application/json",
-     },
-     body: JSON.stringify(productsToBeSent),
-    })
-     .then(response => {
-      if (!response.ok) {
-       throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();  // Assuming the server sends back JSON data
-     })
-     .then(data => {
-      // Display a success alert. Replace with your custom alert function if needed.
-      showAlertModal("Succes", "Products added successfully!");
-      setTimeout(function () {
-       window.location.href = "/ViewProducts";
-      }, 2000);
-
-     })
-     .catch(error => {
-      console.error("Error creating products:", error);
-      // Handle error logic, for example, show an error modal or message
-     });
-   }
+      </section>
 
 
 
 
 
+      <!-- Success Modal -->
+      <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabel">Alert</h5>
+              <button type="button" class="close" onclick="closeAlertModal()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id="alertModalBody">
+              Message goes here...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="closeAlertModal()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-   function showAlertModal(title, message) {
-    // Set the modal's title and message
-    document.getElementById('alertModalLabel').innerText = title;
-    document.getElementById('alertModalBody').innerText = message;
+      <script>
 
-    // Display the modal
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-   }
+        // Product Array
+        let productsArray = [];
+        // Global variable to hold the selected image URL
+        let selectedImageUrl = null;
 
-   function closeAlertModal() {
-    var modal = document.getElementById('alertModal');
-    modal.style.display = 'none';
-    modal.classList.remove('show');
-    document.body.classList.remove('modal-open');
-   }
+        // This is your existing handleImageUpload function
+        // Modified to set the global selectedImageUrl variable
+        function handleImageUpload(event) {
+          const imageFile = event.target.files[0];
+          if (imageFile) {
+            // Create a URL for the file
+            selectedImageUrl = URL.createObjectURL(imageFile);
+
+            // Set the imagePreview src to the file URL
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = selectedImageUrl;
+
+            // Log the file URL
+            console.log('File URL:', selectedImageUrl);
+          } else {
+            // Handle cases where no file was selected
+            console.log('No file selected');
+          }
+        }
+
+        document.getElementById('CostPrice').addEventListener('input', function () {
+
+          recalculateSellingPrice();
+
+        });
+
+
+        // Event listener for productMarkup input
+        document.getElementById('productMarkup').addEventListener('input', function () {
+          if (this.value) {
+            this.style.borderColor = ''; // Set to default color
+          } else {
+            this.style.borderColor = 'red';
+          }
+
+          // Recalculate the selling price when the markup changes
+          recalculateSellingPrice();
+        });
+
+        function recalculateSellingPrice() {
+          let componentsList = document.getElementById('selectedComponentsList');
+          let totalCost = (document.getElementById('CostPrice').value);
+
+
+          // Get the markup value
+          let markupValue = parseFloat(document.getElementById('productMarkup').value) / 100;
+
+          // Check if the markup value is filled
+          if (isNaN(markupValue)) {
+            console.error("Please fill in the markup value.");
+            return;
+          }
+
+          // Calculate the selling price
+          let sellingPrice = totalCost * (1 + markupValue);
+
+          // Update the productSellingPrice input field
+          document.getElementById('productSellingPrice').value = sellingPrice.toFixed(2); // Rounded to 2 decimal places
+        }
+
+        // Event listener for productMarkup input
+        document.querySelector('input').addEventListener('input', function () {
+          if (this.value) {
+            this.style.borderColor = ''; // Set to default color
+          } else {
+            this.style.borderColor = 'red';
+          }
+        });
+
+
+        // Add the product to the temp array
+        function addProductToList() {
+
+
+          // Grab All the data needed from the form to create the product
+          let productName = document.getElementById('productName').value;
+          let productMarkup = parseFloat(document.getElementById('productMarkup').value);
+          let productCostPrice = parseFloat(document.getElementById('CostPrice').value);
+          let minimumThreshold = parseFloat(document.getElementById('minimumThreshold').value);
+          let maximumThreshold = parseFloat(document.getElementById('maximumThreshold').value);
+          let supplierId = parseInt(document.getElementById('supplier').value);
+          let categoryId = parseInt(document.getElementById('categoryProduct').value);
+          let description = document.getElementById('Description').value;
+          let qoute = document.getElementById('Qoute').value;
+          let unitOfMeasurement = document.getElementById('unitOfMeasurement').value;
+
+          // A Switch to ensure that we select the right unit of measeurment
+          switch (unitOfMeasurement) {
+            case "Liter":
+              unitOfMeasurement = 0;
+              break;
+            case "Kilogram":
+              unitOfMeasurement = 1;
+              break;
+            case "Count":
+              unitOfMeasurement = 2;
+              break;
+            case "Gram":
+              unitOfMeasurement = 3;
+              break;
+            default:
+              break;
+          }
+
+          // Get the image file from the input
+          let imageFile = document.getElementById('imageUpload').files[0];
+
+          // Validation: Check if all fields are filled
+          if (!productName || isNaN(productMarkup)) {
+            console.error("Please fill in all the fields.");
+            // Change the border color of the input fields to red if they are not filled
+            if (!productName) {
+              document.getElementById('productName').style.borderColor = 'red';
+            } else {
+              document.getElementById('productName').style.borderColor = 'black';
+            }
+            if (isNaN(productMarkup)) {
+              document.getElementById('productMarkup').style.borderColor = 'red';
+            } else {
+              document.getElementById('productMarkup').style.borderColor = 'black';
+            }
+            return;
+          }
+
+          // Ensure an image file was selected
+          if (!imageFile) {
+            console.error("Please select an image.");
+            return;
+          }
+
+          // Create a FormData object
+          const formData = new FormData();
+
+          // Append the product data to the formData object
+          formData.append('productName', productName);
+          formData.append('productMarkup', productMarkup);
+          formData.append('productCostPrice', productCostPrice);
+          formData.append('minimumThreshold', minimumThreshold);
+          formData.append('maximumThreshold', maximumThreshold);
+          formData.append('supplierId', supplierId);
+          formData.append('categoryId', categoryId);
+          formData.append('description', description);
+          formData.append('qoute', qoute);
+          formData.append('unitOfMeasurement', unitOfMeasurement);
+          formData.append('imageFile', imageFile); // Append the image file
+
+          // Push the formData to the productsArray
+          productsArray.push(formData);
+
+          // Rest is Pushing the Data to the UI End Of Pushing the product to the array
+
+          // Append the product to the table with the new products information
+          let tableBody = document.querySelector('#myTable tbody');
+          let newRow = document.createElement('tr');
+
+          let productNameCell = document.createElement('td');
+          productNameCell.style = 'padding-left:3rem;'
+          productNameCell.textContent = productName;
+          newRow.appendChild(productNameCell);
+
+          let markupCell = document.createElement('td');
+          markupCell.style = 'padding-left:2.8rem;'
+          markupCell.textContent = `${productMarkup.toFixed(2)}%`; // Display as a percentage
+          newRow.appendChild(markupCell);
+
+          let removeIconCell = document.createElement('td');
+          let removeIcon = document.createElement('i');
+          removeIcon.className = 'material-icons';
+          removeIcon.style = 'padding-left:6rem;'
+          removeIcon.textContent = 'delete';
+          removeIcon.onclick = function () {
+            // Remove the product from the productsArray
+            let productIndex = productsArray.findIndex(p => p.name === productName);
+            if (productIndex > -1) {
+              productsArray.splice(productIndex, 1);
+            }
+            // Remove the row from the table
+            tableBody.removeChild(newRow);
+          };
+          removeIconCell.appendChild(removeIcon);
+          newRow.appendChild(removeIconCell);
+          // Append The Row to the table
+          tableBody.appendChild(newRow);
+
+          document.getElementById('productForm').reset();
+          document.getElementById('imageUpload').value = '';
+          selectedImageUrl = null;
+
+          // Clear the form fields for the next entry
+          document.getElementById('productName').value = '';
+          document.getElementById('productMarkup').value = '';
+          for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+          }
+
+        }
+
+        // Post the product 
+        //REdo this function to simply take the products data from the array and push it instead of over complicating the procedure
+        //This shoudl simply send each of the products in the products array to the backend by calling the api function as many times as the number of products
+        //This Works Now do not change Only Modify The
+
+        function sendProducts() {
+          productsArray.forEach((formData, index) => {
+            // Send the FormData to the server
+            fetch('http://localhost:5358/Product/CreateProductsWithoutComponents', { // Corrected endpoint
+              method: 'POST',
+              body: formData // Pass the formData directly
+            })
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+              })
+              .then(data => {
+                console.log('Success:', data);
+                if (index === productsArray.length - 1) { // Check if it's the last product
+                  showAlertModal('Success', 'Products added successfully!');
+                  window.setTimeout(() => {
+                    window.location.href = '/ViewProducts';
+                    productsArray = []; // Clear the products array
+                  }, 2000);
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                showAlertModal('Error', 'Failed to add products.');
+              });
+          });
+        }
+
+        // Modals
+        function showAlertModal(title, message) {
+          // Set the modal's title and message
+          document.getElementById('alertModalLabel').innerText = title;
+          document.getElementById('alertModalBody').innerText = message;
+
+          // Display the modal
+          var modal = document.getElementById('alertModal');
+          modal.style.display = 'block';
+          modal.classList.add('show');
+          document.body.classList.add('modal-open');
+        }
+
+        function closeAlertModal() {
+          var modal = document.getElementById('alertModal');
+          modal.style.display = 'none';
+          modal.classList.remove('show');
+          document.body.classList.remove('modal-open');
+        }
 
 
 
+      </script>
 
-
-  </script>
-
-</body>
+  </body>
 
 </html>

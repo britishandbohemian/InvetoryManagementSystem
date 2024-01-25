@@ -1,0 +1,1286 @@
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\appsettings.Development.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\appsettings.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\InventoryAPI.exe
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\InventoryAPI.deps.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Azure.Core.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Azure.Identity.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Humanizer.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.CodeDom.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Text.Json.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets.build.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\staticwebassets.development.json
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\refint\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+D:\Group Project\InventoryManagement-Api\API\WebApplication2\obj\Debug\net6.0\ref\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.Development.json
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.json
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.exe
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.deps.json
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Core.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Identity.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Humanizer.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.CodeDom.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Json.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.build.json
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.development.json
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+D:\Group Project\InventoryManagement-Api\API\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.Development.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.exe
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.deps.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Core.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Identity.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Humanizer.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.CodeDom.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Json.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.build.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.development.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api\API\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.Development.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.exe
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.deps.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Core.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Identity.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Humanizer.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.CodeDom.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Json.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.build.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.development.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version2\InventoryManagement-Api\API\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.Development.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.exe
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.deps.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Core.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Identity.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Humanizer.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.CodeDom.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Json.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.build.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.development.json
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.pdb
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+D:\Group Project\InventoryManagement-Api\InventoryManagement-Api-Stable_Version_3\InventoryManagement-Api\API\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\appsettings.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\user\Documents\GitHub\team14-dev\InventoryManagement-Api\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\web.config
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.production.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\Catel.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.dll
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.pdb
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\web.config
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.Development.json
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.json
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\appsettings.production.json
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.exe
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.deps.json
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\InventoryAPI.pdb
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Azure.Core.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Azure.Identity.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Catel.Core.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Humanizer.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.CodeDom.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Memory.Data.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Text.Json.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\xunit.abstractions.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\xunit.core.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\End Year Project\InventoryManagement-Api\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.pack.json
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.build.json
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\staticwebassets.development.json
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+D:\End Year Project\InventoryManagement-Api\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\web.config
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\appsettings.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\appsettings.production.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Catel.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final\API\bin\Debug\net6.0\Bogus.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\web.config
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\appsettings.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\appsettings.production.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Bogus.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Catel.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final - Copy\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\web.config
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.production.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Bogus.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Catel.Core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\kamog\OneDrive\Documents\GitHub\team14-dev\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.sourcelink.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.production.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\web.config
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Bogus.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Catel.Core.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\web.config
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\appsettings.production.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.exe
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.deps.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.runtimeconfig.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.pdb
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Bogus.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Catel.Core.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.core.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.AssemblyReference.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfoInputs.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.AssemblyInfo.cs
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.CoreCompileInputs.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.sourcelink.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.InventoryAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.build.InventoryAPI.props
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InventoryAPI.props
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InventoryAPI.props
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\scopedcss\bundle\InventoryAPI.styles.css
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.csproj.CopyComplete
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\refint\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.pdb
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\InventoryAPI.genruntimeconfig.cache
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\obj\Debug\net6.0\ref\InventoryAPI.dll
+C:\Users\Onthatile Mosia\Documents\GitHub\portfolio\InvetoryManagementSystem\InventoryManagement-Api-Recent-Final-SSA\API\bin\Debug\net6.0\InventoryAPI.staticwebassets.runtime.json

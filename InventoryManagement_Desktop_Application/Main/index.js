@@ -14,9 +14,9 @@ const session = require("express-session");
 
 //--------------- Import Functions From functions js
 const {
-recommendSales,
-totalProfit,
-buildCategoryNarrative,
+  recommendSales,
+  totalProfit,
+  buildCategoryNarrative,
   getMostUsedItems,
   generateItemPerformanceNarrative,
   getAggregateItemMetrics,
@@ -24,7 +24,7 @@ buildCategoryNarrative,
   getItemsByStockLevels,
   fetchBestSellingProducts,
   getOrderDetails,
-StoreNarrative,
+  StoreNarrative,
   ConfirmOrder,
   getProductInformation,
   orderItem,
@@ -52,30 +52,30 @@ StoreNarrative,
   updateSupplier,
   getAllUsers,
   deleteUser,
-Potentialprofit,
+  Potentialprofit,
   orderFromSupplier,
   createCategory,
   getUserById,
   fetchProductsThatNeedReordering,
   updateUser,
   getAllProducts,
-    fetchAllOrderProducts,
+  fetchAllOrderProducts,
   fetchAllOrderItems,
-    fetchTotalProducts,
+  fetchTotalProducts,
   fetchTotalWorthProducts,
   getProductById,
   fetchAllOrders,
   confirmOrder,
   addProductsWithComponent,
   updateCategoryName,
-    getProductsByStockLevels,
+  getProductsByStockLevels,
   getLeastSellingProducts,
   getTopSellingProducts,
   getProductsNearExpiration,
   getOverstockedProducts,
   getLowStockProducts,
   getTotalProducts,
-filterCategoriesByWorthLevel
+  filterCategoriesByWorthLevel
 } = require("./routes/ApplicationFunctions");
 
 
@@ -83,6 +83,7 @@ filterCategoriesByWorthLevel
 // Serve static files from the 'public' directory
 app.use(express.static("public"));
 
+// Session Variable to save the users data
 app.use(
   session({
     secret: "mySecretKey", // Use a more complex key for production.
@@ -197,6 +198,7 @@ app.post("/api/auth/Login", async (req, res) => {
   }
 });
 
+// Get the sales data and render the Page
 app.get("/ViewSales", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -209,7 +211,7 @@ app.get("/ViewSales", async (req, res) => {
   const Orders = await fetchAllOrders();
 
 
-const Narrative = await StoreNarrative();
+  const Narrative = await StoreNarrative();
 
 
   res.render("User/Admin/Sales/Sales", {
@@ -217,11 +219,12 @@ const Narrative = await StoreNarrative();
     Items,
     Products,
     Orders,
-Narrative,// Send all sales data for the date range to the EJS template
+    Narrative,// Send all sales data for the date range to the EJS template
     user: req.session.user,
   });
 });
 
+// Delete a user from the database
 app.post("/delete/:userId", async (req, res) => {
   const userId = req.params.userId;
   try {
@@ -252,14 +255,21 @@ app.get("/homeAdmin", async (req, res) => {
   const Profit = await fetchProfitStats();
   const ProductsRunningLow = await fetchProductsThatNeedReordering();
   const ItemsRunningLow = await fetchItemsRunningLow();
-let parsedData = JSON.parse(await recommendSales());
-const Recommendations = parsedData;
+  let parsedData;
 
-const SalesRev = await SalesRevenue();
+  try {
+    parsedData = JSON.parse(await recommendSales());
+  } catch (e) {
+    console.error("Failed to parse JSON:", e);
+    parsedData = []; // Default to an empty array in case of an error
+  }
+  const Recommendations = parsedData;
+
+  const SalesRev = await SalesRevenue();
 
   //render Page
   res.render("User/Admin/homeAdmin", {
-Recommendations,
+    Recommendations,
     Profit,
     ItemsRunningLow,
     ProductsRunningLow,
@@ -268,6 +278,7 @@ Recommendations,
   });
 });
 
+// Order Products and Items Page
 app.get("/OrderProductsAndItems", async (req, res) => {
   //Redirect to Login Page
   if (!req.session.user) {
@@ -322,7 +333,7 @@ app.get("/GetCategories", async (req, res) => {
   });
 });
 
-
+// Edit a product Page
 app.get("/EditProduct/:productId", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -343,6 +354,7 @@ app.get("/EditProduct/:productId", async (req, res) => {
   });
 });
 
+// Get Indiviual Items
 app.get("/getItems", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -350,9 +362,10 @@ app.get("/getItems", async (req, res) => {
 
   const Components = await getAllComponents();
   // If the user session exists, render the add product page
-res.send(Components);
+  res.send(Components);
 });
 
+// View Items Page
 app.get("/ViewItems", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -368,12 +381,13 @@ app.get("/ViewItems", async (req, res) => {
   res.render("User/Admin/Items/ViewItems", {
     Components,
     Categories,
-    Supplier,ItemsRunningLow,
+    Supplier, ItemsRunningLow,
     user: req.session.user
     // You can pass additional data to the template here
   });
 });
 
+// Create a component that will be linked to a product eg; Lettuce for Product Burger
 app.post("/CreateComponent", async (req, res) => {
   try {
     const {
@@ -414,13 +428,15 @@ app.post("/CreateComponent", async (req, res) => {
   }
 });
 
+// Get The Indivual Categories
 app.post("/api/categories", async (req, res) => {
   try {
     // Here, you can extract the data from the request body
     const category = req.body;
 
     const CategoryDto = {
-      categoryName: category.categoryName
+      categoryName: category.categoryName,
+      categoryDescription: category.categoryDescription
     };
 
 
@@ -436,6 +452,7 @@ app.post("/api/categories", async (req, res) => {
   }
 });
 
+// Add A supplier for all Items and Products
 app.post("/Addsupplier", async (req, res) => {
   try {
     // Validate req.body to ensure it has all required fields
@@ -458,7 +475,7 @@ app.post("/Addsupplier", async (req, res) => {
       rating
     };
 
-console.log(supplierDto)
+    console.log(supplierDto)
 
     // Insert the supplier data into the database using your database middleware
     const response = await addSupplier(supplierDto);
@@ -485,11 +502,12 @@ app.get("/SellItems", async (req, res) => {
 
   res.render("User/SellItems", {
     products,
-categories,
+    categories,
     user: req.session.user
   });
 });
 
+// Let The admin view the page to sell items Internal POS
 app.get("/SellItemsAdmin", async (req, res) => {
   //const products = await getAllProducts();
   const products = await getAllProducts();
@@ -501,11 +519,12 @@ app.get("/SellItemsAdmin", async (req, res) => {
 
   res.render("User/Admin/SellItems", {
     products,
-categories,
+    categories,
     user: req.session.user
   });
 });
 
+// Make a sale
 app.post("/MakeSale", async (req, res) => {
   try {
     const saleData = req.body;
@@ -599,7 +618,7 @@ app.get('/LowStockProducts', async (req, res) => {
 });
 
 
-
+// Get Data on the most used items in store, eg Lettuce, Sauce for a prodcut burger
 app.get('/MostUsedItems', async (req, res) => {
   try {
     const items = await getMostUsedItems();
@@ -610,7 +629,7 @@ app.get('/MostUsedItems', async (req, res) => {
   }
 });
 
-
+// Get Stock that wil expire soon if it is perishable
 app.get('/ItemsExpiringSoon/:days', async (req, res) => {
   try {
     const days = req.params.days;
@@ -623,6 +642,7 @@ app.get('/ItemsExpiringSoon/:days', async (req, res) => {
 });
 
 
+// Get Stock Levels for all items
 app.get('/ItemsByStockLevels/:level', async (req, res) => {
   try {
     const level = req.params.level;
@@ -635,7 +655,7 @@ app.get('/ItemsByStockLevels/:level', async (req, res) => {
 });
 
 
-
+// Get the performance narrative for an item
 app.get('/ItemPerformanceNarrative/:id', async (req, res) => {
   try {
     const itemId = req.params.id;
@@ -650,7 +670,7 @@ app.get('/ItemPerformanceNarrative/:id', async (req, res) => {
 
 
 
-
+// Get information about the category based on multiple varibales
 app.get('/CategoryNarrative/:id', async (req, res) => {
   try {
     const categoryId = req.params.id;
@@ -662,6 +682,8 @@ app.get('/CategoryNarrative/:id', async (req, res) => {
   }
 });
 
+
+// Filter a category
 app.get('/FilterCategories/:level', async (req, res) => {
   try {
     const level = req.params.level;
@@ -672,32 +694,6 @@ app.get('/FilterCategories/:level', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -719,7 +715,7 @@ app.get("/ViewProducts", async (req, res) => {
   const Categories = await getAllCategories();
   const Components = await getAllComponents();
   const ProductsRunningLow = await fetchProductsThatNeedReordering();
-    const totalProducts = await getTotalProducts();
+  const totalProducts = await getTotalProducts();
 
 
   // If the user session exists, render the add product page
@@ -734,10 +730,12 @@ app.get("/ViewProducts", async (req, res) => {
   });
 });
 
-app.post("/AddProductsFromSupplier", async (req, res) => {
+
+// Add a product to the database from a supplier eg Tshirt , Coca cola beverage
+// Function Is Working Properly Do Not change
+app.post("/Product/AddProductFromSupplier", async (req, res) => {
   // Extract the product data from the request body
   const productData = req.body; // Ensure body-parser middleware is used
-
   try {
     // Add the product to the database (replace with your actual logic)
     const Product = await addProducts(productData);
@@ -751,10 +749,10 @@ app.post("/AddProductsFromSupplier", async (req, res) => {
 // Define a GET route to handle fetching product information
 app.get('/ProductInformation', async (req, res) => {
   const productId = req.query.productId;
-console.log(productId)
+  console.log(productId)
   try {
     const productInfo = await getProductInformation(productId);
-console.log(productInfo)
+    console.log(productInfo)
     if (productInfo) {
       res.json(productInfo);
       console.log(productInfo)
@@ -766,12 +764,8 @@ console.log(productInfo)
   }
 });
 
-// Start the server on port 3000
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
 
-
+// Add A product that is made in house eg, A burger
 app.post("/AddProductsMadeInStore", async (req, res) => {
   // Extract the product data from the request body
   const productData = req.body; // Ensure body-parser middleware is used
@@ -781,6 +775,8 @@ app.post("/AddProductsMadeInStore", async (req, res) => {
     // Add the product to the database (replace with your actual logic)
     const response = await addProductsWithComponent(productData);
 
+
+    console.log(productData)
     // Redirect to a success page
     res.send(response);
   } catch (error) {
@@ -789,7 +785,7 @@ app.post("/AddProductsMadeInStore", async (req, res) => {
   }
 });
 
-
+// Update the the category as a whole
 app.post("/UpdateCategoryName/:id", async (req, res) => {
   // Extract the product data from the request body
   const categoryData = req.body; // Ensure body-parser middleware is used
@@ -808,6 +804,7 @@ app.post("/UpdateCategoryName/:id", async (req, res) => {
   }
 });
 
+// Update the suppliers Information
 app.post("/UpdateSupplier/:id", async (req, res) => {
   // Extract the product data from the request body
   const supplierData = req.body; // Ensure body-parser middleware is used
@@ -826,6 +823,7 @@ app.post("/UpdateSupplier/:id", async (req, res) => {
   }
 });
 
+// Select a Product type and render the correct page with inputs
 app.get("/SelectProductType", (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -835,6 +833,7 @@ app.get("/SelectProductType", (req, res) => {
   });
 });
 
+// Add a product that comes from a supplier as a whole product eg a beverage
 app.get("/Add-Product-From-Supplier", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -851,6 +850,7 @@ app.get("/Add-Product-From-Supplier", async (req, res) => {
   });
 });
 
+// This helps me confirm and order to a specific supplier once it arrives
 app.get("/ConfirmOrder/:supplierOrderId/:supplierId", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -870,7 +870,7 @@ app.get("/ConfirmOrder/:supplierOrderId/:supplierId", async (req, res) => {
   });
 });
 
-
+// Im getting a page here and passing variables to that page ejs
 app.get("/Add-Product-Made-In-Store", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -890,51 +890,48 @@ app.get("/Add-Product-Made-In-Store", async (req, res) => {
 
 
 
-
-
-
-
+// These Classes and to help simplify the Ordering of a product or item 
+// Implementing OOP in Javascript to make Life easier
 class ProductOrder {
   constructor(data) {
-      this.productId = data.productId;
-      this.unitsOrdered = data.unitsOrdered;
-      this.totalCostOfOrder = data.totalCostOfOrder;
-      this.piecesPerUnit = data.piecesPerUnit;
-      this.orderDate = new Date(data.orderDate);
-      this.status = "Pending";  // default status
+    this.productId = data.productId;
+    this.unitsOrdered = data.unitsOrdered;
+    this.totalCostOfOrder = data.totalCostOfOrder;
+    this.piecesPerUnit = data.piecesPerUnit;
+    this.orderDate = new Date(data.orderDate);
+    this.status = "Pending";  // default status
   }
 }
 
 
 class ItemOrder {
   constructor(data) {
-      this.itemId = data.itemId;
-      this.unitsOrdered = data.unitsOrdered;  // Note: Changed `unitsOrdered` to `unitsNeeded` based on your form, adjust if needed.
-      this.totalCostOfOrder = data.totalCostOfOrder;
-      this.piecesPerUnit = data.piecesPerUnit;
-      this.orderDate = new Date(data.orderDate);
-      this.status = "Pending";  // default status
+    this.itemId = data.itemId;
+    this.unitsOrdered = data.unitsOrdered;  // Note: Changed `unitsOrdered` to `unitsNeeded` based on your form, adjust if needed.
+    this.totalCostOfOrder = data.totalCostOfOrder;
+    this.piecesPerUnit = data.piecesPerUnit;
+    this.orderDate = new Date(data.orderDate);
+    this.status = "Pending";  // default status
   }
 }
 
-
+// Submit a product order to a supplier
 app.post('/submitProductOrder', async (req, res) => {
   const formData = new ProductOrder(req.body);
 
   const response = await orderProduct(formData);
 
-console.log(response)
+  console.log(response)
   if (response && response.orderedProductId) {
-      // Return the result as JSON
-      res.json(response);
+    // Return the result as JSON
+    res.json(response);
   } else {
-      res.status(400).send('There was an error placing the order.');
+    res.status(400).send('There was an error placing the order.');
   }
 });
 
 
-
-
+// Submit an item Order to the supplier
 app.post('/submitItemOrder', async (req, res) => {
   const formData = new ItemOrder(req.body);
 
@@ -943,29 +940,29 @@ app.post('/submitItemOrder', async (req, res) => {
 
 
   if (response && response.orderedItemId) {
-      // Return the result as JSON
-      res.json(response);
+    // Return the result as JSON
+    res.json(response);
   } else {
-      res.status(400).send('There was an error placing the order.');
+    res.status(400).send('There was an error placing the order.');
   }
 });
 
-
+// Submit an order to a supplier
 app.post('/submitSupplierOrder', async (req, res) => {
 
 
   const dto = req.body; // Taking req.body as is.
 
   try {
-      const result = await orderFromSupplier(dto);
-      res.json(result);
+    const result = await orderFromSupplier(dto);
+    res.json(result);
   } catch (error) {
-      console.error("Error while processing:", error); // Logging the error for debugging.
-      res.status(500).send(error.message);
+    console.error("Error while processing:", error); // Logging the error for debugging.
+    res.status(500).send(error.message);
   }
 });
 
- 
+
 
 //--------SUPPLIERS
 //GET THE SUPPLIERS
@@ -984,7 +981,7 @@ app.get("/Suppliers", async (req, res) => {
     console.error(error);
     res.status(500).send({ message: "Error fetching suppliers" });
   }
-}); 
+});
 
 
 ///--USERS
@@ -996,27 +993,27 @@ app.get("/users", async (req, res) => {
     return res.redirect("/");
   }
 
-  res.render("User/Admin/Users/ViewUsers",{data ,      user: req.session.user})
+  res.render("User/Admin/Users/ViewUsers", { data, user: req.session.user })
 
 });
 
+// Confirm And Order of a product from a supplier
 app.post('/ConfirmOrder', async (req, res) => {
-    const dto = req.body;  // Get the data from the request body.
+  const dto = req.body;  // Get the data from the request body.
   if (!req.session.user == null) {
     return res.redirect("/");
   }
-    try {
-        const data = await ConfirmOrder(dto);
-        res.json(data);  // Send back the response from the API.
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
+  try {
+    const data = await ConfirmOrder(dto);
+    res.json(data);  // Send back the response from the API.
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 
 
-//Orders
-
+//Orders View Orders made to a supplier for Goods
 app.get("/Orders", async (req, res) => {
   if (!req.session.user) {
     return res.redirect("/");
@@ -1037,14 +1034,17 @@ app.get("/Orders", async (req, res) => {
     user: req.session.user,
   });
 });
+
+
 //----------------------------------------------------------
 //----------------------------------------------------------
 //----------------------------------------------------------
 //----------------------------------------------------------
 //----------------------------------------------------------
 
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, '0.0.0.0',() => {
+// Start the server Listen On Prot 3002
+const port = process.env.PORT || 3002;
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server started on port ${port}`);
 });
+
