@@ -108,6 +108,7 @@ app.set("view engine", "ejs");
 
 //SHOW PAGES------------------------------
 
+//USER ROUTES
 app.get("/", (req, res) => {
   const message = "";
   res.render("User/login", { message: message });
@@ -197,6 +198,14 @@ app.post("/api/auth/Login", async (req, res) => {
     return res.status(500).render("User/Login", { message }); // Rendering login page with error message
   }
 });
+
+
+
+
+
+
+
+
 
 // Get the sales data and render the Page
 app.get("/ViewSales", async (req, res) => {
