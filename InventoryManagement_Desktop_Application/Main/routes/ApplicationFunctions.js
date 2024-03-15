@@ -1,66 +1,77 @@
-const axios = require("axios");
+const admin = require('firebase-admin');
 
-//-----------USER ROUTES--------------------
-const BaseUrlAuth = "http://0.0.0.0:5358/api/Auth/LoginUser";
+// Initialize the app with a service account, granting admin privileges
+const serviceAccount = require('./britishandbohemianapi-firebase-adminsdk-m6l4h-6a63615218.json');
 
-//LOG USER IN
-const loginUser = async (username, userPassword) => {
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://britishandbohemianapi-default-rtdb.firebaseio.com"
+});
+
+
+// Get a reference to the Firebase Realtime Database
+const database = admin.database();
+
+// // Test function to write to the database
+// const testWriteToDatabase = async () => {
+//   const dataToWrite = {
+//     username: "testuser",
+//     email: "testuser@example.com",
+//     role: "user"
+//   };
+
+//   try {
+//     await database.ref('users').push(dataToWrite);
+//     console.log('Data written successfully to the database');
+//   } catch (error) {
+//     console.error('Error writing to database:', error);
+//   }
+// };
+
+// // Test function to read from the database
+// const testReadFromDatabase = async () => {
+//   try {
+//     const snapshot = await database.ref('users').once('value');
+//     const data = snapshot.val();
+//     console.log('Data read successfully from the database:', data);
+//   } catch (error) {
+//     console.error('Error reading from database:', error);
+//   }
+// };
+
+// // Run the test functions
+// testWriteToDatabase();
+// testReadFromDatabase();
+
+
+
+
+
+// Function to register a new user in the Realtime Database
+// Function to register a new user in the Realtime Database
+const registerUser = async ({ username, userPassword, userEmail, userContact, role }) => {
   try {
-    //First Create the function
-    //insert the url
-    //define the method
-    //define how you want the info
-    //send the data in body
-    const resp = await fetch(BaseUrlAuth, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ username, userPassword })
+    // Use a transaction to safely increment the lastUserId
+    const lastUserIdRef = database.ref('lastUserId');
+    const nextId = await lastUserIdRef.transaction(currentId => {
+      return (currentId || 0) + 1;
     });
 
-    if (resp.status === 200) {
-      const data = await resp.json();
-      return data;
-    }
-  } catch (error) {
-    console.error("Login failed:", error.message);
-    throw error;
-  }
-};
-
-
-const BaseUrlRegister = "http://localhost:5358/api/Auth/RegisterUser";
-const registerUser = async (
-  username,
-  userPassword,
-  userEmail,
-  userContact,
-  role
-) => {
-  try {
-    const resp = await fetch(BaseUrlRegister, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
+    // Check if the transaction was successful
+    if (nextId.committed) {
+      // Now, save the new user with the incremented ID
+      await database.ref(`users/${nextId.snapshot.val()}`).set({
         username,
         userPassword,
         userEmail,
         userContact,
         role
-      })
-    });
+      });
 
-    if (resp.ok) {
-      const data = await resp.json();
-      const token = data.token;
-      return data; // Returning the data including the user information
+      console.log("User registered successfully with ID:", nextId.snapshot.val());
+      return nextId.snapshot.val(); // Return the new user's ID
     } else {
-      const error = await resp.json();
-      console.error("User registration failed:", error.message);
-      throw new Error(error.message);
+      throw new Error("Failed to get a new user ID");
     }
   } catch (error) {
     console.error("User registration failed:", error.message);
@@ -68,40 +79,99 @@ const registerUser = async (
   }
 };
 
-const baseUrl = "http://localhost:5358/api/users"; // replace with your actual API address
+
+// Function to check if a user exists in the Realtime Database
+
+const loginUser = async (username, userPassword) => {
+  try {
+    let userExists = false;
+    let userData = null;
+
+    // Retrieve all users and find the one with the matching username
+    const snapshot = await database.ref('users').orderByChild('username').equalTo(username).once('value');
+    snapshot.forEach(childSnapshot => {
+      const data = childSnapshot.val();
+      if (data.userPassword === userPassword) { // This comparison is not secure for production use
+        userExists = true;
+        userData = { ...data, uid: childSnapshot.key };
+      }
+    });
+
+    if (userExists) {
+      console.log("User logged in successfully:", userData);
+      return userData; // Return the data of the user if found
+    } else {
+      throw new Error("Invalid credentials");
+    }
+  } catch (error) {
+    console.error("Login failed:", error.message);
+    throw error;
+  }
+};
 
 // GET ALL THE USERS
 async function getAllUsers() {
-  const response = await fetch(baseUrl);
-  return response.json();
+  try {
+    const snapshot = await database.ref('users').once('value');
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      return {}; // Return an empty object if there are no users
+    }
+  } catch (error) {
+    console.error("Error getting users:", error.message);
+    throw error;
+  }
 }
 
 // GET USER BY ID
 async function getUserById(id) {
-  const response = await fetch(`${baseUrl}/${id}`);
-  return response.json();
+  try {
+    const snapshot = await database.ref('users').child(id).once('value');
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      throw new Error("User not found");
+    }
+  } catch (error) {
+    console.error("Error getting user by ID:", error.message);
+    throw error;
+  }
 }
 
 // UPDATE THE USER
 async function updateUser(id, userData) {
-  const response = await fetch(`${baseUrl}/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(userData)
-  });
-
-  return response;
+  try {
+    await database.ref('users').child(id).update(userData);
+    console.log("User updated successfully");
+  } catch (error) {
+    console.error("Error updating user:", error.message);
+    throw error;
+  }
 }
 
 // DELETE A USER
 async function deleteUser(id) {
-  const response = await fetch(`${baseUrl}/${id}`, {
-    method: "DELETE"
-  });
-  return response;
+  try {
+    await database.ref('users').child(id).remove();
+    console.log("User deleted successfully");
+  } catch (error) {
+    console.error("Error deleting user:", error.message);
+    throw error;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 const RevenueUrl = "http://0.0.0.0:5358/api/Stats/totalrevenue";
 // Get Sales Revenue
@@ -1520,6 +1590,7 @@ async function filterCategoriesByWorthLevel(level) {
 //-------EXPORT ALL THE MODULES ---------
 
 module.exports = {
+  registerUser, loginUser,
   filterCategoriesByWorthLevel,
   buildCategoryNarrative,
   getMostUsedItems,

@@ -146,56 +146,66 @@ app.post("/api/auth/register", async (req, res) => {
   }
 
   try {
-    const user = await registerUser(
+    // Pass an object to the registerUser function
+    const uid = await registerUser({
       username,
       userPassword,
       userEmail,
       userContact,
-      role // Convert the role to an integer
-    );
+      role // Directly pass the converted role
+    });
 
-    if (!user) {
-      // If the registration is unsuccessful for any reason
+    if (!uid) {
       const message = "Failed to register user";
       return res.status(400).render("User/register", { message }); // 400 Bad Request
     }
 
-    const message = ""; // Message can be used to display a success message if needed
+    // Success case
     res.redirect("/");
   } catch (error) {
-    const message = "Failed To register User";
-    res.status(500).render("User/register", { message }); // 500 Internal Server Error
+    console.error("Registration error:", error);
+    res.status(500).render("User/register", { message: "Failed To register User" }); // 500 Internal Server Error
   }
 });
 
+
+
+
+
+
+
+
+
 //FUNCTION TO LOGIN A USER
-app.post("/api/auth/Login", async (req, res) => {
+app.post("/api/auth/login", async (req, res) => {
   const { username, userPassword } = req.body;
+
   try {
     const user = await loginUser(username, userPassword);
 
     if (!user) {
-      // Check if user is not found
+      // If the user is not found or the password does not match
       const message = "Invalid credentials";
-      return redirect("/Login", message); // Rendering login page with error message
+      return res.status(400).render("User/Login", { message }); // Assuming you have a User/Login template for rendering
     }
 
+    // Here, you would set up your session or token for the user
+    // This example just sets the user info directly on the session
     req.session.user = user;
 
-    // Switch based on user role
+    // Redirect based on user role
     switch (user.role) {
       case 1:
         return res.redirect("/SellItems");
       case 2:
-        return res.redirect("/homeAdmin");
-      case 3:
+      case 3: // Assuming roles 2 and 3 both redirect to /homeAdmin
         return res.redirect("/homeAdmin");
       default:
-        return res.redirect("/SellItems"); // Default view if no role matches
+        return res.redirect("/"); // Redirect to a default page if no specific role found
     }
   } catch (error) {
-    const message = "Failed to Login, Invalid Credentials";
-    return res.status(500).render("User/Login", { message }); // Rendering login page with error message
+    console.error("Login error:", error);
+    return res.status(500).render("User/Login", { message: "Failed to login, please try again." }); // Adjust the path to your login page if needed
   }
 });
 
