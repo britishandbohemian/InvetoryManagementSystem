@@ -10,8 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 const session = require("express-session");
 
 
-
-
 //--------------- Import Functions From functions js
 const {
   recommendSales,
@@ -104,18 +102,17 @@ app.set("view engine", "ejs");
 //----------------------------------------------------------
 //----------------------------------------------------------
 //----------------------------------------------------------
-//-----------------------------ROUTES-----------------------------
-
-//SHOW PAGES------------------------------
-
 //USER ROUTES
+
+
+
 app.get("/", (req, res) => {
   const message = "";
   res.render("User/login", { message: message });
 });
 
 //REGISTER PAGE SHOW
-app.get("/Register", (req, res) => {
+app.get("/register", (req, res) => {
   const message = "";
   res.render("User/register", { message: message });
 });
@@ -168,14 +165,6 @@ app.post("/api/auth/register", async (req, res) => {
   }
 });
 
-
-
-
-
-
-
-
-
 //FUNCTION TO LOGIN A USER
 app.post("/api/auth/login", async (req, res) => {
   const { username, userPassword } = req.body;
@@ -208,6 +197,96 @@ app.post("/api/auth/login", async (req, res) => {
     return res.status(500).render("User/Login", { message: "Failed to login, please try again." }); // Adjust the path to your login page if needed
   }
 });
+
+app.get('/api/users', async (req, res) => {
+  try {
+    const users = await getAllUsers();
+    res.status(200).json(users); // Send users as JSON
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: error.message }); // Send error as JSON
+  }
+});
+
+app.get('/api/users/:id', async (req, res) => {
+  const { id } = req.params; // Extract the ID from the route parameter
+  try {
+    const user = await getUserById(id);
+    if (user) {
+      res.status(200).json(user); // Send user as JSON
+    } else {
+      res.status(404).json({ message: "User not found" }); // Send not found message as JSON
+    }
+  } catch (error) {
+    console.error("Error fetching user by ID:", error);
+    res.status(500).json({ error: error.message }); // Send error as JSON
+  }
+});
+
+app.put('/api/users/:id', async (req, res) => {
+  const { id } = req.params; // Extract the user ID from the URL parameter
+  const userData = req.body; // Extract the data to be updated from the request body
+
+  try {
+    await updateUser(id, userData); // Call the updateUser function
+    res.status(200).json({ message: "User updated successfully" });
+  } catch (error) {
+    console.error("Error updating user:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete('/api/users/:id', async (req, res) => {
+  const { id } = req.params; // Extract the user ID from the URL parameter
+
+  try {
+    await deleteUser(id); // Call the deleteUser function with the extracted ID
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
+//Load Admin Page
+
+app.get("/homeAdmin", async (req, res) => {
+  //Redirect to Login Page
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
+
+  //Variables Passed to admin Page
+  const Profit = await fetchProfitStats();
+  const ProductsRunningLow = await fetchProductsThatNeedReordering();
+  const ItemsRunningLow = await fetchItemsRunningLow();
+
+  const SalesRev = await SalesRevenue();
+
+  //render Page
+  res.render("User/Admin/homeAdmin", {
+    Profit,
+    ItemsRunningLow,
+    ProductsRunningLow,
+    SalesRev,
+    user: req.session.user
+  });
+});
+
+
+//Get users
+app.get("/users", async (req, res) => {
+  const data = await getAllUsers();
+  const dataArray = Object.values(data);
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
+  res.render("User/Admin/Users/ViewUsers", { dataArray, user: req.session.user })
+});
+
+
+
 
 
 
@@ -243,59 +322,9 @@ app.get("/ViewSales", async (req, res) => {
   });
 });
 
-// Delete a user from the database
-app.post("/delete/:userId", async (req, res) => {
-  const userId = req.params.userId;
-  try {
-    // Assuming deleteUser is a function that deletes a user by ID and returns the deleted user
-    const deletedUser = await deleteUser(userId);
-
-    if (!deletedUser) {
-      res.status(404).send('User not found');
-      return;
-    }
-
-    res.status(200).send('User deleted successfully');
-  } catch (error) {
-    res.status(500).send('An error occurred: ' + error.message);
-  }
-});
-
 
 //ADMIN PAGE
 
-app.get("/homeAdmin", async (req, res) => {
-  //Redirect to Login Page
-  if (!req.session.user) {
-    return res.redirect("/");
-  }
-
-  //Variables Passed to admin Page
-  const Profit = await fetchProfitStats();
-  const ProductsRunningLow = await fetchProductsThatNeedReordering();
-  const ItemsRunningLow = await fetchItemsRunningLow();
-  let parsedData;
-
-  try {
-    parsedData = JSON.parse(await recommendSales());
-  } catch (e) {
-    console.error("Failed to parse JSON:", e);
-    parsedData = []; // Default to an empty array in case of an error
-  }
-  const Recommendations = parsedData;
-
-  const SalesRev = await SalesRevenue();
-
-  //render Page
-  res.render("User/Admin/homeAdmin", {
-    Recommendations,
-    Profit,
-    ItemsRunningLow,
-    ProductsRunningLow,
-    SalesRev,
-    user: req.session.user
-  });
-});
 
 // Order Products and Items Page
 app.get("/OrderProductsAndItems", async (req, res) => {
@@ -1003,18 +1032,9 @@ app.get("/Suppliers", async (req, res) => {
 });
 
 
-///--USERS
+///--    
 
 //GET ALL THE USERS FROM THE DATABASE
-app.get("/users", async (req, res) => {
-  const data = await getAllUsers();
-  if (!req.session.user == null) {
-    return res.redirect("/");
-  }
-
-  res.render("User/Admin/Users/ViewUsers", { data, user: req.session.user })
-
-});
 
 // Confirm And Order of a product from a supplier
 app.post('/ConfirmOrder', async (req, res) => {

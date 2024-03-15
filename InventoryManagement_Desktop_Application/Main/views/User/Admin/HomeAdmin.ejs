@@ -189,10 +189,6 @@
                 </div>
               </div>
 
-
-
-
-
             </div>
 
           </div>
@@ -238,59 +234,8 @@
 
             </div>
 
-            <div
-              style="width: 30%;margin: 2rem auto;border:  1px solid rgb(0, 0, 0);border-radius: 15px;background-color: white;">
-              <div style="border-radius: 15px;">
-                <div style="padding: 1.6rem 2rem;  background-color: #191716;border-radius: 15px;height: 11rem;">
-                  <h3 style="font-weight: bold;font-size: 1.5rem;color: white;">Product Sale Ideas For Today
-                  </h3>
-                  <h5 style="font-size: 1rem;font-weight: 400;margin-top: 20px;color: white;">
-                    Sales Reccomendations
-                  </h5>
-                </div>
-
-
-                <div style="background-color: #ffffff;width: 100%;border-radius: 15px;height: 100%;">
-                  <div style="padding: 3rem;height: 100%;">
-                    <ul class="list-group" style="font-size: 1.4rem;">
-                      <li class="list-group-item list-group-item-borderless">
-                        <strong>Name:</strong>
-                        <%= Recommendations.Name %>
-                      </li>
-                      <li class="list-group-item list-group-item-borderless">
-                        <strong>Units in Inventory:</strong>
-                        <%= Recommendations.UnitsInInventory %>
-                      </li>
-                      <li class="list-group-item list-group-item-borderless">
-                        <strong>Last Sold Date:</strong>
-                        2 May
-                        <!-- Replace with <%= Recommendations.LastSoldDate %> after formatting it on the server-side -->
-                      </li>
-                      <li class="list-group-item list-group-item-borderless">
-                        <strong>Reason:</strong> <span class="text-danger font-weight-bold">
-                          <%= Recommendations.Reason %>
-                        </span>
-                      </li>
-                      <li class="list-group-item list-group-item-borderless">
-                        <button id="placeOnSaleButton" onclick="PlaceonSale('<%= Recommendations.ProductId %>')"
-                          class="btn">Reduce
-                          price</button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-
-
-              </div>
-            </div>
+        
           </div>
-
-
-
-
-
-
 
 
         </div>
@@ -362,6 +307,7 @@
       </div>
 
     </div>
+
     <!-- Notification Modal -->
     <div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
